@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC9DB8781C6C9A33001C9319 /* icon_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9DB8751C6C9A32001C9319 /* icon_switch.png */; };
+		BC9DB8791C6C9A33001C9319 /* icon_switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9DB8761C6C9A32001C9319 /* icon_switch@2x.png */; };
+		BC9DB87A1C6C9A33001C9319 /* icon_switch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC9DB8771C6C9A32001C9319 /* icon_switch@3x.png */; };
 		BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920071C6BA6AC0089F52A /* AppDelegate.swift */; };
 		BCD9200A1C6BA6AC0089F52A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920091C6BA6AC0089F52A /* ViewController.swift */; };
 		BCD9200D1C6BA6AC0089F52A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD9200B1C6BA6AC0089F52A /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC9DB8751C6C9A32001C9319 /* icon_switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_switch.png; path = ../../../Desktop/icon_switch.png; sourceTree = "<group>"; };
+		BC9DB8761C6C9A32001C9319 /* icon_switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@2x.png"; path = "../../../Desktop/icon_switch@2x.png"; sourceTree = "<group>"; };
+		BC9DB8771C6C9A32001C9319 /* icon_switch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@3x.png"; path = "../../../Desktop/icon_switch@3x.png"; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD920071C6BA6AC0089F52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD920091C6BA6AC0089F52A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC9DB87B1C6C9A41001C9319 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DB8751C6C9A32001C9319 /* icon_switch.png */,
+				BC9DB8761C6C9A32001C9319 /* icon_switch@2x.png */,
+				BC9DB8771C6C9A32001C9319 /* icon_switch@3x.png */,
+			);
+			name = Assets;
+			path = Currency;
+			sourceTree = "<group>";
+		};
 		BCD91FFB1C6BA6AC0089F52A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +100,7 @@
 				BCD9201E1C6BA6AC0089F52A /* CurrencyTests */,
 				BCD920291C6BA6AC0089F52A /* CurrencyUITests */,
 				BCD920051C6BA6AC0089F52A /* Products */,
+				BC9DB87B1C6C9A41001C9319 /* Assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,8 +253,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9DB8781C6C9A33001C9319 /* icon_switch.png in Resources */,
 				BCD920151C6BA6AC0089F52A /* LaunchScreen.storyboard in Resources */,
+				BC9DB87A1C6C9A33001C9319 /* icon_switch@3x.png in Resources */,
 				BCD920121C6BA6AC0089F52A /* Assets.xcassets in Resources */,
+				BC9DB8791C6C9A33001C9319 /* icon_switch@2x.png in Resources */,
 				BCD9200D1C6BA6AC0089F52A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

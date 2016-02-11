@@ -20,7 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF">
                                 <rect key="frame" x="0.0" y="523" width="150" height="77"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.77638524770736694" green="0.77651971578598022" blue="0.77637678384780884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,10 +130,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i">
                                 <rect key="frame" x="450" y="292" width="150" height="77"/>
                                 <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Switch">
+                                <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="icon_switch.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -154,21 +155,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
                                 <rect key="frame" x="20" y="20" width="44" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="122" id="DeM-lc-6zr"/>
                                     <constraint firstAttribute="width" constant="44" id="N8u-5W-qid"/>
                                 </constraints>
-                                <state key="normal" title="JPY"/>
+                                <state key="normal" title="JPY">
+                                    <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
                                 <rect key="frame" x="20" y="156" width="44" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="122" id="03s-5x-mei"/>
                                     <constraint firstAttribute="width" constant="44" id="t7h-mC-VPo"/>
                                 </constraints>
-                                <state key="normal" title="GBP"/>
+                                <state key="normal" title="GBP">
+                                    <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-TC-8Wg">
                                 <rect key="frame" x="64" y="156" width="516" height="116"/>
@@ -176,7 +181,7 @@
                                     <constraint firstAttribute="height" priority="750" constant="122" id="Rkz-e1-CAU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="78"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.19804513454437256" green="0.61618024110794067" blue="0.96500927209854126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -304,5 +309,8 @@
             <point key="canvasLocation" x="359" y="462"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_switch.png" width="44" height="32"/>
+    </resources>
     <color key="tintColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
