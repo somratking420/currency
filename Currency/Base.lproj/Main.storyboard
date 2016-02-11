@@ -311,7 +311,6 @@
         <!--Change Currency-->
         <scene sceneID="pOo-EA-Pxe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3P-Sz-mgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Gga-26-1cy" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3qz-7c-EoR"/>
@@ -367,6 +366,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XKg-x9-1w8"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3P-Sz-mgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1171" y="1302"/>
         </scene>
