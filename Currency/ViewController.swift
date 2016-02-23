@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     @IBAction func clearPressed(sender: AnyObject) {
         input = "0"
         inputCurrencyLabel.text = "¥0"
-        outputCurrencyLabel.text = "£0"
+        outputCurrencyLabel.text = "£0.00"
     }
     
     func convertToCurrency(price: Double, currency: String) -> String {

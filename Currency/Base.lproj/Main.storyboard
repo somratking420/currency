@@ -208,7 +208,7 @@
                                     <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-TC-8Wg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="38" translatesAutoresizingMaskIntoConstraints="NO" id="6bk-TC-8Wg">
                                 <rect key="frame" x="64" y="156" width="516" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="122" id="Rkz-e1-CAU"/>
