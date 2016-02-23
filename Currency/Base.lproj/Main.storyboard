@@ -25,6 +25,9 @@
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oUg-ss-ANx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai">
                                 <rect key="frame" x="0.0" y="446" width="150" height="77"/>
@@ -33,6 +36,9 @@
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYh-PW-9PB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A">
                                 <rect key="frame" x="0.0" y="369" width="150" height="77"/>
@@ -41,6 +47,9 @@
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="67i-SI-hJG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64">
                                 <rect key="frame" x="0.0" y="292" width="150" height="77"/>
@@ -49,6 +58,9 @@
                                 <state key="normal" title="7">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSg-Z0-ofB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q">
                                 <rect key="frame" x="150" y="523" width="150" height="77"/>
@@ -57,6 +69,9 @@
                                 <state key="normal" title="0">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yb3-BQ-VQ0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe">
                                 <rect key="frame" x="150" y="446" width="150" height="77"/>
@@ -65,6 +80,9 @@
                                 <state key="normal" title="2">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7I-ER-ag8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1">
                                 <rect key="frame" x="150" y="369" width="150" height="77"/>
@@ -73,6 +91,9 @@
                                 <state key="normal" title="5">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f6Y-Ig-nvs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx">
                                 <rect key="frame" x="150" y="292" width="150" height="77"/>
@@ -81,6 +102,9 @@
                                 <state key="normal" title="8">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQd-oN-ElC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX">
                                 <rect key="frame" x="300" y="523" width="150" height="77"/>
@@ -97,6 +121,9 @@
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Oo-Vd-bDQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB">
                                 <rect key="frame" x="300" y="369" width="150" height="77"/>
@@ -105,6 +132,9 @@
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ghy-tj-IEF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS">
                                 <rect key="frame" x="300" y="292" width="150" height="77"/>
@@ -113,6 +143,9 @@
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvQ-l0-WFL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK">
                                 <rect key="frame" x="450" y="446" width="150" height="77"/>
@@ -303,6 +336,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="inputCurrencyLabel" destination="Xs7-XS-l7P" id="1ST-VS-OEE"/>
+                        <outlet property="outputCurrencyLabel" destination="6bk-TC-8Wg" id="9gF-sg-9EL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,7 +376,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Japanese Yen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k47-Km-vzr">
                                                     <rect key="frame" x="18" y="8" width="450" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py8-gc-jlt">
