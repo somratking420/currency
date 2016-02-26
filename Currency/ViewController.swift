@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var input = ""
-    var inputCurrency = "ja_JP"
-    var outputCurrency = "gb_GB"
-    var exchangeRate = 0.0061
-
+    var input: String = ""
+    var inputCurrency: String = "ja_JP"
+    var outputCurrency: String = "gb_GB"
+    var exchangeRate: Double = 0.0061
+    
     @IBOutlet weak var inputCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
     
@@ -33,14 +33,16 @@ class ViewController: UIViewController {
             return
         }
         input = input + digit
-        inputCurrencyLabel.text = convertToCurrency(Double(input)!, currency: inputCurrency)
-        outputCurrencyLabel.text = convertToCurrency(Double(input)! * exchangeRate, currency: outputCurrency)
+        let formattedInput: String = convertToCurrency(Double(input)!, currency: inputCurrency)
+        let formattedOutput: String = convertToCurrency(Double(input)! * exchangeRate, currency: outputCurrency)
+        inputCurrencyLabel.text = formattedInput
+        outputCurrencyLabel.text = formattedOutput
     }
 
     @IBAction func clearPressed(sender: AnyObject) {
         input = "0"
         inputCurrencyLabel.text = "¥0"
-        outputCurrencyLabel.text = "£0.00"
+        outputCurrencyLabel.text = "£ 0.00"
     }
     
     func convertToCurrency(price: Double, currency: String) -> String {
