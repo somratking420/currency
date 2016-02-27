@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
+import Realm
 
 class ViewController: UIViewController {
     
@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.path!)
+//        let realm = try! Realm()
+//        print(Realm.Configuration.defaultConfiguration.path!)
     }
     
     // Change status bar color.

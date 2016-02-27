@@ -418,6 +418,9 @@
                                 <state key="normal" title="GBP">
                                     <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="pFU-Zi-pwq" kind="presentation" id="epB-0k-ch1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
                                 <rect key="frame" x="20" y="20" width="44" height="290"/>
@@ -427,6 +430,9 @@
                                 <state key="normal" title="JPY">
                                     <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="pFU-Zi-pwq" kind="presentation" id="yHF-dd-E4s"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
                                 <rect key="frame" x="64" y="20" width="516" height="290"/>
@@ -547,7 +553,7 @@
         <!--Change Currency-->
         <scene sceneID="pOo-EA-Pxe">
             <objects>
-                <viewController id="Gga-26-1cy" sceneMemberID="viewController">
+                <viewController id="Gga-26-1cy" customClass="ChangeCurrencyViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3qz-7c-EoR"/>
                         <viewControllerLayoutGuide type="bottom" id="dg3-2g-E8C"/>
@@ -556,7 +562,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-Bl-AQo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-Bl-AQo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Currency" id="KIQ-ce-C31">
@@ -565,29 +571,18 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" rowHeight="64" id="7r5-xP-kk4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" rowHeight="64" style="IBUITableViewCellStyleDefault" id="7r5-xP-kk4" customClass="TableViewCell">
                                         <rect key="frame" x="0.0" y="136" width="600" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7r5-xP-kk4" id="KeT-OW-NtB">
                                             <rect key="frame" x="0.0" y="0.0" width="561" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Japanese Yen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k47-Km-vzr">
-                                                    <rect key="frame" x="18" y="8" width="450" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qf-Ta-xvN">
+                                                    <rect key="frame" x="15" y="0.0" width="546" height="63.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py8-gc-jlt">
-                                                    <rect key="frame" x="476" y="21" width="77" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.19804513454437256" green="0.61618024110794067" blue="0.96500927209854126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JPY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-Ym-IrB">
-                                                    <rect key="frame" x="18" y="34" width="450" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -597,14 +592,27 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P8b-Bl-AQo" firstAttribute="leading" secondItem="StB-6j-ag4" secondAttribute="leading" id="YMg-hv-ngY"/>
+                            <constraint firstItem="P8b-Bl-AQo" firstAttribute="top" secondItem="StB-6j-ag4" secondAttribute="top" id="kL7-d3-t7j"/>
+                            <constraint firstAttribute="trailing" secondItem="P8b-Bl-AQo" secondAttribute="trailing" id="y8x-H4-TzX"/>
+                            <constraint firstItem="dg3-2g-E8C" firstAttribute="top" secondItem="P8b-Bl-AQo" secondAttribute="bottom" id="yCg-uQ-xxa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change Currency" id="3Na-n4-bDO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XKg-x9-1w8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XKg-x9-1w8">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="Gga-26-1cy" id="3Ng-LF-ETL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="P8b-Bl-AQo" id="QVP-m1-Oxf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3P-Sz-mgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="1302"/>
+            <point key="canvasLocation" x="1100" y="937"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oC3-ds-aOi">
@@ -622,7 +630,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLr-pf-4lw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="1302"/>
+            <point key="canvasLocation" x="359" y="937"/>
         </scene>
     </scenes>
     <resources>
@@ -637,5 +645,8 @@
         <image name="button_clear_bg.png" width="103" height="103"/>
         <image name="icon_switch.png" width="44" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yHF-dd-E4s"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

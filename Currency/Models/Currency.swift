@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import RealmSwift
+import Realm
 
-class Currency: Object {
+class Currency: RLMObject {
     
     dynamic var name:String = ""
     dynamic var code:String = ""

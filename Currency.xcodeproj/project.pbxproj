@@ -51,6 +51,7 @@
 		BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
 		BCE0A6661C81FDC60093AC38 /* initial.realm in Resources */ = {isa = PBXBuildFile; fileRef = BCE0A65C1C81A4820093AC38 /* initial.realm */; };
+		BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */; };
 		BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05EF1C6CDD2600E992AE /* icon_switch.png */; };
 		BCEC05F31C6CDD2600E992AE /* icon_switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05F01C6CDD2600E992AE /* icon_switch@2x.png */; };
 		BCEC05F41C6CDD2600E992AE /* icon_switch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05F11C6CDD2600E992AE /* icon_switch@3x.png */; };
@@ -137,6 +138,7 @@
 		BCE0A65F1C81A4950093AC38 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Models/Currency.swift; sourceTree = "<group>"; };
 		BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorActionButton.swift; path = "UI Classes/CalculatorActionButton.swift"; sourceTree = "<group>"; };
 		BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorButton.swift; path = "UI Classes/CalculatorButton.swift"; sourceTree = "<group>"; };
+		BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCurrencyViewController.swift; sourceTree = "<group>"; };
 		BCEC05EF1C6CDD2600E992AE /* icon_switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_switch.png; path = Assets.xcassets/icon_switch.png; sourceTree = "<group>"; };
 		BCEC05F01C6CDD2600E992AE /* icon_switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@2x.png"; path = "Assets.xcassets/icon_switch@2x.png"; sourceTree = "<group>"; };
 		BCEC05F11C6CDD2600E992AE /* icon_switch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@3x.png"; path = "Assets.xcassets/icon_switch@3x.png"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				BCD920111C6BA6AC0089F52A /* Assets.xcassets */,
 				BCD920071C6BA6AC0089F52A /* AppDelegate.swift */,
 				BCD920091C6BA6AC0089F52A /* ViewController.swift */,
+				BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */,
 				BCDED2621C8095180059E770 /* CurrencyConverter.swift */,
 				BCE0A6551C8185CC0093AC38 /* UI Classes */,
 				BCE0A6541C8185C10093AC38 /* Models */,
@@ -488,6 +491,7 @@
 				BCE0A6621C81A4950093AC38 /* Currency.swift in Sources */,
 				BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */,
 				BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */,
+				BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */,
 				BCD9200A1C6BA6AC0089F52A /* ViewController.swift in Sources */,
 				BCDED2631C8095180059E770 /* CurrencyConverter.swift in Sources */,
 				BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */,
