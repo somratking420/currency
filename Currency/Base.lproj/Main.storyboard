@@ -69,7 +69,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yp-b8-b4J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

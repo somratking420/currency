@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.path!)
     }
     
     // Change status bar color.
