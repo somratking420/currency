@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC50E0B41C8182670043184D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC50E0B31C8182670043184D /* Currency.swift */; };
 		BC6917DA1C7EA436007F8431 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6917D91C7EA436007F8431 /* CalculatorButton.swift */; };
 		BC6917DC1C7EA4D5007F8431 /* CalculatorActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6917DB1C7EA4D5007F8431 /* CalculatorActionButton.swift */; };
 		BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920071C6BA6AC0089F52A /* AppDelegate.swift */; };
@@ -44,6 +45,12 @@
 		BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */; };
 		BCD9CD1F1C8077990061AEF1 /* button_clear_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */; };
 		BCD9CD201C8077990061AEF1 /* button_clear_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */; };
+		BCDED2631C8095180059E770 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDED2621C8095180059E770 /* CurrencyConverter.swift */; };
+		BCDED2661C8180660059E770 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; };
+		BCDED2671C8180660059E770 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BCDED2681C8180660059E770 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2651C8180660059E770 /* RealmSwift.framework */; };
+		BCDED2691C8180660059E770 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2651C8180660059E770 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BCE0A65B1C81A35A0093AC38 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = BCE0A65A1C81A3500093AC38 /* default.realm */; };
 		BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05EF1C6CDD2600E992AE /* icon_switch.png */; };
 		BCEC05F31C6CDD2600E992AE /* icon_switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05F01C6CDD2600E992AE /* icon_switch@2x.png */; };
 		BCEC05F41C6CDD2600E992AE /* icon_switch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05F11C6CDD2600E992AE /* icon_switch@3x.png */; };
@@ -66,7 +73,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BCDED26A1C8180660059E770 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BCDED2691C8180660059E770 /* RealmSwift.framework in Embed Frameworks */,
+				BCDED2671C8180660059E770 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BC50E0B31C8182670043184D /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		BC6917D91C7EA436007F8431 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		BC6917DB1C7EA4D5007F8431 /* CalculatorActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorActionButton.swift; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +133,10 @@
 		BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_clear_bg.png; path = Assets.xcassets/button_clear_bg.png; sourceTree = "<group>"; };
 		BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@2x.png"; path = "Assets.xcassets/button_clear_bg@2x.png"; sourceTree = "<group>"; };
 		BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@3x.png"; path = "Assets.xcassets/button_clear_bg@3x.png"; sourceTree = "<group>"; };
+		BCDED2621C8095180059E770 /* CurrencyConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		BCDED2641C8180660059E770 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		BCDED2651C8180660059E770 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		BCE0A65A1C81A3500093AC38 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = default.realm; path = Currency/default.realm; sourceTree = "<group>"; };
 		BCEC05EF1C6CDD2600E992AE /* icon_switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_switch.png; path = Assets.xcassets/icon_switch.png; sourceTree = "<group>"; };
 		BCEC05F01C6CDD2600E992AE /* icon_switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@2x.png"; path = "Assets.xcassets/icon_switch@2x.png"; sourceTree = "<group>"; };
 		BCEC05F11C6CDD2600E992AE /* icon_switch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_switch@3x.png"; path = "Assets.xcassets/icon_switch@3x.png"; sourceTree = "<group>"; };
@@ -120,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDED2681C8180660059E770 /* RealmSwift.framework in Frameworks */,
+				BCDED2661C8180660059E770 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,11 +210,13 @@
 		BCD91FFB1C6BA6AC0089F52A = {
 			isa = PBXGroup;
 			children = (
+				BC9DB87B1C6C9A41001C9319 /* Assets */,
 				BCD920061C6BA6AC0089F52A /* Currency */,
 				BCD9201E1C6BA6AC0089F52A /* CurrencyTests */,
 				BCD920291C6BA6AC0089F52A /* CurrencyUITests */,
+				BCE0A6531C81852E0093AC38 /* Frameworks */,
 				BCD920051C6BA6AC0089F52A /* Products */,
-				BC9DB87B1C6C9A41001C9319 /* Assets */,
+				BCE0A65A1C81A3500093AC38 /* default.realm */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,12 +233,13 @@
 		BCD920061C6BA6AC0089F52A /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				BCD920111C6BA6AC0089F52A /* Assets.xcassets */,
 				BCD920071C6BA6AC0089F52A /* AppDelegate.swift */,
 				BCD920091C6BA6AC0089F52A /* ViewController.swift */,
-				BC6917D91C7EA436007F8431 /* CalculatorButton.swift */,
+				BCDED2621C8095180059E770 /* CurrencyConverter.swift */,
+				BCE0A6551C8185CC0093AC38 /* UI Classes */,
+				BCE0A6541C8185C10093AC38 /* Models */,
 				BCD9200B1C6BA6AC0089F52A /* Main.storyboard */,
-				BC6917DB1C7EA4D5007F8431 /* CalculatorActionButton.swift */,
-				BCD920111C6BA6AC0089F52A /* Assets.xcassets */,
 				BCD920131C6BA6AC0089F52A /* LaunchScreen.storyboard */,
 				BCD920161C6BA6AC0089F52A /* Info.plist */,
 				BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */,
@@ -233,6 +265,32 @@
 			path = CurrencyUITests;
 			sourceTree = "<group>";
 		};
+		BCE0A6531C81852E0093AC38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCDED2641C8180660059E770 /* Realm.framework */,
+				BCDED2651C8180660059E770 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCE0A6541C8185C10093AC38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC50E0B31C8182670043184D /* Currency.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BCE0A6551C8185CC0093AC38 /* UI Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC6917D91C7EA436007F8431 /* CalculatorButton.swift */,
+				BC6917DB1C7EA4D5007F8431 /* CalculatorActionButton.swift */,
+			);
+			name = "UI Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +301,8 @@
 				BCD920001C6BA6AC0089F52A /* Sources */,
 				BCD920011C6BA6AC0089F52A /* Frameworks */,
 				BCD920021C6BA6AC0089F52A /* Resources */,
+				BCDED26A1C8180660059E770 /* Embed Frameworks */,
+				BCDED26B1C81813F0059E770 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE0A65B1C81A35A0093AC38 /* default.realm in Resources */,
 				BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */,
 				BCD9CD131C8076B70061AEF1 /* button_bg_2@2x.png in Resources */,
 				BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */,
@@ -395,6 +456,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCDED26B1C81813F0059E770 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCD920001C6BA6AC0089F52A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -403,7 +480,9 @@
 				BC6917DC1C7EA4D5007F8431 /* CalculatorActionButton.swift in Sources */,
 				BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */,
 				BCD9200A1C6BA6AC0089F52A /* ViewController.swift in Sources */,
+				BCDED2631C8095180059E770 /* CurrencyConverter.swift in Sources */,
 				BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */,
+				BC50E0B41C8182670043184D /* Currency.swift in Sources */,
 				BC6917DA1C7EA436007F8431 /* CalculatorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +623,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunocoelhosantos.Currency;
@@ -555,6 +638,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunocoelhosantos.Currency;
