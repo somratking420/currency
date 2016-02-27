@@ -49,7 +49,7 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Set new currency.
-        // self.dismissViewControllerAnimated(true, completion: {})
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
     
