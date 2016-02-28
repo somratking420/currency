@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Realm
 
 func bundlePath(path: String) -> String? {
     let resourcePath = NSBundle.mainBundle().resourcePath as NSString?
@@ -20,13 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        let defaultPath = Realm.Configuration.defaultConfiguration.path!
-        if let initialDatabasePath = bundlePath("initial.realm") {
-            do {
-                try NSFileManager.defaultManager().removeItemAtPath(defaultPath)
-                try NSFileManager.defaultManager().copyItemAtPath(initialDatabasePath, toPath: defaultPath)
-            } catch {}
+        
+        if Currency.allObjects().count == 0 {
+            let defaultPath = Realm.Configuration.defaultConfiguration.path!
+            if let initialDatabasePath = bundlePath("initial.realm") {
+                do {
+                    try NSFileManager.defaultManager().removeItemAtPath(defaultPath)
+                    try NSFileManager.defaultManager().copyItemAtPath(initialDatabasePath, toPath: defaultPath)
+                } catch {}
+            }
         }
         
         return true
