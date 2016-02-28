@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 import Realm
+import RealmSwift
 
 func bundlePath(path: String) -> String? {
     let resourcePath = NSBundle.mainBundle().resourcePath as NSString?
