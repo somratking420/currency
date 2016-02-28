@@ -13,8 +13,8 @@ import RealmSwift
 class ViewController: UIViewController {
     
     var input: String = ""
-    var inputCurrency: String = "ja_JP"
-    var outputCurrency: String = "gb_GB"
+    var inputCurrency: String = "JPY"
+    var outputCurrency: String = "GBP"
     var exchangeRate: Double = 0.0061
     
     @IBOutlet weak var inputCurrencyLabel: UILabel!
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     func convertToCurrency(price: Double, currency: String) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.locale = NSLocale(localeIdentifier: currency)
+        formatter.currencyCode = currency
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         let formattedPriceString = formatter.stringFromNumber(price)

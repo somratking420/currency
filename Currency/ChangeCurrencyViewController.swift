@@ -28,7 +28,6 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
