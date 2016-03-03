@@ -32,13 +32,17 @@ class MainViewController: UIViewController {
             return
         }
         converter.addInput(digit)
-        inputCurrencyLabel.text = converter.inputValue()
-        outputCurrencyLabel.text = converter.outputValue()
+        updateInterface()
     }
 
     @IBAction func clearPressed(sender: AnyObject) {
-        inputCurrencyLabel.text = converter.resetInputValue()
-        outputCurrencyLabel.text = converter.resetOutputValue()
+        converter.reset()
+        updateInterface()
+    }
+    
+    func updateInterface() {
+        inputCurrencyLabel.text = converter.inputValue()
+        outputCurrencyLabel.text = converter.outputValue()
     }
 
 }

@@ -68,13 +68,8 @@ class Converter {
         resetExchangeRates()
     }
 
-    func resetInputValue() -> String {
+    func reset() {
         input = "";
-        return convertToCurrency(0, currency_code: inputCurrencyCode)
-    }
-
-    func resetOutputValue() -> String {
-        return convertToCurrency(0, currency_code: outputCurrencyCode)
     }
 
     private func resetExchangeRates() {
