@@ -39,6 +39,14 @@ class Converter {
     }
 
     func addInput(string: String) {
+        if input == "0" && string == "0" {
+            print("Value string is already zero or empty.")
+            return
+        }
+        if input == "0" && string != "0" {
+            input = string
+            return
+        }
         input = input + string
     }
 
