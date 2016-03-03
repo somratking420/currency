@@ -36,11 +36,7 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
         let index = indexPath.row
-        // Below we will create an array for the currency objects so we can retrieve
-        // the currency that we want at an index. I couldn't find a way to do this
-        // with a Realm List, and this implementation is far from desirable.
-        var currenciesArray: Array<Object> = Array(realm.objects(Currency).sorted("name"))
-        let currency = currenciesArray[index] as! Currency
+        let currency = realm.objects(Currency).sorted("name")[index]
 
         cell?.textLabel!.text = currency.name
         return cell!
