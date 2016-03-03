@@ -11,21 +11,16 @@ import Realm
 import RealmSwift
 
 class MainViewController: UIViewController {
-    
-    var input: String = ""
-    var inputCurrency: String = "JPY"
-    var outputCurrency: String = "GBP"
-    var exchangeRate: Double = 0.0061
-    
+
+    var converter = Converter()
+
     @IBOutlet weak var inputCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let realm = try! Realm()
-//        print(Realm.Configuration.defaultConfiguration.path!)
     }
-    
+
     // Change status bar color.
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -36,28 +31,15 @@ class MainViewController: UIViewController {
             print("Error setting digit value.")
             return
         }
-        input = input + digit
-        let formattedInput: String = convertToCurrency(Double(input)!, currency: inputCurrency)
-        let formattedOutput: String = convertToCurrency(Double(input)! * exchangeRate, currency: outputCurrency)
-        inputCurrencyLabel.text = formattedInput
-        outputCurrencyLabel.text = formattedOutput
+        converter.addInput(digit)
+        inputCurrencyLabel.text = converter.inputValue()
+        outputCurrencyLabel.text = converter.outputValue()
     }
 
     @IBAction func clearPressed(sender: AnyObject) {
-        input = "0"
-        inputCurrencyLabel.text = "¥0"
-        outputCurrencyLabel.text = "£0.00"
+        inputCurrencyLabel.text = converter.resetInputValue()
+        outputCurrencyLabel.text = converter.resetOutputValue()
     }
-    
-    func convertToCurrency(price: Double, currency: String) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.currencyCode = currency
-        formatter.usesGroupingSeparator = true;
-        formatter.groupingSeparator = ","
-        let formattedPriceString = formatter.stringFromNumber(price)
-        return formattedPriceString!
-    }
-    
+
 }
 
