@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Currency
 //
 //  Created by Nuno Coelho Santos on 11/02/2016.
@@ -10,7 +10,7 @@ import UIKit
 import Realm
 import RealmSwift
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var input: String = ""
     var inputCurrency: String = "JPY"

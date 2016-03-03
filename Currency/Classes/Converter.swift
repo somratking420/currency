@@ -1,5 +1,5 @@
 //
-//  CurrencyConverter.swift
+//  Converter.swift
 //  Currency
 //
 //  Created by Nuno Coelho Santos on 26/02/2016.

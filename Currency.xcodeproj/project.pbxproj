@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCD26BF81C87D9DC00523273 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD26BF71C87D9DC00523273 /* Converter.swift */; };
 		BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920071C6BA6AC0089F52A /* AppDelegate.swift */; };
-		BCD9200A1C6BA6AC0089F52A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920091C6BA6AC0089F52A /* ViewController.swift */; };
+		BCD9200A1C6BA6AC0089F52A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920091C6BA6AC0089F52A /* MainViewController.swift */; };
 		BCD9200D1C6BA6AC0089F52A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD9200B1C6BA6AC0089F52A /* Main.storyboard */; };
 		BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */; };
 		BCD920121C6BA6AC0089F52A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD920111C6BA6AC0089F52A /* Assets.xcassets */; };
@@ -42,7 +43,6 @@
 		BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */; };
 		BCD9CD1F1C8077990061AEF1 /* button_clear_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */; };
 		BCD9CD201C8077990061AEF1 /* button_clear_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */; };
-		BCDED2631C8095180059E770 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDED2621C8095180059E770 /* CurrencyConverter.swift */; };
 		BCDED2661C8180660059E770 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; };
 		BCDED2671C8180660059E770 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCDED2681C8180660059E770 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2651C8180660059E770 /* RealmSwift.framework */; };
@@ -90,9 +90,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BCD26BF71C87D9DC00523273 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Classes/Converter.swift; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD920071C6BA6AC0089F52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BCD920091C6BA6AC0089F52A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCD920091C6BA6AC0089F52A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BCD9200C1C6BA6AC0089F52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Currency.xcdatamodel; sourceTree = "<group>"; };
 		BCD920111C6BA6AC0089F52A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_clear_bg.png; path = Assets.xcassets/button_clear_bg.png; sourceTree = "<group>"; };
 		BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@2x.png"; path = "Assets.xcassets/button_clear_bg@2x.png"; sourceTree = "<group>"; };
 		BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@3x.png"; path = "Assets.xcassets/button_clear_bg@3x.png"; sourceTree = "<group>"; };
-		BCDED2621C8095180059E770 /* CurrencyConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 		BCDED2641C8180660059E770 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		BCDED2651C8180660059E770 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		BCE0A65C1C81A4820093AC38 /* initial.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = initial.realm; path = Currency/Databases/initial.realm; sourceTree = "<group>"; };
@@ -209,6 +209,14 @@
 			path = Currency;
 			sourceTree = "<group>";
 		};
+		BCD26BF61C87D95B00523273 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BCD26BF71C87D9DC00523273 /* Converter.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		BCD91FFB1C6BA6AC0089F52A = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +245,9 @@
 			children = (
 				BCD920111C6BA6AC0089F52A /* Assets.xcassets */,
 				BCD920071C6BA6AC0089F52A /* AppDelegate.swift */,
-				BCD920091C6BA6AC0089F52A /* ViewController.swift */,
+				BCD920091C6BA6AC0089F52A /* MainViewController.swift */,
 				BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */,
-				BCDED2621C8095180059E770 /* CurrencyConverter.swift */,
+				BCD26BF61C87D95B00523273 /* Classes */,
 				BCE0A6551C8185CC0093AC38 /* UI Classes */,
 				BCE0A6541C8185C10093AC38 /* Models */,
 				BCD9200B1C6BA6AC0089F52A /* Main.storyboard */,
@@ -492,8 +500,8 @@
 				BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */,
 				BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */,
 				BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */,
-				BCD9200A1C6BA6AC0089F52A /* ViewController.swift in Sources */,
-				BCDED2631C8095180059E770 /* CurrencyConverter.swift in Sources */,
+				BCD26BF81C87D9DC00523273 /* Converter.swift in Sources */,
+				BCD9200A1C6BA6AC0089F52A /* MainViewController.swift in Sources */,
 				BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */,
 				BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */,
 			);
