@@ -9,6 +9,7 @@
 import Foundation
 import Realm
 import RealmSwift
+import SWXMLHash
 
 class Converter {
 
@@ -77,7 +78,37 @@ class Converter {
         return formattedPriceString!
     }
 
-    private func requestUpdateForCurrencyConvertionRate(currency_code: String) {
+    private func requestUpdateForCurrencyConvertionRate(currencyCode: String) {
+        
+        let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
+            "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
+            "%22USD" + currencyCode + "%22)&diagnostics=true&env=store%3A%2F%2F" +
+            "datatables.org%2Falltableswithkeys")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            
+            let xml = SWXMLHash.parse(data!)
+            
+            guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
+                print("Could not parse XML request.")
+                return
+            }
+            
+            print(rate)
+            
+            // To-do: Update data on database.
+            
+            if currencyCode == self.inputCurrencyCode {
+                self.inputCurrencyExchangeRate = Double(rate)!
+            }
+            
+            if currencyCode == self.outputCurrencyCode {
+                self.outputCurrencyExchangeRate = Double(rate)!
+            }
+            
+        }
+        
+        task.resume()
 
     }
 
