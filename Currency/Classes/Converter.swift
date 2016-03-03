@@ -15,13 +15,18 @@ class Converter {
 
     let requestEndpoint = ""
 
-    var input = ""
+    var input: String = ""
     var inputCurrencyCode: String = "JPY";
     var outputCurrencyCode: String = "GBP";
     var inputCurrencyExchangeRate: Double = 113.81;
     var outputCurrencyExchangeRate: Double = 0.71;
 
     let realm = try! Realm()
+    
+    init() {
+        requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
+        requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
+    }
 
     func inputValue() -> String {
         let inputValue: Double = Double(input)!
@@ -56,7 +61,7 @@ class Converter {
     }
 
     func resetInputValue() -> String {
-        input = "0";
+        input = "";
         return convertToCurrency(0, currency_code: inputCurrencyCode)
     }
 
