@@ -102,14 +102,17 @@ class Converter {
                 return
             }
             
-            print(rate)
+            // Update currency record on database.
+            self.updateCurrencyRecord(currencyCode, rate: Double(rate)!)
             
-            // To-do: Update data on database.
-            
+            // If we are dealing with the currency input currency,
+            // let's update the current input rate.
             if currencyCode == self.inputCurrencyCode {
                 self.inputCurrencyExchangeRate = Double(rate)!
             }
             
+            // If we are dealing with the currency output currency,
+            // let's update the current output rate.
             if currencyCode == self.outputCurrencyCode {
                 self.outputCurrencyExchangeRate = Double(rate)!
             }
@@ -121,10 +124,9 @@ class Converter {
     }
     
     private func updateCurrencyRecord(currencyCode: String, rate: Double) {
-
-        try! realm.write {
-            realm.create(Currency.self, value: ["code": currencyCode, "rateFromUSD": rate], update: true)
-        }
+        
+        print("Currency \(currencyCode) updated with the rate: \(rate)")
+        
     }
 
 }
