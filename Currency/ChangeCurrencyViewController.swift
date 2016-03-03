@@ -7,18 +7,13 @@
 //
 
 import UIKit
-import Realm
 import RealmSwift
 
 class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var currencies: RLMResults {
-        get {
-            return Currency.allObjects()
-        }
-    }
+    let realm = try! Realm()
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -35,13 +30,17 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(currencies.count)
+        return Int(realm.objects(Currency).count)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
-        let index = UInt(indexPath.row)
-        let currency = currencies.objectAtIndex(index) as! Currency
+        let index = indexPath.row
+        // Below we will create an array for the currency objects so we can retrieve
+        // the currency that we want at an index. I couldn't find a way to do this
+        // with a Realm List, and this implementation is far from desirable.
+        var currenciesArray: Array<Object> = Array(realm.objects(Currency).sorted("name"))
+        let currency = currenciesArray[index] as! Currency
 
         cell?.textLabel!.text = currency.name
         return cell!

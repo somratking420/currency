@@ -124,5 +124,12 @@ class Converter {
         task.resume()
 
     }
+    
+    private func updateCurrencyRecord(currencyCode: String, rate: Double) {
+
+        try! realm.write {
+            realm.create(Currency.self, value: ["code": currencyCode, "rateFromUSD": rate], update: true)
+        }
+    }
 
 }

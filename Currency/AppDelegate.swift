@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Realm
 import RealmSwift
 
 // Define a function to get a path of a bundled asset by passing the asset name.
@@ -20,11 +19,12 @@ func bundlePath(path: String) -> String? {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let realm = try! Realm()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // First, check that the database is empty.
-        if Currency.allObjects().count == 0 {
+        if realm.objects(Currency).count == 0 {
             // Then, define the path for the default realm database as a constant.
             let defaultPath = Realm.Configuration.defaultConfiguration.path!
             // If we can find the initial database dump on the bundle...
