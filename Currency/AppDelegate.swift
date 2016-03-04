@@ -19,9 +19,13 @@ func bundlePath(path: String) -> String? {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let realm = try! Realm()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Update schema version.
+        Realm.Configuration.defaultConfiguration.schemaVersion = 1
+        
+        let realm = try! Realm()
         
         // First, check that the database is empty.
         if realm.objects(Currency).count == 0 {

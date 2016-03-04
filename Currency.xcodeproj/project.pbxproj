@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F571620F43A933512A59C36 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8433CA71619EB07E2995B7D5 /* Pods.framework */; };
+		BCB2AC161C89784000B9113D /* initial.realm in Resources */ = {isa = PBXBuildFile; fileRef = BCB2AC151C89784000B9113D /* initial.realm */; };
 		BCD26BF81C87D9DC00523273 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD26BF71C87D9DC00523273 /* Converter.swift */; };
 		BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920071C6BA6AC0089F52A /* AppDelegate.swift */; };
 		BCD9200A1C6BA6AC0089F52A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920091C6BA6AC0089F52A /* MainViewController.swift */; };
@@ -51,7 +52,6 @@
 		BCE0A6621C81A4950093AC38 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A65F1C81A4950093AC38 /* Currency.swift */; };
 		BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
-		BCE0A6661C81FDC60093AC38 /* initial.realm in Resources */ = {isa = PBXBuildFile; fileRef = BCE0A65C1C81A4820093AC38 /* initial.realm */; };
 		BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */; };
 		BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05EF1C6CDD2600E992AE /* icon_switch.png */; };
 		BCEC05F31C6CDD2600E992AE /* icon_switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCEC05F01C6CDD2600E992AE /* icon_switch@2x.png */; };
@@ -94,6 +94,7 @@
 		19EB43FCFC362B9564CD0798 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		64DBF81E56746D141A99F0FC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8433CA71619EB07E2995B7D5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB2AC151C89784000B9113D /* initial.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = initial.realm; path = Currency/Databases/initial.realm; sourceTree = "<group>"; };
 		BCD26BF71C87D9DC00523273 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Classes/Converter.swift; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD920071C6BA6AC0089F52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		BCD91FFB1C6BA6AC0089F52A = {
 			isa = PBXGroup;
 			children = (
+				BCB2AC151C89784000B9113D /* initial.realm */,
 				BC9DB87B1C6C9A41001C9319 /* Assets */,
 				BCD920061C6BA6AC0089F52A /* Currency */,
 				BCD9201E1C6BA6AC0089F52A /* CurrencyTests */,
@@ -441,7 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCE0A6661C81FDC60093AC38 /* initial.realm in Resources */,
+				BCB2AC161C89784000B9113D /* initial.realm in Resources */,
 				BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */,
 				BCD9CD131C8076B70061AEF1 /* button_bg_2@2x.png in Resources */,
 				BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */,
