@@ -12,9 +12,14 @@ import RealmSwift
 
 class Currency: Object {
     
+    dynamic var id:Int = 0
     dynamic var name:String = ""
     dynamic var code:String = ""
     dynamic var rateFromUSD: Double = 0.00
     dynamic var decimalPlaces: Int = 0
+    
+    override class func primaryKey() -> String {
+        return "id"
+    }
     
 }
