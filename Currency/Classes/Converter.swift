@@ -69,7 +69,7 @@ class Converter {
     }
 
     func reset() {
-        input = "";
+        input = "0";
     }
 
     private func resetExchangeRates() {
@@ -109,12 +109,14 @@ class Converter {
             // let's update the current input rate.
             if currencyCode == self.inputCurrencyCode {
                 self.inputCurrencyExchangeRate = Double(rate)!
+                print("Input Currency \(currencyCode) updated with the rate: \(rate)")
             }
             
             // If we are dealing with the currency output currency,
             // let's update the current output rate.
             if currencyCode == self.outputCurrencyCode {
                 self.outputCurrencyExchangeRate = Double(rate)!
+                print("Output Currency \(currencyCode) updated with the rate: \(rate)")
             }
             
         }
@@ -125,7 +127,7 @@ class Converter {
     
     private func updateCurrencyRecord(currencyCode: String, rate: Double) {
         
-        print("Currency \(currencyCode) updated with the rate: \(rate)")
+        print("Currency \(currencyCode) record saved with the rate: \(rate)")
         
     }
 
