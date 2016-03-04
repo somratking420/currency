@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Realm
-import RealmSwift
+//import Realm
+//import RealmSwift
 import SWXMLHash
 
 class Converter {
@@ -21,7 +21,7 @@ class Converter {
     var inputCurrencyExchangeRate: Double = 113.81;
     var outputCurrencyExchangeRate: Double = 0.71;
 
-    let realm = try! Realm()
+//    let realm = try! Realm()
     
     init() {
         requestUpdateForCurrencyConvertionRate(inputCurrencyCode)

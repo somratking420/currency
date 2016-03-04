@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F571620F43A933512A59C36 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8433CA71619EB07E2995B7D5 /* Pods.framework */; };
-		BCB2AC161C89784000B9113D /* initial.realm in Resources */ = {isa = PBXBuildFile; fileRef = BCB2AC151C89784000B9113D /* initial.realm */; };
 		BCD26BF81C87D9DC00523273 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD26BF71C87D9DC00523273 /* Converter.swift */; };
 		BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920071C6BA6AC0089F52A /* AppDelegate.swift */; };
 		BCD9200A1C6BA6AC0089F52A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD920091C6BA6AC0089F52A /* MainViewController.swift */; };
@@ -45,10 +44,6 @@
 		BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */; };
 		BCD9CD1F1C8077990061AEF1 /* button_clear_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */; };
 		BCD9CD201C8077990061AEF1 /* button_clear_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */; };
-		BCDED2661C8180660059E770 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; };
-		BCDED2671C8180660059E770 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2641C8180660059E770 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BCDED2681C8180660059E770 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2651C8180660059E770 /* RealmSwift.framework */; };
-		BCDED2691C8180660059E770 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCDED2651C8180660059E770 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCE0A6621C81A4950093AC38 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A65F1C81A4950093AC38 /* Currency.swift */; };
 		BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
@@ -75,26 +70,10 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		BCDED26A1C8180660059E770 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BCDED2691C8180660059E770 /* RealmSwift.framework in Embed Frameworks */,
-				BCDED2671C8180660059E770 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		19EB43FCFC362B9564CD0798 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		64DBF81E56746D141A99F0FC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8433CA71619EB07E2995B7D5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCB2AC151C89784000B9113D /* initial.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = initial.realm; path = Currency/Databases/initial.realm; sourceTree = "<group>"; };
 		BCD26BF71C87D9DC00523273 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Classes/Converter.swift; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD920071C6BA6AC0089F52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,9 +116,6 @@
 		BCD9CD1B1C8077990061AEF1 /* button_clear_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_clear_bg.png; path = Assets.xcassets/button_clear_bg.png; sourceTree = "<group>"; };
 		BCD9CD1C1C8077990061AEF1 /* button_clear_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@2x.png"; path = "Assets.xcassets/button_clear_bg@2x.png"; sourceTree = "<group>"; };
 		BCD9CD1D1C8077990061AEF1 /* button_clear_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_clear_bg@3x.png"; path = "Assets.xcassets/button_clear_bg@3x.png"; sourceTree = "<group>"; };
-		BCDED2641C8180660059E770 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		BCDED2651C8180660059E770 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		BCE0A65C1C81A4820093AC38 /* initial.realm */ = {isa = PBXFileReference; lastKnownFileType = file; name = initial.realm; path = Currency/Databases/initial.realm; sourceTree = "<group>"; };
 		BCE0A65F1C81A4950093AC38 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Models/Currency.swift; sourceTree = "<group>"; };
 		BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorActionButton.swift; path = "UI Classes/CalculatorActionButton.swift"; sourceTree = "<group>"; };
 		BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorButton.swift; path = "UI Classes/CalculatorButton.swift"; sourceTree = "<group>"; };
@@ -154,8 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCDED2681C8180660059E770 /* RealmSwift.framework in Frameworks */,
-				BCDED2661C8180660059E770 /* Realm.framework in Frameworks */,
 				0F571620F43A933512A59C36 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,14 +209,12 @@
 		BCD91FFB1C6BA6AC0089F52A = {
 			isa = PBXGroup;
 			children = (
-				BCB2AC151C89784000B9113D /* initial.realm */,
 				BC9DB87B1C6C9A41001C9319 /* Assets */,
 				BCD920061C6BA6AC0089F52A /* Currency */,
 				BCD9201E1C6BA6AC0089F52A /* CurrencyTests */,
 				BCD920291C6BA6AC0089F52A /* CurrencyUITests */,
 				BCE0A6531C81852E0093AC38 /* Frameworks */,
 				BCD920051C6BA6AC0089F52A /* Products */,
-				BCE0A6651C81A4A50093AC38 /* Databases */,
 				3728C01291D5DE01D30578B4 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -296,8 +268,6 @@
 		BCE0A6531C81852E0093AC38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCDED2641C8180660059E770 /* Realm.framework */,
-				BCDED2651C8180660059E770 /* RealmSwift.framework */,
 				8433CA71619EB07E2995B7D5 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -320,14 +290,6 @@
 			name = "UI Classes";
 			sourceTree = "<group>";
 		};
-		BCE0A6651C81A4A50093AC38 /* Databases */ = {
-			isa = PBXGroup;
-			children = (
-				BCE0A65C1C81A4820093AC38 /* initial.realm */,
-			);
-			name = Databases;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,7 +301,6 @@
 				BCD920001C6BA6AC0089F52A /* Sources */,
 				BCD920011C6BA6AC0089F52A /* Frameworks */,
 				BCD920021C6BA6AC0089F52A /* Resources */,
-				BCDED26A1C8180660059E770 /* Embed Frameworks */,
 				BCDED26B1C81813F0059E770 /* ShellScript */,
 				4EF4BB9FE7746222C43E63AD /* Embed Pods Frameworks */,
 				271F1C2D6DAF91FF57AF7133 /* Copy Pods Resources */,
@@ -443,7 +404,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCB2AC161C89784000B9113D /* initial.realm in Resources */,
 				BCEC05F21C6CDD2600E992AE /* icon_switch.png in Resources */,
 				BCD9CD131C8076B70061AEF1 /* button_bg_2@2x.png in Resources */,
 				BCD9CD1E1C8077990061AEF1 /* button_clear_bg.png in Resources */,

@@ -7,19 +7,19 @@
 //
 
 import Foundation
-import Realm
-import RealmSwift
+//import Realm
+//import RealmSwift
 
-class Currency: Object {
+class Currency {
     
-    dynamic var id:Int = 0
-    dynamic var name:String = ""
-    dynamic var code:String = ""
-    dynamic var rateFromUSD: Double = 0.00
-    dynamic var decimalPlaces: Int = 0
+//    dynamic var id:Int = 0
+//    dynamic var name:String = ""
+//    dynamic var code:String = ""
+//    dynamic var rateFromUSD: Double = 0.00
+//    dynamic var decimalPlaces: Int = 0
     
-    override class func primaryKey() -> String {
+    /*override class func primaryKey() -> String {
         return "id"
-    }
+    }*/
     
 }

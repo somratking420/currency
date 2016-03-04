@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
+//import RealmSwift
 
 // Define a function to get a path of a bundled asset by passing the asset name.
 func bundlePath(path: String) -> String? {
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(
+        /*Realm.Configuration.defaultConfiguration = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
             schemaVersion: 1,
@@ -35,12 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
                 }
-        })
+        })*/
         
-        let realm = try! Realm()
+//        let realm = try! Realm()
         
         // Clone database from bundle if empty.
-        if realm.objects(Currency).count == 0 {
+        /*if realm.objects(Currency).count == 0 {
             // Then, define the path for the default realm database as a constant.
             let defaultPath = Realm.Configuration.defaultConfiguration.path!
             // If we can find the initial database dump on the bundle...
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     try NSFileManager.defaultManager().copyItemAtPath(initialDatabasePath, toPath: defaultPath)
                 } catch {}
             }
-        }
+        }*/
         
         return true
     }

@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import RealmSwift
+//import RealmSwift
 
 class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let realm = try! Realm()
+//    let realm = try! Realm()
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -30,15 +30,17 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(realm.objects(Currency).count)
+//        return Int(realm.objects(Currency).count)
+        return 155
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
         let index = indexPath.row
-        let currency = realm.objects(Currency).sorted("name")[index]
+//        let currency = realm.objects(Currency).sorted("name")[index]
 
-        cell?.textLabel!.text = currency.name
+//        cell?.textLabel!.text = currency.name
+        cell?.textLabel!.text = "\(index)"
         return cell!
     }
     
