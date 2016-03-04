@@ -1,0 +1,12 @@
+-  Save currency rate to realm database after XML request and parse.
+-  Add button highlight effects on tap.
+-  Add background color to the output currency area as per design.
+-  Why are the results off when comparing to the Yahoo website?
+-  Change input currency when selecting from table view.
+-  Change output currency when selecting from table view.
+-  Search results and populate table view.
+-  Limit length of the input string.
+-  List recent 5 currencies at the top of the table view.
+-  Save current input currency on user preferences file.
+-  Save current output currency on user preferences file.
+-  If user changes the input currency to be the same as the output currency, or vice versa, swap them.
