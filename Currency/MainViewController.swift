@@ -10,8 +10,7 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController {
-
-    let realm = try! Realm()
+    
     var converter = Converter()
 
     @IBOutlet weak var inputCurrencyLabel: UILabel!
