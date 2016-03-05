@@ -589,6 +589,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gga-26-1cy" id="0IC-Ty-Hb0"/>
+                                    <outlet property="delegate" destination="Gga-26-1cy" id="fXg-am-bNG"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

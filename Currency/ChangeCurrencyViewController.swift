@@ -7,13 +7,13 @@
 //
 
 import UIKit
-//import RealmSwift
+import CoreData
 
 class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var managedObjectContext: NSManagedObjectContext!
 
     @IBOutlet weak var tableView: UITableView!
-    
-//    let realm = try! Realm()
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -23,30 +23,40 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return Int(realm.objects(Currency).count)
-        return 155
+        return currencies().count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
         let index = indexPath.row
-//        let currency = realm.objects(Currency).sorted("name")[index]
+        let currency: Currency = currencies()[index] as! Currency
 
-//        cell?.textLabel!.text = currency.name
-        cell?.textLabel!.text = "\(index)"
+        cell?.textLabel!.text = currency.name
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // Set new currency.
         self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    func currencies() -> [AnyObject]{
+        let fetchRequest = NSFetchRequest(entityName: "Currency")
+        var result = [AnyObject]()
+        do {
+            result = try managedObjectContext!.executeFetchRequest(fetchRequest)
+        } catch let error as NSError {
+                print("Fetch error: %@", error)
+        }
+        return result
     }
     
     

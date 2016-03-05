@@ -2,24 +2,16 @@
 //  Currency.swift
 //  Currency
 //
-//  Created by Nuno Coelho Santos on 27/02/2016.
+//  Created by Nuno Coelho Santos on 05/03/2016.
 //  Copyright © 2016 Nuno Coelho Santos. All rights reserved.
 //
 
 import Foundation
-//import Realm
-//import RealmSwift
+import CoreData
 
-class Currency {
-    
-//    dynamic var id:Int = 0
-//    dynamic var name:String = ""
-//    dynamic var code:String = ""
-//    dynamic var rateFromUSD: Double = 0.00
-//    dynamic var decimalPlaces: Int = 0
-    
-    /*override class func primaryKey() -> String {
-        return "id"
-    }*/
-    
+
+class Currency: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
 }
