@@ -7,21 +7,16 @@
 //
 
 import Foundation
-//import Realm
-//import RealmSwift
+import CoreData
 import SWXMLHash
 
 class Converter {
-
-    let requestEndpoint = ""
 
     var input: String = ""
     var inputCurrencyCode: String = "JPY";
     var outputCurrencyCode: String = "GBP";
     var inputCurrencyExchangeRate: Double = 113.81;
     var outputCurrencyExchangeRate: Double = 0.71;
-
-//    let realm = try! Realm()
     
     init() {
         requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
@@ -109,14 +104,14 @@ class Converter {
             // let's update the current input rate.
             if currencyCode == self.inputCurrencyCode {
                 self.inputCurrencyExchangeRate = Double(rate)!
-                print("Input Currency \(currencyCode) updated with the rate: \(rate)")
+                print("Input currency updated.")
             }
             
             // If we are dealing with the currency output currency,
             // let's update the current output rate.
             if currencyCode == self.outputCurrencyCode {
                 self.outputCurrencyExchangeRate = Double(rate)!
-                print("Output Currency \(currencyCode) updated with the rate: \(rate)")
+                print("Output currency updated.")
             }
             
         }
@@ -127,7 +122,35 @@ class Converter {
     
     private func updateCurrencyRecord(currencyCode: String, rate: Double) {
         
-        print("Currency \(currencyCode) record saved with the rate: \(rate)")
+        // CoreData setup.
+        let managedObjectContext: NSManagedObjectContext!
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
+        var currency: Currency
+        
+        // CoreData fetching.
+        let fetch = NSFetchRequest(entityName: "Currency")
+        let predicate = NSPredicate(format: "%K == %@", "code", currencyCode)
+        fetch.predicate = predicate
+        fetch.fetchLimit = 1
+        
+        do {
+            currency = try managedObjectContext.executeFetchRequest(fetch).first as! Currency
+        } catch {
+            fatalError("Error fetching currency: \(error)")
+        }
+        
+        // Update object.
+        currency.setValue(rate, forKey: "rateFromUSD")
+        
+        // CoreData save.
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Error saving currency: \(error)")
+        }
+        
+        print("Currency \(currencyCode) updated with the rate: \(rate)")
         
     }
 

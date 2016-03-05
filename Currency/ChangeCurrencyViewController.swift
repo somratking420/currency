@@ -57,7 +57,7 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
         do {
             result = try managedObjectContext!.executeFetchRequest(fetch)
         } catch let error as NSError {
-                print("Fetch error: %@", error)
+                print("Error fetching currencies error: %@", error)
         }
         return result
     }
