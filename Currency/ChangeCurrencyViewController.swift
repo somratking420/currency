@@ -49,10 +49,13 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func currencies() -> [AnyObject]{
-        let fetchRequest = NSFetchRequest(entityName: "Currency")
+        let fetch = NSFetchRequest(entityName: "Currency")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        fetch.sortDescriptors = sortDescriptors
         var result = [AnyObject]()
         do {
-            result = try managedObjectContext!.executeFetchRequest(fetchRequest)
+            result = try managedObjectContext!.executeFetchRequest(fetch)
         } catch let error as NSError {
                 print("Fetch error: %@", error)
         }
