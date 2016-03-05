@@ -59,5 +59,4 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
         return result
     }
     
-    
 }
