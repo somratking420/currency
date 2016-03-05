@@ -48,27 +48,19 @@ class Converter {
     func setInputCurrency(currency_code: String) {
         inputCurrencyCode = currency_code
         requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
-        resetExchangeRates()
     }
 
     func setOutputCurrency(currency_code: String) {
         outputCurrencyCode = currency_code
         requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
-        resetExchangeRates()
     }
 
     func swapInputWithOutput() {
-        inputCurrencyCode = outputCurrencyCode;
-        outputCurrencyCode = inputCurrencyCode;
-        resetExchangeRates()
+        
     }
 
     func reset() {
         input = "0";
-    }
-
-    private func resetExchangeRates() {
-
     }
 
     private func convertToCurrency(value: Double, currency_code: String) -> String {
