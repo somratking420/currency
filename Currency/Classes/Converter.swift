@@ -25,12 +25,12 @@ class Converter {
 
     func inputValue() -> String {
         let inputValue: Double = Double(input)!
-        return convertToCurrency(inputValue, currency_code: inputCurrencyCode)
+        return convertToCurrency(inputValue, currencyCode: inputCurrencyCode)
     }
 
     func outputValue() -> String {
         let outputValue: Double = (Double(input)! / inputCurrencyExchangeRate) * outputCurrencyExchangeRate
-        return convertToCurrency(outputValue, currency_code: outputCurrencyCode)
+        return convertToCurrency(outputValue, currencyCode: outputCurrencyCode)
     }
 
     func addInput(string: String) {
@@ -45,13 +45,13 @@ class Converter {
         input = input + string
     }
 
-    func setInputCurrency(currency_code: String) {
-        inputCurrencyCode = currency_code
+    func setInputCurrency(currencyCode: String) {
+        inputCurrencyCode = currencyCode
         requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
     }
 
-    func setOutputCurrency(currency_code: String) {
-        outputCurrencyCode = currency_code
+    func setOutputCurrency(currencyCode: String) {
+        outputCurrencyCode = currencyCode
         requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
     }
 
@@ -63,10 +63,10 @@ class Converter {
         input = "0";
     }
 
-    private func convertToCurrency(value: Double, currency_code: String) -> String {
+    private func convertToCurrency(value: Double, currencyCode: String) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.currencyCode = currency_code
+        formatter.currencyCode = currencyCode
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         let formattedPriceString = formatter.stringFromNumber(value)
