@@ -1,4 +1,3 @@
--  Save currency rate to realm database after XML request and parse.
 -  Add button highlight effects on tap.
 -  Add background color to the output currency area as per design.
 -  Why are the results off when comparing to the Yahoo website?
