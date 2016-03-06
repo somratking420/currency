@@ -42,6 +42,30 @@ class MainViewController: UIViewController {
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
     }
+    
+    func updateInputCurrency(currencyCode: String) {
+        print(currencyCode)
+    }
+    
+    func updateOutputCurrency(currencyCode: String) {
+        print(currencyCode)
+    }
+    
+    // MARK: - Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "ChangeInputCurrency" {
+            let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
+            changeCurrencyViewController.targetCurrency = "input"
+        }
+        
+        if segue.identifier == "ChangeOutputCurrency" {
+            let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
+            changeCurrencyViewController.targetCurrency = "output"
+        }
+        
+    }
 
 }
 

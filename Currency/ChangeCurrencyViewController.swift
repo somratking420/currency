@@ -12,6 +12,7 @@ import CoreData
 class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var managedObjectContext: NSManagedObjectContext!
+    var targetCurrency = ""
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +22,9 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(targetCurrency)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -45,6 +49,12 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let index = indexPath.row
+        let currency: Currency = currencies()[index] as! Currency
+        
+        let mainViewController = MainViewController()
+        mainViewController.updateInputCurrency(currency.code!)
+        
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
