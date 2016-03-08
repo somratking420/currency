@@ -29,8 +29,6 @@ class ChangeCurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(targetCurrency)
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -82,10 +80,8 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         let index = indexPath.row
         let currency: Currency = currencies()[index] as! Currency
         let currencyCode = currency.code!
-        print("didSelectRowAtIndexPath: " + currencyCode + " (" + targetCurrency + ")")
         
         delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
-        
         self.dismissViewControllerAnimated(true, completion: {})
     }
     

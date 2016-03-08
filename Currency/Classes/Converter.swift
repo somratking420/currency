@@ -12,13 +12,18 @@ import SWXMLHash
 
 class Converter {
 
-    var input: String = "0"
-    var inputCurrencyCode: String = "JPY";
-    var outputCurrencyCode: String = "GBP";
-    var inputCurrencyExchangeRate: Double = 113.81;
-    var outputCurrencyExchangeRate: Double = 0.71;
+    var input: String
+    var inputCurrencyCode: String
+    var outputCurrencyCode: String
+    var inputCurrencyExchangeRate: Double
+    var outputCurrencyExchangeRate: Double
     
     init() {
+        input = "0"
+        inputCurrencyCode = "JPY";
+        outputCurrencyCode = "GBP";
+        inputCurrencyExchangeRate = 113.81;
+        outputCurrencyExchangeRate = 0.71;
         requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
         requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
     }
@@ -46,14 +51,14 @@ class Converter {
     }
 
     func setInputCurrency(currencyCode: String) {
-        self.inputCurrencyCode = currencyCode
-        self.requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
+        inputCurrencyCode = currencyCode
+        requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
         print("Set input currency to: \(currencyCode).")
     }
 
     func setOutputCurrency(currencyCode: String) {
-        self.outputCurrencyCode = currencyCode
-        self.requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
+        outputCurrencyCode = currencyCode
+        requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
         print("Set output currency to: \(currencyCode).")
     }
 

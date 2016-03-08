@@ -41,9 +41,10 @@ class MainViewController: UIViewController {
     }
     
     func updateInterface() {
-        print("updateInterface")
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
+        
+
     }
     
     // MARK: - Segue
@@ -71,14 +72,13 @@ class MainViewController: UIViewController {
 extension MainViewController: ChangeCurrencyViewControllerDelegate {
     
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {
-        print("didChangeCurrency")
         if targetCurrency == "input" {
             converter.setInputCurrency(currencyCode)
-            print("didChangeCurrency, input")
+            inputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
         }
         if targetCurrency == "output" {
             converter.setOutputCurrency(currencyCode)
-            print("didChangeCurrency, output")
+            outputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
         }
         updateInterface()
     }
