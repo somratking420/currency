@@ -27,7 +27,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                 <state key="normal" title="C" backgroundImage="button_clear_bg.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -299,8 +299,8 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPZ-3z-0o4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-19" y="585" width="39" height="29"/>
                                 <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xcs-D8-JHK" secondAttribute="height" multiplier="1:1" id="LG6-2a-hYS"/>
@@ -322,8 +322,8 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-18" y="589" width="36" height="22"/>
                                 <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4r1-uK-adB" secondAttribute="height" multiplier="100:69" id="LIg-Et-Pgx"/>
@@ -351,6 +351,7 @@
                                     <constraint firstAttribute="width" secondItem="aOt-1A-j4i" secondAttribute="height" multiplier="25:17" id="EXB-ON-Oor"/>
                                     <constraint firstAttribute="width" secondItem="aOt-1A-j4i" secondAttribute="height" multiplier="150:103" id="fVn-mS-IXV"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                 <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="icon_switch.png" backgroundImage="button_action_bg_1.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -366,8 +367,8 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-19" y="589" width="39" height="22"/>
                                 <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dWW-RI-d8f" secondAttribute="height" multiplier="1:1" id="1MC-pt-EnA"/>
@@ -542,7 +543,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
                         <outlet property="inputCurrencyLabel" destination="v6F-6f-2Hr" id="75Q-IG-ZjQ"/>
+                        <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
                         <outlet property="outputCurrencyLabel" destination="YAg-OE-Uu3" id="CaO-Ek-ird"/>
                     </connections>
                 </viewController>
@@ -571,18 +574,25 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" rowHeight="64" style="IBUITableViewCellStyleDefault" id="7r5-xP-kk4" customClass="TableViewCell">
-                                        <rect key="frame" x="0.0" y="136" width="600" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4" customClass="TableViewCell">
+                                        <rect key="frame" x="0.0" y="136" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7r5-xP-kk4" id="KeT-OW-NtB">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qf-Ta-xvN">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="63.5"/>
+                                                    <rect key="frame" x="15" y="24" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zjl-ce-ePH">
+                                                    <rect key="frame" x="15" y="43.5" width="50" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.5871957540512085" green="0.587299644947052" blue="0.5871891975402832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
