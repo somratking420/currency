@@ -20,14 +20,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.77638524770736694" green="0.77651971578598022" blue="0.77637678384780884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZW-lu-eYF" secondAttribute="height" multiplier="1:1" id="BVw-Is-8tL"/>
                                     <constraint firstAttribute="width" secondItem="7ZW-lu-eYF" secondAttribute="height" multiplier="25:17" id="aeL-sY-Kh1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="C" backgroundImage="button_clear_bg.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -45,14 +45,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8vk-bG-bai" secondAttribute="height" multiplier="1:1" id="4zB-Lz-Rbf"/>
                                     <constraint firstAttribute="width" secondItem="8vk-bG-bai" secondAttribute="height" multiplier="150:103" id="mcp-Zl-xqJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="1" backgroundImage="button_bg_3.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -71,14 +71,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DJH-uF-R2A" secondAttribute="height" multiplier="1:1" id="Hfa-34-xGb"/>
                                     <constraint firstAttribute="width" secondItem="DJH-uF-R2A" secondAttribute="height" multiplier="25:17" id="eMV-qv-6BY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="4" backgroundImage="button_bg_2.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -96,14 +96,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="height" multiplier="1:1" id="oOJ-pM-mYg"/>
                                     <constraint firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="height" multiplier="150:103" id="v4P-Re-1Ra"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="7" backgroundImage="button_bg_1.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -122,14 +122,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1au-Bl-X2Q" secondAttribute="height" multiplier="150:103" id="pNd-Bs-GT9"/>
                                     <constraint firstAttribute="width" secondItem="1au-Bl-X2Q" secondAttribute="height" multiplier="1:1" id="uXb-TD-8ec"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="0" backgroundImage="button_bg_4.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -148,14 +148,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a03-dZ-HOe" secondAttribute="height" multiplier="1:1" id="N8V-nt-uYS"/>
                                     <constraint firstAttribute="width" secondItem="a03-dZ-HOe" secondAttribute="height" multiplier="150:103" id="ZCZ-Pi-DQB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="2" backgroundImage="button_bg_3.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -174,14 +174,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yfa-A5-Xr1" secondAttribute="height" multiplier="1:1" id="NXa-I8-uah"/>
                                     <constraint firstAttribute="width" secondItem="yfa-A5-Xr1" secondAttribute="height" multiplier="25:17" id="xNG-Bh-W97"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="5" backgroundImage="button_bg_2.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -199,14 +199,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YAk-yI-DGx" secondAttribute="height" multiplier="25:17" id="SL5-pG-iPl"/>
                                     <constraint firstAttribute="width" secondItem="YAk-yI-DGx" secondAttribute="height" multiplier="150:103" id="jff-NC-kmF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="8" backgroundImage="button_bg_1.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -224,14 +224,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XDL-TB-GgY" secondAttribute="height" multiplier="150:103" id="JoL-Hh-VS8"/>
                                     <constraint firstAttribute="width" secondItem="XDL-TB-GgY" secondAttribute="height" multiplier="1:1" id="MfT-NU-9vr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="3" backgroundImage="button_bg_3.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -250,14 +250,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="35e-qM-0gB" secondAttribute="height" multiplier="1:1" id="Mji-fT-hgU"/>
                                     <constraint firstAttribute="width" secondItem="35e-qM-0gB" secondAttribute="height" multiplier="150:103" id="vfm-Ks-K3D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="6" backgroundImage="button_bg_2.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -276,14 +276,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fVX-LE-xzS" secondAttribute="height" multiplier="25:17" id="RAB-Em-Ykb"/>
                                     <constraint firstAttribute="width" secondItem="fVX-LE-xzS" secondAttribute="height" multiplier="150:103" id="Rm2-xK-pdA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="9" backgroundImage="button_bg_1.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -299,15 +299,14 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPZ-3z-0o4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="-19" y="585" width="39" height="29"/>
-                                <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-13" y="585" width="27" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xcs-D8-JHK" secondAttribute="height" multiplier="1:1" id="LG6-2a-hYS"/>
                                     <constraint firstAttribute="width" secondItem="Xcs-D8-JHK" secondAttribute="height" multiplier="150:103" id="NbP-JF-EUR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" title="+" backgroundImage="button_action_bg_2.png">
+                                <state key="normal" image="buttonPlusIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -322,15 +321,14 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="-18" y="589" width="36" height="22"/>
-                                <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-25" y="567" width="51" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4r1-uK-adB" secondAttribute="height" multiplier="100:69" id="LIg-Et-Pgx"/>
                                     <constraint firstAttribute="width" secondItem="4r1-uK-adB" secondAttribute="height" multiplier="1:1" id="arY-MI-vQr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" title="-" backgroundImage="button_action_bg_3.png">
+                                <state key="normal" image="buttonMinusIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -344,16 +342,15 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aOt-1A-j4i" secondAttribute="height" multiplier="25:17" id="EXB-ON-Oor"/>
                                     <constraint firstAttribute="width" secondItem="aOt-1A-j4i" secondAttribute="height" multiplier="150:103" id="fVn-mS-IXV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                 <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" image="icon_switch.png" backgroundImage="button_action_bg_1.png">
+                                <state key="normal" image="buttonSwitchIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -367,15 +364,14 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
-                                <rect key="frame" x="-19" y="589" width="39" height="22"/>
-                                <color key="backgroundColor" red="0.16064199805259705" green="0.53825384378433228" blue="0.85799503326416016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                                <rect key="frame" x="-51" y="548" width="103" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dWW-RI-d8f" secondAttribute="height" multiplier="1:1" id="1MC-pt-EnA"/>
                                     <constraint firstAttribute="width" secondItem="dWW-RI-d8f" secondAttribute="height" multiplier="25:17" id="NIi-Ym-gO6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" title="=" backgroundImage="button_action_bg_4.png">
+                                <state key="normal" image="buttonEqualsIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -391,14 +387,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
-                                <color key="backgroundColor" red="0.86265093088150024" green="0.86279940605163574" blue="0.86264163255691528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F8k-oV-4YX" secondAttribute="height" multiplier="25:17" id="7PD-hy-aNN"/>
                                     <constraint firstAttribute="width" secondItem="F8k-oV-4YX" secondAttribute="height" multiplier="1:1" id="E85-xp-Kst"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
-                                <state key="normal" title="." backgroundImage="button_bg_4.png">
-                                    <color key="titleColor" red="0.18821030855178833" green="0.18824970722198486" blue="0.18820786476135254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -417,7 +413,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="TEi-4k-UpY"/>
                                 </constraints>
                                 <state key="normal" title="GBP">
-                                    <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
@@ -426,13 +422,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
                                 <rect key="frame" x="397" y="20" width="183" height="290"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
                                 <rect key="frame" x="397" y="310" width="183" height="290"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="0.15989521145820618" green="0.60767078399658203" blue="0.97723430395126343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
@@ -441,14 +437,14 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cFp-Bz-T80"/>
                                 </constraints>
                                 <state key="normal" title="JPY">
-                                    <color key="titleColor" red="0.47707056999206543" green="0.47715663909912109" blue="0.47706514596939087" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.12547165155410767" green="0.12550082802772522" blue="0.12546983361244202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XDL-TB-GgY" firstAttribute="top" secondItem="35e-qM-0gB" secondAttribute="bottom" id="0YW-KG-pfp"/>
                             <constraint firstAttribute="trailing" secondItem="4r1-uK-adB" secondAttribute="trailing" id="0b0-9b-UoP"/>
@@ -648,16 +644,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_action_bg_1.png" width="103" height="103"/>
-        <image name="button_action_bg_2.png" width="103" height="103"/>
-        <image name="button_action_bg_3.png" width="103" height="103"/>
-        <image name="button_action_bg_4.png" width="103" height="103"/>
-        <image name="button_bg_1.png" width="103" height="103"/>
-        <image name="button_bg_2.png" width="103" height="103"/>
-        <image name="button_bg_3.png" width="103" height="103"/>
-        <image name="button_bg_4.png" width="103" height="103"/>
-        <image name="button_clear_bg.png" width="103" height="103"/>
-        <image name="icon_switch.png" width="44" height="32"/>
+        <image name="buttonEqualsIcon.png" width="27" height="13"/>
+        <image name="buttonMinusIcon.png" width="27" height="3"/>
+        <image name="buttonPlusIcon.png" width="27" height="29"/>
+        <image name="buttonSwitchIcon.png" width="44" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="epB-0k-ch1"/>

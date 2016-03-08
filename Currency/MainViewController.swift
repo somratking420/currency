@@ -19,11 +19,11 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    // Change status bar color.
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+        
+        // Style view.
+        view.layer.cornerRadius = 3.0
+        view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
+        view.clipsToBounds = true
     }
 
     @IBAction func digitPressed(sender: UIButton) {

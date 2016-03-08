@@ -12,9 +12,9 @@ import UIKit
 class CalculatorActionButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        self.layer.borderColor = UIColor(red:0.02, green:0.22, blue:0.39, alpha:1).CGColor
-        self.layer.borderWidth = 0.25
-        self.tintColor = UIColor.whiteColor()
-        self.layer.masksToBounds = true;
+//        self.layer.borderColor = UIColor(red:0.02, green:0.22, blue:0.39, alpha:1).CGColor
+//        self.layer.borderWidth = 0.25
+//        self.tintColor = UIColor.whiteColor()
+//        self.layer.masksToBounds = true;
     }
 }
