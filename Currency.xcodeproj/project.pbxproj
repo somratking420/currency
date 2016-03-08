@@ -152,6 +152,7 @@
 		BC473BFF1C8E72FB008EACA9 /* buttonSwitchIconHighlighted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonSwitchIconHighlighted@3x.png"; path = "Assets.xcassets/buttonSwitchIconHighlighted@3x.png"; sourceTree = "<group>"; };
 		BC6B29BD1C8AAD780011CCAE /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Currency+CoreDataProperties.swift"; path = "Models/Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC6B29BE1C8AAD780011CCAE /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Models/Currency.swift; sourceTree = "<group>"; };
+		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
 		BC94BB0F1C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InitialCurrencyDatabase.sqlite; path = Databases/InitialCurrencyDatabase.sqlite; sourceTree = "<group>"; };
 		BC94BB101C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
 		BC94BB111C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
@@ -959,9 +960,10 @@
 		BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */,
 				BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */,
 			);
-			currentVersion = BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */;
+			currentVersion = BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */;
 			path = Currency.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

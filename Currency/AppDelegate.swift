@@ -64,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite")
         
+        print(url)
+        
         if !NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]

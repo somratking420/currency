@@ -18,5 +18,7 @@ extension Currency {
     @NSManaged var code: String?
     @NSManaged var rateFromUSD: NSNumber?
     @NSManaged var decimals: NSNumber?
+    @NSManaged var symbol: String?
+    @NSManaged var locale: String?
 
 }
