@@ -12,7 +12,7 @@ import SWXMLHash
 
 class Converter {
 
-    var input: String = ""
+    var input: String = "0"
     var inputCurrencyCode: String = "JPY";
     var outputCurrencyCode: String = "GBP";
     var inputCurrencyExchangeRate: Double = 113.81;
@@ -46,13 +46,15 @@ class Converter {
     }
 
     func setInputCurrency(currencyCode: String) {
-        inputCurrencyCode = currencyCode
-        requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
+        self.inputCurrencyCode = currencyCode
+        self.requestUpdateForCurrencyConvertionRate(inputCurrencyCode)
+        print("Set input currency to: \(currencyCode).")
     }
 
     func setOutputCurrency(currencyCode: String) {
-        outputCurrencyCode = currencyCode
-        requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
+        self.outputCurrencyCode = currencyCode
+        self.requestUpdateForCurrencyConvertionRate(outputCurrencyCode)
+        print("Set output currency to: \(currencyCode).")
     }
 
     func swapInputWithOutput() {

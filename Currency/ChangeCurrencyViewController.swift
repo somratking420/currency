@@ -9,11 +9,17 @@
 import UIKit
 import CoreData
 
-class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol ChangeCurrencyViewControllerDelegate {
+    func didChangeCurrency(currencyCode: String, targetCurrency: String)
+}
+
+class ChangeCurrencyViewController: UIViewController {
     
     var managedObjectContext: NSManagedObjectContext!
-    var targetCurrency = ""
-
+    var delegate: ChangeCurrencyViewControllerDelegate?
+    var targetCurrency: String!
+    var selectedCurrency: String!
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
@@ -31,33 +37,6 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
         managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies().count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
-        let index = indexPath.row
-        let currency: Currency = currencies()[index] as! Currency
-
-        cell?.textLabel!.text = currency.name
-        return cell!
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
-        let currency: Currency = currencies()[index] as! Currency
-        
-        let mainViewController = MainViewController()
-        mainViewController.updateInputCurrency(currency.code!)
-        
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
-    
     func currencies() -> [AnyObject]{
         let fetch = NSFetchRequest(entityName: "Currency")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
@@ -70,6 +49,44 @@ class ChangeCurrencyViewController: UIViewController, UITableViewDelegate, UITab
                 print("Error fetching currencies error: %@", error)
         }
         return result
+    }
+    
+}
+
+extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currencies().count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
+        let index = indexPath.row
+        let currency: Currency = currencies()[index] as! Currency
+        cell!.textLabel!.text = currency.name!
+        cell!.detailTextLabel!.text = currency.code!
+        cell!.accessoryType = UITableViewCellAccessoryType.None
+        
+        if currency.code! == selectedCurrency {
+            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let index = indexPath.row
+        let currency: Currency = currencies()[index] as! Currency
+        let currencyCode = currency.code!
+        print("didSelectRowAtIndexPath: " + currencyCode + " (" + targetCurrency + ")")
+        
+        delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
+        
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
 }

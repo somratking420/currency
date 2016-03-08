@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var inputCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
+    @IBOutlet weak var inputCurrencyCodeButton: UIButton!
+    @IBOutlet weak var outputCurrencyCodeButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +41,9 @@ class MainViewController: UIViewController {
     }
     
     func updateInterface() {
+        print("updateInterface")
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
-    }
-    
-    func updateInputCurrency(currencyCode: String) {
-        print(currencyCode)
-    }
-    
-    func updateOutputCurrency(currencyCode: String) {
-        print(currencyCode)
     }
     
     // MARK: - Segue
@@ -58,14 +53,35 @@ class MainViewController: UIViewController {
         if segue.identifier == "ChangeInputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "input"
+            changeCurrencyViewController.selectedCurrency = inputCurrencyCodeButton.titleLabel!.text
+            changeCurrencyViewController.delegate = self
         }
         
         if segue.identifier == "ChangeOutputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "output"
+            changeCurrencyViewController.selectedCurrency = outputCurrencyCodeButton.titleLabel!.text
+            changeCurrencyViewController.delegate = self
         }
         
     }
+    
+}
 
+extension MainViewController: ChangeCurrencyViewControllerDelegate {
+    
+    func didChangeCurrency(currencyCode: String, targetCurrency: String) {
+        print("didChangeCurrency")
+        if targetCurrency == "input" {
+            converter.setInputCurrency(currencyCode)
+            print("didChangeCurrency, input")
+        }
+        if targetCurrency == "output" {
+            converter.setOutputCurrency(currencyCode)
+            print("didChangeCurrency, output")
+        }
+        updateInterface()
+    }
+    
 }
 
