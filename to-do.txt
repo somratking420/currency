@@ -1,8 +1,5 @@
 -  Add button highlight effects on tap.
--  Add background color to the output currency area as per design.
 -  Why are the results off when comparing to the Yahoo website?
--  Change input currency when selecting from table view.
--  Change output currency when selecting from table view.
 -  Search results and populate table view.
 -  Limit length of the input string.
 -  List recent 5 currencies at the top of the table view.
