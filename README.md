@@ -1,5 +1,7 @@
 # Currency for iOS
 
+![View of the Currency app for iOS running on an iPhone](http://f.cl.ly/items/1V1t3V1T140z2N0M1415/currency.jpg)
+
 This project is a fun currency converter app, built by a designer learning iOS development in Swift, hitting the App Store as soon as possible. Free to download, open to contributions.
 
 ## Swift
