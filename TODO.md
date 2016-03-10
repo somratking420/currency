@@ -1,0 +1,23 @@
+### To-do:
+
+- Addition.
+- Subtraction.
+- Swap input and output currencies.
+- Limit length of input number.
+- Search currencies list.
+- Show 5 most recent currencies at top of currencies list.
+- If user changes the input currency to be the same as the output currency, or vice versa, swap them.
+- Remember input currency.
+- Remember output currency.
+- Sounds.
+- Settings option for muting sounds.
+- Why are the results off when comparing to the Yahoo website?
+- Button highlight effects on tap.
+- Copy input value.
+- Copy output value.
+- App icon.
+- Splash screen.
+- Marketing images.
+- App Store description.
+- App promotional website.
+- App domain.

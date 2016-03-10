@@ -1,8 +1,0 @@
--  Limit length of the input string.
--  Search results and populate table view.
--  List recent 5 currencies at the top of the table view.
--  If user changes the input currency to be the same as the output currency, or vice versa, swap them.
--  Add button highlight effects on tap.
--  Why are the results off when comparing to the Yahoo website?
--  Save current input currency on user preferences file.
--  Save current output currency on user preferences file.
