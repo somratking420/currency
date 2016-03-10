@@ -52,6 +52,10 @@ class Converter {
             input = string
             return
         }
+        if input.characters.count >= 10 {
+            print("Input string is too long.")
+            return
+        }
         input = input + string
     }
 

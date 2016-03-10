@@ -1,4 +1,3 @@
-- Limit length of input number.
 - Search currencies list.
 - Addition.
 - Subtraction.
