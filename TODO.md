@@ -1,10 +1,8 @@
-### To-do:
-
+- Limit length of input number.
+- Search currencies list.
 - Addition.
 - Subtraction.
 - Swap input and output currencies.
-- Limit length of input number.
-- Search currencies list.
 - Show 5 most recent currencies at top of currencies list.
 - If user changes the input currency to be the same as the output currency, or vice versa, swap them.
 - Remember input currency.
