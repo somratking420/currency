@@ -62,13 +62,22 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies.count
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return searchResults?.count ?? 0
+        } else {
+            return currencies.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
         let index = indexPath.row
-        let currency: Currency = currencies[index]
+        let currency: Currency
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            currency = searchResults![index]
+        } else {
+            currency = currencies[index]
+        }
         cell!.textLabel!.text = currency.name!
         cell!.detailTextLabel!.text = currency.code!
         cell!.accessoryType = UITableViewCellAccessoryType.None
@@ -82,7 +91,12 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
-        let currency: Currency = currencies[index]
+        let currency: Currency
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            currency = searchResults![index]
+        } else {
+            currency = currencies[index]
+        }
         let currencyCode = currency.code!
         
         delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
@@ -100,27 +114,9 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
         })
     }
     
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+        self.filterContentForSearchText(searchString!)
+        return true
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

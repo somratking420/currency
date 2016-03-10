@@ -1,4 +1,3 @@
-- Search currencies list.
 - Addition.
 - Subtraction.
 - Swap input and output currencies.
