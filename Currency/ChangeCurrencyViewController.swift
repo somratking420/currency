@@ -19,6 +19,8 @@ class ChangeCurrencyViewController: UIViewController {
     var delegate: ChangeCurrencyViewControllerDelegate?
     var targetCurrency: String!
     var selectedCurrency: String!
+    var currencies:Array<Currency>!
+    var searchResults:Array<Currency>?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,9 +35,11 @@ class ChangeCurrencyViewController: UIViewController {
         self.tableView.dataSource = self
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
+        
+        currencies = fetchCurrencies()
     }
     
-    func currencies() -> [AnyObject]{
+    func fetchCurrencies() -> [Currency]{
         let fetch = NSFetchRequest(entityName: "Currency")
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         let sortDescriptors = [sortDescriptor]
@@ -44,9 +48,9 @@ class ChangeCurrencyViewController: UIViewController {
         do {
             result = try managedObjectContext!.executeFetchRequest(fetch)
         } catch let error as NSError {
-                print("Error fetching currencies error: %@", error)
+            print("Error fetching currencies error: %@", error)
         }
-        return result
+        return result as! [Currency]
     }
     
 }
@@ -58,13 +62,13 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies().count
+        return currencies.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
         let index = indexPath.row
-        let currency: Currency = currencies()[index] as! Currency
+        let currency: Currency = currencies[index]
         cell!.textLabel!.text = currency.name!
         cell!.detailTextLabel!.text = currency.code!
         cell!.accessoryType = UITableViewCellAccessoryType.None
@@ -78,7 +82,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
-        let currency: Currency = currencies()[index] as! Currency
+        let currency: Currency = currencies[index]
         let currencyCode = currency.code!
         
         delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
@@ -86,3 +90,35 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
 }
+
+extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDelegate {
+    
+    func filterContentForSearchText(searchText: String) {
+
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
