@@ -564,10 +564,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-Bl-AQo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Currency" id="KIQ-ce-C31">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Currencies" id="CZV-23-ufX">
                                     <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Gga-26-1cy" id="2dR-Fj-fag"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4" customClass="TableViewCell">
@@ -617,10 +620,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="Voo-x0-JhT" id="X38-YO-hgX"/>
                         <outlet property="tableView" destination="P8b-Bl-AQo" id="QVP-m1-Oxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3P-Sz-mgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Voo-x0-JhT">
+                    <connections>
+                        <outlet property="delegate" destination="Gga-26-1cy" id="zgz-23-dbx"/>
+                        <outlet property="searchBar" destination="CZV-23-ufX" id="C8s-Jw-ufy"/>
+                        <outlet property="searchContentsController" destination="Gga-26-1cy" id="K2R-sx-WsD"/>
+                        <outlet property="searchResultsDataSource" destination="Gga-26-1cy" id="oOA-Ni-Xdj"/>
+                        <outlet property="searchResultsDelegate" destination="Gga-26-1cy" id="lec-aI-3yU"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1100" y="937"/>
         </scene>
