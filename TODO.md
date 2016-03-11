@@ -1,5 +1,3 @@
-- Addition.
-- Subtraction.
 - Swap input and output currencies.
 - Show 5 most recent currencies at top of currencies list.
 - If user changes the input currency to be the same as the output currency, or vice versa, swap them.
