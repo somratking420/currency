@@ -6,7 +6,6 @@
 - Sounds.
 - Settings option for muting sounds.
 - Why are the results off when comparing to the Yahoo website?
-- Button highlight effects on tap.
 - Copy input value.
 - Copy output value.
 - App icon.
