@@ -27,6 +27,11 @@ class MainViewController: UIViewController {
         view.layer.cornerRadius = 3.0
         view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         view.clipsToBounds = true
+        
+        addButton.setBackgroundImage(UIImage(named: "buttonPlusBackground.png"), forState: .Highlighted)
+        addButton.setImage(UIImage(named: "buttonPlusIconHighlighted.png"), forState: .Highlighted)
+        minusButton.setBackgroundImage(UIImage(named: "buttonMinusBackground.png"), forState: .Highlighted)
+        minusButton.setImage(UIImage(named: "buttonMinusIconHighlighted.png"), forState: .Highlighted)
     }
 
     @IBAction func digitPressed(sender: UIButton) {
@@ -35,16 +40,12 @@ class MainViewController: UIViewController {
             return
         }
         converter.addInput(digit)
-        addButton.highlighted = false
-        minusButton.highlighted = false
         updateInterface()
     }
 
     @IBAction func clearPressed(sender: UIButton) {
         converter.reset()
         calculator.reset()
-        addButton.highlighted = false
-        minusButton.highlighted = false
         updateInterface()
     }
     
@@ -53,7 +54,8 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
-        sender.highlighted = true
+        sender.setBackgroundImage(UIImage(named: "buttonPlusBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonPlusIconHighlighted.png"), forState: .Normal)
     }
     
     @IBAction func minusPressed(sender: UIButton) {
@@ -61,12 +63,13 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
-        sender.highlighted = true
+        sender.setBackgroundImage(UIImage(named: "buttonMinusBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonMinusIconHighlighted.png"), forState: .Normal)
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
         let result = calculator.calculate(Double(converter.input)!)
-        converter.input = String(result)
+        converter.input = String(Int(result))
         updateInterface()
     }
     
@@ -74,6 +77,10 @@ class MainViewController: UIViewController {
     func updateInterface() {
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
+        addButton.setBackgroundImage(nil, forState: .Normal)
+        addButton.setImage(UIImage(named: "buttonPlusIcon.png"), forState: .Normal)
+        minusButton.setBackgroundImage(nil, forState: .Normal)
+        minusButton.setImage(UIImage(named: "buttonMinusIcon.png"), forState: .Normal)
     }
     
     // MARK: - Segue

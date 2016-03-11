@@ -57,6 +57,7 @@ class Converter {
             return
         }
         input = input + string
+        print("Converter input value: \(input)")
     }
 
     func setInputCurrency(currencyCode: String) {
