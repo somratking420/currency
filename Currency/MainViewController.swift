@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var outputCurrencyLabel: UILabel!
     @IBOutlet weak var inputCurrencyCodeButton: UIButton!
     @IBOutlet weak var outputCurrencyCodeButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +35,16 @@ class MainViewController: UIViewController {
             return
         }
         converter.addInput(digit)
+        addButton.highlighted = false
+        minusButton.highlighted = false
         updateInterface()
     }
 
     @IBAction func clearPressed(sender: UIButton) {
         converter.reset()
+        calculator.reset()
+        addButton.highlighted = false
+        minusButton.highlighted = false
         updateInterface()
     }
     
@@ -46,6 +53,7 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
+        sender.highlighted = true
     }
     
     @IBAction func minusPressed(sender: UIButton) {
@@ -53,6 +61,7 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
+        sender.highlighted = true
     }
     
     @IBAction func equalsPressed(sender: UIButton) {

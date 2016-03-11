@@ -44,4 +44,9 @@ class Calculator {
         operation = "-"
     }
     
+    func reset() {
+        initialValue = 0
+        operation = nil
+    }
+    
 }

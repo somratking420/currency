@@ -548,8 +548,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
                         <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
                         <outlet property="inputCurrencyLabel" destination="v6F-6f-2Hr" id="75Q-IG-ZjQ"/>
+                        <outlet property="minusButton" destination="4r1-uK-adB" id="cvc-SM-RQw"/>
                         <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
                         <outlet property="outputCurrencyLabel" destination="YAg-OE-Uu3" id="CaO-Ek-ird"/>
                     </connections>
