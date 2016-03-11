@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     var converter = Converter()
+    var calculator = Calculator()
 
     @IBOutlet weak var inputCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
@@ -35,16 +36,35 @@ class MainViewController: UIViewController {
         updateInterface()
     }
 
-    @IBAction func clearPressed(sender: AnyObject) {
+    @IBAction func clearPressed(sender: UIButton) {
         converter.reset()
         updateInterface()
     }
     
+    @IBAction func addPressed(sender: UIButton) {
+        calculator.newAddition(Double(converter.input)!)
+        converter.input = String(calculator.initialValue)
+        updateInterface()
+        converter.input = "0"
+    }
+    
+    @IBAction func minusPressed(sender: UIButton) {
+        calculator.newSubtraction(Double(converter.input)!)
+        converter.input = String(calculator.initialValue)
+        updateInterface()
+        converter.input = "0"
+    }
+    
+    @IBAction func equalsPressed(sender: UIButton) {
+        let result = calculator.calculate(Double(converter.input)!)
+        converter.input = String(result)
+        updateInterface()
+    }
+    
+    
     func updateInterface() {
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
-        
-
     }
     
     // MARK: - Segue

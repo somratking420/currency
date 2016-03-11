@@ -320,6 +320,9 @@
                                         <exclude reference="NbP-JF-EUR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qny-bA-am0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="-25" y="567" width="51" height="65"/>
@@ -341,6 +344,9 @@
                                         <exclude reference="LIg-Et-Pgx"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="minusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAU-7O-2Ve"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
@@ -384,6 +390,9 @@
                                         <exclude reference="NIi-Ym-gO6"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="equalsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHt-sn-Tq4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
