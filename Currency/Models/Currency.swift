@@ -11,7 +11,12 @@ import CoreData
 
 
 class Currency: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
+    
+    @NSManaged var name: String?
+    @NSManaged var code: String?
+    @NSManaged var rateFromUSD: NSNumber?
+    @NSManaged var decimals: NSNumber?
+    @NSManaged var symbol: String?
+    @NSManaged var locale: String?
 
 }
