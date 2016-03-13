@@ -14,8 +14,8 @@ class CalculatorResultButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        self.setBackgroundImage(UIImage(named: "buttonEqualsBackground.png"), forState: .Highlighted)
-        self.setImage(UIImage(named: "buttonEqualsIconHighlighted.png"), forState: .Highlighted)
+        self.setBackgroundImage(UIImage(named: "buttonResultBackground.png"), forState: .Highlighted)
+        self.setImage(UIImage(named: "buttonResultIconHighlighted.png"), forState: .Highlighted)
     }
     
 }

@@ -306,7 +306,7 @@
                                     <constraint firstAttribute="width" secondItem="Xcs-D8-JHK" secondAttribute="height" multiplier="150:103" id="NbP-JF-EUR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" image="buttonPlusIcon.png">
+                                <state key="normal" image="buttonAddIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -331,7 +331,7 @@
                                     <constraint firstAttribute="width" secondItem="4r1-uK-adB" secondAttribute="height" multiplier="1:1" id="arY-MI-vQr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" image="buttonMinusIcon.png">
+                                <state key="normal" image="buttonSubtractIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -377,7 +377,7 @@
                                     <constraint firstAttribute="width" secondItem="dWW-RI-d8f" secondAttribute="height" multiplier="25:17" id="NIi-Ym-gO6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
-                                <state key="normal" image="buttonEqualsIcon.png">
+                                <state key="normal" image="buttonResultIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -670,9 +670,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buttonEqualsIcon.png" width="27" height="13"/>
-        <image name="buttonMinusIcon.png" width="27" height="3"/>
-        <image name="buttonPlusIcon.png" width="27" height="29"/>
+        <image name="buttonAddIcon.png" width="27" height="29"/>
+        <image name="buttonResultIcon.png" width="27" height="13"/>
+        <image name="buttonSubtractIcon.png" width="27" height="3"/>
         <image name="buttonSwitchIcon.png" width="44" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>

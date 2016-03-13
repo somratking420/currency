@@ -51,8 +51,8 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
-        sender.setBackgroundImage(UIImage(named: "buttonPlusBackground.png"), forState: .Normal)
-        sender.setImage(UIImage(named: "buttonPlusIconHighlighted.png"), forState: .Normal)
+        sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
     }
     
     @IBAction func minusPressed(sender: UIButton) {
@@ -60,8 +60,8 @@ class MainViewController: UIViewController {
         converter.input = String(calculator.initialValue)
         updateInterface()
         converter.input = "0"
-        sender.setBackgroundImage(UIImage(named: "buttonMinusBackground.png"), forState: .Normal)
-        sender.setImage(UIImage(named: "buttonMinusIconHighlighted.png"), forState: .Normal)
+        sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
@@ -75,9 +75,9 @@ class MainViewController: UIViewController {
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
         addButton.setBackgroundImage(nil, forState: .Normal)
-        addButton.setImage(UIImage(named: "buttonPlusIcon.png"), forState: .Normal)
+        addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         minusButton.setBackgroundImage(nil, forState: .Normal)
-        minusButton.setImage(UIImage(named: "buttonMinusIcon.png"), forState: .Normal)
+        minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
     }
     
     // MARK: - Segue
