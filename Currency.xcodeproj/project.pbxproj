@@ -46,6 +46,10 @@
 		BC473C231C8E72FB008EACA9 /* buttonSwitchIconHighlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC473BFF1C8E72FB008EACA9 /* buttonSwitchIconHighlighted@3x.png */; };
 		BC6B29BF1C8AAD780011CCAE /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B29BD1C8AAD780011CCAE /* Currency+CoreDataProperties.swift */; };
 		BC6B29C01C8AAD780011CCAE /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B29BE1C8AAD780011CCAE /* Currency.swift */; };
+		BC8B3C061C9545F10017CC1C /* CalculatorAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B3C051C9545F10017CC1C /* CalculatorAddButton.swift */; };
+		BC8B3C081C9545FC0017CC1C /* CalculatorSubtractButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B3C071C9545FC0017CC1C /* CalculatorSubtractButton.swift */; };
+		BC8B3C0A1C9546050017CC1C /* CalculatorResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B3C091C9546050017CC1C /* CalculatorResultButton.swift */; };
+		BC8B3C0C1C9547070017CC1C /* CalculatorSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B3C0B1C9547070017CC1C /* CalculatorSwitchButton.swift */; };
 		BC94BB121C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB0F1C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite */; };
 		BC94BB131C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB101C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-shm */; };
 		BC94BB141C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB111C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-wal */; };
@@ -59,7 +63,6 @@
 		BCD920151C6BA6AC0089F52A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD920131C6BA6AC0089F52A /* LaunchScreen.storyboard */; };
 		BCD920201C6BA6AC0089F52A /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9201F1C6BA6AC0089F52A /* CurrencyTests.swift */; };
 		BCD9202B1C6BA6AC0089F52A /* CurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9202A1C6BA6AC0089F52A /* CurrencyUITests.swift */; };
-		BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
 		BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */; };
 /* End PBXBuildFile section */
@@ -124,6 +127,10 @@
 		BC6B29BD1C8AAD780011CCAE /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Currency+CoreDataProperties.swift"; path = "Models/Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC6B29BE1C8AAD780011CCAE /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Models/Currency.swift; sourceTree = "<group>"; };
 		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
+		BC8B3C051C9545F10017CC1C /* CalculatorAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorAddButton.swift; sourceTree = "<group>"; };
+		BC8B3C071C9545FC0017CC1C /* CalculatorSubtractButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorSubtractButton.swift; sourceTree = "<group>"; };
+		BC8B3C091C9546050017CC1C /* CalculatorResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorResultButton.swift; sourceTree = "<group>"; };
+		BC8B3C0B1C9547070017CC1C /* CalculatorSwitchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorSwitchButton.swift; sourceTree = "<group>"; };
 		BC94BB0F1C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InitialCurrencyDatabase.sqlite; path = Databases/InitialCurrencyDatabase.sqlite; sourceTree = "<group>"; };
 		BC94BB101C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
 		BC94BB111C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
@@ -143,7 +150,6 @@
 		BCD920261C6BA6AC0089F52A /* CurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9202A1C6BA6AC0089F52A /* CurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITests.swift; sourceTree = "<group>"; };
 		BCD9202C1C6BA6AC0089F52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorActionButton.swift; path = "UI Classes/CalculatorActionButton.swift"; sourceTree = "<group>"; };
 		BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorButton.swift; path = "UI Classes/CalculatorButton.swift"; sourceTree = "<group>"; };
 		BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,7 +334,10 @@
 			isa = PBXGroup;
 			children = (
 				BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */,
-				BCE0A6601C81A4950093AC38 /* CalculatorActionButton.swift */,
+				BC8B3C0B1C9547070017CC1C /* CalculatorSwitchButton.swift */,
+				BC8B3C051C9545F10017CC1C /* CalculatorAddButton.swift */,
+				BC8B3C071C9545FC0017CC1C /* CalculatorSubtractButton.swift */,
+				BC8B3C091C9546050017CC1C /* CalculatorResultButton.swift */,
 			);
 			name = "UI Classes";
 			sourceTree = "<group>";
@@ -575,15 +584,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6B29C01C8AAD780011CCAE /* Currency.swift in Sources */,
+				BC8B3C0A1C9546050017CC1C /* CalculatorResultButton.swift in Sources */,
+				BC8B3C081C9545FC0017CC1C /* CalculatorSubtractButton.swift in Sources */,
 				BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */,
 				BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */,
 				BCD206D01C929ABC002B68FA /* Calculator.swift in Sources */,
+				BC8B3C0C1C9547070017CC1C /* CalculatorSwitchButton.swift in Sources */,
 				BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */,
 				BCD26BF81C87D9DC00523273 /* Converter.swift in Sources */,
 				BCD9200A1C6BA6AC0089F52A /* MainViewController.swift in Sources */,
-				BCE0A6631C81A4950093AC38 /* CalculatorActionButton.swift in Sources */,
 				BC6B29BF1C8AAD780011CCAE /* Currency+CoreDataProperties.swift in Sources */,
 				BCD920081C6BA6AC0089F52A /* AppDelegate.swift in Sources */,
+				BC8B3C061C9545F10017CC1C /* CalculatorAddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,16 +29,6 @@ class MainViewController: UIViewController {
         view.layer.cornerRadius = 3.0
         view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         view.clipsToBounds = true
-        
-        // Button highlight states.
-        switchButton.setBackgroundImage(UIImage(named: "buttonSwitchBackground.png"), forState: .Highlighted)
-        switchButton.setImage(UIImage(named: "buttonSwitchIconHighlighted.png"), forState: .Highlighted)
-        addButton.setBackgroundImage(UIImage(named: "buttonPlusBackground.png"), forState: .Highlighted)
-        addButton.setImage(UIImage(named: "buttonPlusIconHighlighted.png"), forState: .Highlighted)
-        minusButton.setBackgroundImage(UIImage(named: "buttonMinusBackground.png"), forState: .Highlighted)
-        minusButton.setImage(UIImage(named: "buttonMinusIconHighlighted.png"), forState: .Highlighted)
-        equalsButton.setBackgroundImage(UIImage(named: "buttonEqualsBackground.png"), forState: .Highlighted)
-        equalsButton.setImage(UIImage(named: "buttonEqualsIconHighlighted.png"), forState: .Highlighted)
     }
 
     @IBAction func digitPressed(sender: UIButton) {

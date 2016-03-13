@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZW-lu-eYF" secondAttribute="height" multiplier="1:1" id="BVw-Is-8tL"/>
@@ -43,7 +43,7 @@
                                     <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cev-yM-0dh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8vk-bG-bai" secondAttribute="height" multiplier="1:1" id="4zB-Lz-Rbf"/>
@@ -69,7 +69,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yp-b8-b4J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DJH-uF-R2A" secondAttribute="height" multiplier="1:1" id="Hfa-34-xGb"/>
@@ -94,7 +94,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDI-Xu-ghW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="height" multiplier="1:1" id="oOJ-pM-mYg"/>
@@ -120,7 +120,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frj-k7-LPm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1au-Bl-X2Q" secondAttribute="height" multiplier="150:103" id="pNd-Bs-GT9"/>
@@ -146,7 +146,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="513-Uw-PkC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a03-dZ-HOe" secondAttribute="height" multiplier="1:1" id="N8V-nt-uYS"/>
@@ -172,7 +172,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lo4-1v-QSc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yfa-A5-Xr1" secondAttribute="height" multiplier="1:1" id="NXa-I8-uah"/>
@@ -197,7 +197,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02u-pU-ucd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YAk-yI-DGx" secondAttribute="height" multiplier="25:17" id="SL5-pG-iPl"/>
@@ -222,7 +222,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iZX-2T-ZeJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XDL-TB-GgY" secondAttribute="height" multiplier="150:103" id="JoL-Hh-VS8"/>
@@ -248,7 +248,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wt5-W4-hQU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="35e-qM-0gB" secondAttribute="height" multiplier="1:1" id="Mji-fT-hgU"/>
@@ -274,7 +274,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VC4-YW-HMa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fVX-LE-xzS" secondAttribute="height" multiplier="25:17" id="RAB-Em-Ykb"/>
@@ -299,7 +299,7 @@
                                     <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPZ-3z-0o4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="-13" y="585" width="27" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xcs-D8-JHK" secondAttribute="height" multiplier="1:1" id="LG6-2a-hYS"/>
@@ -324,7 +324,7 @@
                                     <action selector="addPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qny-bA-am0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="-25" y="567" width="51" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4r1-uK-adB" secondAttribute="height" multiplier="100:69" id="LIg-Et-Pgx"/>
@@ -348,7 +348,7 @@
                                     <action selector="minusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAU-7O-2Ve"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aOt-1A-j4i" secondAttribute="height" multiplier="25:17" id="EXB-ON-Oor"/>
@@ -370,7 +370,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorActionButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="-51" y="548" width="103" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dWW-RI-d8f" secondAttribute="height" multiplier="1:1" id="1MC-pt-EnA"/>
@@ -394,7 +394,7 @@
                                     <action selector="equalsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHt-sn-Tq4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="600" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="F8k-oV-4YX" secondAttribute="height" multiplier="25:17" id="7PD-hy-aNN"/>

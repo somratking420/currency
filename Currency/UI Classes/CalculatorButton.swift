@@ -10,10 +10,26 @@ import Foundation
 import UIKit
 
 class CalculatorButton: UIButton {
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-//        self.layer.borderColor = UIColor(red:0.24, green:0.24, blue:0.24, alpha:1).CGColor
-//        self.layer.borderWidth = 0.25
-//        self.layer.masksToBounds = true;
+        
+        self.tintColor = UIColor(red:0.2, green:0.2, blue:0.2, alpha:1)
     }
+    
+    override var highlighted: Bool {
+        get {
+            return super.highlighted
+        }
+        set {
+            if newValue {
+                self.backgroundColor = UIColor(red:0.92, green:0.92, blue:0.92, alpha:1)
+            }
+            else {
+                self.backgroundColor = nil
+            }
+            super.highlighted = newValue
+        }
+    }
+    
 }
