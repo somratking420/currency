@@ -108,10 +108,21 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
 extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDelegate {
     
     func filterContentForSearchText(searchText: String) {
-        // Filter currencies with the search text in the currency name.
-        self.searchResults = self.currencies!.filter({( currency: Currency) -> Bool in
-            return currency.name!.lowercaseString.rangeOfString(searchText.lowercaseString) != nil
-        })
+
+        var filteredContent:Array<Currency> = []
+        let searchText = searchText.lowercaseString
+        
+        for currency in currencies {
+            let matchesName = currency.name!.lowercaseString.rangeOfString(searchText) != nil
+            let matchesCode = currency.code!.lowercaseString.rangeOfString(searchText) != nil
+            
+            if (matchesName || matchesCode) {
+                filteredContent += [currency]
+            }
+        }
+        
+        self.searchResults = filteredContent
+        
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
