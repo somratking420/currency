@@ -51,8 +51,15 @@
                                 <color key="textColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
-                                <rect key="frame" x="0.0" y="196" width="600" height="404"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih">
+                                <rect key="frame" x="0.0" y="196" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="3PI-9x-iJX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
+                                <rect key="frame" x="0.0" y="197" width="600" height="403"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="101"/>
@@ -308,6 +315,7 @@
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="IUw-fS-xyU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="bottom" id="JIm-Jt-wwp"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" id="JkF-T0-Cnr"/>
+                            <constraint firstItem="e6z-VH-Rih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jve-d4-68s"/>
                             <constraint firstAttribute="trailing" secondItem="NLh-XE-j1z" secondAttribute="trailing" id="KLx-Ba-7or"/>
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KRn-Nm-PeU"/>
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="Ph4-42-eBv"/>
@@ -319,8 +327,10 @@
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="64" id="dnW-MJ-aI6"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="centerY" secondItem="4nD-bv-Hha" secondAttribute="centerY" id="eLX-ac-bCn"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="gKB-JT-mMI"/>
+                            <constraint firstAttribute="trailing" secondItem="e6z-VH-Rih" secondAttribute="trailing" id="gT4-Us-54V"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="v6F-6f-2Hr" secondAttribute="bottom" id="hHr-de-FZv"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="v6F-6f-2Hr" secondAttribute="bottom" id="hJj-qk-29u"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="e6z-VH-Rih" secondAttribute="bottom" id="j0v-DU-FxE"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="jBK-Ew-8Vk"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="jlz-bC-B40"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="width" secondItem="dVx-wP-zji" secondAttribute="width" id="mR1-Tv-tkg"/>

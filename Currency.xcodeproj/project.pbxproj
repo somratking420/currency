@@ -60,11 +60,11 @@
 		BCD9200D1C6BA6AC0089F52A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD9200B1C6BA6AC0089F52A /* Main.storyboard */; };
 		BCD920101C6BA6AC0089F52A /* Currency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */; };
 		BCD920121C6BA6AC0089F52A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD920111C6BA6AC0089F52A /* Assets.xcassets */; };
-		BCD920151C6BA6AC0089F52A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD920131C6BA6AC0089F52A /* LaunchScreen.storyboard */; };
 		BCD920201C6BA6AC0089F52A /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9201F1C6BA6AC0089F52A /* CurrencyTests.swift */; };
 		BCD9202B1C6BA6AC0089F52A /* CurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9202A1C6BA6AC0089F52A /* CurrencyUITests.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
 		BCE0A6681C8200CC0093AC38 /* ChangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */; };
+		BCFAE40F1C965D8B00DCE95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCFAE40E1C965D8B00DCE95D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +142,6 @@
 		BCD9200C1C6BA6AC0089F52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Currency.xcdatamodel; sourceTree = "<group>"; };
 		BCD920111C6BA6AC0089F52A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BCD920141C6BA6AC0089F52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCD920161C6BA6AC0089F52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD9201B1C6BA6AC0089F52A /* CurrencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD9201F1C6BA6AC0089F52A /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		BCD9202C1C6BA6AC0089F52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorButton.swift; path = "UI Classes/CalculatorButton.swift"; sourceTree = "<group>"; };
 		BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeCurrencyViewController.swift; sourceTree = "<group>"; };
+		BCFAE40E1C965D8B00DCE95D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,7 +288,7 @@
 				BCE0A6551C8185CC0093AC38 /* UI Classes */,
 				BCE0A6541C8185C10093AC38 /* Models */,
 				BCD9200B1C6BA6AC0089F52A /* Main.storyboard */,
-				BCD920131C6BA6AC0089F52A /* LaunchScreen.storyboard */,
+				BCFAE40E1C965D8B00DCE95D /* LaunchScreen.storyboard */,
 				BCD920161C6BA6AC0089F52A /* Info.plist */,
 				BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */,
 			);
@@ -485,7 +485,6 @@
 				BC8B3CD11C954E250017CC1C /* buttonSubtractIconHighlighted.png in Resources */,
 				BC8B3CBA1C954E250017CC1C /* buttonAddBackground@2x.png in Resources */,
 				BC8B3CCA1C954E250017CC1C /* buttonResultIconHighlighted@3x.png in Resources */,
-				BCD920151C6BA6AC0089F52A /* LaunchScreen.storyboard in Resources */,
 				BC8B3CD41C954E250017CC1C /* buttonSwitchBackground.png in Resources */,
 				BC8B3CDB1C954E250017CC1C /* buttonSwitchIconHighlighted@2x.png in Resources */,
 				BCD920121C6BA6AC0089F52A /* Assets.xcassets in Resources */,
@@ -496,6 +495,7 @@
 				BC8B3CD31C954E250017CC1C /* buttonSubtractIconHighlighted@3x.png in Resources */,
 				BC8B3CCC1C954E250017CC1C /* buttonSubtractBackground@2x.png in Resources */,
 				BC8B3CD61C954E250017CC1C /* buttonSwitchBackground@3x.png in Resources */,
+				BCFAE40F1C965D8B00DCE95D /* LaunchScreen.storyboard in Resources */,
 				BCD9200D1C6BA6AC0089F52A /* Main.storyboard in Resources */,
 				BC8B3CD21C954E250017CC1C /* buttonSubtractIconHighlighted@2x.png in Resources */,
 			);
@@ -639,14 +639,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BCD920131C6BA6AC0089F52A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCD920141C6BA6AC0089F52A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -736,6 +728,7 @@
 			baseConfigurationReference = 19EB43FCFC362B9564CD0798 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Images";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -752,6 +745,7 @@
 			baseConfigurationReference = 64DBF81E56746D141A99F0FC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Images";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
