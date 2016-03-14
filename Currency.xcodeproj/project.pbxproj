@@ -282,8 +282,8 @@
 			children = (
 				BCD920111C6BA6AC0089F52A /* Assets.xcassets */,
 				BCD920071C6BA6AC0089F52A /* AppDelegate.swift */,
-				BCD920091C6BA6AC0089F52A /* MainViewController.swift */,
 				BCE0A6671C8200CC0093AC38 /* ChangeCurrencyViewController.swift */,
+				BCD920091C6BA6AC0089F52A /* MainViewController.swift */,
 				BCD26BF61C87D95B00523273 /* Classes */,
 				BCE0A6551C8185CC0093AC38 /* UI Classes */,
 				BCE0A6541C8185C10093AC38 /* Models */,

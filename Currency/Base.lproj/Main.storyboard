@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
+                                <rect key="frame" x="64" y="20" width="516" height="88"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
+                                <color key="textColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
                                 <rect key="frame" x="20" y="20" width="560" height="88"/>
                                 <gestureRecognizers/>
@@ -26,23 +33,8 @@
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Qja-Te-wIY" appends="YES" id="tPT-Xc-Q7a"/>
+                                    <outletCollection property="gestureRecognizers" destination="aPd-Tz-Kd5" appends="YES" id="DSx-WP-fRu"/>
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
-                                <rect key="frame" x="64" y="20" width="516" height="88"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
-                                <rect key="frame" x="20" y="108" width="560" height="88"/>
-                                <state key="normal" title="GBP">
-                                    <color key="titleColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
@@ -51,6 +43,17 @@
                                 <color key="textColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
+                                <rect key="frame" x="20" y="108" width="560" height="88"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="GBP">
+                                    <color key="titleColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="37l-L7-qu4" appends="YES" id="NOt-7W-aO1"/>
+                                    <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih">
                                 <rect key="frame" x="0.0" y="196" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,6 +365,16 @@
                         <action selector="swipedInput:" destination="BYZ-38-t0r" id="NtI-ws-FNA"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="aPd-Tz-Kd5">
+                    <connections>
+                        <action selector="longPressedInput:" destination="BYZ-38-t0r" id="oRv-Ru-KF7"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="37l-L7-qu4">
+                    <connections>
+                        <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="A3H-ne-b6e"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="359" y="96"/>
         </scene>

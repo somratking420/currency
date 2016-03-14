@@ -89,6 +89,19 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
+    @IBAction func longPressedInput(sender: UIGestureRecognizer) {
+        if sender.state == .Began {
+            UIPasteboard.generalPasteboard().string = inputCurrencyLabel.text
+            print("Copied input currency value to clipboard.")
+        }
+    }
+    
+    @IBAction func longPressedOutput(sender: UIGestureRecognizer) {
+        if sender.state == .Began {
+            UIPasteboard.generalPasteboard().string = outputCurrencyLabel.text
+            print("Copied output currency value to clipboard.")
+        }
+    }
     
     func updateInterface() {
         inputCurrencyLabel.text = converter.inputValue()
