@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     
     var converter = Converter()
     var calculator = Calculator()
+    var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
     @IBOutlet weak var inputCurrencyLabel: UILabel!
     @IBOutlet weak var outputCurrencyLabel: UILabel!
@@ -29,6 +30,19 @@ class MainViewController: UIViewController {
         view.layer.cornerRadius = 3.0
         view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         view.clipsToBounds = true
+        
+        if let currencyCode = prefs.stringForKey("input") {
+            converter.setInputCurrency(currencyCode)
+            updateInterface()
+            print("Used saved input currency: \(currencyCode)")
+        }
+        
+        if let currencyCode = prefs.stringForKey("output") {
+            converter.setOutputCurrency(currencyCode)
+            updateInterface()
+            print("Used saved output currency: \(currencyCode)")
+        }
+        
     }
 
     @IBAction func digitPressed(sender: UIButton) {
@@ -79,6 +93,8 @@ class MainViewController: UIViewController {
     func updateInterface() {
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
+        inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
+        outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.setBackgroundImage(nil, forState: .Normal)
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         minusButton.setBackgroundImage(nil, forState: .Normal)
@@ -112,12 +128,14 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {
         if targetCurrency == "input" {
             converter.setInputCurrency(currencyCode)
-            inputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
+            updateInterface()
+            prefs.setObject(currencyCode, forKey: "input")
             print("Input currency updated to: \(currencyCode)")
         }
         if targetCurrency == "output" {
             converter.setOutputCurrency(currencyCode)
-            outputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
+            updateInterface()
+            prefs.setObject(currencyCode, forKey: "output")
             print("Output currency updated to: \(currencyCode)")
         }
         updateInterface()
