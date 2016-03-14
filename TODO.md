@@ -14,3 +14,4 @@
 - App Store description.
 - App promotional website.
 - App domain.
+- Swipe to delete last digit.
