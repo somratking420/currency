@@ -7,4 +7,3 @@
 - Settings option for muting sounds.
 - Copy input value.
 - Copy output value.
-- Splash screen.
