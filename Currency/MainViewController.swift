@@ -31,12 +31,16 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         view.clipsToBounds = true
         
+        // If we have the last input currency used saved on the preferences
+        // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
             converter.setInputCurrency(currencyCode)
             updateInterface()
             print("Used saved input currency: \(currencyCode)")
         }
         
+        // If we have the last input currency used saved on the preferences
+        // file, let's use it.
         if let currencyCode = prefs.stringForKey("output") {
             converter.setOutputCurrency(currencyCode)
             updateInterface()
@@ -62,20 +66,34 @@ class MainViewController: UIViewController {
     
     @IBAction func addPressed(sender: UIButton) {
         calculator.newAddition(Double(converter.input)!)
+        // Update the input label with the latest calculation,
+        // at this point stored as the initial value.
         converter.input = String(calculator.initialValue)
         updateInterface()
-        converter.input = "0"
+        // Keep this button highlighted after it's pressed so the user
+        // knows a new operation has begun.
         sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
+        // Set the converter input to zero without updating the interface,
+        // as the user is going to input the value to be added next and expects
+        // the new number to appear on screen.
+        converter.input = "0"
     }
     
     @IBAction func minusPressed(sender: UIButton) {
         calculator.newSubtraction(Double(converter.input)!)
+        // Update the input label with the latest calculation,
+        // at this point stored as the initial value.
         converter.input = String(calculator.initialValue)
         updateInterface()
-        converter.input = "0"
+        // Keep this button highlighted after it's pressed so the user
+        // knows a new operation has begun.
         sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
         sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
+        // Set the converter input to zero without updating the interface,
+        // as the user is going to input the value to be subtracted next and expects
+        // the new number to appear on screen.
+        converter.input = "0"
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
@@ -85,11 +103,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func swipedInput(sender: AnyObject) {
+        // If a user swipes on the input label, remove on digit.
+        // The iOS native calculator app also has this hidden feature.
         converter.removeLastInput()
         updateInterface()
     }
     
     @IBAction func longPressedInput(sender: UIGestureRecognizer) {
+        // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
             UIPasteboard.generalPasteboard().string = inputCurrencyLabel.text
             print("Copied input currency value to clipboard.")
@@ -97,6 +118,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func longPressedOutput(sender: UIGestureRecognizer) {
+        // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
             UIPasteboard.generalPasteboard().string = outputCurrencyLabel.text
             print("Copied output currency value to clipboard.")
@@ -104,6 +126,7 @@ class MainViewController: UIViewController {
     }
     
     func updateInterface() {
+        // Update all visible labels and reset buttons to their default styles.
         inputCurrencyLabel.text = converter.inputValue()
         outputCurrencyLabel.text = converter.outputValue()
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
@@ -118,17 +141,20 @@ class MainViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        // Pass the currency we are changing (input or output) and
+        // the current currency code to the Change Currency View Controller.
+        
         if segue.identifier == "ChangeInputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "input"
-            changeCurrencyViewController.selectedCurrency = inputCurrencyCodeButton.titleLabel!.text
+            changeCurrencyViewController.selectedCurrency = converter.inputCurrency.code
             changeCurrencyViewController.delegate = self
         }
         
         if segue.identifier == "ChangeOutputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "output"
-            changeCurrencyViewController.selectedCurrency = outputCurrencyCodeButton.titleLabel!.text
+            changeCurrencyViewController.selectedCurrency = converter.outputCurrency.code
             changeCurrencyViewController.delegate = self
         }
         
@@ -140,16 +166,18 @@ class MainViewController: UIViewController {
 
 extension MainViewController: ChangeCurrencyViewControllerDelegate {
     
+    // After selecting a new currency from the Change Currency View Controller,
+    // set it as the new currency and update the interface.
+    // At this point, also save it to the user preferences file.
+    
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {
         if targetCurrency == "input" {
             converter.setInputCurrency(currencyCode)
-            updateInterface()
             prefs.setObject(currencyCode, forKey: "input")
             print("Input currency updated to: \(currencyCode)")
         }
         if targetCurrency == "output" {
             converter.setOutputCurrency(currencyCode)
-            updateInterface()
             prefs.setObject(currencyCode, forKey: "output")
             print("Output currency updated to: \(currencyCode)")
         }
