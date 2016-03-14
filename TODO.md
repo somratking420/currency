@@ -8,7 +8,3 @@
 - Copy input value.
 - Copy output value.
 - Splash screen.
-- Marketing images.
-- App Store description.
-- App promotional website.
-- App domain.
