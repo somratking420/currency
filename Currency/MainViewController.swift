@@ -123,6 +123,8 @@ class MainViewController: UIViewController {
     
 }
 
+// MARK: - Delegate
+
 extension MainViewController: ChangeCurrencyViewControllerDelegate {
     
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {

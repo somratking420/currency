@@ -55,6 +55,8 @@ class ChangeCurrencyViewController: UIViewController {
     
 }
 
+// MARK: - Table View
+
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -104,6 +106,8 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
 }
+
+// MARK: - Search
 
 extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDelegate {
     
