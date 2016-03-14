@@ -2,15 +2,15 @@
 
 ![View of the Currency app for iOS running on an iPhone](http://f.cl.ly/items/1V1t3V1T140z2N0M1415/currency.jpg)
 
-This project is a fun currency converter app, built by a designer learning iOS development in Swift, hitting the App Store as soon as possible. Free to download, open to contributions.
+This project is to-be a fun currency converter app, built by a designer learning iOS development in Swift. It will be hitting the App Store as soon as possible. Free.
 
 ## Swift
 
-This project is written in the Apple Swift version 2.1.1
+This project is written in the Apple Swift version 2.1.1, I hope you're cool with that.
 
 ## Motivation
 
-This project is a learning exercise in Swift programming. With the open sourcing the code base I seek primarily to get feedback and critique on my code base but also to allow others to contribute to the project.
+This project is a learning exercise in Swift programming. I seek primarily to get feedback and critique on the code written for this project, but feedback on the overall design and idea is also welcome.
 
 ## Installation
 
@@ -46,8 +46,8 @@ There are no tests written for this application so far.
 
 ## Tasks
 
-There is a plain text file included in the repository with the current list of tasks to do. This is temporary.
+There is a plain text file included in the repository with the current list of tasks to do.
 
 ## Contributors
 
-The best contribution to this project right now is in the form of feedback. Either comment the code base, on the commits, or open issues. I will reply to all feedback as quickly as possible. If you are interested in contributing directly to the code base, please open a pull request and explain the changes. If you have more questions please contact me on Twitter at [@nunosans](http://twitter.com/nunosans).
+The best contribution to this project right now is by code revewing the project and by sending any bugs you find or general feedback you have. For code reviews, either comment the code base, the commits, open issues or just message me directly. I will reply to all feedback as quickly as possible. If don't have my contact details, I'm [@nunosans](http://twitter.com/nunosans) on Twitter, you can add and message me on Facebook: [fb.com/nunosans](http://fb.com/nunosans/) or email me at [nuno@nunocoelhosantos.com](mailto:nuno@nunocoelhosantos.com).
