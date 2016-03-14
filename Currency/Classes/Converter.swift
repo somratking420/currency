@@ -114,6 +114,11 @@ class Converter {
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             
+            guard data != nil else {
+                print("Error performing Yahoo query.")
+                return
+            }
+            
             let xml = SWXMLHash.parse(data!)
             
             guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
