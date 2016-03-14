@@ -7,7 +7,6 @@
 - Settings option for muting sounds.
 - Copy input value.
 - Copy output value.
-- App icon.
 - Splash screen.
 - Marketing images.
 - App Store description.
