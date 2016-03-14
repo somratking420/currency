@@ -113,10 +113,12 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
         if targetCurrency == "input" {
             converter.setInputCurrency(currencyCode)
             inputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
+            print("Input currency updated to: \(currencyCode)")
         }
         if targetCurrency == "output" {
             converter.setOutputCurrency(currencyCode)
             outputCurrencyCodeButton.setTitle(currencyCode, forState: .Normal)
+            print("Output currency updated to: \(currencyCode)")
         }
         updateInterface()
     }

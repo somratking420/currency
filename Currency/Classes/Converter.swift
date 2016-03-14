@@ -65,6 +65,7 @@ class Converter {
         inputCurrency.code = currency.code
         inputCurrency.locale = currency.locale
         inputCurrency.symbol = currency.symbol
+        inputCurrency.rate = currency.rate
         requestUpdateForCurrencyExchangeRate(currency.code)
         print("Set input currency to: \(currencyCode).")
     }
@@ -74,6 +75,7 @@ class Converter {
         outputCurrency.code = currency.code
         outputCurrency.locale = currency.locale
         outputCurrency.symbol = currency.symbol
+        outputCurrency.rate = currency.rate
         requestUpdateForCurrencyExchangeRate(currency.code)
         print("Set output currency to: \(currencyCode).")
     }
