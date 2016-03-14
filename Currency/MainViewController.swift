@@ -70,6 +70,11 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
+    @IBAction func swipedInput(sender: AnyObject) {
+        converter.removeLastInput()
+        updateInterface()
+    }
+    
     
     func updateInterface() {
         inputCurrencyLabel.text = converter.inputValue()

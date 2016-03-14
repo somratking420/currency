@@ -81,6 +81,20 @@ class Converter {
     func swapInputWithOutput() {
         
     }
+    
+    func removeLastInput() {
+        if input == "0" {
+            print("Value string is already zero.")
+            return
+        }
+        if input.characters.count == 1 {
+            input = "0"
+            print("Converter input value: \(input)")
+            return
+        }
+        input = String(input.characters.dropLast())
+        print("Converter input value: \(input)")
+    }
 
     func reset() {
         input = "0";
