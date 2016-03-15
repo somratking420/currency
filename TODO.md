@@ -2,6 +2,13 @@
 - If user changes the input currency to be the same as the output currency, or vice versa, swap them.
 - Animate input and output currencies when swap button is pressed.
 - Add lastSelected: NSDate attribute to Currency model.
+  - Create new model version.
+  - Add new attribute to new model version.
+  - Comment out code to clone database.
+  - Reset simulator.
+  - Populate database with initial data on launch.
+  - Copy similator database to bundle.
+  - Uncomment code to clone database.
 - Update lastSelected attribute with current date when selected.
 - Show a new section with 5 last selected currencies at top of currencies list.
 - Add different piano key sounds to the different keypad buttons.
