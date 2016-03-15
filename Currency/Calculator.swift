@@ -11,24 +11,24 @@ import Foundation
 class Calculator {
     
     var initialValue: Double
-    var operation: String?
+    var operationSymbol: String?
     
     init() {
         initialValue = 0
-        operation = nil
+        operationSymbol = nil
     }
     
     func calculate(number:Double) -> Double {
-        if let operationSymbol = operation {
+        if let operation = operationSymbol {
             var result:Double = initialValue
-            if operationSymbol == "+" {
+            if operation == "+" {
                 result = initialValue + number
             }
-            if operationSymbol == "-" {
+            if operation == "-" {
                 result = initialValue - number
             }
             initialValue = result
-            operation = nil
+            operationSymbol = nil
             return result
         }
         return number
@@ -36,17 +36,17 @@ class Calculator {
     
     func newAddition(number: Double) {
         initialValue = calculate(number)
-        operation = "+"
+        operationSymbol = "+"
     }
     
     func newSubtraction(number: Double) {
         initialValue = calculate(number)
-        operation = "-"
+        operationSymbol = "-"
     }
     
     func reset() {
         initialValue = 0
-        operation = nil
+        operationSymbol = nil
     }
     
 }
