@@ -21,12 +21,12 @@ class Calculator {
     }
     
     func calculate(number:Double) -> Double {
-        if let operation = operationSymbol {
+        if operationInProgress {
             var result:Double = initialValue
-            if operation == "+" {
+            if operationSymbol == "+" {
                 result = initialValue + number
             }
-            if operation == "-" {
+            if operationSymbol == "-" {
                 result = initialValue - number
             }
             initialValue = result
