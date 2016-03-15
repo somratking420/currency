@@ -31,21 +31,30 @@ class Calculator {
             }
             initialValue = result
             operationSymbol = nil
+            operationInProgress = false
             return result
         }
         return number
     }
     
-    func newAddition(number: Double) {
+    func newAddition(number: Double) -> Bool {
+        if operationInProgress {
+            return false
+        }
         initialValue = calculate(number)
         operationSymbol = "+"
         operationInProgress = true
+        return true
     }
     
-    func newSubtraction(number: Double) {
+    func newSubtraction(number: Double) -> Bool {
+        if operationInProgress {
+            return false
+        }
         initialValue = calculate(number)
         operationSymbol = "-"
         operationInProgress = true
+        return true
     }
     
     func reset() {
