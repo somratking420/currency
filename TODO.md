@@ -1,7 +1,13 @@
-- Swap input and output currencies.
-- Show 5 most recent currencies at top of currencies list.
+- Swap input and output currencies when swap button is pressed.
 - If user changes the input currency to be the same as the output currency, or vice versa, swap them.
-- Sounds.
-- Settings option for muting sounds.
-- Copy input value.
-- Copy output value.
+- Animate input and output currencies when swap button is pressed.
+- Add lastSelected: NSDate attribute to Currency model.
+- Update lastSelected attribute with current date when selected.
+- Show a new section with 5 last selected currencies at top of currencies list.
+- Add different piano key sounds to the different keypad buttons.
+- Add a Settings option for muting sounds.
+- Add a Settings button to rate app on App Store.
+- Add about copy to Settings view.
+- Show popover to copy input value.
+- Show popover to copy output value.
+- Replace UISearchDisplayController with UISearchController.
