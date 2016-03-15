@@ -64,55 +64,42 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    @IBAction func switchPressed(sender: UIButton) {
-        converter.swapInputWithOutput()
-        if calculator.operationInProgress {
-            
-        }
-    }
-    
     @IBAction func addPressed(sender: UIButton) {
-        if calculator.newAddition(Double(converter.input)!) {
-            // Update the input label with the latest calculation,
-            // at this point stored as the initial value.
-            converter.input = String(calculator.initialValue)
-            updateInterface()
-            // Keep this button highlighted after it's pressed so the user
-            // knows a new operation has begun.
-            sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
-            sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
-            // Set the converter input to zero without updating the interface,
-            // as the user is going to input the value to be added next and expects
-            // the new number to appear on screen.
-            converter.input = "0"
-        }
+        calculator.newAddition(Double(converter.input)!)
+        // Update the input label with the latest calculation,
+        // at this point stored as the initial value.
+        converter.input = String(calculator.initialValue)
+        updateInterface()
+        // Keep this button highlighted after it's pressed so the user
+        // knows a new operation has begun.
+        sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
+        // Set the converter input to zero without updating the interface,
+        // as the user is going to input the value to be added next and expects
+        // the new number to appear on screen.
+        converter.input = "0"
     }
     
     @IBAction func minusPressed(sender: UIButton) {
-        if calculator.newSubtraction(Double(converter.input)!) {
-            // Update the input label with the latest calculation,
-            // at this point stored as the initial value.
-            converter.input = String(calculator.initialValue)
-            updateInterface()
-            // Keep this button highlighted after it's pressed so the user
-            // knows a new operation has begun.
-            sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
-            sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
-            // Set the converter input to zero without updating the interface,
-            // as the user is going to input the value to be subtracted next and expects
-            // the new number to appear on screen.
-            converter.input = "0"
-        }
+        calculator.newSubtraction(Double(converter.input)!)
+        // Update the input label with the latest calculation,
+        // at this point stored as the initial value.
+        converter.input = String(calculator.initialValue)
+        updateInterface()
+        // Keep this button highlighted after it's pressed so the user
+        // knows a new operation has begun.
+        sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
+        sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
+        // Set the converter input to zero without updating the interface,
+        // as the user is going to input the value to be subtracted next and expects
+        // the new number to appear on screen.
+        converter.input = "0"
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
         let result = calculator.calculate(Double(converter.input)!)
         converter.input = String(Int(result))
         updateInterface()
-        addButton.setBackgroundImage(nil, forState: .Normal)
-        addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
-        minusButton.setBackgroundImage(nil, forState: .Normal)
-        minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
     }
     
     @IBAction func swipedInput(sender: AnyObject) {
@@ -144,6 +131,10 @@ class MainViewController: UIViewController {
         outputCurrencyLabel.text = converter.outputValue()
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
+        addButton.setBackgroundImage(nil, forState: .Normal)
+        addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
+        minusButton.setBackgroundImage(nil, forState: .Normal)
+        minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
     }
     
     // MARK: - Segue
