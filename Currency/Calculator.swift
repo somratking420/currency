@@ -12,10 +12,12 @@ class Calculator {
     
     var initialValue: Double
     var operationSymbol: String?
+    var operationInProgress: Bool
     
     init() {
         initialValue = 0
         operationSymbol = nil
+        operationInProgress = false
     }
     
     func calculate(number:Double) -> Double {
@@ -37,16 +39,19 @@ class Calculator {
     func newAddition(number: Double) {
         initialValue = calculate(number)
         operationSymbol = "+"
+        operationInProgress = true
     }
     
     func newSubtraction(number: Double) {
         initialValue = calculate(number)
         operationSymbol = "-"
+        operationInProgress = true
     }
     
     func reset() {
         initialValue = 0
         operationSymbol = nil
+        operationInProgress = false
     }
     
 }
