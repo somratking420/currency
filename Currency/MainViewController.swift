@@ -98,10 +98,6 @@ class MainViewController: UIViewController {
         // knows a new operation has begun.
         sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
         sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
-        // Set the converter input to zero without updating the interface,
-        // as the user is going to input the value to be subtracted next and expects
-        // the new number to appear on screen.
-        converter.input = 0
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
