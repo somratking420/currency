@@ -89,6 +89,7 @@
 		64DBF81E56746D141A99F0FC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8433CA71619EB07E2995B7D5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6B29BE1C8AAD780011CCAE /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Currency.swift; path = Models/Currency.swift; sourceTree = "<group>"; };
+		BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 3.xcdatamodel"; sourceTree = "<group>"; };
 		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
 		BC8B3C051C9545F10017CC1C /* CalculatorAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorAddButton.swift; sourceTree = "<group>"; };
 		BC8B3C071C9545FC0017CC1C /* CalculatorSubtractButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorSubtractButton.swift; sourceTree = "<group>"; };
@@ -850,10 +851,11 @@
 		BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */,
 				BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */,
 				BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */,
 			);
-			currentVersion = BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */;
+			currentVersion = BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */;
 			path = Currency.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
