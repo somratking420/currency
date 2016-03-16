@@ -176,12 +176,24 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
     
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {
         if targetCurrency == "input" {
-            converter.setInputCurrency(currencyCode)
+            // If user changes input currency to be the same as the
+            // output currency, swap them.
+            if currencyCode == converter.outputCurrency.code {
+                converter.swapInputWithOutput(true)
+            } else {
+                converter.setInputCurrency(currencyCode)
+            }
             prefs.setObject(currencyCode, forKey: "input")
             print("Input currency updated to: \(currencyCode)")
         }
         if targetCurrency == "output" {
-            converter.setOutputCurrency(currencyCode)
+            // If user changes output currency to be the same as the
+            // input currency, swap them.
+            if currencyCode == converter.inputCurrency.code {
+                converter.swapInputWithOutput(true)
+            } else {
+                converter.setOutputCurrency(currencyCode)
+            }
             prefs.setObject(currencyCode, forKey: "output")
             print("Output currency updated to: \(currencyCode)")
         }
