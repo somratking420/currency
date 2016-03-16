@@ -37,7 +37,7 @@
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0.00" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
                                 <rect key="frame" x="64" y="108.5" width="516" height="88.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
                                 <color key="textColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
