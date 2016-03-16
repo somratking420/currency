@@ -133,7 +133,13 @@ class Converter {
         
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
-        let formattedPriceString = formatter.stringFromNumber(value)
+        var formattedPriceString: String! = formatter.stringFromNumber(value)
+        let formattedPriceStringLastCharacters: String! = String(formattedPriceString.characters.suffix(3))
+        
+        if (formattedPriceStringLastCharacters == ".00") {
+            formattedPriceString = String(formattedPriceString.characters.dropLast(3))
+        }
+        
         return formattedPriceString!
     }
 
