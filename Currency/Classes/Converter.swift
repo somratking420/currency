@@ -13,8 +13,8 @@ import SWXMLHash
 class Converter {
 
     var input: Double
-    var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?)
-    var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?)
+    var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
+    var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
     
     init() {
         input = 0
@@ -23,11 +23,13 @@ class Converter {
         inputCurrency.rate = 113.81;
         inputCurrency.locale = "ja_JP"
         inputCurrency.symbol = "¥"
+        inputCurrency.decimals = 0
         
         outputCurrency.code = "GBP";
         outputCurrency.rate = 0.71;
         outputCurrency.locale = "en_GB"
         outputCurrency.symbol = "£"
+        outputCurrency.decimals = 2
         
         requestUpdateForCurrencyExchangeRate(inputCurrency.code)
         requestUpdateForCurrencyExchangeRate(outputCurrency.code)
@@ -35,12 +37,12 @@ class Converter {
 
     func inputValue() -> String {
         let inputValue: Double = input
-        return convertToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol)
+        return convertToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
     }
 
     func outputValue() -> String {
         let outputValue: Double = convertToOutputCurrency(input)
-        return convertToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol)
+        return convertToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
     }
     
     func convertToInputCurrency(number: Double) -> Double {
@@ -79,6 +81,7 @@ class Converter {
         inputCurrency.locale = currency.locale
         inputCurrency.symbol = currency.symbol
         inputCurrency.rate = currency.rate
+        inputCurrency.decimals = currency.decimals
         requestUpdateForCurrencyExchangeRate(currency.code)
     }
 
@@ -88,6 +91,7 @@ class Converter {
         outputCurrency.locale = currency.locale
         outputCurrency.symbol = currency.symbol
         outputCurrency.rate = currency.rate
+        outputCurrency.decimals = currency.decimals
         requestUpdateForCurrencyExchangeRate(currency.code)
     }
 
@@ -118,7 +122,7 @@ class Converter {
         input = 0
     }
 
-    private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?) -> String {
+    private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
@@ -134,10 +138,12 @@ class Converter {
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         var formattedPriceString: String! = formatter.stringFromNumber(value)
-        let formattedPriceStringLastCharacters: String! = String(formattedPriceString.characters.suffix(3))
         
-        if (formattedPriceStringLastCharacters == ".00") {
-            formattedPriceString = String(formattedPriceString.characters.dropLast(3))
+        if decimals == 2 {
+            let formattedPriceStringLastCharacters: String! = String(formattedPriceString.characters.suffix(3))
+            if (formattedPriceStringLastCharacters == ".00" || formattedPriceStringLastCharacters == ",00") {
+                formattedPriceString = String(formattedPriceString.characters.dropLast(3))
+            }
         }
         
         return formattedPriceString!
@@ -221,7 +227,7 @@ class Converter {
         
     }
     
-    private func getCurrencyRecord(currencyCode: String) -> (name: String, code: String, rate: Double, locale: String?, symbol: String?)  {
+    private func getCurrencyRecord(currencyCode: String) -> (name: String, code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)  {
         
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
@@ -241,9 +247,14 @@ class Converter {
             fatalError("Error fetching currency: \(error)")
         }
         
-        let rate:Double! = Double(currency.rateFromUSD!)
+        let name: String = currency.name!
+        let code: String = currencyCode
+        let rate: Double = Double(currency.rateFromUSD!)
+        let locale: String = currency.locale!
+        let symbol: String = currency.symbol!
+        let decimals: Int = Int(currency.decimals!)
         
-        return(currency.name!, currencyCode, rate, currency.locale, currency.symbol)
+        return(name, code, rate, locale, symbol, decimals)
     
     }
 
