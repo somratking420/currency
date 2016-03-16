@@ -83,6 +83,7 @@ class Converter {
         inputCurrency.rate = currency.rate
         inputCurrency.decimals = currency.decimals
         requestUpdateForCurrencyExchangeRate(currency.code)
+        recordAsSelected(currency.code)
     }
 
     func setOutputCurrency(currencyCode: String) {
@@ -93,6 +94,7 @@ class Converter {
         outputCurrency.rate = currency.rate
         outputCurrency.decimals = currency.decimals
         requestUpdateForCurrencyExchangeRate(currency.code)
+        recordAsSelected(currency.code)
     }
 
     func swapInputWithOutput(convertInput: Bool) {
@@ -224,6 +226,40 @@ class Converter {
         }
         
         print("Currency \(currencyCode) updated with the rate: \(rate)")
+        
+    }
+    
+    func recordAsSelected(currencyCode: String) {
+        
+        // CoreData setup.
+        let managedObjectContext: NSManagedObjectContext!
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
+        var currency: Currency
+        
+        // CoreData fetching.
+        let fetch = NSFetchRequest(entityName: "Currency")
+        let predicate = NSPredicate(format: "%K == %@", "code", currencyCode)
+        fetch.predicate = predicate
+        fetch.fetchLimit = 1
+        
+        do {
+            currency = try managedObjectContext.executeFetchRequest(fetch).first as! Currency
+        } catch {
+            fatalError("Error fetching currency: \(error)")
+        }
+        
+        // Update object.
+        currency.setValue(NSDate(), forKey: "lastSelected")
+        
+        // CoreData save.
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Error saving currency: \(error)")
+        }
+        
+        print("Currency \(currencyCode) last selected at: \(NSDate())")
         
     }
     

@@ -180,6 +180,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
             // output currency, swap them.
             if currencyCode == converter.outputCurrency.code {
                 converter.swapInputWithOutput(true)
+                converter.recordAsSelected(currencyCode)
             } else {
                 converter.setInputCurrency(currencyCode)
             }
@@ -191,6 +192,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
             // input currency, swap them.
             if currencyCode == converter.inputCurrency.code {
                 converter.swapInputWithOutput(true)
+                converter.recordAsSelected(currencyCode)
             } else {
                 converter.setOutputCurrency(currencyCode)
             }

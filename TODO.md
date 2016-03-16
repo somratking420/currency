@@ -1,5 +1,4 @@
 - Animate input and output currencies when swap button is pressed.
-- Update lastSelected attribute with current date when selected.
 - Show a new section with 5 last selected currencies at top of currencies list.
 - Add different piano key sounds to the different keypad buttons.
 - Add a Settings option for muting sounds.
