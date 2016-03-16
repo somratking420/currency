@@ -36,7 +36,6 @@ class MainViewController: UIViewController {
         if let currencyCode = prefs.stringForKey("input") {
             converter.setInputCurrency(currencyCode)
             updateInterface()
-            print("Used saved input currency: \(currencyCode)")
         }
         
         // If we have the last input currency used saved on the preferences
@@ -44,7 +43,6 @@ class MainViewController: UIViewController {
         if let currencyCode = prefs.stringForKey("output") {
             converter.setOutputCurrency(currencyCode)
             updateInterface()
-            print("Used saved output currency: \(currencyCode)")
         }
         
     }
@@ -54,7 +52,11 @@ class MainViewController: UIViewController {
             print("Error setting digit value.")
             return
         }
-        converter.addInput(digit)
+        if calculator.settingNewValue {
+            converter.input = 0
+            calculator.settingNewValue = false
+        }
+        converter.addInput(Double(digit)!)
         updateInterface()
     }
 
@@ -64,27 +66,33 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
+    @IBAction func switchPressed(sender: AnyObject) {
+        calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
+        if calculator.operationInProgress && !calculator.settingNewValue {
+            converter.swapInputWithOutput(false)
+        } else {
+            converter.swapInputWithOutput(true)
+        }
+        updateInterface()
+    }
+    
     @IBAction func addPressed(sender: UIButton) {
-        calculator.newAddition(Double(converter.input)!)
+        calculator.newAddition(converter.input)
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input = String(calculator.initialValue)
+        converter.input = calculator.initialValue
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
-        // Set the converter input to zero without updating the interface,
-        // as the user is going to input the value to be added next and expects
-        // the new number to appear on screen.
-        converter.input = "0"
     }
     
     @IBAction func minusPressed(sender: UIButton) {
-        calculator.newSubtraction(Double(converter.input)!)
+        calculator.newSubtraction(converter.input)
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input = String(calculator.initialValue)
+        converter.input = calculator.initialValue
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
@@ -93,12 +101,12 @@ class MainViewController: UIViewController {
         // Set the converter input to zero without updating the interface,
         // as the user is going to input the value to be subtracted next and expects
         // the new number to appear on screen.
-        converter.input = "0"
+        converter.input = 0
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
-        let result = calculator.calculate(Double(converter.input)!)
-        converter.input = String(Int(result))
+        let result = calculator.calculate(converter.input)
+        converter.input = Double(result)
         updateInterface()
     }
     

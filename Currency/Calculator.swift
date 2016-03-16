@@ -13,14 +13,21 @@ class Calculator {
     var initialValue: Double
     var operationSymbol: String?
     var operationInProgress: Bool
+    var settingNewValue: Bool
     
     init() {
         initialValue = 0
         operationSymbol = nil
         operationInProgress = false
+        settingNewValue = false
     }
     
     func calculate(number:Double) -> Double {
+        if settingNewValue {
+            let result = initialValue
+            reset()
+            return result
+        }
         if operationInProgress {
             var result:Double = initialValue
             if operationSymbol == "+" {
@@ -29,28 +36,32 @@ class Calculator {
             if operationSymbol == "-" {
                 result = initialValue - number
             }
+            reset()
             initialValue = result
-            operationSymbol = nil
             return result
         }
+        reset()
         return number
     }
     
     func newAddition(number: Double) {
         initialValue = calculate(number)
         operationSymbol = "+"
+        settingNewValue = true
         operationInProgress = true
     }
     
     func newSubtraction(number: Double) {
         initialValue = calculate(number)
         operationSymbol = "-"
+        settingNewValue = true
         operationInProgress = true
     }
     
     func reset() {
         initialValue = 0
         operationSymbol = nil
+        settingNewValue = false
         operationInProgress = false
     }
     

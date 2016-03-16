@@ -12,12 +12,12 @@ import SWXMLHash
 
 class Converter {
 
-    var input: String
+    var input: Double
     var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?)
     var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?)
     
     init() {
-        input = "0"
+        input = 0
         
         inputCurrency.code = "JPY";
         inputCurrency.rate = 113.81;
@@ -34,30 +34,43 @@ class Converter {
     }
 
     func inputValue() -> String {
-        let inputValue: Double = Double(input)!
+        let inputValue: Double = input
         return convertToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol)
     }
 
     func outputValue() -> String {
-        let outputValue: Double = (Double(input)! / inputCurrency.rate) * outputCurrency.rate
+        let outputValue: Double = convertToOutputCurrency(input)
         return convertToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol)
     }
+    
+    func convertToInputCurrency(number: Double) -> Double {
+        let result: Double = (number / outputCurrency.rate) * inputCurrency.rate
+        return result
+    }
+    
+    func convertToOutputCurrency(number: Double) -> Double {
+        let result: Double = (number / inputCurrency.rate) * outputCurrency.rate
+        return result
+    }
 
-    func addInput(string: String) {
-        if input == "0" && string == "0" {
+    func addInput(newInput: Double) {
+        if input == 0.0 && newInput == 0.0 {
             print("Value string is already zero or empty.")
             return
         }
-        if input == "0" && string != "0" {
-            input = string
+        if input == 0.0 && newInput != 0.0 {
+            input = newInput
             return
         }
-        if input.characters.count >= 10 {
+        if input >= 99999999.99 {
             print("Input string is too long.")
             return
         }
-        input = input + string
-        print("Converter input value: \(input)")
+        
+        var inputString:String = String(Int(input))
+        let newInputString:String = String(Int(newInput))
+        inputString = inputString + newInputString
+        input = Double(inputString)!
     }
 
     func setInputCurrency(currencyCode: String) {
@@ -67,7 +80,6 @@ class Converter {
         inputCurrency.symbol = currency.symbol
         inputCurrency.rate = currency.rate
         requestUpdateForCurrencyExchangeRate(currency.code)
-        print("Set input currency to: \(currencyCode).")
     }
 
     func setOutputCurrency(currencyCode: String) {
@@ -77,29 +89,33 @@ class Converter {
         outputCurrency.symbol = currency.symbol
         outputCurrency.rate = currency.rate
         requestUpdateForCurrencyExchangeRate(currency.code)
-        print("Set output currency to: \(currencyCode).")
     }
 
-    func swapInputWithOutput() {
-        
+    func swapInputWithOutput(convertInput: Bool) {
+        if convertInput {
+            input = self.convertToOutputCurrency(input)
+        }
+        let newInputCurrency = outputCurrency
+        let newOutputCurrency = inputCurrency
+        inputCurrency = newInputCurrency
+        outputCurrency = newOutputCurrency
     }
     
     func removeLastInput() {
-        if input == "0" {
+        if input == 0 {
             print("Value string is already zero.")
             return
         }
-        if input.characters.count == 1 {
-            input = "0"
+        if input <= 9.99 {
+            input = 0
             print("Converter input value: \(input)")
             return
         }
-        input = String(input.characters.dropLast())
-        print("Converter input value: \(input)")
+        input = input / 10
     }
 
     func reset() {
-        input = "0";
+        input = 0
     }
 
     private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?) -> String {
