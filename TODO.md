@@ -1,4 +1,3 @@
-- If user changes the input currency to be the same as the output currency, or vice versa, swap them.
 - Animate input and output currencies when swap button is pressed.
 - Add lastSelected: NSDate attribute to Currency model.
   - Create new model version.
