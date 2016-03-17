@@ -20,6 +20,7 @@ class ChangeCurrencyViewController: UIViewController {
     var targetCurrency: String!
     var selectedCurrency: String!
     var currencies:Array<Currency>!
+    var recentCurrencies:Array<Currency>!
     var searchResults:Array<Currency>?
     
     @IBOutlet weak var tableView: UITableView!
@@ -33,10 +34,12 @@ class ChangeCurrencyViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.rowHeight = 64.0
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
         
         currencies = fetchCurrencies()
+        recentCurrencies = fetchRecentCurrencies()
     }
     
     func fetchCurrencies() -> [Currency]{
@@ -53,6 +56,21 @@ class ChangeCurrencyViewController: UIViewController {
         return result as! [Currency]
     }
     
+    func fetchRecentCurrencies() -> [Currency]{
+        let fetch = NSFetchRequest(entityName: "Currency")
+        let sortDescriptor = NSSortDescriptor(key: "lastSelected", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        fetch.sortDescriptors = sortDescriptors
+        fetch.fetchLimit = 5
+        var result = [AnyObject]()
+        do {
+            result = try managedObjectContext!.executeFetchRequest(fetch)
+        } catch let error as NSError {
+            print("Error fetching recent currencies error: %@", error)
+        }
+        return result as! [Currency]
+    }
+    
 }
 
 // MARK: - Table View
@@ -60,6 +78,10 @@ class ChangeCurrencyViewController: UIViewController {
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if recentCurrencies.count != 0 {
+            print("Two sections")
+            return 2
+        }
         return 1
     }
     
@@ -72,7 +94,8 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
+        var cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
+    
         let index = indexPath.row
         let currency: Currency
         if tableView == self.searchDisplayController!.searchResultsTableView {

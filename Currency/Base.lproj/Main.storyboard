@@ -411,7 +411,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4" customClass="TableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4">
                                         <rect key="frame" x="0.0" y="136" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7r5-xP-kk4" id="KeT-OW-NtB">
@@ -434,6 +434,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="18" left="8" bottom="18" right="8"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
