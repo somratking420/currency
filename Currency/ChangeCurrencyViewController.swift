@@ -78,10 +78,6 @@ class ChangeCurrencyViewController: UIViewController {
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if recentCurrencies.count != 0 {
-            print("Two sections")
-            return 2
-        }
         return 1
     }
 
