@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
-                                <rect key="frame" x="64" y="20" width="516" height="88.5"/>
+                                <rect key="frame" x="64" y="40" width="516" height="88.5"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
                                 <color key="textColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
-                                <rect key="frame" x="20" y="20" width="560" height="88.5"/>
+                                <rect key="frame" x="20" y="40" width="560" height="88.5"/>
                                 <gestureRecognizers/>
                                 <state key="normal" title="JPY">
-                                    <color key="titleColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Qja-Te-wIY" appends="YES" id="tPT-Xc-Q7a"/>
@@ -38,16 +38,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
-                                <rect key="frame" x="64" y="108.5" width="516" height="88.5"/>
+                                <rect key="frame" x="64" y="128" width="516" height="88.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="0.74991732835769653" green="0.75004750490188599" blue="0.74990910291671753" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
-                                <rect key="frame" x="20" y="108.5" width="560" height="88.5"/>
+                                <rect key="frame" x="20" y="128" width="560" height="88.5"/>
                                 <gestureRecognizers/>
                                 <state key="normal" title="GBP">
-                                    <color key="titleColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="37l-L7-qu4" appends="YES" id="NOt-7W-aO1"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
-                                <rect key="frame" x="0.0" y="196" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="235.5" width="600" height="0.5"/>
                                 <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3PI-9x-iJX"/>
@@ -68,10 +68,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
-                                <rect key="frame" x="0.0" y="197" width="600" height="403"/>
+                                <rect key="frame" x="0.0" y="236.5" width="600" height="363.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="101"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="7">
@@ -82,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="101"/>
+                                        <rect key="frame" x="150" y="0.0" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="8">
@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="0.0" width="150" height="101"/>
+                                        <rect key="frame" x="300" y="0.0" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="9">
@@ -104,7 +104,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="101" width="150" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="91" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="4">
@@ -115,7 +115,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="101" width="150" height="100.5"/>
+                                        <rect key="frame" x="150" y="91" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="5">
@@ -126,7 +126,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="101" width="150" height="100.5"/>
+                                        <rect key="frame" x="300" y="91" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="6">
@@ -137,7 +137,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="201.5" width="150" height="101"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="1">
@@ -148,7 +148,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="201.5" width="150" height="101"/>
+                                        <rect key="frame" x="150" y="181.5" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2">
@@ -159,7 +159,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="201.5" width="150" height="101"/>
+                                        <rect key="frame" x="300" y="181.5" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="3">
@@ -170,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="302.5" width="150" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="272.5" width="150" height="90.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="C">
@@ -181,7 +181,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="302.5" width="150" height="100.5"/>
+                                        <rect key="frame" x="150" y="272.5" width="150" height="90.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="0">
@@ -192,7 +192,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="302.5" width="150" height="100.5"/>
+                                        <rect key="frame" x="300" y="272.5" width="150" height="90.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=".">
@@ -200,7 +200,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="0.0" width="150" height="101"/>
+                                        <rect key="frame" x="450" y="0.0" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="buttonSwitchIcon.png">
@@ -211,7 +211,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="101" width="150" height="100.5"/>
+                                        <rect key="frame" x="450" y="91" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonAddIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,7 +221,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="201.5" width="150" height="101"/>
+                                        <rect key="frame" x="450" y="181.5" width="150" height="91"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonSubtractIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -231,7 +231,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="302.5" width="150" height="100.5"/>
+                                        <rect key="frame" x="450" y="272.5" width="150" height="90.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonResultIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -327,10 +327,10 @@
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="trailing" secondItem="dVx-wP-zji" secondAttribute="trailing" id="GZs-b2-q3S"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="IUw-fS-xyU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="bottom" id="JIm-Jt-wwp"/>
-                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" id="JkF-T0-Cnr"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" constant="20" id="JkF-T0-Cnr"/>
                             <constraint firstItem="e6z-VH-Rih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jve-d4-68s"/>
                             <constraint firstAttribute="trailing" secondItem="NLh-XE-j1z" secondAttribute="trailing" id="KLx-Ba-7or"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KRn-Nm-PeU"/>
+                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="KRn-Nm-PeU"/>
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="Ph4-42-eBv"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q43-dZ-uH0"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="trailing" secondItem="4nD-bv-Hha" secondAttribute="trailing" id="T71-sc-QTa"/>
@@ -347,8 +347,8 @@
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="jBK-Ew-8Vk"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="jlz-bC-B40"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="width" secondItem="dVx-wP-zji" secondAttribute="width" id="mR1-Tv-tkg"/>
-                            <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pyA-mg-lnq"/>
-                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="qaj-yp-iEK"/>
+                            <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="pyA-mg-lnq"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="bottom" constant="20" id="qaj-yp-iEK"/>
                             <constraint firstItem="v6F-6f-2Hr" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="rRg-5H-xyI"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="tVl-bf-Ed1"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" id="vbs-Z6-kiK"/>
@@ -357,6 +357,12 @@
                             <constraint firstAttribute="trailing" secondItem="v6F-6f-2Hr" secondAttribute="trailing" constant="20" id="yaN-Yk-ZLz"/>
                             <constraint firstItem="YAg-OE-Uu3" firstAttribute="width" secondItem="v6F-6f-2Hr" secondAttribute="width" id="ykj-tJ-f2R"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hHr-de-FZv"/>
+                                <exclude reference="vbs-Z6-kiK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
