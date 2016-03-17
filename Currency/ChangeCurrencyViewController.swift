@@ -34,7 +34,7 @@ class ChangeCurrencyViewController: UIViewController {
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.rowHeight = 64.0
+        self.tableView.rowHeight = 54.0
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
 
