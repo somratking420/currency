@@ -265,6 +265,9 @@ class Converter {
     
     private func getCurrencyRecord(currencyCode: String) -> (name: String, code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)  {
         
+        // Start by showing the network indicator.
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -289,6 +292,9 @@ class Converter {
         let locale: String = currency.locale!
         let symbol: String = currency.symbol!
         let decimals: Int = Int(currency.decimals!)
+        
+        // Finish by hiding the network indicator.
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
         return(name, code, rate, locale, symbol, decimals)
     
