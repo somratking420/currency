@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
         
         // Style view.
         view.layer.cornerRadius = 3.0
-        view.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1)
         view.clipsToBounds = true
         
         // If we have the last input currency used saved on the preferences

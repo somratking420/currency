@@ -23,7 +23,7 @@ class CalculatorButton: UIButton {
         }
         set {
             if newValue {
-                self.backgroundColor = UIColor(red:0.92, green:0.92, blue:0.92, alpha:1)
+                self.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1)
             }
             else {
                 self.backgroundColor = nil
