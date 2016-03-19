@@ -91,7 +91,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
 
         let index = indexPath.row
         let currency: Currency
