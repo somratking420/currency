@@ -35,8 +35,6 @@
                                     <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Qja-Te-wIY" appends="YES" id="tPT-Xc-Q7a"/>
-                                    <outletCollection property="gestureRecognizers" destination="aPd-Tz-Kd5" appends="YES" id="DSx-WP-fRu"/>
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
                                 </connections>
                             </button>
@@ -56,7 +54,6 @@
                                     <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="37l-L7-qu4" appends="YES" id="NOt-7W-aO1"/>
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
                                 </connections>
                             </button>
@@ -386,21 +383,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="Qja-Te-wIY">
-                    <connections>
-                        <action selector="swipedInput:" destination="BYZ-38-t0r" id="NtI-ws-FNA"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="aPd-Tz-Kd5">
-                    <connections>
-                        <action selector="longPressedInput:" destination="BYZ-38-t0r" id="oRv-Ru-KF7"/>
-                    </connections>
-                </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="37l-L7-qu4">
-                    <connections>
-                        <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="A3H-ne-b6e"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="359" y="96"/>
         </scene>
