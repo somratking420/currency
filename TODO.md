@@ -9,4 +9,3 @@
 - Replace UISearchDisplayController with UISearchController.
 - Swip up or down on display to swap input with output.
 - If "+" or "-" are active, disable them by pressing them again.
-- Long press and double tap on "=" clears input.
