@@ -246,12 +246,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="450" y="254" width="150" height="84"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonResultIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="equalsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHt-sn-Tq4"/>
+                                            <outletCollection property="gestureRecognizers" destination="zYS-Rm-9Dl" appends="YES" id="MNg-Ie-Bj5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -396,6 +398,11 @@
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Xo-w5-vdo" userLabel="Long Press on Output Currency">
                     <connections>
                         <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="QX4-Uf-V8i"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press Equals Button">
+                    <connections>
+                        <action selector="longPressedEquals:" destination="BYZ-38-t0r" id="mQd-tK-ajZ"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>

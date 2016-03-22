@@ -60,9 +60,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func clearPressed(sender: UIButton) {
-        converter.reset()
-        calculator.reset()
-        updateInterface()
+        reset()
     }
     
     @IBAction func switchPressed(sender: AnyObject) {
@@ -124,6 +122,18 @@ class MainViewController: UIViewController {
             UIPasteboard.generalPasteboard().string = outputCurrency.titleLabel!.text
             print("Copied output currency value to clipboard.")
         }
+    }
+
+    @IBAction func longPressedEquals(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            reset()
+        }
+    }
+    
+    func reset() {
+        converter.reset()
+        calculator.reset()
+        updateInterface()
     }
     
     func swapInputAndOutputCurrencies() {
