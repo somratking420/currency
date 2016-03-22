@@ -33,10 +33,15 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-tM-atU">
                                 <rect key="frame" x="64" y="40" width="516" height="101"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
                                 <state key="normal" title="¥0">
                                     <color key="titleColor" red="0.19997376203536987" green="0.20001503825187683" blue="0.19997116923332214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fYV-Ee-EWy" appends="YES" id="RJw-lx-5Km"/>
+                                    <outletCollection property="gestureRecognizers" destination="CvM-8I-DFd" appends="YES" id="U0e-uc-q8h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
                                 <rect key="frame" x="0.0" y="141" width="64" height="101"/>
@@ -53,10 +58,15 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-1B-zNv">
                                 <rect key="frame" x="64" y="141" width="516" height="101"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
                                 <state key="normal" title="£0">
                                     <color key="titleColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ouputCurrencyPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pdf-cN-KIO"/>
+                                    <outletCollection property="gestureRecognizers" destination="6Xo-w5-vdo" appends="YES" id="JV3-iV-nER"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
                                 <rect key="frame" x="0.0" y="262" width="600" height="0.5"/>
@@ -373,6 +383,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="fYV-Ee-EWy" userLabel="Swipe on Input Currency">
+                    <connections>
+                        <action selector="swipedInput:" destination="BYZ-38-t0r" id="4Xw-8Z-Ymx"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CvM-8I-DFd" userLabel="Long Press on Input Currency">
+                    <connections>
+                        <action selector="longPressedInput:" destination="BYZ-38-t0r" id="aRH-N8-pjT"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Xo-w5-vdo" userLabel="Long Press on Output Currency">
+                    <connections>
+                        <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="QX4-Uf-V8i"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="359" y="96"/>
         </scene>

@@ -66,13 +66,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func switchPressed(sender: AnyObject) {
-        calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
-        if calculator.operationInProgress && !calculator.settingNewValue {
-            converter.swapInputWithOutput(false)
-        } else {
-            converter.swapInputWithOutput(true)
-        }
-        updateInterface()
+        swapInputAndOutputCurrencies()
     }
     
     @IBAction func addPressed(sender: UIButton) {
@@ -105,6 +99,10 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
+    @IBAction func ouputCurrencyPressed(sender: UIButton) {
+        swapInputAndOutputCurrencies()
+    }
+    
     @IBAction func swipedInput(sender: AnyObject) {
         // If a user swipes on the input label, remove on digit.
         // The iOS native calculator app also has this hidden feature.
@@ -126,6 +124,16 @@ class MainViewController: UIViewController {
             UIPasteboard.generalPasteboard().string = outputCurrency.titleLabel!.text
             print("Copied output currency value to clipboard.")
         }
+    }
+    
+    func swapInputAndOutputCurrencies() {
+        calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
+        if calculator.operationInProgress && !calculator.settingNewValue {
+            converter.swapInputWithOutput(false)
+        } else {
+            converter.swapInputWithOutput(true)
+        }
+        updateInterface()
     }
     
     func updateInterface() {
