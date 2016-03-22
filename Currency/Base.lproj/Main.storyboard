@@ -18,18 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="v6F-6f-2Hr">
-                                <rect key="frame" x="64" y="40" width="516" height="88"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji">
-                                <rect key="frame" x="0.0" y="40" width="64" height="88"/>
+                                <rect key="frame" x="0.0" y="40" width="64" height="101"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="FRs-Tz-fOw"/>
+                                    <constraint firstAttribute="width" constant="64" id="gjd-fr-VFt"/>
                                 </constraints>
                                 <state key="normal" title="JPY">
                                     <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,17 +31,18 @@
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeInputCurrency" id="yHF-dd-E4s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="YAg-OE-Uu3">
-                                <rect key="frame" x="64" y="128" width="516" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-tM-atU">
+                                <rect key="frame" x="64" y="40" width="516" height="101"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
-                                <color key="textColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="¥0">
+                                    <color key="titleColor" red="0.19997376203536987" green="0.20001503825187683" blue="0.19997116923332214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha">
-                                <rect key="frame" x="0.0" y="128" width="64" height="88"/>
+                                <rect key="frame" x="0.0" y="141" width="64" height="101"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="oVV-pL-hhO"/>
+                                    <constraint firstAttribute="width" constant="64" id="9U5-ez-Efg"/>
                                 </constraints>
                                 <state key="normal" title="GBP">
                                     <color key="titleColor" red="0.64992761611938477" green="0.65004163980484009" blue="0.64992046356201172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,8 +51,15 @@
                                     <segue destination="pFU-Zi-pwq" kind="presentation" identifier="ChangeOutputCurrency" id="epB-0k-ch1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-1B-zNv">
+                                <rect key="frame" x="64" y="141" width="516" height="101"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="74"/>
+                                <state key="normal" title="£0">
+                                    <color key="titleColor" red="0.69992250204086304" green="0.70004463195800781" blue="0.69991475343704224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
-                                <rect key="frame" x="0.0" y="237" width="600" height="0.5"/>
+                                <rect key="frame" x="0.0" y="262" width="600" height="0.5"/>
                                 <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="3PI-9x-iJX"/>
@@ -71,10 +72,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
-                                <rect key="frame" x="0.0" y="236.5" width="600" height="363.5"/>
+                                <rect key="frame" x="0.0" y="262" width="600" height="338"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="7">
@@ -85,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="0.0" width="150" height="91"/>
+                                        <rect key="frame" x="150" y="0.0" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="8">
@@ -96,7 +97,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="0.0" width="150" height="91"/>
+                                        <rect key="frame" x="300" y="0.0" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="9">
@@ -107,7 +108,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="91" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="84" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="4">
@@ -118,7 +119,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="91" width="150" height="91"/>
+                                        <rect key="frame" x="150" y="84" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="5">
@@ -129,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="91" width="150" height="91"/>
+                                        <rect key="frame" x="300" y="84" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="6">
@@ -140,7 +141,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="181.5" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="169" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="1">
@@ -151,7 +152,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="181.5" width="150" height="91"/>
+                                        <rect key="frame" x="150" y="169" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2">
@@ -162,7 +163,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="181.5" width="150" height="91"/>
+                                        <rect key="frame" x="300" y="169" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="3">
@@ -173,7 +174,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="272.5" width="150" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="254" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="C">
@@ -184,7 +185,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="272.5" width="150" height="90.5"/>
+                                        <rect key="frame" x="150" y="254" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="0">
@@ -195,7 +196,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="272.5" width="150" height="90.5"/>
+                                        <rect key="frame" x="300" y="254" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=".">
@@ -203,7 +204,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="0.0" width="150" height="91"/>
+                                        <rect key="frame" x="450" y="0.0" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="buttonSwitchIcon.png">
@@ -214,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="91" width="150" height="91"/>
+                                        <rect key="frame" x="450" y="84" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonAddIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,7 +225,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="181.5" width="150" height="91"/>
+                                        <rect key="frame" x="450" y="169" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonSubtractIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,7 +235,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="450" y="272.5" width="150" height="90.5"/>
+                                        <rect key="frame" x="450" y="254" width="150" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonResultIcon.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,62 +324,51 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="width" secondItem="v6F-6f-2Hr" secondAttribute="width" id="1fR-vV-Q1Y"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="2u1-3M-pw3"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="trailing" secondItem="dVx-wP-zji" secondAttribute="trailing" id="7DX-jT-axp"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" id="AyJ-tt-KnV"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="CQ5-2z-Ky5"/>
-                            <constraint firstItem="e6z-VH-Rih" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" constant="19.5" id="EWd-Jo-X4Y"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ew8-8j-cDK"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="FAK-on-bp9"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" id="Fao-Re-Xgb"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="bottom" constant="20.5" id="0ll-97-8O7"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="trailing" secondItem="dVx-wP-zji" secondAttribute="trailing" id="4Jz-ko-ZXB"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="5Um-ne-6IN"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" id="6e8-fq-SCm"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="top" id="AFX-l1-alV"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="muv-tM-atU" secondAttribute="bottom" id="EPV-MV-1Od"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="bottom" id="JIm-Jt-wwp"/>
                             <constraint firstItem="e6z-VH-Rih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jve-d4-68s"/>
                             <constraint firstAttribute="trailing" secondItem="NLh-XE-j1z" secondAttribute="trailing" id="KLx-Ba-7or"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="height" secondItem="v6F-6f-2Hr" secondAttribute="height" id="M0a-7p-byF"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="trailing" secondItem="v6F-6f-2Hr" secondAttribute="trailing" id="PRZ-Dk-8Of"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="bottom" secondItem="dVx-wP-zji" secondAttribute="bottom" id="La5-Ae-gFj"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q43-dZ-uH0"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="height" secondItem="4nD-bv-Hha" secondAttribute="height" id="WL9-ze-sfS"/>
-                            <constraint firstItem="e6z-VH-Rih" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="bottom" constant="19.5" id="Yo9-32-uj9"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="top" id="aCk-OJ-dZZ"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="leading" secondItem="v6F-6f-2Hr" secondAttribute="leading" id="aDp-8K-Ema"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="bottom" secondItem="dVx-wP-zji" secondAttribute="bottom" id="cq2-EB-mI6"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="v6F-6f-2Hr" secondAttribute="bottom" id="dd2-bP-36a"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" id="ekS-Rx-gSg"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="Q75-zv-1r7"/>
+                            <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Rjo-yf-FEe"/>
+                            <constraint firstAttribute="trailing" secondItem="muv-tM-atU" secondAttribute="trailing" constant="20" id="T62-cT-GYH"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="leading" id="T8c-nw-OHQ"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="Ufx-xK-f1U"/>
+                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="rXn-1B-zNv" secondAttribute="bottom" constant="20.5" id="W4Q-v7-L2Y"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="Y1H-dW-6l2"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="muv-tM-atU" secondAttribute="bottom" id="YZ5-bF-cLJ"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="top" id="e6i-Ds-lCN"/>
+                            <constraint firstItem="dVx-wP-zji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g2V-yG-TPV"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" id="gEL-Od-VDN"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" id="gNY-ff-rDx"/>
                             <constraint firstAttribute="trailing" secondItem="e6z-VH-Rih" secondAttribute="trailing" id="gT4-Us-54V"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="v6F-6f-2Hr" secondAttribute="bottom" id="hHr-de-FZv"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="leading" id="hbr-mK-GDo"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="ggf-zq-GRP"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="hRk-NO-SVa"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="trailing" secondItem="muv-tM-atU" secondAttribute="trailing" id="i4G-yL-pJ1"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="e6z-VH-Rih" secondAttribute="bottom" id="j0v-DU-FxE"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="jCg-Kh-1P7"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="centerY" secondItem="4nD-bv-Hha" secondAttribute="centerY" id="jXE-Pp-6or"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" id="k3C-9z-Fxd"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="top" id="kel-3f-uPg"/>
-                            <constraint firstItem="v6F-6f-2Hr" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="p0J-AW-os5"/>
-                            <constraint firstAttribute="trailing" secondItem="YAg-OE-Uu3" secondAttribute="trailing" constant="20" id="qgl-N3-w6y"/>
-                            <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="rDv-Qi-pbb"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="width" secondItem="dVx-wP-zji" secondAttribute="width" id="ruc-n7-YPV"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="upV-af-tSf"/>
-                            <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="YAg-OE-Uu3" secondAttribute="bottom" id="vbs-Z6-kiK"/>
-                            <constraint firstAttribute="trailing" secondItem="v6F-6f-2Hr" secondAttribute="trailing" constant="20" id="vdz-9E-d00"/>
-                            <constraint firstItem="YAg-OE-Uu3" firstAttribute="top" secondItem="v6F-6f-2Hr" secondAttribute="bottom" id="vul-IW-ZOe"/>
-                            <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="yKj-nZ-VBp"/>
-                            <constraint firstItem="dVx-wP-zji" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zZk-0D-9uI"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="mlg-Er-Yfb"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="muv-tM-atU" secondAttribute="leading" id="mpP-vw-7K7"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" id="mun-9Y-cWg"/>
+                            <constraint firstItem="4nD-bv-Hha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n88-M0-nSk"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="centerY" secondItem="4nD-bv-Hha" secondAttribute="centerY" id="p1X-oW-vtc"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="pJf-de-URn"/>
+                            <constraint firstAttribute="trailing" secondItem="rXn-1B-zNv" secondAttribute="trailing" constant="20" id="uqL-8E-STN"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="hHr-de-FZv"/>
-                                <exclude reference="vbs-Z6-kiK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
                         <outlet property="equalsButton" destination="dWW-RI-d8f" id="PG9-VW-zau"/>
+                        <outlet property="inputCurrency" destination="muv-tM-atU" id="TbY-SG-j65"/>
                         <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
-                        <outlet property="inputCurrencyLabel" destination="v6F-6f-2Hr" id="75Q-IG-ZjQ"/>
                         <outlet property="minusButton" destination="4r1-uK-adB" id="cvc-SM-RQw"/>
+                        <outlet property="outputCurrency" destination="rXn-1B-zNv" id="9CD-Of-61e"/>
                         <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
-                        <outlet property="outputCurrencyLabel" destination="YAg-OE-Uu3" id="CaO-Ek-ird"/>
                         <outlet property="switchButton" destination="aOt-1A-j4i" id="9LZ-er-PRc"/>
                     </connections>
                 </viewController>

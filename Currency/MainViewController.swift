@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
     var calculator = Calculator()
     var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
-    @IBOutlet weak var inputCurrencyLabel: UILabel!
-    @IBOutlet weak var outputCurrencyLabel: UILabel!
+    @IBOutlet weak var inputCurrency: UIButton!
+    @IBOutlet weak var outputCurrency: UIButton!
     @IBOutlet weak var inputCurrencyCodeButton: UIButton!
     @IBOutlet weak var outputCurrencyCodeButton: UIButton!
     @IBOutlet weak var switchButton: UIButton!
@@ -115,7 +115,7 @@ class MainViewController: UIViewController {
     @IBAction func longPressedInput(sender: UIGestureRecognizer) {
         // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
-            UIPasteboard.generalPasteboard().string = inputCurrencyLabel.text
+            UIPasteboard.generalPasteboard().string = inputCurrency.titleLabel!.text
             print("Copied input currency value to clipboard.")
         }
     }
@@ -123,15 +123,15 @@ class MainViewController: UIViewController {
     @IBAction func longPressedOutput(sender: UIGestureRecognizer) {
         // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
-            UIPasteboard.generalPasteboard().string = outputCurrencyLabel.text
+            UIPasteboard.generalPasteboard().string = outputCurrency.titleLabel!.text
             print("Copied output currency value to clipboard.")
         }
     }
     
     func updateInterface() {
         // Update all visible labels and reset buttons to their default styles.
-        inputCurrencyLabel.text = converter.inputValue()
-        outputCurrencyLabel.text = converter.outputValue()
+        inputCurrency.setTitle(converter.inputValue(), forState: .Normal)
+        outputCurrency.setTitle(converter.outputValue(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.setBackgroundImage(nil, forState: .Normal)
