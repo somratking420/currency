@@ -42,11 +42,7 @@ https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xc
 
 ## Initial Currency Data
 
-For this project an initial database is created with the currency data from this spreadsheet:
-
-```
-https://docs.google.com/spreadsheets/d/1218JsxdKNp3ytpAtIq8D1Wtl9t4blLpC2amTweWDhek/edit?usp=sharing
-```
+For this project an initial database is created with the currency data from this [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1218JsxdKNp3ytpAtIq8D1Wtl9t4blLpC2amTweWDhek/edit?usp=sharing). Please add a comment if some of the data is incorrect. Exchange rates are updated using the Yahoo API above while the app is being used as rates fluctuate daily.
 
 ## Tests
 
