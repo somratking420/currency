@@ -40,6 +40,14 @@ And the resulting XML REST query looks like:
 https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDJPY%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
 ```
 
+## Initial Currency Data
+
+For this project an initial database is created with the currency data from this spreadsheet:
+
+```
+https://docs.google.com/spreadsheets/d/1218JsxdKNp3ytpAtIq8D1Wtl9t4blLpC2amTweWDhek/edit?usp=sharing
+```
+
 ## Tests
 
 There are no tests written for this application so far.
