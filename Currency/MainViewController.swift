@@ -75,8 +75,7 @@ class MainViewController: UIViewController {
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
-        sender.setBackgroundImage(UIImage(named: "buttonAddBackground.png"), forState: .Normal)
-        sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
+        sender.backgroundColor = UIColor(red:0, green:0.79, blue:0.58, alpha:0.16)
     }
     
     @IBAction func minusPressed(sender: UIButton) {
@@ -87,8 +86,7 @@ class MainViewController: UIViewController {
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
-        sender.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Normal)
-        sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
+        sender.backgroundColor = UIColor(red:0.98, green:0.31, blue:0.3, alpha:0.16)
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
@@ -152,9 +150,9 @@ class MainViewController: UIViewController {
         outputCurrency.setTitle(converter.outputValue(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
-        addButton.setBackgroundImage(nil, forState: .Normal)
+        addButton.backgroundColor = nil
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
-        minusButton.setBackgroundImage(nil, forState: .Normal)
+        minusButton.backgroundColor = nil
         minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
     }
     
