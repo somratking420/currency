@@ -135,6 +135,38 @@ class MainViewController: UIViewController {
     }
     
     func swapInputAndOutputCurrencies() {
+        
+        let inputPosition = inputCurrency.center.y
+        let inputColor = inputCurrency.titleLabel?.textColor
+        let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
+        let outputPosition = outputCurrency.center.y
+        let outputColor = outputCurrency.titleLabel?.textColor
+        let outputCodeButtonPosition = outputCurrencyCodeButton.center.y
+        
+        inputCurrency.center.y = outputPosition
+        inputCurrency.setTitleColor(outputColor, forState: .Normal)
+        inputCurrencyCodeButton.center.y = outputCodeButtonPosition
+        outputCurrency.center.y = inputPosition
+        outputCurrency.setTitleColor(inputColor, forState: .Normal)
+        outputCurrencyCodeButton.center.y = inputCodeButtonPosition
+        
+        UIView.animateWithDuration(
+            0.46,
+            delay: 0,
+            usingSpringWithDamping: 0.66,
+            initialSpringVelocity: 0.0,
+            options: .CurveEaseOut,
+            animations: {
+                self.inputCurrency.center.y = inputPosition
+                self.inputCurrency.setTitleColor(inputColor, forState: .Normal)
+                self.inputCurrencyCodeButton.center.y = inputCodeButtonPosition
+                self.outputCurrency.center.y = outputPosition
+                self.outputCurrency.setTitleColor(outputColor, forState: .Normal)
+                self.outputCurrencyCodeButton.center.y = outputCodeButtonPosition
+            },
+            completion: nil
+        )
+        
         calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
         if calculator.operationInProgress && !calculator.settingNewValue {
             converter.swapInputWithOutput(false)
@@ -142,6 +174,7 @@ class MainViewController: UIViewController {
             converter.swapInputWithOutput(true)
         }
         updateInterface()
+        
     }
     
     func updateInterface() {
