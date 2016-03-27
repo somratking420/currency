@@ -54,4 +54,7 @@ There is a plain text file included in the repository with the current list of t
 
 ## Contributors
 
-The best contribution to this project right now is by code revewing the project and by sending any bugs you find or general feedback you have. For code reviews, either comment the code base, the commits, open issues or just message me directly. I will reply to all feedback as quickly as possible. If don't have my contact details, I'm [@nunosans](http://twitter.com/nunosans) on Twitter, you can add and message me on Facebook: [fb.com/nunosans](http://fb.com/nunosans/) or email me at [nuno@nunocoelhosantos.com](mailto:nuno@nunocoelhosantos.com).
+At the moment the best contribution is in the form of feedback on the code and the product. All feedback is valid: design decisions, code style, recommended re-writes based on your experience, architecture, naming, etc. You can open an issue, comment directly on the code or add inline comments to the code.
+I will address and reply to feedback as quickly as possible. The goal is for me to learn, so learning from your suggestions is more important than the app itself.
+If don't have my contact details, I'm [@nunosans](http://twitter.com/nunosans) on Twitter, you can add and message me on Facebook: [fb.com/nunosans](http://fb.com/nunosans/) or email me at [nuno@nunocoelhosantos.com](mailto:nuno@nunocoelhosantos.com).
+This project repository will be made public after the app is launched on the App Store.
