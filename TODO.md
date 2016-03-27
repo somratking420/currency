@@ -1,4 +1,3 @@
-- Animate input and output currencies when swap button is pressed.
 - Show a new section with 5 last selected currencies at top of currencies list.
 - Add different piano key sounds to the different keypad buttons.
 - Add a Settings option for muting sounds.
@@ -7,5 +6,5 @@
 - Show popover to copy input value.
 - Show popover to copy output value.
 - Replace UISearchDisplayController with UISearchController.
-- Swip up or down on display to swap input with output.
-- If "+" or "-" are active, disable them by pressing them again.
+- Swipe up or down on display to swap input with output.
+- Replace depricated C-style loop
