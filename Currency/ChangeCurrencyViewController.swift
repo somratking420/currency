@@ -123,6 +123,13 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
             return tableSectionTitles[section]
         }
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0 && tableData[0].count == 0) {
+            return 0.0
+        }
+        return UITableViewAutomaticDimension
+    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currency: Currency
