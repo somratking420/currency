@@ -1,3 +1,4 @@
+- Different font sizes for different screen sizes.
 - Animate button background colors on touch.
 - Add different piano key sounds to the different keypad buttons.
 - Add a Settings option for muting sounds.
