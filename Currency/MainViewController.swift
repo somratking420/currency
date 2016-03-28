@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
         // Style view.
         view.layer.cornerRadius = 3.0
         view.clipsToBounds = true
+        inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
+        outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
