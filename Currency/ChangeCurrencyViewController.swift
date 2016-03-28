@@ -65,7 +65,9 @@ class ChangeCurrencyViewController: UIViewController {
         let fetch = NSFetchRequest(entityName: "Currency")
         let sortDescriptor = NSSortDescriptor(key: "lastSelected", ascending: false)
         let sortDescriptors = [sortDescriptor]
+        let predicate = NSPredicate(format: "lastSelected != nil")
         fetch.sortDescriptors = sortDescriptors
+        fetch.predicate = predicate
         fetch.fetchLimit = 5
         var result = [AnyObject]()
         do {
