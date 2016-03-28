@@ -22,6 +22,8 @@ class ChangeCurrencyViewController: UIViewController {
     var currencies:Array<Currency>!
     var recentCurrencies:Array<Currency>!
     var searchResults:Array<Currency>?
+    var tableData:Array<Array<Currency>>!
+    var tableSectionTitles:Array<String>!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -41,6 +43,8 @@ class ChangeCurrencyViewController: UIViewController {
 
         currencies = fetchCurrencies()
         recentCurrencies = fetchRecentCurrencies()
+        tableData = [recentCurrencies, currencies]
+        tableSectionTitles = ["Recent currencies", "All currencies"]
     }
 
     func fetchCurrencies() -> [Currency]{
@@ -59,7 +63,7 @@ class ChangeCurrencyViewController: UIViewController {
 
     func fetchRecentCurrencies() -> [Currency]{
         let fetch = NSFetchRequest(entityName: "Currency")
-        let sortDescriptor = NSSortDescriptor(key: "lastSelected", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "lastSelected", ascending: false)
         let sortDescriptors = [sortDescriptor]
         fetch.sortDescriptors = sortDescriptors
         fetch.fetchLimit = 5
@@ -79,26 +83,25 @@ class ChangeCurrencyViewController: UIViewController {
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return tableData.count
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return searchResults?.count ?? 0
         } else {
-            return currencies.count
+            return tableData[section].count
         }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
-
-        let index = indexPath.row
         let currency: Currency
+        
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            currency = searchResults![index]
+            currency = searchResults![indexPath.row]
         } else {
-            currency = currencies[index]
+            currency = tableData[indexPath.section][indexPath.row]
         }
         cell!.textLabel!.text = currency.name!
         cell!.detailTextLabel!.text = currency.code!
@@ -110,15 +113,24 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
 
         return cell!
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return nil
+        } else {
+            return tableSectionTitles[section]
+        }
+    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
         let currency: Currency
+        
         if tableView == self.searchDisplayController!.searchResultsTableView {
-            currency = searchResults![index]
+            currency = searchResults![indexPath.row]
         } else {
-            currency = currencies[index]
+            currency = tableData[indexPath.section][indexPath.row]
         }
+        
         let currencyCode = currency.code!
 
         delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
