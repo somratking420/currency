@@ -1,9 +1,10 @@
+- Animate button background colors on touch.
 - Add different piano key sounds to the different keypad buttons.
 - Add a Settings option for muting sounds.
 - Add a Settings button to rate app on App Store.
 - Add about copy to Settings view.
 - Show popover to copy input value.
 - Show popover to copy output value.
-- Replace UISearchDisplayController with UISearchController.
 - Swipe up or down on display to swap input with output.
-- Replace depricated C-style loop
+- Replace UISearchDisplayController with UISearchController.
+- Replace depricated C-style loop.
