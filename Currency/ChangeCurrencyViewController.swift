@@ -85,7 +85,11 @@ class ChangeCurrencyViewController: UIViewController {
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableData.count
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return 1
+        } else {
+            return tableData.count
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
