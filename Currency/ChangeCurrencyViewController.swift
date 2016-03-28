@@ -125,7 +125,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0 && tableData[0].count == 0) {
+        if (tableData[section].count == 0) {
             return 0.0
         }
         return UITableViewAutomaticDimension
