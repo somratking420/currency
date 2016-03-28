@@ -1,4 +1,3 @@
-- Show a new section with 5 last selected currencies at top of currencies list.
 - Add different piano key sounds to the different keypad buttons.
 - Add a Settings option for muting sounds.
 - Add a Settings button to rate app on App Store.
