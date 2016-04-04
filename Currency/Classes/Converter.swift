@@ -156,15 +156,30 @@ class Converter {
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         var formattedPriceString: String! = formatter.stringFromNumber(value)
-        
-        if decimals == 2 {
-            let formattedPriceStringLastCharacters: String! = String(formattedPriceString.characters.suffix(3))
-            if (formattedPriceStringLastCharacters == ".00" || formattedPriceStringLastCharacters == ",00") {
-                formattedPriceString = String(formattedPriceString.characters.dropLast(3))
-            }
-        }
+        formattedPriceString = truncateCurrency(formattedPriceString, decimals: decimals)
         
         return formattedPriceString!
+    }
+    
+    private func truncateCurrency(formattedPrice: String, decimals: Int) -> String {
+        guard decimals > 0 else {
+            print("No decimals to truncate from price string")
+            return formattedPrice
+        }
+        
+        let lastCharacters: String! = String(formattedPrice.characters.suffix(decimals + 1))
+        let truncationLenght: Int! = inputtingDecimals ? decimals : decimals + 1
+        let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
+        
+        let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
+
+        if (lastCharacters == emptyDecimals) {
+            let truncatedPrice: String! = String(formattedPrice.characters.dropLast(truncationLenght))
+            return truncatedPrice
+        } else {
+            return formattedPrice
+        }
+
     }
 
     private func requestUpdateForCurrencyExchangeRate(currencyCode: String) {
