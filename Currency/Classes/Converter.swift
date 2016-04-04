@@ -163,7 +163,6 @@ class Converter {
     
     private func truncateCurrency(formattedPrice: String, decimals: Int) -> String {
         guard decimals > 0 else {
-            print("No decimals to truncate from price string")
             return formattedPrice
         }
         
