@@ -243,7 +243,8 @@ class Converter {
         do {
             currency = try managedObjectContext.executeFetchRequest(fetch).first as! Currency
         } catch {
-            fatalError("Error fetching currency: \(error)")
+            print("Error fetching currency: \(error)")
+            return
         }
         
         // Update object.
@@ -253,7 +254,8 @@ class Converter {
         do {
             try managedObjectContext.save()
         } catch {
-            fatalError("Error saving currency: \(error)")
+            print("Error saving currency: \(error)")
+            return
         }
         
         print("Currency \(currencyCode) updated with the rate: \(rate)")
