@@ -114,6 +114,15 @@ class Converter {
         outputCurrency = newOutputCurrency
     }
     
+    func beginDecimalInput() {
+        guard inputCurrency.decimals != 0 else {
+            print("Input currency does not have decimals")
+            return
+        }
+        inputtingDecimals = true
+        print("Started inputting decimals.")
+    }
+    
     func removeLastInput() {
         if input == 0 {
             print("Value string is already zero.")

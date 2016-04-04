@@ -97,6 +97,10 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
+    @IBAction func dotPressed(sender: UIButton) {
+        converter.beginDecimalInput()
+    }
+    
     @IBAction func ouputCurrencyPressed(sender: UIButton) {
         swapInputAndOutputCurrencies()
     }
