@@ -12,12 +12,17 @@ import SWXMLHash
 
 class Converter {
 
+    var inputInteger: String
+    var inputDecimal: String
     var input: Double
     var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
     var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
+    var inputtingDecimals: Bool
     
     init() {
-        input = 0
+        inputInteger = "0"
+        inputDecimal = ""
+        input = Double(inputInteger + inputDecimal)!
         
         inputCurrency.code = "JPY";
         inputCurrency.rate = 113.81;
@@ -30,6 +35,8 @@ class Converter {
         outputCurrency.locale = "en_GB"
         outputCurrency.symbol = "£"
         outputCurrency.decimals = 2
+        
+        inputtingDecimals = false
         
         requestUpdateForCurrencyExchangeRate(inputCurrency.code)
         requestUpdateForCurrencyExchangeRate(outputCurrency.code)
