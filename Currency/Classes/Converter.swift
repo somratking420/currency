@@ -22,7 +22,7 @@ class Converter {
     init() {
         inputInteger = "0"
         inputDecimal = ""
-        input = Double(inputInteger + inputDecimal)!
+        input = Double(inputInteger + "." + inputDecimal)!
         
         inputCurrency.code = "JPY";
         inputCurrency.rate = 113.81;
