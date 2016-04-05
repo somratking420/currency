@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
             converter.input = 0
             calculator.settingNewValue = false
         }
-        converter.addInput(Double(digit)!)
+        converter.addInput(digit)
         updateInterface()
     }
 

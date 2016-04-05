@@ -62,24 +62,21 @@ class Converter {
         return result
     }
 
-    func addInput(newInput: Double) {
-        if input == 0.0 && newInput == 0.0 {
-            print("Value string is already zero or empty.")
-            return
-        }
-        if input == 0.0 && newInput != 0.0 {
-            input = newInput
-            return
-        }
-        if input >= 99999999.99 {
+    func addInput(newInput: String) {
+        guard inputInteger.characters.count < 8 else {
             print("Input string is too long.")
             return
         }
+        if inputInteger == "0" && newInput == "0" {
+            print("Value string is already zero or empty.")
+            return
+        }
+        if inputInteger == "0" && newInput != "0" {
+            inputInteger = newInput
+            return
+        }
         
-        var inputString:String = String(Int(input))
-        let newInputString:String = String(Int(newInput))
-        inputString = inputString + newInputString
-        input = Double(inputString)!
+        inputInteger = inputInteger + newInput
     }
 
     func setInputCurrency(currencyCode: String) {
