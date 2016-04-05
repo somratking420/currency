@@ -139,6 +139,7 @@ class Converter {
     func reset() {
         inputInteger = "0"
         inputDecimal = ""
+        input = 0.00
         inputtingDecimals = false
     }
 
