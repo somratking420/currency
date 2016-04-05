@@ -137,7 +137,9 @@ class Converter {
     }
 
     func reset() {
-        input = 0
+        inputInteger = "0"
+        inputDecimal = ""
+        inputtingDecimals = false
     }
 
     private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
