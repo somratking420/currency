@@ -54,7 +54,8 @@ class MainViewController: UIViewController {
             return
         }
         if calculator.settingNewValue {
-            converter.input = 0
+            converter.inputInteger = "0"
+            converter.inputDecimal = ""
             calculator.settingNewValue = false
         }
         converter.addInput(digit)
@@ -70,10 +71,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func addPressed(sender: UIButton) {
-        calculator.newAddition(converter.input)
+        calculator.newAddition(Double(converter.inputInteger)!)
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input = calculator.initialValue
+        converter.inputInteger = String(calculator.initialValue)
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
@@ -81,10 +82,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func minusPressed(sender: UIButton) {
-        calculator.newSubtraction(converter.input)
+        calculator.newSubtraction(Double(converter.inputInteger)!)
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input = calculator.initialValue
+        converter.inputInteger = String(calculator.initialValue)
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
@@ -92,8 +93,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
-        let result = calculator.calculate(converter.input)
-        converter.input = Double(result)
+        let result = calculator.calculate(Double(converter.inputInteger)!)
+        converter.inputInteger = String(result)
         updateInterface()
     }
     

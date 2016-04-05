@@ -14,7 +14,6 @@ class Converter {
 
     var inputInteger: String
     var inputDecimal: String
-    var input: Double
     var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
     var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
     var inputtingDecimals: Bool
@@ -22,7 +21,6 @@ class Converter {
     init() {
         inputInteger = "0"
         inputDecimal = ""
-        input = Double(inputInteger + "." + inputDecimal)!
         
         inputCurrency.code = "JPY";
         inputCurrency.rate = 113.81;
@@ -43,12 +41,12 @@ class Converter {
     }
 
     func inputValue() -> String {
-        let inputValue: Double = Double(inputInteger + "." + inputDecimal)!
+        let inputValue: Double = currentInput()
         return convertToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
     }
 
     func outputValue() -> String {
-        let outputValue: Double = convertToOutputCurrency(Double(inputInteger + "." + inputDecimal)!)
+        let outputValue: Double = convertToOutputCurrency(currentInput())
         return convertToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
     }
     
@@ -103,7 +101,11 @@ class Converter {
 
     func swapInputWithOutput(convertInput: Bool) {
         if convertInput {
-            input = self.convertToOutputCurrency(input)
+            let old: String! = String(convertToOutputCurrency(currentInput()))
+            let new: Array! = old.characters.split{$0 == "."}.map(String.init)
+            
+            inputInteger = new[0]
+            inputDecimal = new[1]
         }
         let newInputCurrency = outputCurrency
         let newOutputCurrency = inputCurrency
@@ -121,23 +123,26 @@ class Converter {
     }
     
     func removeLastInput() {
-        if input == 0 {
+        if inputInteger == "0" {
             print("Value string is already zero.")
             return
         }
-        if input <= 9.99 {
-            input = 0
-            print("Converter input value: \(input)")
+        if inputInteger.characters.count == 1 {
+            inputInteger = "0"
+            print("Converter input value: \(inputInteger)")
             return
         }
-        input = input / 10
+        inputInteger = String(inputInteger.characters.dropLast())
     }
 
     func reset() {
         inputInteger = "0"
         inputDecimal = ""
-        input = 0.00
         inputtingDecimals = false
+    }
+    
+    private func currentInput() -> Double {
+        return Double(inputInteger + "." + inputDecimal)!
     }
 
     private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
