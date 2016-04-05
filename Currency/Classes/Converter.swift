@@ -43,12 +43,12 @@ class Converter {
     }
 
     func inputValue() -> String {
-        let inputValue: Double = input
+        let inputValue: Double = Double(inputInteger + "." + inputDecimal)!
         return convertToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
     }
 
     func outputValue() -> String {
-        let outputValue: Double = convertToOutputCurrency(input)
+        let outputValue: Double = convertToOutputCurrency(Double(inputInteger + "." + inputDecimal)!)
         return convertToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
     }
     
