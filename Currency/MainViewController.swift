@@ -182,6 +182,9 @@ class MainViewController: UIViewController {
         }
         updateInterface()
         
+        prefs.setObject(converter.inputCurrency.code, forKey: "input")
+        prefs.setObject(converter.outputCurrency.code, forKey: "output")
+        
     }
     
     func updateInterface() {
