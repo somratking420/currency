@@ -11,16 +11,16 @@ import CoreData
 import SWXMLHash
 
 class Converter {
-
-    var inputInteger: String
-    var inputDecimal: String
+    
+    var input:(integer: String, decimal: String, decimalMode: Bool, decimalInputs: Int)
     var inputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
     var outputCurrency:(code: String, rate: Double, locale: String?, symbol: String?, decimals: Int)
-    var inputtingDecimals: Bool
     
     init() {
-        inputInteger = "0"
-        inputDecimal = ""
+        input.integer = "0"
+        input.decimal = ""
+        input.decimalMode = false
+        input.decimalInputs = 0
         
         inputCurrency.code = "JPY";
         inputCurrency.rate = 113.81;
@@ -33,8 +33,6 @@ class Converter {
         outputCurrency.locale = "en_GB"
         outputCurrency.symbol = "£"
         outputCurrency.decimals = 2
-        
-        inputtingDecimals = false
         
         requestUpdateForCurrencyExchangeRate(inputCurrency.code)
         requestUpdateForCurrencyExchangeRate(outputCurrency.code)
@@ -62,29 +60,30 @@ class Converter {
 
     func addInput(newInput: String) {
         
-        if inputtingDecimals {
-            guard inputDecimal.characters.count < inputCurrency.decimals else {
+        if input.decimalMode {
+            guard input.decimal.characters.count < inputCurrency.decimals else {
                 print("Decimal input string is complete.")
                 return
             }
-            inputDecimal = inputDecimal + newInput
+            input.decimal = input.decimal + newInput
+            input.decimalInputs = input.decimalInputs + 1
             return
         }
         
-        guard inputInteger.characters.count < 8 else {
+        guard input.integer.characters.count < 8 else {
             print("Input string is too long.")
             return
         }
-        if inputInteger == "0" && newInput == "0" {
+        if input.integer == "0" && newInput == "0" {
             print("Value string is already zero or empty.")
             return
         }
-        if inputInteger == "0" && newInput != "0" {
-            inputInteger = newInput
+        if input.integer == "0" && newInput != "0" {
+            input.integer = newInput
             return
         }
         
-        inputInteger = inputInteger + newInput
+        input.integer = input.integer + newInput
     }
 
     func setInputCurrency(currencyCode: String) {
@@ -114,8 +113,8 @@ class Converter {
             let old: String! = String(convertToOutputCurrency(currentInput()))
             let new: Array! = old.characters.split{$0 == "."}.map(String.init)
             
-            inputInteger = new[0]
-            inputDecimal = new[1]
+            input.integer = new[0]
+            input.decimal = new[1]
         }
         let newInputCurrency = outputCurrency
         let newOutputCurrency = inputCurrency
@@ -128,31 +127,68 @@ class Converter {
             print("Input currency does not have decimals")
             return
         }
-        inputtingDecimals = true
+        input.decimal = ""
+        input.decimalMode = true
+        input.decimalInputs = 0
         print("Started inputting decimals.")
     }
     
     func removeLastInput() {
-        if inputInteger == "0" {
+        if input.integer == "0" {
             print("Value string is already zero.")
             return
         }
-        if inputInteger.characters.count == 1 {
-            inputInteger = "0"
-            print("Converter input value: \(inputInteger)")
+        if input.integer.characters.count == 1 {
+            input.integer = "0"
+            print("Converter input value: \(input.integer)")
             return
         }
-        inputInteger = String(inputInteger.characters.dropLast())
+        input.integer = String(input.integer.characters.dropLast())
     }
 
     func reset() {
-        inputInteger = "0"
-        inputDecimal = ""
-        inputtingDecimals = false
+        input.integer = "0"
+        input.decimal = ""
+        input.decimalMode = false
+        input.decimalInputs = 0
+    }
+    
+    func recordAsSelected(currencyCode: String) {
+        
+        // CoreData setup.
+        let managedObjectContext: NSManagedObjectContext!
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
+        var currency: Currency
+        
+        // CoreData fetching.
+        let fetch = NSFetchRequest(entityName: "Currency")
+        let predicate = NSPredicate(format: "%K == %@", "code", currencyCode)
+        fetch.predicate = predicate
+        fetch.fetchLimit = 1
+        
+        do {
+            currency = try managedObjectContext.executeFetchRequest(fetch).first as! Currency
+        } catch {
+            fatalError("Error fetching currency: \(error)")
+        }
+        
+        // Update object.
+        currency.setValue(NSDate(), forKey: "lastSelected")
+        
+        // CoreData save.
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Error saving currency: \(error)")
+        }
+        
+        print("Currency \(currencyCode) last selected at: \(NSDate())")
+        
     }
     
     private func currentInput() -> Double {
-        return Double(inputInteger + "." + inputDecimal)!
+        return Double(input.integer + "." + input.decimal)!
     }
 
     private func convertToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
@@ -181,19 +217,9 @@ class Converter {
             return formattedPrice
         }
         
-        let lastCharacters: String! = String(formattedPrice.characters.suffix(decimals + 1))
-        let truncationLenght: Int! = inputtingDecimals ? decimals : decimals + 1
-        let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
-        
-        let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
-
-        if (lastCharacters == emptyDecimals) {
-            let truncatedPrice: String! = String(formattedPrice.characters.dropLast(truncationLenght))
-            return truncatedPrice
-        } else {
-            return formattedPrice
-        }
-
+        let truncationLenght: Int! = (input.decimalMode ? decimals : decimals + 1) - input.decimalInputs
+        let truncatedPrice: String! = String(formattedPrice.characters.dropLast(truncationLenght))
+        return truncatedPrice
     }
 
     private func requestUpdateForCurrencyExchangeRate(currencyCode: String) {
@@ -273,40 +299,6 @@ class Converter {
         }
         
         print("Currency \(currencyCode) updated with the rate: \(rate)")
-        
-    }
-    
-    func recordAsSelected(currencyCode: String) {
-        
-        // CoreData setup.
-        let managedObjectContext: NSManagedObjectContext!
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
-        var currency: Currency
-        
-        // CoreData fetching.
-        let fetch = NSFetchRequest(entityName: "Currency")
-        let predicate = NSPredicate(format: "%K == %@", "code", currencyCode)
-        fetch.predicate = predicate
-        fetch.fetchLimit = 1
-        
-        do {
-            currency = try managedObjectContext.executeFetchRequest(fetch).first as! Currency
-        } catch {
-            fatalError("Error fetching currency: \(error)")
-        }
-        
-        // Update object.
-        currency.setValue(NSDate(), forKey: "lastSelected")
-        
-        // CoreData save.
-        do {
-            try managedObjectContext.save()
-        } catch {
-            fatalError("Error saving currency: \(error)")
-        }
-        
-        print("Currency \(currencyCode) last selected at: \(NSDate())")
         
     }
     
