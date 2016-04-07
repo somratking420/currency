@@ -1,5 +1,6 @@
 - Animate button background colors on touch.
 - Add different piano key sounds to the different keypad buttons.
+- Shake to Share, Report Bug or Rate on App Store.
 - Add a Settings option for muting sounds.
 - Add a Settings button to rate app on App Store.
 - Add about copy to Settings view.
