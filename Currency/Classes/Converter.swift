@@ -61,6 +61,16 @@ class Converter {
     }
 
     func addInput(newInput: String) {
+        
+        if inputtingDecimals {
+            guard inputDecimal.characters.count < inputCurrency.decimals else {
+                print("Decimal input string is complete.")
+                return
+            }
+            inputDecimal = inputDecimal + newInput
+            return
+        }
+        
         guard inputInteger.characters.count < 8 else {
             print("Input string is too long.")
             return
