@@ -18,13 +18,7 @@ class Coin {
     var decimals: Int!
     
     init(withCode code: String) {
-        
         setTo(code)
-        
-    }
-    
-    func update() {
-        updateRate()
     }
     
     func setTo(code: String) {
@@ -36,6 +30,10 @@ class Coin {
         self.decimals = currency.decimals
         self.update()
         self.recordAsSelected()
+    }
+    
+    func update() {
+        updateRate()
     }
     
     func recordAsSelected() {

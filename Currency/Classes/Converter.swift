@@ -67,12 +67,17 @@ class Converter {
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         var formattedCurrency: String! = formatter.stringFromNumber(value)
-        formattedCurrency = truncateFormattedCurrency(formattedCurrency, decimals: decimals)
+
+        if code == inputCurrency.code {
+            formattedCurrency = truncateFormattedCurrencyToDecimalInput(formattedCurrency, decimals: decimals)
+        } else {
+            formattedCurrency = truncateFormattedCurrency(formattedCurrency, decimals: decimals)
+        }
 
         return formattedCurrency!
     }
 
-    private func truncateFormattedCurrency(formattedCurrency: String, decimals: Int) -> String {
+    private func truncateFormattedCurrencyToDecimalInput(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
             return formattedCurrency
         }
@@ -80,6 +85,26 @@ class Converter {
         let truncationLenght: Int! = (input.decimalMode ? decimals : decimals + 1) - input.decimalInputs
         let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
         return truncatedPrice
+    }
+
+    private func truncateFormattedCurrency(formattedCurrency: String, decimals: Int) -> String {
+        guard decimals > 0 else {
+             print("No decimals to truncate from price string")
+             return formattedCurrency
+         }
+
+         let lastCharacters: String! = String(formattedCurrency.characters.suffix(decimals + 1))
+         let truncationLenght: Int! = input.decimalMode ? decimals : decimals + 1
+         let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
+
+         let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
+
+         if (lastCharacters == emptyDecimals) {
+             let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
+             return truncatedPrice
+         } else {
+             return formattedCurrency
+         }
     }
 
     // MARK: Add input.
