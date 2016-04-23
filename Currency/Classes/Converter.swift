@@ -79,6 +79,7 @@ class Converter {
 
     private func truncateDecimalsToDecimalInputLength(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
+            print("No decimals to truncate from price string")
             return formattedCurrency
         }
 
