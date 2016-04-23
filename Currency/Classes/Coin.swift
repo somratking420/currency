@@ -21,7 +21,7 @@ class Coin {
         setTo(code)
     }
     
-    func setTo(code: String) {
+    func setTo(code: String, remember: Bool = true) {
         let currency = getRecord(code)
         self.code = currency.code
         self.locale = currency.locale
@@ -29,7 +29,9 @@ class Coin {
         self.rate = currency.rate
         self.decimals = currency.decimals
         self.update()
-        self.recordAsSelected()
+        if remember {
+            self.recordAsSelected()
+        }
     }
     
     func update() {
