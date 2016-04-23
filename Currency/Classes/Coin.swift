@@ -17,18 +17,20 @@ class Coin {
     var symbol: String?
     var decimals: Int!
     
-    init(withCode code: String) {
-        setTo(code)
+    init(withCode code: String, update: Bool = true, remember: Bool = true) {
+        setTo(code, update: update, remember: remember)
     }
     
-    func setTo(code: String, remember: Bool = true) {
+    func setTo(code: String, update: Bool = true, remember: Bool = true) {
         let currency = getRecord(code)
         self.code = currency.code
         self.locale = currency.locale
         self.symbol = currency.symbol
         self.rate = currency.rate
         self.decimals = currency.decimals
-        self.update()
+        if update {
+            self.update()
+        }
         if remember {
             self.recordAsSelected()
         }

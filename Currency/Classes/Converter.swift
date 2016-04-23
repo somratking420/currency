@@ -22,8 +22,8 @@ class Converter {
         input.decimalMode = false
         input.decimalInputs = 0
 
-        inputCurrency = Coin(withCode: "JPY")
-        outputCurrency = Coin(withCode: "GBP")
+        inputCurrency = Coin(withCode: "JPY", update: false, remember: false)
+        outputCurrency = Coin(withCode: "GBP", update: false, remember: false)
     }
 
     // MARK: Convert.
