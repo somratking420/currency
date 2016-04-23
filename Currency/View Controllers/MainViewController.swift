@@ -35,14 +35,14 @@ class MainViewController: UIViewController {
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
-            converter.setInputCurrency(currencyCode)
+            converter.inputCurrency.setTo(currencyCode)
             updateInterface()
         }
         
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("output") {
-            converter.setOutputCurrency(currencyCode)
+            converter.outputCurrency.setTo(currencyCode)
             updateInterface()
         }
         
@@ -190,8 +190,8 @@ class MainViewController: UIViewController {
     
     func updateInterface() {
         // Update all visible labels and reset buttons to their default styles.
-        inputCurrency.setTitle(converter.inputValue(), forState: .Normal)
-        outputCurrency.setTitle(converter.outputValue(), forState: .Normal)
+        inputCurrency.setTitle(converter.formattedInput(), forState: .Normal)
+        outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.backgroundColor = nil
@@ -241,7 +241,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
                 converter.swapInputWithOutput(true)
                 converter.outputCurrency.recordAsSelected()
             } else {
-                converter.setInputCurrency(currencyCode)
+                converter.inputCurrency.setTo(currencyCode)
             }
             prefs.setObject(currencyCode, forKey: "input")
             print("Input currency updated to: \(currencyCode)")
@@ -253,7 +253,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
                 converter.swapInputWithOutput(true)
                 converter.inputCurrency.recordAsSelected()
             } else {
-                converter.setOutputCurrency(currencyCode)
+                converter.outputCurrency.setTo(currencyCode)
             }
             prefs.setObject(currencyCode, forKey: "output")
             print("Output currency updated to: \(currencyCode)")
