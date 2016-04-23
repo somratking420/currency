@@ -149,7 +149,7 @@ class Converter {
     }
     
     private func removeLastDecimalInput() {
-        guard input.decimal.isEmpty else {
+        guard !input.decimal.isEmpty else {
             print("Input decimal value is already empty.")
             return
         }
