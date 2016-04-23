@@ -54,8 +54,8 @@ class MainViewController: UIViewController {
             return
         }
         if calculator.settingNewValue {
-            converter.inputInteger = "0"
-            converter.inputDecimal = ""
+            converter.input.integer = "0"
+            converter.input.decimal = ""
             calculator.settingNewValue = false
         }
         converter.addInput(digit)
