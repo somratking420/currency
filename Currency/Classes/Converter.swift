@@ -69,15 +69,15 @@ class Converter {
         var formattedCurrency: String! = formatter.stringFromNumber(value)
 
         if code == inputCurrency.code {
-            formattedCurrency = truncateFormattedCurrencyToDecimalInput(formattedCurrency, decimals: decimals)
+            formattedCurrency = truncateDecimalsToDecimalInputLength(formattedCurrency, decimals: decimals)
         } else {
-            formattedCurrency = truncateFormattedCurrency(formattedCurrency, decimals: decimals)
+            formattedCurrency = truncateEmptyDecimalsFromCurrency(formattedCurrency, decimals: decimals)
         }
 
         return formattedCurrency!
     }
 
-    private func truncateFormattedCurrencyToDecimalInput(formattedCurrency: String, decimals: Int) -> String {
+    private func truncateDecimalsToDecimalInputLength(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
             return formattedCurrency
         }
@@ -87,7 +87,7 @@ class Converter {
         return truncatedPrice
     }
 
-    private func truncateFormattedCurrency(formattedCurrency: String, decimals: Int) -> String {
+    private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
              print("No decimals to truncate from price string")
              return formattedCurrency
