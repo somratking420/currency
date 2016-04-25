@@ -39,14 +39,26 @@ class Converter {
     }
 
     // MARK: Format as currency.
+    
+    private func parseInput() -> Double {
+        let integer: Int = Int(input.integer)!
+        let decimal: Int? = Int(input.decimal)!
+        let inputString: String
+        if let newDecimal = decimal {
+            inputString = "\(integer).\(newDecimal)"
+        } else {
+            inputString = "\(integer).0"
+        }
+        return Double(inputString)!
+    }
 
     func formattedInput() -> String {
-        let inputValue: Double! = Double(input.integer + "." + input.decimal)!
+        let inputValue: Double! = parseInput()
         return formatToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
     }
 
     func formattedOutput() -> String {
-        let inputValue: Double! = Double(input.integer + "." + input.decimal)!
+        let inputValue: Double! = parseInput()
         let outputValue: Double = convertToOutputCurrency(inputValue)
         return formatToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
     }
@@ -150,7 +162,7 @@ class Converter {
     // MARK: Remove input.
 
     func removeLastInput() {
-        if input.decimalMode {
+        if input.decimalMode && inputCurrency.decimals > 0 {
             if input.decimal.isEmpty {
                 input.decimalMode = false
             } else {
@@ -185,19 +197,50 @@ class Converter {
 
     // MARK: Swap input with output.
 
-    func swapInputWithOutput(convertInput: Bool) {
-        if convertInput {
-            let inputValue: Double! = Double(input.integer + "." + input.decimal)
-            let old: String! = String(convertToOutputCurrency(inputValue))
-            let new: Array! = old.characters.split{$0 == "."}.map(String.init)
-
-            input.integer = new[0]
-            input.decimal = new[1]
-        }
+    func swapInputWithOutput(keepInputValue: Bool) {
+        
+        let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+        
+        let newInteger: String! = oldOutput.integer
+        let newDecimal: String! = oldOutput.decimal == "0" ? "" : oldOutput.decimal
+        let newNumberOfDecimalInputs: Int! = outputCurrency.decimals - newDecimal.characters.count
+        let isDecimalModeOn: Bool! = newNumberOfDecimalInputs == 0 ? false : true
+        
+        input.integer = newInteger
+        input.decimal = newDecimal
+        input.decimalInputs = newNumberOfDecimalInputs
+        input.decimalMode = isDecimalModeOn
+        
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
-        inputCurrency.setTo(newInputCurrencyCode)
-        outputCurrency.setTo(newOutputCurrencyCode)
+        inputCurrency.setTo(newInputCurrencyCode, update: false)
+        outputCurrency.setTo(newOutputCurrencyCode, update: false)
+        
+    }
+    
+    private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> (integer: String, decimal: String) {
+        
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
+        if let locale = locale where !locale.isEmpty {
+            formatter.locale = NSLocale(localeIdentifier: locale)
+        } else if let symbol = symbol where !symbol.isEmpty {
+            formatter.positivePrefix = symbol
+            formatter.negativePrefix = symbol
+        } else {
+            formatter.currencySymbol = ""
+        }
+        
+        formatter.usesGroupingSeparator = true;
+        formatter.groupingSeparator = ","
+        let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
+        
+        let integer: String = String(double.split()[0])
+        let decimal: String = String(double.split()[1])
+        
+        return (integer, decimal)
+        
     }
 
     // MARK: Reset.
@@ -221,4 +264,12 @@ class Converter {
     }
 
 
+}
+
+extension Double {
+    func split() -> [Int] {
+        return String(self).characters.split{$0 == "."}.map({
+            return Int(String($0))!
+        })
+    }
 }
