@@ -7,5 +7,3 @@
 - Show popover to copy input value.
 - Show popover to copy output value.
 - Swipe up or down on display to swap input with output.
-- Replace UISearchDisplayController with UISearchController.
-- Replace depricated C-style loop.
