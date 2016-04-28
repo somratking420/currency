@@ -132,11 +132,11 @@
                                             <color key="titleColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-H7-xRt">
-                                        <rect key="frame" x="0.0" y="302" width="150" height="101"/>
+                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-H7-xRt">
+                                        <rect key="frame" x="49" y="328" width="52" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515169999996" green="0.60788232090000005" blue="0.60776835679999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="C">
+                                        <state key="normal" image="buttonClearIconDimmed.png">
                                             <color key="titleColor" red="0.65000000000000002" green="0.64987813979375086" blue="0.64988017079718829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
@@ -326,6 +326,7 @@
     </scenes>
     <resources>
         <image name="buttonAddIconDimmed.png" width="26" height="26"/>
+        <image name="buttonClearIconDimmed.png" width="52" height="32"/>
         <image name="buttonResultIconDimmed.png" width="24" height="12"/>
         <image name="buttonSubtractIconDimmed.png" width="25" height="2"/>
         <image name="buttonSwitchIconDimmed.png" width="44" height="32"/>

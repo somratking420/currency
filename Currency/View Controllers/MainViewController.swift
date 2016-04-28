@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    @IBAction func switchPressed(sender: AnyObject) {
+    @IBAction func switchPressed(sender: UIButton) {
         swapInputAndOutputCurrencies()
     }
     
@@ -110,7 +110,7 @@ class MainViewController: UIViewController {
         swapInputAndOutputCurrencies()
     }
     
-    @IBAction func swipedInput(sender: AnyObject) {
+    @IBAction func swipedInput(sender: UIGestureRecognizer) {
         // If a user swipes on the input label, remove on digit.
         // The iOS native calculator app also has this hidden feature.
         converter.removeLastInput()

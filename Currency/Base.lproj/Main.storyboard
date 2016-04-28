@@ -185,12 +185,12 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wt5-W4-hQU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorClearButton" customModule="Currency">
                                         <rect key="frame" x="0.0" y="254" width="150" height="84"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="C">
+                                        <state key="normal" image="buttonClearIcon.png">
                                             <color key="titleColor" red="0.58422970771789551" green="0.5841909646987915" blue="0.58420157432556152" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -530,6 +530,7 @@
     </scenes>
     <resources>
         <image name="buttonAddIcon.png" width="26" height="26"/>
+        <image name="buttonClearIcon.png" width="52" height="32"/>
         <image name="buttonResultIcon.png" width="24" height="12"/>
         <image name="buttonSubtractIcon.png" width="25" height="2"/>
         <image name="buttonSwitchIcon.png" width="44" height="32"/>
