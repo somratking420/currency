@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func addPressed(sender: UIButton) {
-        calculator.newAddition(Double(converter.parsedInput()))
+        calculator.newAddition(converter.parsedInput())
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
@@ -82,7 +82,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func minusPressed(sender: UIButton) {
-        calculator.newSubtraction(Double(converter.parsedInput()))
+        calculator.newSubtraction(converter.parsedInput())
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
