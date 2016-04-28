@@ -14,7 +14,7 @@ class CalculatorSubtractButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        self.setBackgroundImage(UIImage(named: "buttonSubtractBackground.png"), forState: .Highlighted)
+        self.setBackgroundImage(UIImage(named: "buttonSubtractBackgroundHighlighted.png"), forState: .Highlighted)
         self.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Highlighted)
         
         let border = CALayer()
