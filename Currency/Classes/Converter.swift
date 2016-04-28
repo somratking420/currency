@@ -202,15 +202,15 @@ class Converter {
     // MARK: Swap input with output.
     
     func setInputValue(value: Double) {
-        
+        // First split the double into an integer and decimal string.
         let valueInteger: String = String(value.split()[0])
         let valueDecimal: String = String(value.split()[1])
-        
+        // Then define the values to be set.
         let newInteger: String = valueInteger
         let newDecimal: String = valueDecimal == "0" ? "" : valueDecimal
         let newNumberOfDecimalInputs: Int! = newDecimal.characters.count
         let isDecimalModeOn: Bool! = newNumberOfDecimalInputs == 0 ? false : true
-        
+        // Finally, set the values.
         input.integer = newInteger
         input.decimal = newDecimal
         input.decimalInputs = newNumberOfDecimalInputs
@@ -218,11 +218,11 @@ class Converter {
     }
 
     func swapInputWithOutput(keepInputValue: Bool) {
-        
+        // First let's get the values from the output currency.
         let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
-        
+        // Then set those values as the new input.
         setInputValue(oldOutput)
-        
+        // And finally, swap the currencies.
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
         inputCurrency.setTo(newInputCurrencyCode, update: false)
@@ -231,7 +231,6 @@ class Converter {
     }
     
     private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> Double {
-        
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
@@ -249,7 +248,6 @@ class Converter {
         let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
         
         return (double)
-        
     }
 
     // MARK: Reset.
