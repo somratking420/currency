@@ -42,7 +42,7 @@ class Converter {
     
     private func parseInput() -> Double {
         let integer: Int = Int(input.integer)!
-        let decimal: Int? = Int(input.decimal)!
+        let decimal: Int? = Int(input.decimal)
         let inputString: String
         if let newDecimal = decimal {
             inputString = "\(integer).\(newDecimal)"
