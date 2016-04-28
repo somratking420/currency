@@ -76,6 +76,7 @@ class MainViewController: UIViewController {
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
         updateInterface()
+        converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.backgroundColor = UIColor(red:0, green:0.79, blue:0.58, alpha:0.16)
@@ -87,6 +88,7 @@ class MainViewController: UIViewController {
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
         updateInterface()
+        converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.backgroundColor = UIColor(red:0.98, green:0.31, blue:0.3, alpha:0.16)
@@ -137,7 +139,7 @@ class MainViewController: UIViewController {
     }
     
     func reset() {
-        converter.reset()
+        converter.clear()
         calculator.reset()
         updateInterface()
     }

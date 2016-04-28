@@ -260,7 +260,7 @@ class Converter {
 
     // MARK: Reset.
 
-    func reset() {
+    func clear() {
         input.integer = "0"
         input.decimal = ""
         input.decimalMode = false
