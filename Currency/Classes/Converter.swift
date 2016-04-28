@@ -41,13 +41,17 @@ class Converter {
     // MARK: Format as currency.
     
     func parsedInput() -> Double {
-        let integer: Int = Int(input.integer)!
-        let decimal: Int? = Int(input.decimal)
-        let inputString: String
-        if let newDecimal = decimal {
-            inputString = "\(integer).\(newDecimal)"
+        var inputString: String
+        if let integer = Int(input.integer) {
+            inputString = "\(integer)"
         } else {
-            inputString = "\(integer).0"
+            print("Unable to parse integer input.")
+            inputString = "0"
+        }
+        if let decimal = Int(input.decimal) {
+            inputString = inputString + "." + "\(decimal)"
+        } else {
+            print("Unable to parse decimal input.")
         }
         return Double(inputString)!
     }
