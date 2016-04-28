@@ -196,13 +196,14 @@ class Converter {
     }
 
     // MARK: Swap input with output.
-
-    func swapInputWithOutput(keepInputValue: Bool) {
+    
+    func setInputValue(value: Double) {
         
-        let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+        let valueInteger: String = String(value.split()[0])
+        let valueDecimal: String = String(value.split()[1])
         
-        let newInteger: String! = oldOutput.integer
-        let newDecimal: String! = oldOutput.decimal == "0" ? "" : oldOutput.decimal
+        let newInteger: String = valueInteger
+        let newDecimal: String = valueDecimal == "0" ? "" : valueDecimal
         let newNumberOfDecimalInputs: Int! = newDecimal.characters.count
         let isDecimalModeOn: Bool! = newNumberOfDecimalInputs == 0 ? false : true
         
@@ -210,6 +211,13 @@ class Converter {
         input.decimal = newDecimal
         input.decimalInputs = newNumberOfDecimalInputs
         input.decimalMode = isDecimalModeOn
+    }
+
+    func swapInputWithOutput(keepInputValue: Bool) {
+        
+        let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+        
+        setInputValue(oldOutput)
         
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
@@ -218,7 +226,7 @@ class Converter {
         
     }
     
-    private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> (integer: String, decimal: String) {
+    private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> Double {
         
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
@@ -236,10 +244,7 @@ class Converter {
         formatter.groupingSeparator = ","
         let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
         
-        let integer: String = String(double.split()[0])
-        let decimal: String = String(double.split()[1])
-        
-        return (integer, decimal)
+        return (double)
         
     }
 
