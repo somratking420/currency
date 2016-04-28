@@ -217,12 +217,14 @@ class Converter {
         input.decimalMode = isDecimalModeOn
     }
 
-    func swapInputWithOutput(keepInputValue: Bool) {
-        // First let's get the values from the output currency.
-        let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
-        // Then set those values as the new input.
-        setInputValue(oldOutput)
-        // And finally, swap the currencies.
+    func swapInputWithOutput(convertInputValue convertInputValue: Bool = true) {
+        if convertInputValue {
+            // First let's get the values from the output currency.
+            let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+            // Then set those values as the new input.
+            setInputValue(oldOutput)
+            // And finally, swap the currencies.
+        }
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
         inputCurrency.setTo(newInputCurrencyCode, update: false)

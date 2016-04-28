@@ -142,8 +142,7 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    func swapInputAndOutputCurrencies() {
-        
+    func swapInputAndOutputCurrencies() {        
         let inputPosition = inputCurrency.center.y
         let inputColor = inputCurrency.titleLabel?.textColor
         let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
@@ -177,9 +176,9 @@ class MainViewController: UIViewController {
         
         calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
         if calculator.operationInProgress && !calculator.settingNewValue {
-            converter.swapInputWithOutput(false)
+            converter.swapInputWithOutput(convertInputValue: false)
         } else {
-            converter.swapInputWithOutput(true)
+            converter.swapInputWithOutput()
         }
         updateInterface()
         
@@ -238,7 +237,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
             // If user changes input currency to be the same as the
             // output currency, swap them.
             if currencyCode == converter.outputCurrency.code {
-                converter.swapInputWithOutput(true)
+                converter.swapInputWithOutput()
                 converter.outputCurrency.recordAsSelected()
             } else {
                 converter.inputCurrency.setTo(currencyCode)
@@ -250,7 +249,7 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
             // If user changes output currency to be the same as the
             // input currency, swap them.
             if currencyCode == converter.inputCurrency.code {
-                converter.swapInputWithOutput(true)
+                converter.swapInputWithOutput()
                 converter.inputCurrency.recordAsSelected()
             } else {
                 converter.outputCurrency.setTo(currencyCode)
