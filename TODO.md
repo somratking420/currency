@@ -1,9 +1,9 @@
+- Change clear button to delete.
+- Add input indicator.
+- Add button sounds.
+- Make Settings view.
+- Add credits to Settings.
+- Add a Settings option to mute sounds.
+- Fade button background colours on tap.
 - Animate button background colors on touch.
-- Add different piano key sounds to the different keypad buttons.
 - Shake to Share, Report Bug or Rate on App Store.
-- Add a Settings option for muting sounds.
-- Add a Settings button to rate app on App Store.
-- Add about copy to Settings view.
-- Show popover to copy input value.
-- Show popover to copy output value.
-- Swipe up or down on display to swap input with output.
