@@ -14,7 +14,6 @@ class CalculatorSubtractButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        self.setBackgroundImage(UIImage(named: "buttonSubtractBackgroundHighlighted.png"), forState: .Highlighted)
         self.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Highlighted)
         
         let border = CALayer()
@@ -22,6 +21,38 @@ class CalculatorSubtractButton: UIButton {
         border.frame = CGRect(x: 0, y: 0, width: 0.25, height: self.frame.size.height * 2)
         self.layer.masksToBounds = true
         self.layer.addSublayer(border)
+    }
+    
+    override var highlighted: Bool {
+        
+        get {
+            return super.highlighted
+        }
+        set {
+            if newValue {
+                let fadeIn = CABasicAnimation(keyPath: "backgroundColor")
+                fadeIn.fromValue = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0).CGColor
+                fadeIn.toValue = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32).CGColor
+                fadeIn.duration = 0.12
+                fadeIn.autoreverses = false
+                fadeIn.repeatCount = 1
+                
+                self.layer.addAnimation(fadeIn, forKey: "fadeIn")
+                self.backgroundColor = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32)
+            }
+            else {
+                let fadeOut = CABasicAnimation(keyPath: "backgroundColor")
+                fadeOut.fromValue = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32).CGColor
+                fadeOut.toValue = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0).CGColor
+                fadeOut.duration = 0.12
+                fadeOut.autoreverses = false
+                fadeOut.repeatCount = 1
+                
+                self.layer.addAnimation(fadeOut, forKey: "fadeOut")
+                self.backgroundColor = nil
+            }
+            super.highlighted = newValue
+        }
     }
     
 }

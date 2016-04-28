@@ -80,8 +80,8 @@ class MainViewController: UIViewController {
         converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
-        sender.backgroundColor = UIColor(red:0, green:0.79, blue:0.58, alpha:1.00)
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
+        
     }
     
     @IBAction func minusPressed(sender: UIButton) {
@@ -93,7 +93,6 @@ class MainViewController: UIViewController {
         converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
-        sender.backgroundColor = UIColor(red:0.98, green:0.31, blue:0.3, alpha:1.00)
         sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
     }
     
@@ -204,9 +203,7 @@ class MainViewController: UIViewController {
         outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
-        addButton.backgroundColor = nil
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
-        minusButton.backgroundColor = nil
         minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
     }
     
