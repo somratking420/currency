@@ -203,7 +203,7 @@ class Converter {
         
         let newInteger: String! = oldOutput.integer
         let newDecimal: String! = oldOutput.decimal == "0" ? "" : oldOutput.decimal
-        let newNumberOfDecimalInputs: Int! = outputCurrency.decimals - newDecimal.characters.count
+        let newNumberOfDecimalInputs: Int! = newDecimal.characters.count
         let isDecimalModeOn: Bool! = newNumberOfDecimalInputs == 0 ? false : true
         
         input.integer = newInteger
