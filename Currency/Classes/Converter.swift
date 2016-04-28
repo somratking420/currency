@@ -100,6 +100,12 @@ class Converter {
         }
 
         let truncationLenght: Int! = (input.decimalMode ? decimals : decimals + 1) - input.decimalInputs
+        
+        guard truncationLenght > 0 else {
+            print("Truncation length is a negative value");
+            return formattedCurrency
+        }
+        
         let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
         return truncatedPrice
     }
