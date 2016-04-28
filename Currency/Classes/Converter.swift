@@ -40,7 +40,7 @@ class Converter {
 
     // MARK: Format as currency.
     
-    private func parseInput() -> Double {
+    func parsedInput() -> Double {
         let integer: Int = Int(input.integer)!
         let decimal: Int? = Int(input.decimal)
         let inputString: String
@@ -53,12 +53,12 @@ class Converter {
     }
 
     func formattedInput() -> String {
-        let inputValue: Double! = parseInput()
+        let inputValue: Double! = parsedInput()
         return formatToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
     }
 
     func formattedOutput() -> String {
-        let inputValue: Double! = parseInput()
+        let inputValue: Double! = parsedInput()
         let outputValue: Double = convertToOutputCurrency(inputValue)
         return formatToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
     }
