@@ -71,10 +71,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func addPressed(sender: UIButton) {
-        calculator.newAddition(Double(converter.input.integer)!)
+        calculator.newAddition(Double(converter.parsedInput()))
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input.integer = String(calculator.initialValue)
+        converter.setInputValue(calculator.initialValue)
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
@@ -82,10 +82,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func minusPressed(sender: UIButton) {
-        calculator.newSubtraction(Double(converter.input.integer)!)
+        calculator.newSubtraction(Double(converter.parsedInput()))
         // Update the input label with the latest calculation,
         // at this point stored as the initial value.
-        converter.input.integer = String(calculator.initialValue)
+        converter.setInputValue(calculator.initialValue)
         updateInterface()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
@@ -93,8 +93,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
-        let result = calculator.calculate(Double(converter.input.integer)!)
-        converter.input.integer = String(result)
+        let result = calculator.calculate(Double(converter.parsedInput()))
+        converter.setInputValue(result)
         updateInterface()
     }
     
