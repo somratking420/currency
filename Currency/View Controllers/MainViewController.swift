@@ -63,7 +63,8 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func clearPressed(sender: UIButton) {
-        reset()
+        converter.removeLastInput()
+        updateInterface()
     }
     
     @IBAction func switchPressed(sender: AnyObject) {
@@ -133,6 +134,12 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func longPressedEquals(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Began {
+            reset()
+        }
+    }
+    
+    @IBAction func longPressedClear(sender: UILongPressGestureRecognizer) {
         if sender.state == .Began {
             reset()
         }

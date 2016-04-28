@@ -187,6 +187,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="254" width="150" height="84"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="C">
@@ -194,6 +195,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cev-yM-0dh"/>
+                                            <outletCollection property="gestureRecognizers" destination="UDK-Qq-hYp" appends="YES" id="3QF-cx-xPt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
@@ -405,9 +407,14 @@
                         <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="QX4-Uf-V8i"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press Equals Button">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press on Equals Button">
                     <connections>
                         <action selector="longPressedEquals:" destination="BYZ-38-t0r" id="mQd-tK-ajZ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="UDK-Qq-hYp" userLabel="Long Press on Clear Button">
+                    <connections>
+                        <action selector="longPressedClear:" destination="BYZ-38-t0r" id="Iej-7p-PSy"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
