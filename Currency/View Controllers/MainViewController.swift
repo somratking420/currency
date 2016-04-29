@@ -68,6 +68,7 @@ class MainViewController: UIViewController {
         }
         if calculator.settingNewValue {
             converter.clear()
+            calculator.settingNewValue = false
         }
         converter.addInput(digit)
         updateInterface()
