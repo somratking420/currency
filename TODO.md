@@ -1,4 +1,3 @@
-- Change clear button to delete.
 - Add input indicator.
 - Add button sounds.
 - Make Settings view.
