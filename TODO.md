@@ -1,4 +1,3 @@
-- Add input indicator.
 - Add button sounds.
 - Make Settings view.
 - Add credits to Settings.
