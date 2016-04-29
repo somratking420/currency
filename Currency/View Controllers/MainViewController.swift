@@ -32,23 +32,10 @@ class MainViewController: UIViewController {
         view.clipsToBounds = true
         inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
+        inputIndicator.layer.cornerRadius = 2.0
         
         // Animate input indicator.
-        let inputIndicatorAnimation = CAAnimationGroup()
-        inputIndicatorAnimation.duration = 1.08
-        inputIndicatorAnimation.repeatCount = Float.infinity
-        
-        let pulse = CABasicAnimation(keyPath: "opacity")
-        pulse.fromValue = 1
-        pulse.toValue = 0
-        pulse.duration = 0.36
-        pulse.autoreverses = true
-        pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
-        inputIndicatorAnimation.animations = [pulse]
-        
-        inputIndicator.layer.cornerRadius = 2.0
-        inputIndicator.layer.addAnimation(inputIndicatorAnimation, forKey: "pulse")
+        animateInputIndicator()
         
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
@@ -64,6 +51,11 @@ class MainViewController: UIViewController {
             updateInterface()
         }
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        animateInputIndicator()
+        super.viewWillAppear(animated)
     }
 
     @IBAction func digitPressed(sender: UIButton) {
@@ -223,6 +215,23 @@ class MainViewController: UIViewController {
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
+    }
+    
+    func animateInputIndicator() {
+        let inputIndicatorAnimation = CAAnimationGroup()
+        inputIndicatorAnimation.duration = 1.08
+        inputIndicatorAnimation.repeatCount = Float.infinity
+        
+        let pulse = CABasicAnimation(keyPath: "opacity")
+        pulse.fromValue = 1
+        pulse.toValue = 0
+        pulse.duration = 0.36
+        pulse.autoreverses = true
+        pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        inputIndicatorAnimation.animations = [pulse]
+        
+        inputIndicator.layer.addAnimation(inputIndicatorAnimation, forKey: "pulse")
     }
     
     // MARK: - Segue
