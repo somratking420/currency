@@ -343,6 +343,8 @@
                                 <rect key="frame" x="582" y="61" width="4" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="6J2-rj-PQP"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="PVk-po-dB0"/>
                                     <constraint firstAttribute="width" constant="4" id="jCs-y0-qcy"/>
                                 </constraints>
                             </view>
