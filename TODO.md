@@ -1,2 +1,1 @@
-- Add button sounds.
 - Highlight states on "+" and "-".
