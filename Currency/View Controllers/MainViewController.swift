@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var equalsButton: UIButton!
+    @IBOutlet weak var inputIndicator: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,23 @@ class MainViewController: UIViewController {
         view.clipsToBounds = true
         inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        // Animate input indicator.
+        let inputIndicatorAnimation = CAAnimationGroup()
+        inputIndicatorAnimation.duration = 1.08
+        inputIndicatorAnimation.repeatCount = Float.infinity
+        
+        let pulse = CABasicAnimation(keyPath: "opacity")
+        pulse.fromValue = 1
+        pulse.toValue = 0
+        pulse.duration = 0.36
+        pulse.autoreverses = true
+        pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        inputIndicatorAnimation.animations = [pulse]
+        
+        inputIndicator.layer.cornerRadius = 2.0
+        inputIndicator.layer.addAnimation(inputIndicatorAnimation, forKey: "pulse")
         
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
