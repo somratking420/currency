@@ -2,16 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Title</key>
+	<string>Currency</string>
 	<key>StringsTable</key>
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Currency Preferences</string>
-		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
@@ -21,6 +17,14 @@
 			<string>sounds_preference</string>
 			<key>DefaultValue</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Credits</string>
+			<key>File</key>
+			<string>Credits</string>
 		</dict>
 	</array>
 </dict>
