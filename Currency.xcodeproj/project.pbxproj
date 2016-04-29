@@ -23,7 +23,7 @@
 		BC94BB121C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB0F1C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite */; };
 		BC94BB131C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB101C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-shm */; };
 		BC94BB141C8B1CD900F9716D /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = BC94BB111C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-wal */; };
-		BCA0CC321CD367B8001C520C /* tap-resonant.aif in Resources */ = {isa = PBXBuildFile; fileRef = BCA0CC311CD367B8001C520C /* tap-resonant.aif */; };
+		BCA0CC3A1CD36EF4001C520C /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = BCA0CC391CD36EF4001C520C /* tap.wav */; };
 		BCAADB6F1CD2643800F360F8 /* CalculatorClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAADB6E1CD2643800F360F8 /* CalculatorClearButton.swift */; };
 		BCAADBBB1CD2657300F360F8 /* buttonAddBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAADB821CD2657300F360F8 /* buttonAddBackground.png */; };
 		BCAADBBC1CD2657300F360F8 /* buttonAddBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCAADB831CD2657300F360F8 /* buttonAddBackground@2x.png */; };
@@ -142,7 +142,7 @@
 		BC94BB0F1C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InitialCurrencyDatabase.sqlite; path = Databases/InitialCurrencyDatabase.sqlite; sourceTree = "<group>"; };
 		BC94BB101C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
 		BC94BB111C8B1CCA00F9716D /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
-		BCA0CC311CD367B8001C520C /* tap-resonant.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tap-resonant.aif"; sourceTree = "<group>"; };
+		BCA0CC391CD36EF4001C520C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tap.wav; path = Sounds/tap.wav; sourceTree = "<group>"; };
 		BCAADB6E1CD2643800F360F8 /* CalculatorClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorClearButton.swift; path = "UI Classes/CalculatorClearButton.swift"; sourceTree = "<group>"; };
 		BCAADB821CD2657300F360F8 /* buttonAddBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buttonAddBackground.png; path = Assets.xcassets/buttonAddBackground.png; sourceTree = "<group>"; };
 		BCAADB831CD2657300F360F8 /* buttonAddBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buttonAddBackground@2x.png"; path = "Assets.xcassets/buttonAddBackground@2x.png"; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		BCA0CC2F1CD3646D001C520C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				BCA0CC311CD367B8001C520C /* tap-resonant.aif */,
+				BCA0CC391CD36EF4001C520C /* tap.wav */,
 			);
 			name = Sounds;
 			path = Currency;
@@ -614,6 +614,7 @@
 				BCAADBD61CD2657300F360F8 /* buttonResultIconDimmed.png in Resources */,
 				BCAADC071CD2674900F360F8 /* buttonSubtractBackgroundHighlighted@2x.png in Resources */,
 				BC1FFFBB1CD342F40036EC84 /* Settings.bundle in Resources */,
+				BCA0CC3A1CD36EF4001C520C /* tap.wav in Resources */,
 				BCAADBC81CD2657300F360F8 /* buttonClearIcon@2x.png in Resources */,
 				BCAADBE71CD2657300F360F8 /* buttonSubtractIconHighlighted@3x.png in Resources */,
 				BCAADBCB1CD2657300F360F8 /* buttonClearIconDimmed@2x.png in Resources */,
@@ -651,7 +652,6 @@
 				BCAADBE61CD2657300F360F8 /* buttonSubtractIconHighlighted@2x.png in Resources */,
 				BCAADBED1CD2657300F360F8 /* buttonSwitchIcon@3x.png in Resources */,
 				BCAADC061CD2674900F360F8 /* buttonSubtractBackgroundHighlighted.png in Resources */,
-				BCA0CC321CD367B8001C520C /* tap-resonant.aif in Resources */,
 				BCD920121C6BA6AC0089F52A /* Assets.xcassets in Resources */,
 				BCFAE40F1C965D8B00DCE95D /* LaunchScreen.storyboard in Resources */,
 				BCAADBD11CD2657300F360F8 /* buttonResultBackground@2x.png in Resources */,

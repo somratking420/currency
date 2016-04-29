@@ -263,7 +263,7 @@ class MainViewController: UIViewController {
             return
         }
         
-        let path = NSBundle.mainBundle().pathForResource("tap-resonant", ofType: "aif")!
+        let path = NSBundle.mainBundle().pathForResource("tap", ofType: "wav")!
         let url = NSURL(fileURLWithPath: path)
         
         do {
