@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainViewController: UIViewController {
     
     var converter = Converter()
     var calculator = Calculator()
     var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var tapSoundPlayer: AVAudioPlayer!
 
     @IBOutlet weak var inputCurrency: UIButton!
     @IBOutlet weak var outputCurrency: UIButton!
@@ -215,6 +217,7 @@ class MainViewController: UIViewController {
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
+        playTapSound()
     }
     
     func animateInputIndicator() {
@@ -255,6 +258,18 @@ class MainViewController: UIViewController {
             changeCurrencyViewController.delegate = self
         }
         
+    }
+    
+    func playTapSound() {
+        let path = NSBundle.mainBundle().pathForResource("tap-resonant", ofType: "aif")!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            try tapSoundPlayer = AVAudioPlayer(contentsOfURL: url)
+            tapSoundPlayer.play()
+        } catch {
+            print("Could not load audio file.")
+        }
     }
     
 }
