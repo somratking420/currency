@@ -45,13 +45,10 @@ class Converter {
         if let integer = Int(input.integer) {
             inputString = "\(integer)"
         } else {
-            print("Unable to parse integer input.")
             inputString = "0"
         }
         if let decimal = Int(input.decimal) {
             inputString = inputString + "." + "\(decimal)"
-        } else {
-            print("Unable to parse decimal input.")
         }
         return Double(inputString)!
     }
@@ -112,7 +109,6 @@ class Converter {
 
     private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
-             print("No decimals to truncate from price string")
              return formattedCurrency
          }
 
