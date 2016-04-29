@@ -1,5 +1,4 @@
 - Add button sounds.
-- Make Settings view.
 - Add credits to Settings.
 - Add a Settings option to mute sounds.
 - Fade button background colours on tap.

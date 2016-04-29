@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F571620F43A933512A59C36 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8433CA71619EB07E2995B7D5 /* Pods.framework */; };
+		BC1FFFBB1CD342F40036EC84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC1FFFBA1CD342F30036EC84 /* Settings.bundle */; };
 		BC5969F41CCB4EFF003C25FD /* CalculatorAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5969EE1CCB4EFF003C25FD /* CalculatorAddButton.swift */; };
 		BC5969F61CCB4EFF003C25FD /* CalculatorKeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5969F01CCB4EFF003C25FD /* CalculatorKeypadView.swift */; };
 		BC5969F71CCB4EFF003C25FD /* CalculatorResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5969F11CCB4EFF003C25FD /* CalculatorResultButton.swift */; };
@@ -123,6 +124,7 @@
 		19EB43FCFC362B9564CD0798 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		64DBF81E56746D141A99F0FC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8433CA71619EB07E2995B7D5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1FFFBA1CD342F30036EC84 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Currency/Settings/Settings.bundle; sourceTree = "<group>"; };
 		BC5969EE1CCB4EFF003C25FD /* CalculatorAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorAddButton.swift; path = "UI Classes/CalculatorAddButton.swift"; sourceTree = "<group>"; };
 		BC5969F01CCB4EFF003C25FD /* CalculatorKeypadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorKeypadView.swift; path = "UI Classes/CalculatorKeypadView.swift"; sourceTree = "<group>"; };
 		BC5969F11CCB4EFF003C25FD /* CalculatorResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorResultButton.swift; path = "UI Classes/CalculatorResultButton.swift"; sourceTree = "<group>"; };
@@ -260,6 +262,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BC1FFFBC1CD342FB0036EC84 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BC1FFFBA1CD342F30036EC84 /* Settings.bundle */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		BC596A001CCB4F43003C25FD /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +388,7 @@
 				BCE0A6531C81852E0093AC38 /* Frameworks */,
 				BCD920051C6BA6AC0089F52A /* Products */,
 				3728C01291D5DE01D30578B4 /* Pods */,
+				BC1FFFBC1CD342FB0036EC84 /* Settings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -590,6 +601,7 @@
 				BCAADBF01CD2657300F360F8 /* buttonSwitchIconDimmed@3x.png in Resources */,
 				BCAADBD61CD2657300F360F8 /* buttonResultIconDimmed.png in Resources */,
 				BCAADC071CD2674900F360F8 /* buttonSubtractBackgroundHighlighted@2x.png in Resources */,
+				BC1FFFBB1CD342F40036EC84 /* Settings.bundle in Resources */,
 				BCAADBC81CD2657300F360F8 /* buttonClearIcon@2x.png in Resources */,
 				BCAADBE71CD2657300F360F8 /* buttonSubtractIconHighlighted@3x.png in Resources */,
 				BCAADBCB1CD2657300F360F8 /* buttonClearIconDimmed@2x.png in Resources */,
