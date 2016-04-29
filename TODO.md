@@ -1,1 +1,0 @@
-- Highlight states on "+" and "-".
