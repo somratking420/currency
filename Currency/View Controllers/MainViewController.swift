@@ -13,8 +13,11 @@ class MainViewController: UIViewController {
     
     var converter = Converter()
     var calculator = Calculator()
-    var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var tapSoundPlayer: AVAudioPlayer!
+    var addButtonHighlight: CALayer!
+    var minusButtonHighlight: CALayer!
+    var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    let notificationCenter = NSNotificationCenter.defaultCenter()
 
     @IBOutlet weak var inputCurrency: UIButton!
     @IBOutlet weak var outputCurrency: UIButton!
@@ -53,12 +56,24 @@ class MainViewController: UIViewController {
             updateInterface(playSound: false)
         }
         
+        // We want to know if the app is opened from the background
+        // to restart the input indicator animation.
+        notificationCenter.addObserver(self, selector:#selector(MainViewController.applicationBecameActiveNotification), name:UIApplicationDidBecomeActiveNotification, object:nil)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-        // When we change views the animations stop, so let's restart them.
+        // When we change views the animations stop,
+        // so let's restart them when the view appears.
         animateInputIndicator()
         super.viewDidAppear(animated)
+    }
+    
+    func applicationBecameActiveNotification() {
+        print("applicationBecameActiveNotification")
+        // When we put the app on the background the animations stop,
+        // so let's restart them when the app is back on the foreground.
+        animateInputIndicator()
     }
 
     @IBAction func digitPressed(sender: UIButton) {
