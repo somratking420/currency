@@ -43,21 +43,21 @@ class MainViewController: UIViewController {
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
             converter.inputCurrency.setTo(currencyCode, remember: false)
-            updateInterface()
+            updateInterface(playSound: false)
         }
         
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("output") {
             converter.outputCurrency.setTo(currencyCode, remember: false)
-            updateInterface()
+            updateInterface(playSound: false)
         }
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         animateInputIndicator()
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
     }
 
     @IBAction func digitPressed(sender: UIButton) {
@@ -203,13 +203,12 @@ class MainViewController: UIViewController {
             converter.swapInputWithOutput()
         }
         updateInterface()
-        
         prefs.setObject(converter.inputCurrency.code, forKey: "input")
         prefs.setObject(converter.outputCurrency.code, forKey: "output")
         
     }
     
-    func updateInterface() {
+    func updateInterface(playSound playSound: Bool = true) {
         // Update all visible labels and reset buttons to their default styles.
         inputCurrency.setTitle(converter.formattedInput(), forState: .Normal)
         outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
@@ -217,7 +216,9 @@ class MainViewController: UIViewController {
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
         addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
-        playTapSound()
+        if playSound {
+            playTapSound()
+        }
     }
     
     func animateInputIndicator() {
@@ -261,6 +262,11 @@ class MainViewController: UIViewController {
     }
     
     func playTapSound() {
+        guard prefs.boolForKey("sounds_preference") else {
+            print("User disabled sounds from iOS Settings.")
+            return
+        }
+        
         let path = NSBundle.mainBundle().pathForResource("tap-resonant", ofType: "aif")!
         let url = NSURL(fileURLWithPath: path)
         
