@@ -1,5 +1,2 @@
 - Add button sounds.
-- Add credits to Settings.
-- Fade button background colours on tap.
-- Animate button background colors on touch.
-- Shake to Share, Report Bug or Rate on App Store.
+- Highlight states on "+" and "-".
