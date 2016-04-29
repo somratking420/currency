@@ -1,6 +1,5 @@
 - Add button sounds.
 - Add credits to Settings.
-- Add a Settings option to mute sounds.
 - Fade button background colours on tap.
 - Animate button background colors on touch.
 - Shake to Share, Report Bug or Rate on App Store.
