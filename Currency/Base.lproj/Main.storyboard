@@ -380,7 +380,7 @@
                             <constraint firstAttribute="trailing" secondItem="4ye-eY-h2D" secondAttribute="trailing" constant="14" id="gQs-kI-NCP"/>
                             <constraint firstAttribute="trailing" secondItem="e6z-VH-Rih" secondAttribute="trailing" id="gT4-Us-54V"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="dVx-wP-zji" secondAttribute="bottom" id="ggf-zq-GRP"/>
-                            <constraint firstItem="4ye-eY-h2D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="h91-oG-24m"/>
+                            <constraint firstItem="4ye-eY-h2D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="250" constant="41" id="h91-oG-24m"/>
                             <constraint firstItem="rXn-1B-zNv" firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="hRk-NO-SVa"/>
                             <constraint firstItem="rXn-1B-zNv" firstAttribute="trailing" secondItem="muv-tM-atU" secondAttribute="trailing" id="i4G-yL-pJ1"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="top" secondItem="e6z-VH-Rih" secondAttribute="bottom" id="j0v-DU-FxE"/>
