@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     var tapSoundPlayer: AVAudioPlayer!
     var addButtonHighlight: CALayer!
     var minusButtonHighlight: CALayer!
+    var fadeInAnimation: CABasicAnimation!
+    var fadeOutAnimation: CABasicAnimation!
     var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     let notificationCenter = NSNotificationCenter.defaultCenter()
 
@@ -38,6 +40,9 @@ class MainViewController: UIViewController {
         inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         inputIndicator.layer.cornerRadius = 2.0
+        
+        // Style highlights for add and minus buttons.
+        setupCustomHighlights()
         
         // Animate input indicator.
         animateInputIndicator()
@@ -107,6 +112,8 @@ class MainViewController: UIViewController {
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
+        addButtonHighlight.addAnimation(fadeInAnimation, forKey: "fadeIn")
+        addButtonHighlight.opacity = 1
         
     }
     
@@ -119,6 +126,8 @@ class MainViewController: UIViewController {
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
+        minusButtonHighlight.addAnimation(fadeInAnimation, forKey: "fadeIn")
+        minusButtonHighlight.opacity = 1
     }
     
     @IBAction func equalsPressed(sender: UIButton) {
@@ -227,8 +236,16 @@ class MainViewController: UIViewController {
         outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
-        addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
-        minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
+        if addButtonHighlight.opacity == 1 {
+            addButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
+            addButtonHighlight.opacity = 0
+            addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
+        }
+        if minusButtonHighlight.opacity == 1 {
+            minusButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
+            minusButtonHighlight.opacity = 0
+            minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
+        }
         if playSound {
             playTapSound()
         }
@@ -247,8 +264,38 @@ class MainViewController: UIViewController {
         pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         inputIndicatorAnimation.animations = [pulse]
-        
         inputIndicator.layer.addAnimation(inputIndicatorAnimation, forKey: "pulse")
+    }
+    
+    func setupCustomHighlights() {
+        addButtonHighlight = CALayer()
+        addButtonHighlight.backgroundColor = UIColor(red:0.05, green:0.78, blue:0.58, alpha:1.00).CGColor
+        addButtonHighlight.frame = CGRect(x: 0, y: 0, width: addButton.frame.size.width * 2, height: addButton.frame.size.height * 2)
+        addButtonHighlight.opacity = 0
+        addButtonHighlight.masksToBounds = true
+        
+        minusButtonHighlight = CALayer()
+        minusButtonHighlight.backgroundColor = UIColor(red:0.97, green:0.32, blue:0.32, alpha:1.00).CGColor
+        minusButtonHighlight.frame = CGRect(x: 0, y: 0, width: minusButton.frame.size.width * 2, height: minusButton.frame.size.height * 2)
+        minusButtonHighlight.opacity = 0
+        minusButtonHighlight.masksToBounds = true
+        
+        fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeInAnimation.fromValue = 0
+        fadeInAnimation.toValue = 1
+        fadeInAnimation.duration = 0.12
+        fadeInAnimation.autoreverses = false
+        fadeInAnimation.repeatCount = 1
+        
+        fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeOutAnimation.fromValue = 1
+        fadeOutAnimation.toValue = 0
+        fadeOutAnimation.duration = 0.12
+        fadeOutAnimation.autoreverses = false
+        fadeOutAnimation.repeatCount = 1
+        
+        addButton.layer.insertSublayer(addButtonHighlight, below: addButton.imageView?.layer)
+        minusButton.layer.insertSublayer(minusButtonHighlight, below: minusButton.imageView?.layer)
     }
     
     // MARK: - Segue
