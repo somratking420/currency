@@ -56,6 +56,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        // When we change views the animations stop, so let's restart them.
         animateInputIndicator()
         super.viewDidAppear(animated)
     }
