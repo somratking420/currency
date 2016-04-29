@@ -66,9 +66,7 @@ class MainViewController: UIViewController {
             return
         }
         if calculator.settingNewValue {
-            converter.input.integer = "0"
-            converter.input.decimal = ""
-            calculator.settingNewValue = false
+            converter.clear()
         }
         converter.addInput(digit)
         updateInterface()
@@ -89,7 +87,6 @@ class MainViewController: UIViewController {
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
         updateInterface()
-        converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
@@ -102,7 +99,6 @@ class MainViewController: UIViewController {
         // at this point stored as the initial value.
         converter.setInputValue(calculator.initialValue)
         updateInterface()
-        converter.clear()
         // Keep this button highlighted after it's pressed so the user
         // knows a new operation has begun.
         sender.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Normal)
