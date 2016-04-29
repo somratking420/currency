@@ -11,22 +11,27 @@ import UIKit
 
 class CalculatorSwitchButton: UIButton {
     
+    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
+    let normalStateColor: CGColor! = UIColor(red:0.99, green:0.99, blue:0.99, alpha:1.00).CGColor
+    let highlightStateColor: CGColor! = UIColor(red:1.00, green:0.62, blue:0.00, alpha:1.00).CGColor
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
         self.setImage(UIImage(named: "buttonSwitchIconHighlighted.png"), forState: .Highlighted)
         
         let leftBorder = CALayer()
-        leftBorder.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
+        leftBorder.backgroundColor = borderColor
         leftBorder.frame = CGRect(x: 0, y: 0, width: 0.25, height: self.frame.size.height * 2)
         
         let topBorder = CALayer()
-        topBorder.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
+        topBorder.backgroundColor = borderColor
         topBorder.frame = CGRect(x: 0, y: 0, width: self.frame.size.width * 2, height: 0.25)
         
         self.layer.masksToBounds = true
         self.layer.addSublayer(leftBorder)
         self.layer.addSublayer(topBorder)
+        self.backgroundColor = UIColor(CGColor: normalStateColor)
     }
     
     override var highlighted: Bool {
@@ -37,25 +42,25 @@ class CalculatorSwitchButton: UIButton {
         set {
             if newValue {
                 let fadeIn = CABasicAnimation(keyPath: "backgroundColor")
-                fadeIn.fromValue = UIColor(red:1.00, green:0.62, blue:0.00, alpha:0).CGColor
-                fadeIn.toValue = UIColor(red:1.00, green:0.62, blue:0.00, alpha:1).CGColor
+                fadeIn.fromValue = normalStateColor
+                fadeIn.toValue = highlightStateColor
                 fadeIn.duration = 0.12
                 fadeIn.autoreverses = false
                 fadeIn.repeatCount = 1
                 
                 self.layer.addAnimation(fadeIn, forKey: "fadeIn")
-                self.backgroundColor = UIColor(red:1.00, green:0.62, blue:0.00, alpha:1)
+                self.backgroundColor = UIColor(CGColor: highlightStateColor)
             }
             else {
                 let fadeOut = CABasicAnimation(keyPath: "backgroundColor")
-                fadeOut.fromValue = UIColor(red:1.00, green:0.62, blue:0.00, alpha:1).CGColor
-                fadeOut.toValue = UIColor(red:1.00, green:0.62, blue:0.00, alpha:0).CGColor
+                fadeOut.fromValue = highlightStateColor
+                fadeOut.toValue = normalStateColor
                 fadeOut.duration = 0.12
                 fadeOut.autoreverses = false
                 fadeOut.repeatCount = 1
                 
                 self.layer.addAnimation(fadeOut, forKey: "fadeOut")
-                self.backgroundColor = nil
+                self.backgroundColor = UIColor(CGColor: normalStateColor)
             }
             super.highlighted = newValue
         }
