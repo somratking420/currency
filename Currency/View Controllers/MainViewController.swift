@@ -347,7 +347,6 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
     // After selecting a new currency from the Change Currency View Controller,
     // set it as the new currency and update the interface.
     // At this point, also save it to the user preferences file.
-    
     func didChangeCurrency(currencyCode: String, targetCurrency: String) {
         if targetCurrency == "input" {
             // If user changes input currency to be the same as the
