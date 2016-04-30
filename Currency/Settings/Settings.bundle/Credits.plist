@@ -14,7 +14,7 @@
 			<key>Title</key>
 			<string>Credits</string>
 			<key>FooterText</key>
-			<string>Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur.</string>
+			<string>Design and development by Nuno Coelho Santos, @nunosans on Twitter.</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -22,7 +22,7 @@
 			<key>Title</key>
 			<string>Special Thanks</string>
 			<key>FooterText</key>
-			<string>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.</string>
+			<string>Thanks to Johnny Linnert for organising the Command Swift workshops in Tokyo, which got me interested in Swift and kept me motivated to learn. Thanks to Jonathon Toon for all the help getting started with developing for iOS and for the request to build this app. Thanks Aaron Daub and Tiago Alves for reviewing my code at an early stage.</string>
 		</dict>
 	</array>
 </dict>
