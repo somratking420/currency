@@ -22,7 +22,7 @@ class CalculatorResultButton: UIButton {
         
         let border = CALayer()
         border.backgroundColor = borderColor
-        border.frame = CGRect(x: 0, y: 0, width: 0.25, height: self.frame.size.height * 2)
+        border.frame = CGRect(x: 0, y: 0, width: 0.5, height: self.frame.size.height * 2)
         self.layer.masksToBounds = true
         self.layer.addSublayer(border)
         self.backgroundColor = UIColor(CGColor: normalStateColor)
