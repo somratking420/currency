@@ -185,7 +185,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" customClass="CalculatorClearButton" customModule="Currency">
-                                        <rect key="frame" x="0.0" y="253.5" width="150" height="84.5"/>
+                                        <rect key="frame" x="300" y="253" width="150" height="84.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515172958374" green="0.60788232088088989" blue="0.60776835680007935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,17 +206,6 @@
                                         </state>
                                         <connections>
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="513-Uw-PkC"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="300" y="253.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
-                                        <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title=".">
-                                            <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="dotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O07-Lr-vo2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
@@ -264,6 +253,17 @@
                                         <connections>
                                             <action selector="equalsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHt-sn-Tq4"/>
                                             <outletCollection property="gestureRecognizers" destination="zYS-Rm-9Dl" appends="YES" id="MNg-Ie-Bj5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="254" width="150" height="84.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O07-Lr-vo2"/>
                                         </connections>
                                     </button>
                                 </subviews>
