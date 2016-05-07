@@ -16,17 +16,6 @@
 - Localization in Spanish
 
 # Marketing
-- App screenshots
-- App screenshots on device
-- App on real life photos
-- App store screenshots
-- App icon
-- App description
-- Feature list
-- Press release
-- Author Bio
-- Author Photo
-- Press release zip
 - Marketing build
 - Design app website
 - Build app website
