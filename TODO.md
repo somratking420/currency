@@ -1,7 +1,5 @@
 # Bugs / Feedback
 - Swap delete button with dot button
-- Bitcoin not diplaying input
-- Bitcoing not displaying decimals on output
 - 0.01 -> 0.10?
 - Weird circle with cross symbol displaying for some currencies
 - 100188817,30 DZD to AUD changes value

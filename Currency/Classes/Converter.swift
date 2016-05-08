@@ -68,6 +68,8 @@ class Converter {
     private func formatToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.minimumFractionDigits = decimals
+        formatter.maximumFractionDigits = decimals
 
         if let locale = locale where !locale.isEmpty {
             formatter.locale = NSLocale(localeIdentifier: locale)
