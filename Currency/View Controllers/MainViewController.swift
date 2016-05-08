@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class MainViewController: UIViewController {
-    
+
     var converter = Converter()
     var calculator = Calculator()
     var tapSoundPlayer: AVAudioPlayer!
@@ -33,47 +33,47 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Style view.
         view.layer.cornerRadius = 3.0
         view.clipsToBounds = true
         inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         inputIndicator.layer.cornerRadius = 2.0
-        
+
         // Style highlights for add and minus buttons.
         setupCustomHighlights()
-        
+
         // Animate input indicator.
         animateInputIndicator()
-        
+
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
             converter.inputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
         }
-        
+
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("output") {
             converter.outputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
         }
-        
+
         // We want to know if the app is opened from the background
         // to restart the input indicator animation.
         notificationCenter.addObserver(self, selector:#selector(MainViewController.applicationBecameActiveNotification), name:UIApplicationDidBecomeActiveNotification, object:nil)
-        
+
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         // When we change views the animations stop,
         // so let's restart them when the view appears.
         animateInputIndicator()
         super.viewDidAppear(animated)
     }
-    
+
     func applicationBecameActiveNotification() {
         // When we put the app on the background the animations stop,
         // so let's restart them when the app is back on the foreground.
@@ -97,11 +97,11 @@ class MainViewController: UIViewController {
         converter.removeLastInput()
         updateInterface()
     }
-    
+
     @IBAction func switchPressed(sender: UIButton) {
         swapInputAndOutputCurrencies()
     }
-    
+
     @IBAction func addPressed(sender: UIButton) {
         calculator.newAddition(converter.parsedInput())
         // Update the input label with the latest calculation,
@@ -113,9 +113,9 @@ class MainViewController: UIViewController {
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
         addButtonHighlight.addAnimation(fadeInAnimation, forKey: "fadeIn")
         addButtonHighlight.opacity = 1
-        
+
     }
-    
+
     @IBAction func minusPressed(sender: UIButton) {
         calculator.newSubtraction(converter.parsedInput())
         // Update the input label with the latest calculation,
@@ -128,29 +128,29 @@ class MainViewController: UIViewController {
         minusButtonHighlight.addAnimation(fadeInAnimation, forKey: "fadeIn")
         minusButtonHighlight.opacity = 1
     }
-    
+
     @IBAction func equalsPressed(sender: UIButton) {
         let result = calculator.calculate(Double(converter.parsedInput()))
         converter.setInputValue(result)
         updateInterface()
     }
-    
+
     @IBAction func dotPressed(sender: UIButton) {
         converter.beginDecimalInput()
         updateInterface()
     }
-    
+
     @IBAction func ouputCurrencyPressed(sender: UIButton) {
         swapInputAndOutputCurrencies()
     }
-    
+
     @IBAction func swipedInput(sender: UIGestureRecognizer) {
         // If a user swipes on the input label, remove on digit.
         // The iOS native calculator app also has this hidden feature.
         converter.removeLastInput()
         updateInterface()
     }
-    
+
     @IBAction func longPressedInput(sender: UIGestureRecognizer) {
         // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
@@ -158,7 +158,7 @@ class MainViewController: UIViewController {
             print("Copied input currency value to clipboard.")
         }
     }
-    
+
     @IBAction func longPressedOutput(sender: UIGestureRecognizer) {
         // Copy input label text to clipboard after a long press.
         if sender.state == .Began {
@@ -172,34 +172,34 @@ class MainViewController: UIViewController {
             reset()
         }
     }
-    
+
     @IBAction func longPressedClear(sender: UILongPressGestureRecognizer) {
         if sender.state == .Began {
             reset()
         }
     }
-    
+
     func reset() {
         converter.clear()
         calculator.reset()
         updateInterface()
     }
-    
-    func swapInputAndOutputCurrencies() {        
+
+    func swapInputAndOutputCurrencies() {
         let inputPosition = inputCurrency.center.y
         let inputColor = inputCurrency.titleLabel?.textColor
         let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
         let outputPosition = outputCurrency.center.y
         let outputColor = outputCurrency.titleLabel?.textColor
         let outputCodeButtonPosition = outputCurrencyCodeButton.center.y
-        
+
         inputCurrency.center.y = outputPosition
         inputCurrency.setTitleColor(outputColor, forState: .Normal)
         inputCurrencyCodeButton.center.y = outputCodeButtonPosition
         outputCurrency.center.y = inputPosition
         outputCurrency.setTitleColor(inputColor, forState: .Normal)
         outputCurrencyCodeButton.center.y = inputCodeButtonPosition
-        
+
         UIView.animateWithDuration(
             0.46,
             delay: 0,
@@ -216,7 +216,7 @@ class MainViewController: UIViewController {
             },
             completion: nil
         )
-        
+
         calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
         if calculator.operationInProgress && !calculator.settingNewValue {
             converter.swapInputWithOutput(convertInputValue: false)
@@ -226,9 +226,9 @@ class MainViewController: UIViewController {
         updateInterface()
         prefs.setObject(converter.inputCurrency.code, forKey: "input")
         prefs.setObject(converter.outputCurrency.code, forKey: "output")
-        
+
     }
-    
+
     func updateInterface(playSound playSound: Bool = true) {
         // Update all visible labels and reset buttons to their default styles.
         inputCurrency.setTitle(converter.formattedInput(), forState: .Normal)
@@ -249,86 +249,86 @@ class MainViewController: UIViewController {
             playTapSound()
         }
     }
-    
+
     func animateInputIndicator() {
         let inputIndicatorAnimation = CAAnimationGroup()
         inputIndicatorAnimation.duration = 1.08
         inputIndicatorAnimation.repeatCount = Float.infinity
-        
+
         let pulse = CABasicAnimation(keyPath: "opacity")
         pulse.fromValue = 1
         pulse.toValue = 0
         pulse.duration = 0.36
         pulse.autoreverses = true
         pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
+
         inputIndicatorAnimation.animations = [pulse]
         inputIndicator.layer.addAnimation(inputIndicatorAnimation, forKey: "pulse")
     }
-    
+
     func setupCustomHighlights() {
         addButtonHighlight = CALayer()
         addButtonHighlight.backgroundColor = UIColor(red:0.05, green:0.78, blue:0.58, alpha:1.00).CGColor
         addButtonHighlight.frame = CGRect(x: 0, y: 0, width: addButton.frame.size.width * 2, height: addButton.frame.size.height * 2)
         addButtonHighlight.opacity = 0
         addButtonHighlight.masksToBounds = true
-        
+
         minusButtonHighlight = CALayer()
         minusButtonHighlight.backgroundColor = UIColor(red:0.97, green:0.32, blue:0.32, alpha:1.00).CGColor
         minusButtonHighlight.frame = CGRect(x: 0, y: 0, width: minusButton.frame.size.width * 2, height: minusButton.frame.size.height * 2)
         minusButtonHighlight.opacity = 0
         minusButtonHighlight.masksToBounds = true
-        
+
         fadeInAnimation = CABasicAnimation(keyPath: "opacity")
         fadeInAnimation.fromValue = 0
         fadeInAnimation.toValue = 1
         fadeInAnimation.duration = 0.12
         fadeInAnimation.autoreverses = false
         fadeInAnimation.repeatCount = 1
-        
+
         fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 1
         fadeOutAnimation.toValue = 0
         fadeOutAnimation.duration = 0.12
         fadeOutAnimation.autoreverses = false
         fadeOutAnimation.repeatCount = 1
-        
+
         addButton.layer.insertSublayer(addButtonHighlight, below: addButton.imageView?.layer)
         minusButton.layer.insertSublayer(minusButtonHighlight, below: minusButton.imageView?.layer)
     }
-    
+
     // MARK: - Segue
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+
         // Pass the currency we are changing (input or output) and
         // the current currency code to the Change Currency View Controller.
-        
+
         if segue.identifier == "ChangeInputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "input"
             changeCurrencyViewController.selectedCurrency = converter.inputCurrency.code
             changeCurrencyViewController.delegate = self
         }
-        
+
         if segue.identifier == "ChangeOutputCurrency" {
             let changeCurrencyViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ChangeCurrencyViewController
             changeCurrencyViewController.targetCurrency = "output"
             changeCurrencyViewController.selectedCurrency = converter.outputCurrency.code
             changeCurrencyViewController.delegate = self
         }
-        
+
     }
-    
+
     func playTapSound() {
         guard prefs.boolForKey("sounds_preference") else {
             print("User disabled sounds from iOS Settings.")
             return
         }
-        
+
         let path = NSBundle.mainBundle().pathForResource("tap", ofType: "wav")!
         let url = NSURL(fileURLWithPath: path)
-        
+
         do {
             try tapSoundPlayer = AVAudioPlayer(contentsOfURL: url)
             tapSoundPlayer.play()
@@ -336,13 +336,13 @@ class MainViewController: UIViewController {
             print("Could not load audio file.")
         }
     }
-    
+
 }
 
 // MARK: - Delegate
 
 extension MainViewController: ChangeCurrencyViewControllerDelegate {
-    
+
     // After selecting a new currency from the Change Currency View Controller,
     // set it as the new currency and update the interface.
     // At this point, also save it to the user preferences file.
@@ -373,6 +373,6 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
         }
         updateInterface()
     }
-    
+
 }
 
