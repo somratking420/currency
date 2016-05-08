@@ -112,21 +112,22 @@ class Converter {
 
     private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int) -> String {
         guard decimals > 0 else {
-             return formattedCurrency
-         }
+            print ("There are no decimals to truncate from this currency")
+            return formattedCurrency
+        }
+        
+        let lastCharacters: String! = String(formattedCurrency.characters.suffix(decimals + 1))
+        let truncationLenght: Int! = decimals + 1
+        let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
 
-         let lastCharacters: String! = String(formattedCurrency.characters.suffix(decimals + 1))
-         let truncationLenght: Int! = input.decimalMode ? decimals : decimals + 1
-         let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
+        let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
 
-         let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
-
-         if (lastCharacters == emptyDecimals) {
-             let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
-             return truncatedPrice
-         } else {
-             return formattedCurrency
-         }
+        if (lastCharacters == emptyDecimals) {
+            let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
+            return truncatedPrice
+        } else {
+            return formattedCurrency
+        }
     }
 
     // MARK: Add input.
