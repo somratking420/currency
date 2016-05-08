@@ -39,7 +39,7 @@ class Converter {
     }
 
     // MARK: Format as currency.
-    
+
     func parsedInput() -> Double {
         var inputString: String
         if let integer = Int(input.integer) {
@@ -98,12 +98,12 @@ class Converter {
         }
 
         let truncationLenght: Int! = (input.decimalMode ? decimals : decimals + 1) - input.decimalInputs
-        
+
         guard truncationLenght > 0 else {
             print("Truncation length is a negative value");
             return formattedCurrency
         }
-        
+
         let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
         return truncatedPrice
     }
@@ -203,7 +203,7 @@ class Converter {
     }
 
     // MARK: Swap input with output.
-    
+
     func setInputValue(value: Double) {
         // First split the double into an integer and decimal string.
         let valueInteger: String = String(value.split()[0])
@@ -232,13 +232,13 @@ class Converter {
         let newOutputCurrencyCode = inputCurrency.code
         inputCurrency.setTo(newInputCurrencyCode, update: false)
         outputCurrency.setTo(newOutputCurrencyCode, update: false)
-        
+
     }
-    
+
     private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> Double {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        
+
         if let locale = locale where !locale.isEmpty {
             formatter.locale = NSLocale(localeIdentifier: locale)
         } else if let symbol = symbol where !symbol.isEmpty {
@@ -247,11 +247,11 @@ class Converter {
         } else {
             formatter.currencySymbol = ""
         }
-        
+
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
-        
+
         return (double)
     }
 
