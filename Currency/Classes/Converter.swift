@@ -55,7 +55,8 @@ class Converter {
 
     func formattedInput() -> String {
         let inputValue: Double! = parsedInput()
-        return formatToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
+        let formattedInput = formatToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
+        return formattedInput
     }
 
     func formattedOutput() -> String {
