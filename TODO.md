@@ -3,7 +3,6 @@
 - Weird circle with cross symbol displaying for some currencies
 - 100188817,30 DZD to AUD changes value
 - 200 JPY to GBP switch and 199 JPY
-- AFN to DZD input invisible
 
 # Tasks
 - Localization in Japanse
