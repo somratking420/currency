@@ -1,6 +1,5 @@
 # Bugs / Feedback
 - Swap delete button with dot button
-- 0.01 -> 0.10?
 - Weird circle with cross symbol displaying for some currencies
 - 100188817,30 DZD to AUD changes value
 - 200 JPY to GBP switch and 199 JPY

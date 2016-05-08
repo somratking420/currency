@@ -47,8 +47,8 @@ class Converter {
         } else {
             inputString = "0"
         }
-        if let decimal = Int(input.decimal) {
-            inputString = inputString + "." + "\(decimal)"
+        if !input.decimal.isEmpty {
+            inputString = inputString + "." + "\(input.decimal)"
         }
         return Double(inputString)!
     }
@@ -159,13 +159,16 @@ class Converter {
     }
 
     private func addDecimalInput(newInput: String) {
+        print("Adding decimal input: \(newInput).")
         guard input.decimal.characters.count < inputCurrency.decimals else {
-            print("Decimal input string is complete.")
+            print("Decimal input string has already reached the maximum length.")
             return
         }
 
         input.decimal = input.decimal + newInput
+        print("New decimal input is: \(input.decimal)")
         input.decimalInputs = input.decimalInputs + 1
+        print("New number of decimal inputs so far is: \(input.decimalInputs).")
     }
 
     // MARK: Remove input.
