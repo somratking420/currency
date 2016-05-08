@@ -75,7 +75,6 @@ class MainViewController: UIViewController {
     }
     
     func applicationBecameActiveNotification() {
-        print("applicationBecameActiveNotification")
         // When we put the app on the background the animations stop,
         // so let's restart them when the app is back on the foreground.
         animateInputIndicator()
