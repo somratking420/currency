@@ -7,13 +7,13 @@
 - 100188817,30 DZD to AUD changes value
 - 200 JPY to GBP switch and 199 JPY
 - AFN to DZD input invisible
-- Release beta 1.0.1
 
 # Tasks
 - Localization in Japanse
 - Localization in Chinese
 - Localization in Portuguese
 - Localization in Spanish
+- Release beta 1.0.1
 
 # Marketing
 - Marketing build
