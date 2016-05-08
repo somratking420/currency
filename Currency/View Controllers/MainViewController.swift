@@ -322,7 +322,6 @@ class MainViewController: UIViewController {
 
     func playTapSound() {
         guard prefs.boolForKey("sounds_preference") else {
-            print("User disabled sounds from iOS Settings.")
             return
         }
 
