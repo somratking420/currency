@@ -269,7 +269,17 @@ class Converter {
     func swapInputWithOutput(convertInputValue convertInputValue: Bool = true) {
         if convertInputValue {
             // First let's get the values from the output currency.
-            let oldOutput = parseCurrency(formattedOutput(), code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+            let oldOutput = parseCurrency(
+                    formattedOutput(),
+                    code: outputCurrency.code,
+                    locale: outputCurrency.locale,
+                    symbol: outputCurrency.symbol,
+                    decimals: outputCurrency.decimals,
+                    symbolPosition: outputCurrency.symbolPosition,
+                    useLocalization: outputCurrency.useLocalization,
+                    useSymbol: outputCurrency.useSymbol,
+                    useCustomSymbol: outputCurrency.useCustomSymbol
+                )
             // Then set those values as the new input.
             setInputValue(oldOutput)
             // And finally, swap the currencies.
@@ -281,21 +291,42 @@ class Converter {
 
     }
 
-    private func parseCurrency(formattedCurrency: String, code: String, locale: String?, symbol: String?, decimals: Int) -> Double {
+    private func parseCurrency(
+                formattedCurrency: String,
+                code: String,
+                locale: String?,
+                symbol: String?,
+                decimals: Int,
+                symbolPosition: String?,
+                useLocalization: Bool,
+                useSymbol: Bool,
+                useCustomSymbol: Bool
+            ) -> Double {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-
-        if let locale = locale where !locale.isEmpty {
-            formatter.locale = NSLocale(localeIdentifier: locale)
-        } else if let symbol = symbol where !symbol.isEmpty {
-            formatter.positivePrefix = symbol
-            formatter.negativePrefix = symbol
+        formatter.minimumFractionDigits = decimals
+        formatter.maximumFractionDigits = decimals
+        formatter.usesGroupingSeparator = true;
+        formatter.groupingSeparator = ","
+        
+        if useLocalization {
+            if let locale = locale where !locale.isEmpty {
+                formatter.locale = NSLocale(localeIdentifier: locale)
+            }
+        } else {
+            formatter.locale = NSLocale(localeIdentifier: "en_US")
+        }
+        
+        if useSymbol {
+            if useCustomSymbol {
+                if let symbol = symbol where !symbol.isEmpty {
+                    formatter.currencySymbol = symbol
+                }
+            }
         } else {
             formatter.currencySymbol = ""
         }
-
-        formatter.usesGroupingSeparator = true;
-        formatter.groupingSeparator = ","
+        
         let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
 
         return (double)
