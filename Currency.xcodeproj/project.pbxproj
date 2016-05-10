@@ -74,9 +74,9 @@
 		BCD920201C6BA6AC0089F52A /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9201F1C6BA6AC0089F52A /* CurrencyTests.swift */; };
 		BCD9202B1C6BA6AC0089F52A /* CurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9202A1C6BA6AC0089F52A /* CurrencyUITests.swift */; };
 		BCE0A6641C81A4950093AC38 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */; };
-		BCEDD72E1CE19558008C6356 /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BCEDD72B1CE19552008C6356 /* InitialCurrencyDatabase.sqlite */; };
-		BCEDD72F1CE19558008C6356 /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = BCEDD72C1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-shm */; };
-		BCEDD7301CE19558008C6356 /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = BCEDD72D1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-wal */; };
+		BCE7F2531CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BCE7F2501CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite */; };
+		BCE7F2541CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = BCE7F2511CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-shm */; };
+		BCE7F2551CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = BCE7F2521CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-wal */; };
 		BCFAE40F1C965D8B00DCE95D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCFAE40E1C965D8B00DCE95D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -175,10 +175,10 @@
 		BCD9202A1C6BA6AC0089F52A /* CurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITests.swift; sourceTree = "<group>"; };
 		BCD9202C1C6BA6AC0089F52A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE0A6611C81A4950093AC38 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorButton.swift; path = "UI Classes/CalculatorButton.swift"; sourceTree = "<group>"; };
+		BCE7F2501CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InitialCurrencyDatabase.sqlite; path = Databases/InitialCurrencyDatabase.sqlite; sourceTree = "<group>"; };
+		BCE7F2511CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
+		BCE7F2521CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
 		BCEDD72A1CE19032008C6356 /* Currency 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 4.xcdatamodel"; sourceTree = "<group>"; };
-		BCEDD72B1CE19552008C6356 /* InitialCurrencyDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = InitialCurrencyDatabase.sqlite; path = Databases/InitialCurrencyDatabase.sqlite; sourceTree = "<group>"; };
-		BCEDD72C1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-shm"; path = "Databases/InitialCurrencyDatabase.sqlite-shm"; sourceTree = "<group>"; };
-		BCEDD72D1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; name = "InitialCurrencyDatabase.sqlite-wal"; path = "Databases/InitialCurrencyDatabase.sqlite-wal"; sourceTree = "<group>"; };
 		BCFAE40E1C965D8B00DCE95D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,9 +237,9 @@
 		BC94BB0B1C8B1B9500F9716D /* Databases */ = {
 			isa = PBXGroup;
 			children = (
-				BCEDD72B1CE19552008C6356 /* InitialCurrencyDatabase.sqlite */,
-				BCEDD72C1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-shm */,
-				BCEDD72D1CE19552008C6356 /* InitialCurrencyDatabase.sqlite-wal */,
+				BCE7F2501CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite */,
+				BCE7F2511CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-shm */,
+				BCE7F2521CE1A1DC009429AC /* InitialCurrencyDatabase.sqlite-wal */,
 			);
 			name = Databases;
 			path = Currency;
@@ -522,9 +522,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCEDD72E1CE19558008C6356 /* InitialCurrencyDatabase.sqlite in Resources */,
-				BCEDD72F1CE19558008C6356 /* InitialCurrencyDatabase.sqlite-shm in Resources */,
-				BCEDD7301CE19558008C6356 /* InitialCurrencyDatabase.sqlite-wal in Resources */,
+				BCE7F2531CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite in Resources */,
+				BCE7F2541CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite-shm in Resources */,
+				BCE7F2551CE1A1E5009429AC /* InitialCurrencyDatabase.sqlite-wal in Resources */,
 				BC44BB1B1CD4A0DD00991C28 /* buttonResultIcon@2x.png in Resources */,
 				BC44BB0B1CD4A0DD00991C28 /* buttonAddIconDimmed.png in Resources */,
 				BC44BB231CD4A0DD00991C28 /* buttonSubtractIcon.png in Resources */,

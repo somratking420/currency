@@ -11,8 +11,8 @@ import AVFoundation
 
 class MainViewController: UIViewController {
 
-    var converter = Converter()
-    var calculator = Calculator()
+    var converter: Converter!
+    var calculator: Calculator!
     var tapSoundPlayer: AVAudioPlayer!
     var addButtonHighlight: CALayer!
     var minusButtonHighlight: CALayer!
@@ -33,7 +33,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        converter = Converter()
+        calculator = Calculator()
+        
         // Style view.
         view.layer.cornerRadius = 3.0
         view.clipsToBounds = true
