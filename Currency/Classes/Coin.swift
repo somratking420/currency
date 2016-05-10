@@ -16,6 +16,10 @@ class Coin {
     var locale: String?
     var symbol: String?
     var decimals: Int!
+    var symbolPosition: String?
+    var useLocalization: Bool = true
+    var useSymbol: Bool = true
+    var useCustomSymbol: Bool = false
     
     init(withCode code: String, update: Bool = true, remember: Bool = true) {
         setTo(code, update: update, remember: remember)
@@ -24,10 +28,14 @@ class Coin {
     func setTo(code: String, update: Bool = true, remember: Bool = true) {
         let currency = getRecord(code)
         self.code = currency.code
+        self.rate = currency.rate
         self.locale = currency.locale
         self.symbol = currency.symbol
-        self.rate = currency.rate
         self.decimals = currency.decimals
+        self.symbolPosition = currency.symbolPosition
+        self.useLocalization = currency.useLocalization
+        self.useSymbol = currency.useSymbol
+        self.useCustomSymbol = currency.useCustomSymbol
         if update {
             self.update()
         }
@@ -72,7 +80,17 @@ class Coin {
         print("Currency \(self.code) last selected at: \(NSDate())")
     }
     
-    private func getRecord(code: String) -> (name: String, code: String, rate: Double, locale: String?, symbol: String?, decimals: Int) {
+    private func getRecord(code: String) -> (
+            name: String,
+            code: String,
+            rate: Double,
+            locale: String?,
+            symbol: String?,
+            decimals: Int,
+            symbolPosition: String?,
+            useLocalization: Bool,
+            useSymbol: Bool,
+            useCustomSymbol: Bool) {
         // Start by showing the network indicator.
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
@@ -100,11 +118,15 @@ class Coin {
         let locale: String = currency.locale!
         let symbol: String = currency.symbol!
         let decimals: Int = Int(currency.decimals!)
+        let symbolPosition: String? = currency.symbolPosition
+        let useLocalization: Bool = currency.useLocalization
+        let useSymbol: Bool = currency.useSymbol
+        let useCustomSymbol: Bool = currency.useCustomSymbol
         
         // Finish by hiding the network indicator.
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
-        return(name, code, rate, locale, symbol, decimals)
+        return(name, code, rate, locale, symbol, decimals, symbolPosition, useLocalization, useSymbol, useCustomSymbol)
     }
     
     private func updateRate() {
