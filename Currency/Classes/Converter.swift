@@ -101,6 +101,8 @@ class Converter {
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.minimumFractionDigits = decimals
         formatter.maximumFractionDigits = decimals
+        formatter.usesGroupingSeparator = true;
+        formatter.groupingSeparator = ","
 
         if let locale = locale where !locale.isEmpty {
             formatter.locale = NSLocale(localeIdentifier: locale)
@@ -111,8 +113,6 @@ class Converter {
             formatter.currencySymbol = ""
         }
 
-        formatter.usesGroupingSeparator = true;
-        formatter.groupingSeparator = ","
         var formattedCurrency: String! = formatter.stringFromNumber(value)
 
         if code == inputCurrency.code {
