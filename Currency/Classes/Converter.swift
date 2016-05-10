@@ -121,19 +121,26 @@ class Converter {
         } else {
             formatter.currencySymbol = ""
         }
-
+        
+        var offset = 0
+        if symbolPosition == "right" {
+            if let symbol = symbol where !symbol.isEmpty {
+                offset = symbol.characters.count
+            }
+        }
+        
         var formattedCurrency: String! = formatter.stringFromNumber(value)
 
         if code == inputCurrency.code {
-            formattedCurrency = truncateDecimalsToDecimalInputLength(formattedCurrency, decimals: decimals)
+            formattedCurrency = truncateDecimalsToDecimalInputLength(formattedCurrency, decimals: decimals, offset: offset)
         } else {
-            formattedCurrency = truncateEmptyDecimalsFromCurrency(formattedCurrency, decimals: decimals)
+            formattedCurrency = truncateEmptyDecimalsFromCurrency(formattedCurrency, decimals: decimals, offset: offset)
         }
 
         return formattedCurrency!
     }
 
-    private func truncateDecimalsToDecimalInputLength(formattedCurrency: String, decimals: Int) -> String {
+    private func truncateDecimalsToDecimalInputLength(formattedCurrency: String, decimals: Int, offset: Int) -> String {
         guard decimals > 0 else {
             print("No decimals to truncate from price string")
             return formattedCurrency
@@ -146,24 +153,30 @@ class Converter {
             return formattedCurrency
         }
 
-        let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
+        let symbol: String! = String(formattedCurrency.characters.dropFirst(formattedCurrency.characters.count - offset))
+        let number: String! = String(formattedCurrency.characters.dropLast(offset)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let truncatedNumber: String! = String(number.characters.dropLast(truncationLenght))
+        let truncatedPrice: String! = truncatedNumber + symbol
+
         return truncatedPrice
     }
 
-    private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int) -> String {
+    private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int, offset: Int) -> String {
         guard decimals > 0 else {
             print ("There are no decimals to truncate from this currency")
             return formattedCurrency
         }
         
-        let lastCharacters: String! = String(formattedCurrency.characters.suffix(decimals + 1))
         let truncationLenght: Int! = decimals + 1
+        let symbol: String! = String(formattedCurrency.characters.dropFirst(formattedCurrency.characters.count - offset))
+        let number: String! = String(formattedCurrency.characters.dropLast(offset)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let lastCharacters: String! = String(number.characters.suffix(truncationLenght))
         let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
-
         let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
-
+    
         if (lastCharacters == emptyDecimals) {
-            let truncatedPrice: String! = String(formattedCurrency.characters.dropLast(truncationLenght))
+            let truncatedNumber: String! = String(number.characters.dropLast(truncationLenght))
+            let truncatedPrice: String! = truncatedNumber + symbol
             return truncatedPrice
         } else {
             return formattedCurrency
