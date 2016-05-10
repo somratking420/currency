@@ -103,10 +103,16 @@ class Converter {
         formatter.maximumFractionDigits = decimals
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
+        
+        if useLocalization {
+            if let locale = locale where !locale.isEmpty {
+                formatter.locale = NSLocale(localeIdentifier: locale)
+            }
+        } else {
+            formatter.locale = NSLocale(localeIdentifier: "en_US")
+        }
 
-        if let locale = locale where !locale.isEmpty {
-            formatter.locale = NSLocale(localeIdentifier: locale)
-        } else if let symbol = symbol where !symbol.isEmpty {
+        if let symbol = symbol where !symbol.isEmpty {
             formatter.positivePrefix = symbol
             formatter.negativePrefix = symbol
         } else {
