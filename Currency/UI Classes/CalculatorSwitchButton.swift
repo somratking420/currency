@@ -26,7 +26,7 @@ class CalculatorSwitchButton: UIButton {
         
         let topBorder = CALayer()
         topBorder.backgroundColor = borderColor
-        topBorder.frame = CGRect(x: 0, y: 0, width: self.frame.size.width * 2, height: 0.25)
+        topBorder.frame = CGRect(x: 0, y: 0, width: self.frame.size.width * 2, height: 0.5)
         
         self.layer.masksToBounds = true
         self.layer.addSublayer(leftBorder)
