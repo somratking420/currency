@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         converter = Converter()
         calculator = Calculator()
         
@@ -116,7 +115,6 @@ class MainViewController: UIViewController {
         sender.setImage(UIImage(named: "buttonAddIconHighlighted.png"), forState: .Normal)
         addButtonHighlight.addAnimation(fadeInAnimation, forKey: "fadeIn")
         addButtonHighlight.opacity = 1
-
     }
 
     @IBAction func minusPressed(sender: UIButton) {
@@ -375,7 +373,4 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
         }
         updateInterface()
     }
-    
 }
-
-

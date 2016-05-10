@@ -281,7 +281,6 @@ class Converter {
         print("Started inputting decimals.")
     }
 
-
 }
 
 extension Double {

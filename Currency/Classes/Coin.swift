@@ -41,7 +41,6 @@ class Coin {
     }
     
     func recordAsSelected() {
-        
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -71,11 +70,9 @@ class Coin {
         }
         
         print("Currency \(self.code) last selected at: \(NSDate())")
-        
     }
     
     private func getRecord(code: String) -> (name: String, code: String, rate: Double, locale: String?, symbol: String?, decimals: Int) {
-        
         // Start by showing the network indicator.
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
@@ -108,7 +105,6 @@ class Coin {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
         return(name, code, rate, locale, symbol, decimals)
-        
     }
     
     private func updateRate() {
@@ -137,11 +133,9 @@ class Coin {
         }
         
         task.resume()
-        
     }
     
     private func updateRateRecord(rate: Double) {
-        
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -174,7 +168,5 @@ class Coin {
         
         print("Currency \(self.code) updated with the rate: \(rate)")
     }
-    
-    
     
 }

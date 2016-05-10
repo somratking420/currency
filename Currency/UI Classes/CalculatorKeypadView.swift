@@ -11,15 +11,4 @@ import UIKit
 
 class CalculatorKeypadView: UIView {
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        
-//        let border = CALayer()
-//        border.borderColor = UIColor(red:0.74, green:0.74, blue:0.74, alpha:1).CGColor
-//        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 1)
-//        border.borderWidth = 1
-//        self.layer.addSublayer(border)
-//        self.layer.masksToBounds = true
-    }
-    
 }

@@ -171,7 +171,6 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
         }
 
         self.searchResults = filteredContent
-
     }
 
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
