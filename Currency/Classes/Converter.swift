@@ -284,9 +284,9 @@ class Converter {
 }
 
 extension Double {
-    func split() -> [Int] {
+    func split() -> [String] {
         return String(self).characters.split{$0 == "."}.map({
-            return Int(String($0))!
+            return String($0)
         })
     }
 }
