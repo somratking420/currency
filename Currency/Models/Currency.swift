@@ -12,11 +12,15 @@ import CoreData
 
 class Currency: NSManagedObject {
     
-    @NSManaged dynamic var name: String?
-    @NSManaged dynamic var code: String?
-    @NSManaged dynamic var rateFromUSD: NSNumber?
-    @NSManaged dynamic var decimals: NSNumber?
+    @NSManaged dynamic var name: String!
+    @NSManaged dynamic var code: String!
+    @NSManaged dynamic var rateFromUSD: NSNumber!
+    @NSManaged dynamic var decimals: NSNumber!
     @NSManaged dynamic var symbol: String?
     @NSManaged dynamic var locale: String?
+    @NSManaged dynamic var symbolPosition: String?
+    @NSManaged dynamic var useLocalization: Bool
+    @NSManaged dynamic var useSymbol: Bool
+    @NSManaged dynamic var useCustomSymbol: Bool
 
 }
