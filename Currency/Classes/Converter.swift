@@ -111,10 +111,13 @@ class Converter {
         } else {
             formatter.locale = NSLocale(localeIdentifier: "en_US")
         }
-
-        if let symbol = symbol where !symbol.isEmpty {
-            formatter.positivePrefix = symbol
-            formatter.negativePrefix = symbol
+        
+        if useSymbol {
+            if useCustomSymbol {
+                if let symbol = symbol where !symbol.isEmpty {
+                    formatter.currencySymbol = symbol
+                }
+            }
         } else {
             formatter.currencySymbol = ""
         }
