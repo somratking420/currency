@@ -55,17 +55,48 @@ class Converter {
 
     func formattedInput() -> String {
         let inputValue: Double! = parsedInput()
-        let formattedInput = formatToCurrency(inputValue, code: inputCurrency.code, locale: inputCurrency.locale, symbol: inputCurrency.symbol, decimals: inputCurrency.decimals)
+        let formattedInput = formatToCurrency(
+                inputValue,
+                code: inputCurrency.code,
+                locale: inputCurrency.locale,
+                symbol: inputCurrency.symbol,
+                decimals: inputCurrency.decimals,
+                symbolPosition: inputCurrency.symbolPosition,
+                useLocalization: inputCurrency.useLocalization,
+                useSymbol: inputCurrency.useSymbol,
+                useCustomSymbol: inputCurrency.useCustomSymbol
+            )
         return formattedInput
     }
 
     func formattedOutput() -> String {
         let inputValue: Double! = parsedInput()
         let outputValue: Double = convertToOutputCurrency(inputValue)
-        return formatToCurrency(outputValue, code: outputCurrency.code, locale: outputCurrency.locale, symbol: outputCurrency.symbol, decimals: outputCurrency.decimals)
+        let formattedOutput = formatToCurrency(
+                outputValue,
+                code: outputCurrency.code,
+                locale: outputCurrency.locale,
+                symbol: outputCurrency.symbol,
+                decimals: outputCurrency.decimals,
+                symbolPosition: outputCurrency.symbolPosition,
+                useLocalization: outputCurrency.useLocalization,
+                useSymbol: outputCurrency.useSymbol,
+                useCustomSymbol: outputCurrency.useCustomSymbol
+            )
+        return formattedOutput
     }
 
-    private func formatToCurrency(value: Double, code: String, locale: String?, symbol: String?, decimals: Int) -> String {
+    private func formatToCurrency(
+                value: Double,
+                code: String,
+                locale: String?,
+                symbol: String?,
+                decimals: Int,
+                symbolPosition: String?,
+                useLocalization: Bool,
+                useSymbol: Bool,
+                useCustomSymbol: Bool
+            ) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.minimumFractionDigits = decimals
