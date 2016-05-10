@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -139,7 +139,7 @@
                                             <color key="titleColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-xO-FNG">
+                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-xO-FNG">
                                         <rect key="frame" x="0.0" y="302" width="150" height="101"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -176,8 +176,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-H7-xRt">
-                                        <rect key="frame" x="308" y="302" width="150" height="101"/>
+                                    <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwF-H7-xRt">
+                                        <rect key="frame" x="300" y="302" width="150" height="101"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.60777515169999996" green="0.60788232090000005" blue="0.60776835679999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="buttonClearIconDimmed.png">
@@ -187,13 +187,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="kwF-H7-xRt" firstAttribute="leading" secondItem="DSe-NT-tOj" secondAttribute="trailing" id="12b-HC-6Wx"/>
                                     <constraint firstItem="AyC-pg-GUX" firstAttribute="leading" secondItem="56a-p8-Z9S" secondAttribute="trailing" id="1cR-85-A8y"/>
                                     <constraint firstItem="KDU-ek-hch" firstAttribute="leading" secondItem="M7C-zH-11J" secondAttribute="trailing" id="1yn-ct-4pF"/>
                                     <constraint firstItem="DSe-NT-tOj" firstAttribute="top" secondItem="mye-Sm-pZ3" secondAttribute="bottom" id="2GG-dM-aq0"/>
                                     <constraint firstItem="MeL-AN-G13" firstAttribute="leading" secondItem="F5T-4Q-JNB" secondAttribute="trailing" id="3JO-4i-ziK"/>
+                                    <constraint firstItem="DSe-NT-tOj" firstAttribute="leading" secondItem="mUa-xO-FNG" secondAttribute="trailing" id="3v4-1X-2Gk"/>
                                     <constraint firstItem="Hpo-Ns-yaq" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="4Ww-xF-5Op"/>
                                     <constraint firstItem="kwF-H7-xRt" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="5Ig-Kd-9ko"/>
                                     <constraint firstItem="MeL-AN-G13" firstAttribute="width" secondItem="56a-p8-Z9S" secondAttribute="width" id="6pM-MH-agu"/>
+                                    <constraint firstItem="kwF-H7-xRt" firstAttribute="top" secondItem="sZV-UA-G6s" secondAttribute="bottom" id="AEd-ps-FQS"/>
                                     <constraint firstItem="F5T-4Q-JNB" firstAttribute="leading" secondItem="AyC-pg-GUX" secondAttribute="trailing" id="AQC-A6-epD"/>
                                     <constraint firstItem="kwF-H7-xRt" firstAttribute="leading" secondItem="Onr-cr-VFp" secondAttribute="leading" id="B2z-QS-jPg"/>
                                     <constraint firstAttribute="trailing" secondItem="MeL-AN-G13" secondAttribute="trailing" id="BZj-vA-O5b"/>
@@ -201,6 +204,7 @@
                                     <constraint firstItem="mye-Sm-pZ3" firstAttribute="leading" secondItem="2dX-6u-pz6" secondAttribute="trailing" id="CRy-rJ-EYn"/>
                                     <constraint firstAttribute="bottom" secondItem="kwF-H7-xRt" secondAttribute="bottom" id="DR6-pN-jlZ"/>
                                     <constraint firstItem="Qbe-RD-ahC" firstAttribute="width" secondItem="56a-p8-Z9S" secondAttribute="width" id="DXs-1R-04V"/>
+                                    <constraint firstItem="mUa-xO-FNG" firstAttribute="leading" secondItem="Onr-cr-VFp" secondAttribute="leading" id="DhY-Yv-0l0"/>
                                     <constraint firstItem="DSe-NT-tOj" firstAttribute="leading" secondItem="kwF-H7-xRt" secondAttribute="trailing" id="E6a-9k-qM4"/>
                                     <constraint firstItem="M7C-zH-11J" firstAttribute="top" secondItem="56a-p8-Z9S" secondAttribute="bottom" id="E6t-S7-Rir"/>
                                     <constraint firstAttribute="trailing" secondItem="vDs-rX-a1A" secondAttribute="trailing" id="ECQ-Dr-45P"/>
@@ -235,6 +239,7 @@
                                     <constraint firstItem="AyC-pg-GUX" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="XpX-0b-zl9"/>
                                     <constraint firstItem="sZV-UA-G6s" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="YQR-g5-9Z0"/>
                                     <constraint firstAttribute="bottom" secondItem="Hpo-Ns-yaq" secondAttribute="bottom" id="aNl-1d-4C3"/>
+                                    <constraint firstItem="mUa-xO-FNG" firstAttribute="top" secondItem="2dX-6u-pz6" secondAttribute="bottom" id="cZL-J9-oDD"/>
                                     <constraint firstAttribute="width" secondItem="Onr-cr-VFp" secondAttribute="height" multiplier="1:1" priority="750" id="cry-CX-Qg7"/>
                                     <constraint firstItem="sZV-UA-G6s" firstAttribute="leading" secondItem="mye-Sm-pZ3" secondAttribute="trailing" id="ctC-5B-MVh"/>
                                     <constraint firstAttribute="trailing" secondItem="Hpo-Ns-yaq" secondAttribute="trailing" id="dEU-t0-FKg"/>
@@ -252,6 +257,7 @@
                                     <constraint firstItem="M7C-zH-11J" firstAttribute="leading" secondItem="Onr-cr-VFp" secondAttribute="leading" id="nAf-J4-NE3"/>
                                     <constraint firstItem="sZV-UA-G6s" firstAttribute="width" secondItem="56a-p8-Z9S" secondAttribute="width" id="oJd-nH-AdK"/>
                                     <constraint firstItem="Qbe-RD-ahC" firstAttribute="leading" secondItem="KDU-ek-hch" secondAttribute="trailing" id="rbc-wM-kbZ"/>
+                                    <constraint firstItem="Hpo-Ns-yaq" firstAttribute="leading" secondItem="kwF-H7-xRt" secondAttribute="trailing" id="rhO-sP-8gl"/>
                                     <constraint firstItem="vDs-rX-a1A" firstAttribute="top" secondItem="MeL-AN-G13" secondAttribute="bottom" id="skX-xx-O2z"/>
                                     <constraint firstItem="MeL-AN-G13" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="sud-9X-mph"/>
                                     <constraint firstItem="Hpo-Ns-yaq" firstAttribute="leading" secondItem="mUa-xO-FNG" secondAttribute="trailing" id="tfR-0Y-4rl"/>
@@ -259,6 +265,16 @@
                                     <constraint firstItem="vDs-rX-a1A" firstAttribute="height" secondItem="56a-p8-Z9S" secondAttribute="height" id="xVT-lv-Ir9"/>
                                     <constraint firstItem="F5T-4Q-JNB" firstAttribute="top" secondItem="Onr-cr-VFp" secondAttribute="top" id="xdK-QN-PhG"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FRM-Mo-1an"/>
+                                        <exclude reference="j4L-yg-Fyh"/>
+                                        <exclude reference="E6a-9k-qM4"/>
+                                        <exclude reference="B2z-QS-jPg"/>
+                                        <exclude reference="Ha0-N3-na0"/>
+                                        <exclude reference="tfR-0Y-4rl"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
