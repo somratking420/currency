@@ -1,5 +1,4 @@
 # Bugs / Feedback
-- Swap delete button with dot button
 - Weird circle with cross symbol displaying for some currencies
 
 # Tasks
