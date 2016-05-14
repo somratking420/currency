@@ -123,7 +123,7 @@ class Converter {
         }
         
         var offset = 0
-        if symbolPosition == "right" {
+        if symbolPosition == "right" && useSymbol {
             if let symbol = symbol where !symbol.isEmpty {
                 offset = symbol.characters.count
             }
