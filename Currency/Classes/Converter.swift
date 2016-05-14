@@ -340,9 +340,13 @@ class Converter {
             formatter.currencySymbol = ""
         }
         
-        let double: Double = formatter.numberFromString(formattedCurrency)!.doubleValue
+        if let number = formatter.numberFromString(formattedCurrency) {
+            return (number.doubleValue)
+        } else {
+            print("Could not parse double from formatted currency string.")
+            return 0.0
+        }
 
-        return (double)
     }
 
     // MARK: Reset.
