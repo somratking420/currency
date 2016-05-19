@@ -91,8 +91,6 @@ class Coin {
             useLocalization: Bool,
             useSymbol: Bool,
             useCustomSymbol: Bool) {
-        // Start by showing the network indicator.
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
@@ -123,13 +121,14 @@ class Coin {
         let useSymbol: Bool = currency.useSymbol
         let useCustomSymbol: Bool = currency.useCustomSymbol
         
-        // Finish by hiding the network indicator.
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        
         return(name, code, rate, locale, symbol, decimals, symbolPosition, useLocalization, useSymbol, useCustomSymbol)
     }
     
     private func updateRate() {
+        
+        // Start by showing the network indicator.
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
             "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
             "%22USD" + self.code + "%22)&diagnostics=true&env=store%3A%2F%2F" +
@@ -139,6 +138,7 @@ class Coin {
             
             guard data != nil else {
                 print("Error performing Yahoo query.")
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 return
             }
             
@@ -146,15 +146,18 @@ class Coin {
             
             guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
                 print("Could not parse XML request.")
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 return
             }
             
             // Update currency record on database.
             self.updateRateRecord(Double(rate)!)
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
         }
         
         task.resume()
+        
     }
     
     private func updateRateRecord(rate: Double) {
