@@ -301,8 +301,8 @@ class Converter {
         }
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
-        inputCurrency.setTo(newInputCurrencyCode, update: false)
-        outputCurrency.setTo(newOutputCurrencyCode, update: false)
+        inputCurrency.setTo(newInputCurrencyCode, update: false, remember: false)
+        outputCurrency.setTo(newOutputCurrencyCode, update: false, remember: false)
 
     }
 
