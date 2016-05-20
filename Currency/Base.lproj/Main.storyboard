@@ -87,7 +87,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,7 +98,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,7 +109,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,7 +120,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,7 +131,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="150" y="84.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,7 +142,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="300" y="84.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,7 +153,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="169" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,7 +164,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="150" y="169" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -175,7 +175,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="300" y="169" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,7 +199,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="150" y="253.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -257,7 +257,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="253.5" width="150" height="84.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="44"/>
                                         <color key="tintColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" red="0.19605264067649841" green="0.19609326124191284" blue="0.19605004787445068" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
