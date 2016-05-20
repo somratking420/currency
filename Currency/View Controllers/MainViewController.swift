@@ -237,12 +237,12 @@ class MainViewController: UIViewController {
         outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
-        if addButtonHighlight.opacity == 1 {
+        if addButtonHighlight.opacity == 1 && !calculator.settingNewValue {
             addButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
             addButtonHighlight.opacity = 0
             addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         }
-        if minusButtonHighlight.opacity == 1 {
+        if minusButtonHighlight.opacity == 1 && !calculator.settingNewValue {
             minusButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
             minusButtonHighlight.opacity = 0
             minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
