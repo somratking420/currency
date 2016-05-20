@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -63,8 +62,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite")
+        let userDatabaseVersion: Int
+        let latestDatabaseVersion: Int = 2
         
-        if !NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
+        if let version = NSUserDefaults.standardUserDefaults().stringForKey("databaseVersion") {
+            userDatabaseVersion = Int(version)!
+        } else {
+            userDatabaseVersion = 0
+        }
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(url.path!) || userDatabaseVersion != latestDatabaseVersion {
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]
             
@@ -75,6 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(error)
                 }
             }
+            
+            NSUserDefaults.standardUserDefaults().setObject(latestDatabaseVersion, forKey: "databaseVersion")
         }
         
         var failureReason = "There was an error creating or loading the application's saved data."
