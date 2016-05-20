@@ -71,12 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDatabaseVersion = 0
         }
         
+        print("userDatabaseVersion", userDatabaseVersion)
+        print("latestDatabaseVersion", latestDatabaseVersion)
+        
         if !NSFileManager.defaultManager().fileExistsAtPath(url.path!) || userDatabaseVersion != latestDatabaseVersion {
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]
             
             for var index = 0; index < sourceSqliteURLs.count; index++ {
                 do {
+                    try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
                     try NSFileManager.defaultManager().copyItemAtURL(sourceSqliteURLs[index], toURL: destSqliteURLs[index])
                 } catch {
                     print(error)
