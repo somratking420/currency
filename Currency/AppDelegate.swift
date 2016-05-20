@@ -77,11 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("latestDatabaseVersion", latestDatabaseVersion)
         
         if userDatabaseVersion != latestDatabaseVersion {
+            print("delete databases")
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]
             
             // I'm using the "stride" method instead of an old C-style loop, but I don't like it.
             for index in 0.stride(to: -1, by: -1) {
+                print("deleting \(index)")
                 do {
                     if deleteExisting {
                         try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
