@@ -97,6 +97,12 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func clearPressed(sender: UIButton) {
+        guard !calculator.settingNewValue else {
+            calculator.reset()
+            updateInterface()
+            return
+        }
+        
         converter.removeLastInput()
         updateInterface()
     }
