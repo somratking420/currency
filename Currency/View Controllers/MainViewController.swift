@@ -231,24 +231,24 @@ class MainViewController: UIViewController {
         } else {
             converter.swapInputWithOutput()
         }
-        updateInterface()
+        updateInterface(playSound: true, clearOperationButton: false)
         prefs.setObject(converter.inputCurrency.code, forKey: "input")
         prefs.setObject(converter.outputCurrency.code, forKey: "output")
 
     }
 
-    func updateInterface(playSound playSound: Bool = true) {
+    func updateInterface(playSound playSound: Bool = true, clearOperationButton: Bool = true) {
         // Update all visible labels and reset buttons to their default styles.
         inputCurrency.setTitle(converter.formattedInput(), forState: .Normal)
         outputCurrency.setTitle(converter.formattedOutput(), forState: .Normal)
         inputCurrencyCodeButton.setTitle(converter.inputCurrency.code, forState: .Normal)
         outputCurrencyCodeButton.setTitle(converter.outputCurrency.code, forState: .Normal)
-        if addButtonHighlight.opacity == 1 && !calculator.settingNewValue {
+        if addButtonHighlight.opacity == 1 && clearOperationButton {
             addButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
             addButtonHighlight.opacity = 0
             addButton.setImage(UIImage(named: "buttonAddIcon.png"), forState: .Normal)
         }
-        if minusButtonHighlight.opacity == 1 && !calculator.settingNewValue {
+        if minusButtonHighlight.opacity == 1 && clearOperationButton {
             minusButtonHighlight.addAnimation(fadeOutAnimation, forKey: "fadeOut")
             minusButtonHighlight.opacity = 0
             minusButton.setImage(UIImage(named: "buttonSubtractIcon.png"), forState: .Normal)
