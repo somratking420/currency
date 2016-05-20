@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]
             
-            for var index = 0; index < sourceSqliteURLs.count; index++ {
+            for var index = 0; index < sourceSqliteURLs.count; index + 1 {
                 do {
                     if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
                         try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
