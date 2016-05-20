@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
                     }
                     try NSFileManager.defaultManager().copyItemAtURL(sourceSqliteURLs[index], toURL: destSqliteURLs[index])
-                    print("Updated database file \(index) of sourceSqliteURLs.count")
+                    print("Updated database file \(index) of \(sourceSqliteURLs.count)")
                 } catch {
                     print(error)
                 }
