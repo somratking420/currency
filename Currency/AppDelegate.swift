@@ -73,27 +73,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDatabaseVersion = 0
         }
         
-        print("userDatabaseVersion", userDatabaseVersion)
-        print("latestDatabaseVersion", latestDatabaseVersion)
+        print("Device local database version:", userDatabaseVersion)
+        print("Latest database version:", latestDatabaseVersion)
         
         if userDatabaseVersion != latestDatabaseVersion {
-            print("delete databases")
+            print("Device local database is out of date. Updating database files...")
             let sourceSqliteURLs = [NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-wal")!, NSBundle.mainBundle().URLForResource("InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite-shm")]
             
             for var index = 0; index < sourceSqliteURLs.count; index++ {
-                print("deleting \(index)")
                 do {
                     if deleteExisting {
                         try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
                     }
                     try NSFileManager.defaultManager().copyItemAtURL(sourceSqliteURLs[index], toURL: destSqliteURLs[index])
+                    print("Updated database file \(index) of sourceSqliteURLs.count")
                 } catch {
                     print(error)
                 }
             }
             
             prefs.setObject(latestDatabaseVersion, forKey: "databaseVersion")
+            print("Finished updating local database files.")
         }
         
         var failureReason = "There was an error creating or loading the application's saved data."
