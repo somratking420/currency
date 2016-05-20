@@ -62,10 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CurrencyDatabase.sqlite")
+        let prefs = NSUserDefaults.standardUserDefaults()
         let userDatabaseVersion: Int
         let latestDatabaseVersion: Int = 2
+        let deleteExisting: Bool = NSFileManager.defaultManager().fileExistsAtPath(url.path!)
         
-        if let version = NSUserDefaults.standardUserDefaults().stringForKey("databaseVersion") {
+        if let version = prefs.stringForKey("databaseVersion") {
             userDatabaseVersion = Int(version)!
         } else {
             userDatabaseVersion = 0
@@ -81,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // I'm using the "stride" method instead of an old C-style loop, but I don't like it.
             for index in 0.stride(to: -1, by: -1) {
                 do {
-                    if NSFileManager.defaultManager().fileExistsAtPath(url.path!) {
+                    if deleteExisting {
                         try NSFileManager.defaultManager().removeItemAtURL(destSqliteURLs[index])
                     }
                     try NSFileManager.defaultManager().copyItemAtURL(sourceSqliteURLs[index], toURL: destSqliteURLs[index])
@@ -90,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             
-            NSUserDefaults.standardUserDefaults().setObject(latestDatabaseVersion, forKey: "databaseVersion")
+            prefs.setObject(latestDatabaseVersion, forKey: "databaseVersion")
         }
         
         var failureReason = "There was an error creating or loading the application's saved data."
