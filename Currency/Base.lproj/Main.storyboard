@@ -263,7 +263,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yfa-A5-Xr1" firstAttribute="top" secondItem="YAk-yI-DGx" secondAttribute="bottom" id="0CI-fN-RNU"/>
                                     <constraint firstItem="fVX-LE-xzS" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" id="0Cv-OK-rpS"/>
@@ -563,7 +563,7 @@
     </scenes>
     <resources>
         <image name="buttonAddIcon.png" width="26" height="26"/>
-        <image name="buttonClearIcon.png" width="52" height="32"/>
+        <image name="buttonClearIcon.png" width="52" height="31"/>
         <image name="buttonResultIcon.png" width="24" height="12"/>
         <image name="buttonSubtractIcon.png" width="25" height="2"/>
         <image name="buttonSwitchIcon.png" width="44" height="32"/>

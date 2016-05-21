@@ -199,7 +199,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ugj-zm-lna" firstAttribute="leading" secondItem="JkX-Ry-Dqe" secondAttribute="trailing" id="1LN-tf-5Ha"/>
                                     <constraint firstItem="0s8-gB-04h" firstAttribute="height" secondItem="i1F-5m-Gkm" secondAttribute="height" id="4TJ-RJ-tBW"/>
@@ -357,7 +357,7 @@
     </scenes>
     <resources>
         <image name="buttonAddIconDimmed.png" width="26" height="26"/>
-        <image name="buttonClearIconDimmed.png" width="52" height="32"/>
+        <image name="buttonClearIconDimmed.png" width="52" height="31"/>
         <image name="buttonResultIconDimmed.png" width="24" height="12"/>
         <image name="buttonSubtractIconDimmed.png" width="25" height="2"/>
         <image name="buttonSwitchIconDimmed.png" width="44" height="32"/>
