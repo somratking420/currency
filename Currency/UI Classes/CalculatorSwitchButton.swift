@@ -12,7 +12,7 @@ import UIKit
 class CalculatorSwitchButton: UIButton {
     
     let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
-    let normalStateColor: CGColor! = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.00).CGColor
+    let normalStateColor: CGColor! = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.00).CGColor
     let highlightStateColor: CGColor! = UIColor(red:1.00, green:0.62, blue:0.00, alpha:1.00).CGColor
     
     required init(coder aDecoder: NSCoder) {
@@ -20,17 +20,9 @@ class CalculatorSwitchButton: UIButton {
         
         self.setImage(UIImage(named: "buttonSwitchIconHighlighted.png"), forState: .Highlighted)
         
-        let leftBorder = CALayer()
-        leftBorder.backgroundColor = borderColor
-        leftBorder.frame = CGRect(x: 0, y: 0, width: 0.5, height: self.frame.size.height * 2)
-        
-        let topBorder = CALayer()
-        topBorder.backgroundColor = borderColor
-        topBorder.frame = CGRect(x: 0, y: 0, width: self.frame.size.width * 2, height: 0.5)
-        
+        self.layer.borderWidth = 0.25
+        self.layer.borderColor = borderColor
         self.layer.masksToBounds = true
-        self.layer.addSublayer(leftBorder)
-        self.layer.addSublayer(topBorder)
         self.backgroundColor = UIColor(CGColor: normalStateColor)
     }
     
