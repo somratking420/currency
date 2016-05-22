@@ -256,6 +256,8 @@ class MainViewController: UIViewController {
         if playSound {
             playTapSound()
         }
+        inputIndicator.layer.removeAnimationForKey("pulse")
+        animateInputIndicator()
     }
 
     func animateInputIndicator() {
@@ -267,6 +269,7 @@ class MainViewController: UIViewController {
         pulse.fromValue = 1
         pulse.toValue = 0
         pulse.duration = 0.36
+        pulse.beginTime = 0.36
         pulse.autoreverses = true
         pulse.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
