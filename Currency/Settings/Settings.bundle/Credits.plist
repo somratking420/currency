@@ -22,7 +22,7 @@
 			<key>Title</key>
 			<string>Special Thanks</string>
 			<key>FooterText</key>
-			<string>Thanks to Johnny Linnert for organising the Command Swift workshops in Tokyo, which got me interested in Swift and kept me motivated to learn. Thanks to Jonathon Toon for all the help getting started with developing for iOS and for the request to build this app. Thanks Aaron Daub and Tiago Alves for reviewing my code at an early stage.</string>
+			<string>Thanks to Johnny Linnert for organising the Command Swift workshops in Tokyo, which got me interested in Swift and kept me motivated to learn. Thanks to Jonathon Toon for all the help getting started with developing for iOS and for the request to build this app. Thanks Aaron Daub and Tiago Alves for reviewing my code at an early stage. Thank you Teodora Blîndu, Zi Mu, Phill Farrugia, Honey Chang, Matt Delves, Jack Veiga, Benjamin Thomas and Rogério Moreira for testing and giving feedback on the beta builds.</string>
 		</dict>
 	</array>
 </dict>
