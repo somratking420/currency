@@ -69,7 +69,7 @@
                                     <outletCollection property="gestureRecognizers" destination="6Xo-w5-vdo" appends="YES" id="JV3-iV-nER"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
                                 <rect key="frame" x="0.0" y="247" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -263,7 +263,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yfa-A5-Xr1" firstAttribute="top" secondItem="YAk-yI-DGx" secondAttribute="bottom" id="0CI-fN-RNU"/>
                                     <constraint firstItem="fVX-LE-xzS" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" id="0Cv-OK-rpS"/>
