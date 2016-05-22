@@ -209,9 +209,9 @@ class MainViewController: UIViewController {
         outputCurrencyCodeButton.center.y = inputCodeButtonPosition
 
         UIView.animateWithDuration(
-            0.46,
+            0.56,
             delay: 0,
-            usingSpringWithDamping: 0.66,
+            usingSpringWithDamping: 0.56,
             initialSpringVelocity: 0.0,
             options: .CurveEaseOut,
             animations: {
