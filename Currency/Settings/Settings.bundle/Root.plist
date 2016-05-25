@@ -36,21 +36,19 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Developer</string>
-			<key>Key</key>
-			<string>developer_title</string>
-			<key>DefaultValue</key>
-			<string>Nuno Coelho Santos</string>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Credits</string>
 			<key>File</key>
 			<string>Credits</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>File</key>
+			<string>Acknowledgements</string>
 		</dict>
 	</array>
 </dict>
