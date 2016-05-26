@@ -55,6 +55,8 @@ class MainViewController: UIViewController {
         if let currencyCode = prefs.stringForKey("input") {
             converter.inputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
+        } else {
+            converter.inputCurrency.update()
         }
 
         // If we have the last input currency used saved on the preferences
@@ -62,6 +64,8 @@ class MainViewController: UIViewController {
         if let currencyCode = prefs.stringForKey("output") {
             converter.outputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
+        } else {
+            converter.outputCurrency.update()
         }
 
         // We want to know if the app is opened from the background
