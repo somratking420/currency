@@ -519,10 +519,26 @@
                     </view>
                     <navigationItem key="navigationItem" title="Change Currency" id="3Na-n4-bDO">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XKg-x9-1w8">
+                            <attributedString key="userComments">
+                                <fragment content="Button to dismiss change currency view">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="Gga-26-1cy" id="3Ng-LF-ETL"/>
                             </connections>
                         </barButtonItem>
+                        <attributedString key="userComments">
+                            <fragment content="Title for the change currency title">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Voo-x0-JhT" id="X38-YO-hgX"/>

@@ -6,7 +6,7 @@
 "35e-qM-0gB.normalTitle" = "6";
 
 /* Class = "UINavigationItem"; title = "Change Currency"; ObjectID = "3Na-n4-bDO"; */
-"3Na-n4-bDO.title" = "Change Currency";
+"3Na-n4-bDO.title" = "兑换货币";
 
 /* Class = "UIButton"; normalTitle = "GBP"; ObjectID = "4nD-bv-Hha"; */
 "4nD-bv-Hha.normalTitle" = "GBP";
@@ -18,7 +18,7 @@
 "9qf-Ta-xvN.text" = "Title";
 
 /* Class = "UISearchBar"; placeholder = "Currencies"; ObjectID = "CZV-23-ufX"; */
-"CZV-23-ufX.placeholder" = "Currencies";
+"CZV-23-ufX.placeholder" = "货币";
 
 /* Class = "UIButton"; normalTitle = "4"; ObjectID = "DJH-uF-R2A"; */
 "DJH-uF-R2A.normalTitle" = "4";
