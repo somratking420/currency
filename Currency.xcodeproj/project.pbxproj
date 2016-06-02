@@ -164,6 +164,7 @@
 		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
 		BCA0CC391CD36EF4001C520C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tap.wav; path = Sounds/tap.wav; sourceTree = "<group>"; };
 		BCAADB6E1CD2643800F360F8 /* CalculatorClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorClearButton.swift; path = "UI Classes/CalculatorClearButton.swift"; sourceTree = "<group>"; };
+		BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 5.xcdatamodel"; sourceTree = "<group>"; };
 		BCD920041C6BA6AC0089F52A /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD920071C6BA6AC0089F52A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD9200C1C6BA6AC0089F52A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -935,12 +936,13 @@
 		BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */,
 				BCEDD72A1CE19032008C6356 /* Currency 4.xcdatamodel */,
 				BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */,
 				BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */,
 				BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */,
 			);
-			currentVersion = BCEDD72A1CE19032008C6356 /* Currency 4.xcdatamodel */;
+			currentVersion = BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */;
 			path = Currency.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
