@@ -109,7 +109,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         } else {
             currency = tableData[indexPath.section][indexPath.row]
         }
-        cell!.textLabel!.text = currency.name!
+        cell!.textLabel!.text = currency.name_en!
         cell!.detailTextLabel!.text = currency.code!
         cell!.accessoryType = UITableViewCellAccessoryType.None
 
@@ -162,7 +162,7 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
         let searchText = searchText.lowercaseString
 
         for currency in currencies {
-            let matchesName = currency.name!.lowercaseString.rangeOfString(searchText) != nil
+            let matchesName = currency.name_en!.lowercaseString.rangeOfString(searchText) != nil
             let matchesCode = currency.code!.lowercaseString.rangeOfString(searchText) != nil
 
             if (matchesName || matchesCode) {

@@ -110,7 +110,7 @@ class Coin {
             fatalError("Error fetching currency: \(error)")
         }
         
-        let name: String = currency.name!
+        let name: String = currency.name_en!
         let code: String = code
         let rate: Double = Double(currency.rateFromUSD!)
         let locale: String = currency.locale!
