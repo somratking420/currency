@@ -85,6 +85,8 @@ class MainViewController: UIViewController {
         // When we put the app on the background the animations stop,
         // so let's restart them when the app is back on the foreground.
         animateInputIndicator()
+        converter.inputCurrency.update()
+        converter.outputCurrency.update()
     }
 
     @IBAction func digitPressed(sender: UIButton) {
