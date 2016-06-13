@@ -370,6 +370,88 @@ class Converter {
         input.decimalInputs = 0
         print("Started inputting decimals.")
     }
+    
+    // MARK: Update multiple rates.
+    
+    func updateCurrentCurrencies() {
+        
+        // Start by showing the network indicator.
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
+            "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
+            "%22USD" + self.inputCurrency.code + "%2CUSD" + self.outputCurrency.code +
+            "%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            
+            guard data != nil else {
+                print("Error performing Yahoo query when updating current currencies.")
+                return
+            }
+            
+            var fetchedInputRate: String
+            var fetchedOutputRate: String
+            let xml = SWXMLHash.parse(data!)
+            
+            do {
+                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + self.inputCurrency.code)["Rate"].element!.text!
+                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + self.outputCurrency.code)["Rate"].element!.text!
+            } catch {
+                print("Error fetching currencies: \(error)")
+                return
+            }
+            
+            // Update rates on converter.
+            self.inputCurrency.rate = Double(fetchedInputRate)
+            self.outputCurrency.rate = Double(fetchedOutputRate)
+            print("Updated input and output currency rates.")
+            
+            // CoreData setup.
+            let managedObjectContext: NSManagedObjectContext!
+            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
+            var inputCurrencyRecord: Currency
+            var outputCurrencyRecord: Currency
+            
+            // CoreData fetching.
+            let inputFetch = NSFetchRequest(entityName: "Currency")
+            let inputPredicate = NSPredicate(format: "%K == %@", "code", self.inputCurrency.code)
+            inputFetch.predicate = inputPredicate
+            inputFetch.fetchLimit = 2
+            let outputFetch = NSFetchRequest(entityName: "Currency")
+            let outputPredicate = NSPredicate(format: "%K == %@", "code", self.outputCurrency.code)
+            outputFetch.predicate = outputPredicate
+            outputFetch.fetchLimit = 1
+            
+            do {
+                inputCurrencyRecord = try managedObjectContext.executeFetchRequest(inputFetch).first as! Currency
+                outputCurrencyRecord = try managedObjectContext.executeFetchRequest(outputFetch).first as! Currency
+            } catch {
+                print("Error fetching currencies: \(error)")
+                return
+            }
+            
+            // Update objects.
+            inputCurrencyRecord.setValue(Double(fetchedInputRate), forKey: "rateFromUSD")
+            outputCurrencyRecord.setValue(Double(fetchedOutputRate), forKey: "rateFromUSD")
+            
+            // CoreData save.
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print("Error saving currencies: \(error)")
+                return
+            }
+            
+            // Hide the network indicator.
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
+        }
+        
+        task.resume()
+        
+    }
 
 }
 

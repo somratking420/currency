@@ -47,16 +47,11 @@ class MainViewController: UIViewController {
         // Style highlights for add and minus buttons.
         setupCustomHighlights()
 
-        // Animate input indicator.
-        animateInputIndicator()
-
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
             converter.inputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
-        } else {
-            converter.inputCurrency.update()
         }
 
         // If we have the last input currency used saved on the preferences
@@ -64,8 +59,6 @@ class MainViewController: UIViewController {
         if let currencyCode = prefs.stringForKey("output") {
             converter.outputCurrency.setTo(currencyCode, remember: false)
             updateInterface(playSound: false)
-        } else {
-            converter.outputCurrency.update()
         }
 
         // We want to know if the app is opened from the background
@@ -85,8 +78,8 @@ class MainViewController: UIViewController {
         // When we put the app on the background the animations stop,
         // so let's restart them when the app is back on the foreground.
         animateInputIndicator()
-        converter.inputCurrency.update()
-        converter.outputCurrency.update()
+        // Update currencies.
+        converter.updateCurrentCurrencies()
     }
 
     @IBAction func digitPressed(sender: UIButton) {
