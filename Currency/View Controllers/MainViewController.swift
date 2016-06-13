@@ -50,14 +50,14 @@ class MainViewController: UIViewController {
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("input") {
-            converter.inputCurrency.setTo(currencyCode, remember: false)
+            converter.inputCurrency.setTo(currencyCode, update:false, remember: false)
             updateInterface(playSound: false)
         }
 
         // If we have the last input currency used saved on the preferences
         // file, let's use it.
         if let currencyCode = prefs.stringForKey("output") {
-            converter.outputCurrency.setTo(currencyCode, remember: false)
+            converter.outputCurrency.setTo(currencyCode, update:false, remember: false)
             updateInterface(playSound: false)
         }
 
