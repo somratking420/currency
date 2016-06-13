@@ -24,6 +24,11 @@ class ChangeCurrencyViewController: UIViewController {
     var searchResults:Array<Currency>?
     var tableData:Array<Array<Currency>>!
     var tableSectionTitles:Array<String>!
+    let displayChineseSimplified: Bool = "zh-Hans-US" == NSLocale.preferredLanguages()[0]
+    let displayChineseTraditional: Bool = ["zh-Hant-US", "zh-HK", "zh-TW"].contains(NSLocale.preferredLanguages()[0])
+    let displayJapanese: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "ja"
+    let displayPortuguese: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "pt"
+    let displaySpanish: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "es"
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -44,12 +49,39 @@ class ChangeCurrencyViewController: UIViewController {
         currencies = fetchCurrencies()
         recentCurrencies = fetchRecentCurrencies()
         tableData = [recentCurrencies, currencies]
-        tableSectionTitles = ["Recent currencies", "All currencies"]
+        if displayChineseSimplified {
+            tableSectionTitles = ["近期货币", "所有货币"]
+        } else if displayChineseTraditional {
+            tableSectionTitles = ["近期貨幣", "所有貨幣"]
+        } else if displayJapanese {
+            tableSectionTitles = ["最近の通貨", "すべての通貨"]
+        } else if displayPortuguese {
+            tableSectionTitles = ["Moedas recentes", "Todas as moedas"]
+        } else if displaySpanish {
+            tableSectionTitles = ["Monedas recientes", "Todas las monedas"]
+        } else {
+            tableSectionTitles = ["Recent currencies", "All currencies"]
+        }
     }
 
     func fetchCurrencies() -> [Currency]{
         let fetch = NSFetchRequest(entityName: "Currency")
-        let sortDescriptor = NSSortDescriptor(key: "name_en", ascending: true)
+        var sortDescriptor: NSSortDescriptor
+        
+        if displayChineseSimplified {
+            sortDescriptor = NSSortDescriptor(key: "name_zh_Hans", ascending: true)
+        } else if displayChineseTraditional {
+            sortDescriptor = NSSortDescriptor(key: "name_zh_Hant", ascending: true)
+        } else if displayJapanese {
+            sortDescriptor = NSSortDescriptor(key: "name_ja", ascending: true)
+        } else if displayPortuguese {
+            sortDescriptor = NSSortDescriptor(key: "name_pt_PT", ascending: true)
+        } else if displaySpanish {
+            sortDescriptor = NSSortDescriptor(key: "name_es", ascending: true)
+        } else {
+            sortDescriptor = NSSortDescriptor(key: "name_en", ascending: true)
+        }
+        
         let sortDescriptors = [sortDescriptor]
         fetch.sortDescriptors = sortDescriptors
         var result = [AnyObject]()
@@ -109,7 +141,19 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         } else {
             currency = tableData[indexPath.section][indexPath.row]
         }
-        cell!.textLabel!.text = currency.name_en!
+        if displayChineseSimplified {
+            cell!.textLabel!.text = currency.name_zh_Hans!
+        } else if displayChineseTraditional {
+            cell!.textLabel!.text = currency.name_zh_Hant!
+        } else if displayJapanese {
+            cell!.textLabel!.text = currency.name_ja!
+        } else if displayPortuguese {
+            cell!.textLabel!.text = currency.name_pt_PT!
+        } else if displaySpanish {
+            cell!.textLabel!.text = currency.name_es!
+        } else {
+            cell!.textLabel!.text = currency.name_en!
+        }
         cell!.detailTextLabel!.text = currency.code!
         cell!.accessoryType = UITableViewCellAccessoryType.None
 
@@ -162,7 +206,21 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
         let searchText = searchText.lowercaseString
 
         for currency in currencies {
-            let matchesName = currency.name_en!.lowercaseString.rangeOfString(searchText) != nil
+            var matchesName: Bool = false
+            if displayChineseSimplified {
+                matchesName = currency.name_zh_Hans!.lowercaseString.rangeOfString(searchText) != nil
+            } else if displayChineseTraditional {
+                matchesName = currency.name_zh_Hant!.lowercaseString.rangeOfString(searchText) != nil
+            } else if displayJapanese {
+                matchesName = currency.name_ja!.lowercaseString.rangeOfString(searchText) != nil
+            } else if displayPortuguese {
+                matchesName = currency.name_pt_PT!.lowercaseString.rangeOfString(searchText) != nil
+            } else if displaySpanish {
+                matchesName = currency.name_es!.lowercaseString.rangeOfString(searchText) != nil
+            } else {
+                matchesName = currency.name_en!.lowercaseString.rangeOfString(searchText) != nil
+            }
+        
             let matchesCode = currency.code!.lowercaseString.rangeOfString(searchText) != nil
 
             if (matchesName || matchesCode) {
