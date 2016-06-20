@@ -20,6 +20,7 @@ class Coin {
     var useLocalization: Bool = true
     var useSymbol: Bool = true
     var useCustomSymbol: Bool = false
+    var prefs: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     init(withCode code: String, update: Bool = true, remember: Bool = true) {
         setTo(code, update: update, remember: remember)
@@ -36,6 +37,13 @@ class Coin {
         self.useLocalization = currency.useLocalization
         self.useSymbol = currency.useSymbol
         self.useCustomSymbol = currency.useCustomSymbol
+        if let decimalsPreference = prefs.valueForKey("decimals_preference") as! String! {
+            print("Preferred number of decimal places is:", decimalsPreference)
+            guard decimalsPreference != "auto" else {
+                return
+            }
+            self.decimals = Int(decimalsPreference)
+        }
         if update {
             self.update()
         }
