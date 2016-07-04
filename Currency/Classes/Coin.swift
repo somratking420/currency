@@ -165,7 +165,7 @@ class Coin {
             }
             
             // Update currency record on database.
-            self.updateRateRecord(Double(rate)!)
+            self.updateRateRecord(Float(rate)!)
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
         }
@@ -174,7 +174,7 @@ class Coin {
         
     }
     
-    private func updateRateRecord(rate: Double) {
+    private func updateRateRecord(rate: Float) {
         // CoreData setup.
         let managedObjectContext: NSManagedObjectContext!
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
