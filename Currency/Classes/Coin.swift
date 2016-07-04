@@ -167,7 +167,7 @@ class Coin {
             // Update currency record on database.
             self.updateRateRecord(Float(rate)!)
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
+            NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.code, "currencyRate": rate])
         }
         
         task.resume()

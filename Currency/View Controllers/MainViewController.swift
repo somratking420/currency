@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
 
         converter = Converter()
         calculator = Calculator()
+        notificationCenter.addObserver(self, selector: #selector(MainViewController.didReceiveCoinUpdateNotification), name:"CoinUpdatedNotification", object: nil)
         
         // Style view.
         view.layer.cornerRadius = 3.0
@@ -306,6 +307,43 @@ class MainViewController: UIViewController {
         addButton.layer.insertSublayer(addButtonHighlight, below: addButton.imageView?.layer)
         minusButton.layer.insertSublayer(minusButtonHighlight, below: minusButton.imageView?.layer)
     }
+    
+    // MARK: - Sounds
+    
+    func playTapSound() {
+        guard prefs.boolForKey("sounds_preference") else {
+            return
+        }
+        
+        let path = NSBundle.mainBundle().pathForResource("tap", ofType: "wav")!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            try tapSoundPlayer = AVAudioPlayer(contentsOfURL: url)
+            tapSoundPlayer.play()
+        } catch {
+            print("Could not load audio file.")
+        }
+    }
+    
+    // MARK: - Notifications
+    
+    func didReceiveCoinUpdateNotification(notification: NSNotification) {
+        print("Notification received that there's a currency update.")
+        let currency: Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
+        let currencyCode: String = currency["currencyCode"]!
+        let currencyRate: Double = Double(currency["currencyRate"]!)!
+        
+        if currencyCode == converter.inputCurrency.code {
+            converter.inputCurrency.rate = currencyRate
+            print("Updated input currency with data from Notification.")
+        }
+        if currencyCode == converter.outputCurrency.code {
+            converter.outputCurrency.rate = currencyRate
+            print("Updated output currency with data from Notification.")
+        }
+        updateInterface(playSound: false)
+    }
 
     // MARK: - Segue
 
@@ -328,22 +366,6 @@ class MainViewController: UIViewController {
             changeCurrencyViewController.delegate = self
         }
 
-    }
-
-    func playTapSound() {
-        guard prefs.boolForKey("sounds_preference") else {
-            return
-        }
-
-        let path = NSBundle.mainBundle().pathForResource("tap", ofType: "wav")!
-        let url = NSURL(fileURLWithPath: path)
-
-        do {
-            try tapSoundPlayer = AVAudioPlayer(contentsOfURL: url)
-            tapSoundPlayer.play()
-        } catch {
-            print("Could not load audio file.")
-        }
     }
 
 }
