@@ -140,37 +140,44 @@ class Coin {
     
     private func updateRate() {
         
-        // Start by showing the network indicator.
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
-            "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
-            "%22USD" + self.code + "%22)&diagnostics=true&env=store%3A%2F%2F" +
-            "datatables.org%2Falltableswithkeys")
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
-            guard data != nil else {
-                print("Error performing Yahoo query.")
+            // Start by showing the network indicator.
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            
+            let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
+                "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
+                "%22USD" + self.code + "%22)&diagnostics=true&env=store%3A%2F%2F" +
+                "datatables.org%2Falltableswithkeys")
+            
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+                
+                guard data != nil else {
+                    print("Error performing Yahoo query.")
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    return
+                }
+                
+                let xml = SWXMLHash.parse(data!)
+                
+                guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
+                    print("Could not parse XML request.")
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    return
+                }
+                
+                // Update currency record on database.
+                self.updateRateRecord(Float(rate)!)
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                return
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    // Update UI on main thread.
+                    NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.code, "currencyRate": rate])
+                }
             }
             
-            let xml = SWXMLHash.parse(data!)
-            
-            guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
-                print("Could not parse XML request.")
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                return
-            }
-            
-            // Update currency record on database.
-            self.updateRateRecord(Float(rate)!)
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.code, "currencyRate": rate])
+            task.resume()
         }
-        
-        task.resume()
         
     }
     
