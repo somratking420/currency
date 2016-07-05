@@ -49,8 +49,8 @@ class MainViewController: UIViewController {
         inputIndicator.layer.cornerRadius = 2.0
         inputActivityIndicator.hidden = true
         outputActivityIndicator.hidden = true
-        inputActivityIndicator.transform = CGAffineTransformMakeScale(0.75, 0.75)
-        outputActivityIndicator.transform = CGAffineTransformMakeScale(0.75, 0.75)
+        inputActivityIndicator.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        outputActivityIndicator.transform = CGAffineTransformMakeScale(0.8, 0.8)
         
 
         // Style highlights for add and minus buttons.
