@@ -69,6 +69,12 @@
                                     <outletCollection property="gestureRecognizers" destination="6Xo-w5-vdo" appends="YES" id="JV3-iV-nER"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4" userLabel="Input Activity Indicator">
+                                <rect key="frame" x="54" y="77" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9" userLabel="Output Activity Indicator">
+                                <rect key="frame" x="54" y="171" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
                                 <rect key="frame" x="0.0" y="247" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.73717361688613892" green="0.73730176687240601" blue="0.73716557025909424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -367,12 +373,6 @@
                                     <constraint firstAttribute="width" constant="4" id="jCs-y0-qcy"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4">
-                                <rect key="frame" x="54" y="77" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9">
-                                <rect key="frame" x="54" y="171" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -425,10 +425,12 @@
                     <connections>
                         <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
                         <outlet property="equalsButton" destination="dWW-RI-d8f" id="PG9-VW-zau"/>
+                        <outlet property="inputActivityIndicator" destination="6Jm-2k-5N4" id="aBU-LT-ZBD"/>
                         <outlet property="inputCurrency" destination="muv-tM-atU" id="TbY-SG-j65"/>
                         <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
                         <outlet property="inputIndicator" destination="4ye-eY-h2D" id="nSg-dp-Rdn"/>
                         <outlet property="minusButton" destination="4r1-uK-adB" id="cvc-SM-RQw"/>
+                        <outlet property="outputActivityIndicator" destination="Pvj-tD-Cw9" id="jMK-Fk-NdQ"/>
                         <outlet property="outputCurrency" destination="rXn-1B-zNv" id="9CD-Of-61e"/>
                         <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
                         <outlet property="switchButton" destination="aOt-1A-j4i" id="9LZ-er-PRc"/>

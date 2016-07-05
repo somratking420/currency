@@ -30,13 +30,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var equalsButton: UIButton!
     @IBOutlet weak var inputIndicator: UIView!
-
+    @IBOutlet weak var inputActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var outputActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         converter = Converter()
         calculator = Calculator()
         notificationCenter.addObserver(self, selector: #selector(MainViewController.didReceiveCoinUpdateNotification), name:"CoinUpdatedNotification", object: nil)
+        notificationCenter.addObserver(self, selector: #selector(MainViewController.didReceiveUpdateActivityIndicator), name:"UpdateActivityIndicator", object: nil)
         
         // Style view.
         view.layer.cornerRadius = 3.0
@@ -44,6 +47,11 @@ class MainViewController: UIViewController {
         inputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         outputCurrency.titleLabel?.adjustsFontSizeToFitWidth = true
         inputIndicator.layer.cornerRadius = 2.0
+        inputActivityIndicator.hidden = true
+        outputActivityIndicator.hidden = true
+        inputActivityIndicator.transform = CGAffineTransformMakeScale(0.75, 0.75)
+        outputActivityIndicator.transform = CGAffineTransformMakeScale(0.75, 0.75)
+        
 
         // Style highlights for add and minus buttons.
         setupCustomHighlights()
@@ -343,6 +351,47 @@ class MainViewController: UIViewController {
             print("Updated output currency with data from Notification.")
         }
         updateInterface(playSound: false)
+    }
+    
+    func didReceiveUpdateActivityIndicator(notification: NSNotification) {
+        print("Notification received to update the activity indicator.")
+        let currency: Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
+        let currencyCode: String = currency["currencyCode"]!
+        let action: String = currency["action"]!
+        
+        if currencyCode == converter.inputCurrency.code {
+            if action == "show" {
+                showInputActivityIndicator()
+            }
+            if action == "hide" {
+                hideInputActivityIndicator()
+            }
+        }
+        if currencyCode == converter.outputCurrency.code {
+            if action == "show" {
+                showOutputActivityIndicator()
+            }
+            if action == "hide" {
+                hideOutputActivityIndicator()
+            }
+        }
+    }
+    
+    func showInputActivityIndicator() {
+        inputActivityIndicator.hidden = false
+        inputActivityIndicator.startAnimating()
+    }
+    func hideInputActivityIndicator() {
+        inputActivityIndicator.hidden = true
+        inputActivityIndicator.stopAnimating()
+    }
+    func showOutputActivityIndicator() {
+        outputActivityIndicator.hidden = false
+        outputActivityIndicator.startAnimating()
+    }
+    func hideOutputActivityIndicator() {
+        outputActivityIndicator.hidden = true
+        outputActivityIndicator.stopAnimating()
     }
 
     // MARK: - Segue

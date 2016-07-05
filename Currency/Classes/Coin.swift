@@ -140,10 +140,23 @@ class Coin {
     
     private func updateRate() {
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            
-            // Start by showing the network indicator.
+        func showActivityIndicator() {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.code, "action": "show"])
+        }
+        
+        func hideActivityIndicator() {
+            // Update UI on main thread.
+            dispatch_async(dispatch_get_main_queue()) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.code, "action": "hide"])
+            }
+        }
+        
+        // Start by showing the network indicator.
+        showActivityIndicator()
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
             let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
                 "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
@@ -154,7 +167,7 @@ class Coin {
                 
                 guard data != nil else {
                     print("Error performing Yahoo query.")
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    hideActivityIndicator()
                     return
                 }
                 
@@ -162,16 +175,16 @@ class Coin {
                 
                 guard let rate = xml["query"]["results"]["rate"]["Rate"].element?.text else {
                     print("Could not parse XML request.")
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    hideActivityIndicator()
                     return
                 }
                 
                 // Update currency record on database.
                 self.updateRateRecord(Float(rate)!)
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                hideActivityIndicator()
                 
+                // Update UI on main thread.
                 dispatch_async(dispatch_get_main_queue()) {
-                    // Update UI on main thread.
                     NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.code, "currencyRate": rate])
                 }
             }
