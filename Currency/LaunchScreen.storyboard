@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="247" width="600" height="1"/>
                                 <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="0.66" id="kGC-6V-NwW"/>
+                                    <constraint firstAttribute="height" constant="0.66000000000000003" id="kGC-6V-NwW"/>
                                     <constraint firstAttribute="height" constant="1" id="lJe-oR-EBP"/>
                                 </constraints>
                                 <variation key="default">
