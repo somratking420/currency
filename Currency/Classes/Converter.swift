@@ -375,8 +375,23 @@ class Converter {
     
     func updateCurrentCurrencies() {
         
+        func showActivityIndicator() {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "action": "show"])
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "action": "show"])
+        }
+        
+        func hideActivityIndicator() {
+            // Update UI on main thread.
+            dispatch_async(dispatch_get_main_queue()) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "action": "hide"])
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "action": "hide"])
+            }
+        }
+        
         // Start by showing the network indicator.
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        showActivityIndicator()
         
         let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
             "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
@@ -387,6 +402,7 @@ class Converter {
             
             guard data != nil else {
                 print("Error performing Yahoo query when updating current currencies.")
+                hideActivityIndicator()
                 return
             }
             
@@ -399,13 +415,19 @@ class Converter {
                 fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + self.outputCurrency.code)["Rate"].element!.text!
             } catch {
                 print("Error fetching currencies: \(error)")
+                hideActivityIndicator()
                 return
             }
             
-            // Update rates on converter.
-            self.inputCurrency.rate = Double(fetchedInputRate)
-            self.outputCurrency.rate = Double(fetchedOutputRate)
-            print("Updated input and output currency rates.")
+            // Hide the network indicator.
+            hideActivityIndicator()
+            
+            // Update UI on main thread.
+            dispatch_async(dispatch_get_main_queue()) {
+                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "currencyRate": fetchedInputRate])
+                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "currencyRate": fetchedOutputRate])
+                print("Updated input and output currency rates.")
+            }
             
             // CoreData setup.
             let managedObjectContext: NSManagedObjectContext!
@@ -443,9 +465,6 @@ class Converter {
                 print("Error saving currencies: \(error)")
                 return
             }
-            
-            // Hide the network indicator.
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 
         }
         
