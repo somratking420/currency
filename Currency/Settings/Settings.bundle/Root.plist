@@ -20,6 +20,16 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show Activity Indicators</string>
+			<key>Key</key>
+			<string>activity_indicators</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
 			<string>Number of Decimal Places</string>
