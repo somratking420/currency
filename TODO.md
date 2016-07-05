@@ -1,2 +1,0 @@
-- Display "," or "." on keypad depending on the current currency input decimal divider
-- Hide decimal input divider key if input currency does not have decimals

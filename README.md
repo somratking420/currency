@@ -48,10 +48,6 @@ For this project an initial database is created with the currency data from this
 
 There are no tests written for this application so far.
 
-## Tasks
-
-There is a plain text file included in the repository with the current list of tasks to do.
-
 ## Contributors
 
 At the moment the best contribution is in the form of feedback on the code and the product. All feedback is valid: design decisions, code style, recommended re-writes based on your experience, architecture, naming, etc. You can open an issue, comment directly on the code or add inline comments to the code.
