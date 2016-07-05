@@ -24,7 +24,7 @@
 			<key>Title</key>
 			<string>Show Activity Indicators</string>
 			<key>Key</key>
-			<string>activity_indicators</string>
+			<string>activity_indicators_preference</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>

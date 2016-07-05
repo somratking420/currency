@@ -354,6 +354,10 @@ class MainViewController: UIViewController {
     }
     
     func didReceiveUpdateActivityIndicator(notification: NSNotification) {
+        guard prefs.boolForKey("activity_indicators_preference") else {
+            return
+        }
+        
         print("Notification received to update the activity indicator.")
         let currency: Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
         let currencyCode: String = currency["currencyCode"]!
