@@ -375,18 +375,21 @@ class Converter {
     
     func updateCurrentCurrencies() {
         
+        let currentInputCurrency = inputCurrency.code
+        let currentOutputCurrency = outputCurrency.code
+        
         func showActivityIndicator() {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "action": "show"])
-            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "action": "show"])
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "show"])
+            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "show"])
         }
         
         func hideActivityIndicator() {
             // Update UI on main thread.
             dispatch_async(dispatch_get_main_queue()) {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "action": "hide"])
-                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "action": "hide"])
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "hide"])
+                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "hide"])
             }
         }
         
@@ -395,7 +398,7 @@ class Converter {
         
         let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
             "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
-            "%22USD" + self.inputCurrency.code + "%2CUSD" + self.outputCurrency.code +
+            "%22USD" + currentInputCurrency + "%2CUSD" + currentOutputCurrency +
             "%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
@@ -411,8 +414,8 @@ class Converter {
             let xml = SWXMLHash.parse(data!)
             
             do {
-                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + self.inputCurrency.code)["Rate"].element!.text!
-                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + self.outputCurrency.code)["Rate"].element!.text!
+                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentInputCurrency)["Rate"].element!.text!
+                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentOutputCurrency)["Rate"].element!.text!
             } catch {
                 print("Error fetching currencies: \(error)")
                 hideActivityIndicator()
@@ -424,8 +427,8 @@ class Converter {
             
             // Update UI on main thread.
             dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.inputCurrency.code, "currencyRate": fetchedInputRate])
-                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": self.outputCurrency.code, "currencyRate": fetchedOutputRate])
+                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": currentInputCurrency, "currencyRate": fetchedInputRate])
+                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "currencyRate": fetchedOutputRate])
                 print("Updated input and output currency rates.")
             }
             
@@ -438,11 +441,11 @@ class Converter {
             
             // CoreData fetching.
             let inputFetch = NSFetchRequest(entityName: "Currency")
-            let inputPredicate = NSPredicate(format: "%K == %@", "code", self.inputCurrency.code)
+            let inputPredicate = NSPredicate(format: "%K == %@", "code", currentInputCurrency)
             inputFetch.predicate = inputPredicate
             inputFetch.fetchLimit = 2
             let outputFetch = NSFetchRequest(entityName: "Currency")
-            let outputPredicate = NSPredicate(format: "%K == %@", "code", self.outputCurrency.code)
+            let outputPredicate = NSPredicate(format: "%K == %@", "code", currentOutputCurrency)
             outputFetch.predicate = outputPredicate
             outputFetch.fetchLimit = 1
             
