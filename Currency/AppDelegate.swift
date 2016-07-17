@@ -27,6 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error setting audio category:", error)
         }
         
+        // Set default preferences.
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if defaults.valueForKey("sounds_preference") == nil {
+            defaults.setBool(true, forKey: "sounds_preference")
+        }
+        if defaults.valueForKey("activity_indicators_preference") == nil {
+            defaults.setBool(true, forKey: "activity_indicators_preference")
+        }
+        
         return true
     }
     
