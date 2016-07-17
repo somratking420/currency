@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-tM-atU">
-                                <rect key="frame" x="64" y="40" width="516" height="94"/>
+                                <rect key="frame" x="74" y="40" width="506" height="94"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="68"/>
                                 <state key="normal" title="¥0">
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-1B-zNv">
-                                <rect key="frame" x="64" y="134" width="516" height="94"/>
+                                <rect key="frame" x="74" y="134" width="506" height="94"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="68"/>
                                 <state key="normal" title="£0">
@@ -382,6 +382,7 @@
                             <constraint firstItem="muv-tM-atU" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="5Um-ne-6IN"/>
                             <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" id="6e8-fq-SCm"/>
                             <constraint firstItem="6Jm-2k-5N4" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="-10" id="9ME-YT-SzN"/>
+                            <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="Pvj-tD-Cw9" secondAttribute="trailing" id="9oF-Bh-ql3"/>
                             <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="4nD-bv-Hha" secondAttribute="top" id="AFX-l1-alV"/>
                             <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="muv-tM-atU" secondAttribute="bottom" id="EPV-MV-1Od"/>
                             <constraint firstItem="6Jm-2k-5N4" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="GA0-G4-qrs"/>
@@ -390,6 +391,7 @@
                             <constraint firstItem="e6z-VH-Rih" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jve-d4-68s"/>
                             <constraint firstAttribute="trailing" secondItem="NLh-XE-j1z" secondAttribute="trailing" id="KLx-Ba-7or"/>
                             <constraint firstItem="muv-tM-atU" firstAttribute="bottom" secondItem="dVx-wP-zji" secondAttribute="bottom" id="La5-Ae-gFj"/>
+                            <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="6Jm-2k-5N4" secondAttribute="trailing" id="Ma3-2p-g5h"/>
                             <constraint firstItem="NLh-XE-j1z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q43-dZ-uH0"/>
                             <constraint firstItem="4nD-bv-Hha" firstAttribute="height" secondItem="dVx-wP-zji" secondAttribute="height" id="Q75-zv-1r7"/>
                             <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Rjo-yf-FEe"/>
@@ -421,6 +423,14 @@
                             <constraint firstItem="muv-tM-atU" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="pJf-de-URn"/>
                             <constraint firstAttribute="trailing" secondItem="rXn-1B-zNv" secondAttribute="trailing" constant="20" id="uqL-8E-STN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6e8-fq-SCm"/>
+                                <exclude reference="gEL-Od-VDN"/>
+                                <exclude reference="gNY-ff-rDx"/>
+                                <exclude reference="mun-9Y-cWg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Xcs-D8-JHK" id="nLb-LY-Ykf"/>
