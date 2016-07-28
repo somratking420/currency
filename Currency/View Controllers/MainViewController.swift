@@ -202,6 +202,9 @@ class MainViewController: UIViewController {
     }
 
     func swapInputAndOutputCurrencies() {
+        hideInputActivityIndicator()
+        hideOutputActivityIndicator()
+        
         let inputPosition = inputCurrency.center.y
         let inputColor = inputCurrency.titleLabel?.textColor
         let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
