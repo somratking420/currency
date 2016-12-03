@@ -15,9 +15,9 @@ class CurrencyButton: UIButton {
         super.init(coder: aDecoder)!
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         get {
-            return super.highlighted
+            return super.isHighlighted
         }
         set {
             if newValue {
@@ -28,7 +28,7 @@ class CurrencyButton: UIButton {
                 fadeOut.autoreverses = false
                 fadeOut.repeatCount = 1
                 
-                self.layer.addAnimation(fadeOut, forKey: "fadeOut")
+                self.layer.add(fadeOut, forKey: "fadeOut")
                 self.layer.opacity = 0.3
             }
             else {
@@ -39,10 +39,10 @@ class CurrencyButton: UIButton {
                 fadeIn.autoreverses = false
                 fadeIn.repeatCount = 1
                 
-                self.layer.addAnimation(fadeIn, forKey: "fadeIn")
+                self.layer.add(fadeIn, forKey: "fadeIn")
                 self.layer.opacity = 1
             }
-            super.highlighted = newValue
+            super.isHighlighted = newValue
         }
     }
     

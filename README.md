@@ -6,7 +6,7 @@ This project is a simple currency converter app for iOS, built by a designer whi
 
 ## Swift
 
-This project is written in the Apple Swift version 2.1.1.
+This project is written in Swift 3.
 
 ## Motivation
 

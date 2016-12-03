@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol ChangeCurrencyViewControllerDelegate {
-    func didChangeCurrency(currencyCode: String, targetCurrency: String)
+    func didChangeCurrency(_ currencyCode: String, targetCurrency: String)
 }
 
 class ChangeCurrencyViewController: UIViewController {
@@ -24,16 +24,16 @@ class ChangeCurrencyViewController: UIViewController {
     var searchResults:Array<Currency>?
     var tableData:Array<Array<Currency>>!
     var tableSectionTitles:Array<String>!
-    let displayChineseSimplified: Bool = "zh-Hans-US" == NSLocale.preferredLanguages()[0]
-    let displayChineseTraditional: Bool = ["zh-Hant-US", "zh-HK", "zh-TW"].contains(NSLocale.preferredLanguages()[0])
-    let displayJapanese: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "ja"
-    let displayPortuguese: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "pt"
-    let displaySpanish: Bool = String(NSLocale.preferredLanguages()[0].characters.prefix(2)) == "es"
+    let displayChineseSimplified: Bool = "zh-Hans-US" == Locale.preferredLanguages[0]
+    let displayChineseTraditional: Bool = ["zh-Hant-US", "zh-HK", "zh-TW"].contains(Locale.preferredLanguages[0])
+    let displayJapanese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "ja"
+    let displayPortuguese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "pt"
+    let displaySpanish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "es"
 
     @IBOutlet weak var tableView: UITableView!
 
-    @IBAction func doneButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
+    @IBAction func doneButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {})
     }
 
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class ChangeCurrencyViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = 54.0
         self.searchDisplayController?.searchResultsTableView.rowHeight = 54.0
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
 
         currencies = fetchCurrencies()
@@ -65,7 +65,7 @@ class ChangeCurrencyViewController: UIViewController {
     }
 
     func fetchCurrencies() -> [Currency]{
-        let fetch = NSFetchRequest(entityName: "Currency")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Currency")
         var sortDescriptor: NSSortDescriptor
         
         if displayChineseSimplified {
@@ -86,7 +86,7 @@ class ChangeCurrencyViewController: UIViewController {
         fetch.sortDescriptors = sortDescriptors
         var result = [AnyObject]()
         do {
-            result = try managedObjectContext!.executeFetchRequest(fetch)
+            result = try managedObjectContext!.fetch(fetch)
         } catch let error as NSError {
             print("Error fetching currencies error: %@", error)
         }
@@ -94,7 +94,7 @@ class ChangeCurrencyViewController: UIViewController {
     }
 
     func fetchRecentCurrencies() -> [Currency]{
-        let fetch = NSFetchRequest(entityName: "Currency")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Currency")
         let sortDescriptor = NSSortDescriptor(key: "lastSelected", ascending: false)
         let sortDescriptors = [sortDescriptor]
         let predicate = NSPredicate(format: "lastSelected != nil")
@@ -103,7 +103,7 @@ class ChangeCurrencyViewController: UIViewController {
         fetch.fetchLimit = 5
         var result = [AnyObject]()
         do {
-            result = try managedObjectContext!.executeFetchRequest(fetch)
+            result = try managedObjectContext!.fetch(fetch)
         } catch let error as NSError {
             print("Error fetching recent currencies error: %@", error)
         }
@@ -116,7 +116,7 @@ class ChangeCurrencyViewController: UIViewController {
 
 extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSource {
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return 1
         } else {
@@ -124,7 +124,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return searchResults?.count ?? 0
         } else {
@@ -132,8 +132,8 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("CurrencyCell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "CurrencyCell")
         let currency: Currency
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
@@ -155,16 +155,16 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
             cell!.textLabel!.text = currency.name_en!
         }
         cell!.detailTextLabel!.text = currency.code!
-        cell!.accessoryType = UITableViewCellAccessoryType.None
+        cell!.accessoryType = UITableViewCellAccessoryType.none
 
         if currency.code! == selectedCurrency {
-            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell!.accessoryType = UITableViewCellAccessoryType.checkmark
         }
 
         return cell!
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if tableView == self.searchDisplayController!.searchResultsTableView {
             return nil
         } else {
@@ -172,14 +172,14 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (tableData[section].count == 0) {
             return 0.0
         }
         return UITableViewAutomaticDimension
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currency: Currency
         
         if tableView == self.searchDisplayController!.searchResultsTableView {
@@ -191,7 +191,7 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
         let currencyCode = currency.code!
 
         delegate?.didChangeCurrency(currencyCode, targetCurrency: targetCurrency)
-        self.dismissViewControllerAnimated(true, completion: {})
+        self.dismiss(animated: true, completion: {})
     }
 
 }
@@ -200,28 +200,28 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
 
 extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDelegate {
 
-    func filterContentForSearchText(searchText: String) {
+    func filterContentForSearchText(_ searchText: String) {
 
         var filteredContent:Array<Currency> = []
-        let searchText = searchText.lowercaseString
+        let searchText = searchText.lowercased()
 
         for currency in currencies {
             var matchesName: Bool = false
             if displayChineseSimplified {
-                matchesName = currency.name_zh_Hans!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_zh_Hans!.lowercased().range(of: searchText) != nil
             } else if displayChineseTraditional {
-                matchesName = currency.name_zh_Hant!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_zh_Hant!.lowercased().range(of: searchText) != nil
             } else if displayJapanese {
-                matchesName = currency.name_ja!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_ja!.lowercased().range(of: searchText) != nil
             } else if displayPortuguese {
-                matchesName = currency.name_pt_PT!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_pt_PT!.lowercased().range(of: searchText) != nil
             } else if displaySpanish {
-                matchesName = currency.name_es!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_es!.lowercased().range(of: searchText) != nil
             } else {
-                matchesName = currency.name_en!.lowercaseString.rangeOfString(searchText) != nil
+                matchesName = currency.name_en!.lowercased().range(of: searchText) != nil
             }
         
-            let matchesCode = currency.code!.lowercaseString.rangeOfString(searchText) != nil
+            let matchesCode = currency.code!.lowercased().range(of: searchText) != nil
 
             if (matchesName || matchesCode) {
                 filteredContent += [currency]
@@ -231,7 +231,7 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
         self.searchResults = filteredContent
     }
 
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
         self.filterContentForSearchText(searchString!)
         return true
     }

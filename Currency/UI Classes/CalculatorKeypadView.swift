@@ -11,7 +11,7 @@ import UIKit
 
 class CalculatorKeypadView: UIView {
     
-    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
+    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).cgColor
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

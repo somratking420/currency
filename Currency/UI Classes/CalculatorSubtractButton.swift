@@ -11,25 +11,25 @@ import UIKit
 
 class CalculatorSubtractButton: UIButton {
     
-    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).CGColor
-    let normalStateColor: CGColor! = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.00).CGColor
-    let highlightStateColor: CGColor! = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32).CGColor
+    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).cgColor
+    let normalStateColor: CGColor! = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.00).cgColor
+    let highlightStateColor: CGColor! = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32).cgColor
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         
-        self.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), forState: .Highlighted)
+        self.setImage(UIImage(named: "buttonSubtractIconHighlighted.png"), for: .highlighted)
         
         self.layer.borderWidth = 0.25
         self.layer.borderColor = borderColor
         self.layer.masksToBounds = true
-        self.backgroundColor = UIColor(CGColor: normalStateColor)
+        self.backgroundColor = UIColor(cgColor: normalStateColor)
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         
         get {
-            return super.highlighted
+            return super.isHighlighted
         }
         set {
             if newValue {
@@ -40,8 +40,8 @@ class CalculatorSubtractButton: UIButton {
                 fadeIn.autoreverses = false
                 fadeIn.repeatCount = 1
                 
-                self.layer.addAnimation(fadeIn, forKey: "fadeIn")
-                self.backgroundColor = UIColor(CGColor: highlightStateColor)
+                self.layer.add(fadeIn, forKey: "fadeIn")
+                self.backgroundColor = UIColor(cgColor: highlightStateColor)
             }
             else {
                 let fadeOut = CABasicAnimation(keyPath: "backgroundColor")
@@ -51,10 +51,10 @@ class CalculatorSubtractButton: UIButton {
                 fadeOut.autoreverses = false
                 fadeOut.repeatCount = 1
                 
-                self.layer.addAnimation(fadeOut, forKey: "fadeOut")
-                self.backgroundColor = UIColor(CGColor: normalStateColor)
+                self.layer.add(fadeOut, forKey: "fadeOut")
+                self.backgroundColor = UIColor(cgColor: normalStateColor)
             }
-            super.highlighted = newValue
+            super.isHighlighted = newValue
         }
     }
     

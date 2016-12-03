@@ -22,7 +22,7 @@ class Calculator {
         settingNewValue = false
     }
     
-    func calculate(number:Double) -> Double {
+    func calculate(_ number:Double) -> Double {
         if settingNewValue {
             let result = initialValue
             reset()
@@ -44,14 +44,14 @@ class Calculator {
         return number
     }
     
-    func newAddition(number: Double) {
+    func newAddition(_ number: Double) {
         initialValue = calculate(number)
         operationSymbol = "+"
         settingNewValue = true
         operationInProgress = true
     }
     
-    func newSubtraction(number: Double) {
+    func newSubtraction(_ number: Double) {
         initialValue = calculate(number)
         operationSymbol = "-"
         settingNewValue = true

@@ -28,12 +28,12 @@ class Converter {
 
     // MARK: Convert.
 
-    func convertToInputCurrency(number: Double) -> Double {
+    func convertToInputCurrency(_ number: Double) -> Double {
         let result: Double = (number / outputCurrency.rate) * inputCurrency.rate
         return result
     }
 
-    func convertToOutputCurrency(number: Double) -> Double {
+    func convertToOutputCurrency(_ number: Double) -> Double {
         let result: Double = (number / inputCurrency.rate) * outputCurrency.rate
         return result
     }
@@ -88,8 +88,8 @@ class Converter {
         return formattedOutput
     }
 
-    private func formatToCurrency(
-                value: Double,
+    fileprivate func formatToCurrency(
+                _ value: Double,
                 code: String,
                 locale: String?,
                 symbol: String?,
@@ -99,24 +99,24 @@ class Converter {
                 useSymbol: Bool,
                 useCustomSymbol: Bool
             ) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         formatter.minimumFractionDigits = decimals
         formatter.maximumFractionDigits = decimals
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         
         if useLocalization {
-            if let locale = locale where !locale.isEmpty {
-                formatter.locale = NSLocale(localeIdentifier: locale)
+            if let locale = locale, !locale.isEmpty {
+                formatter.locale = Locale(identifier: locale)
             }
         } else {
-            formatter.locale = NSLocale(localeIdentifier: "en_US")
+            formatter.locale = Locale(identifier: "en_US")
         }
         
         if useSymbol {
             if useCustomSymbol {
-                if let symbol = symbol where !symbol.isEmpty {
+                if let symbol = symbol, !symbol.isEmpty {
                     formatter.currencySymbol = symbol
                 }
             }
@@ -126,12 +126,12 @@ class Converter {
         
         var offset = 0
         if symbolPosition == "right" && useSymbol {
-            if let symbol = symbol where !symbol.isEmpty {
+            if let symbol = symbol, !symbol.isEmpty {
                 offset = symbol.characters.count
             }
         }
         
-        var formattedCurrency: String! = formatter.stringFromNumber(value)
+        var formattedCurrency: String! = formatter.string(from: NSNumber(value: value))
 
         if code == inputCurrency.code {
             formattedCurrency = truncateDecimalsToDecimalInputLength(formattedCurrency, decimals: decimals, offset: offset)
@@ -142,7 +142,7 @@ class Converter {
         return formattedCurrency!
     }
 
-    private func truncateDecimalsToDecimalInputLength(formattedCurrency: String, decimals: Int, offset: Int) -> String {
+    fileprivate func truncateDecimalsToDecimalInputLength(_ formattedCurrency: String, decimals: Int, offset: Int) -> String {
         guard decimals > 0 else {
             print("No decimals to truncate from price string")
             return formattedCurrency
@@ -156,14 +156,14 @@ class Converter {
         }
 
         let symbol: String! = String(formattedCurrency.characters.dropFirst(formattedCurrency.characters.count - offset))
-        let number: String! = String(formattedCurrency.characters.dropLast(offset)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let number: String! = String(formattedCurrency.characters.dropLast(offset)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let truncatedNumber: String! = String(number.characters.dropLast(truncationLenght))
         let truncatedPrice: String! = truncatedNumber + symbol
 
         return truncatedPrice
     }
 
-    private func truncateEmptyDecimalsFromCurrency(formattedCurrency: String, decimals: Int, offset: Int) -> String {
+    fileprivate func truncateEmptyDecimalsFromCurrency(_ formattedCurrency: String, decimals: Int, offset: Int) -> String {
         guard decimals > 0 else {
             print ("There are no decimals to truncate from this currency")
             return formattedCurrency
@@ -171,10 +171,10 @@ class Converter {
         
         let truncationLenght: Int! = decimals + 1
         let symbol: String! = String(formattedCurrency.characters.dropFirst(formattedCurrency.characters.count - offset))
-        let number: String! = String(formattedCurrency.characters.dropLast(offset)).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let number: String! = String(formattedCurrency.characters.dropLast(offset)).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let lastCharacters: String! = String(number.characters.suffix(truncationLenght))
         let decimalDivider: String! = String(lastCharacters.characters.prefix(1))
-        let emptyDecimals = decimalDivider + String(count: decimals, repeatedValue: Character("0"))
+        let emptyDecimals = decimalDivider + String(repeating: "0", count: decimals)
     
         if (lastCharacters == emptyDecimals) {
             let truncatedNumber: String! = String(number.characters.dropLast(truncationLenght))
@@ -187,7 +187,7 @@ class Converter {
 
     // MARK: Add input.
 
-    func addInput(newInput: String) {
+    func addInput(_ newInput: String) {
 
         if input.decimalMode {
             addDecimalInput(newInput)
@@ -197,7 +197,7 @@ class Converter {
 
     }
 
-    private func addIntegerInput(newInput: String) {
+    fileprivate func addIntegerInput(_ newInput: String) {
         guard input.integer.characters.count < 8 else {
             print("Input string is too long.")
             return
@@ -214,7 +214,7 @@ class Converter {
         input.integer = input.integer + newInput
     }
 
-    private func addDecimalInput(newInput: String) {
+    fileprivate func addDecimalInput(_ newInput: String) {
         print("Adding decimal input: \(newInput).")
         guard input.decimal.characters.count < inputCurrency.decimals else {
             print("Decimal input string has already reached the maximum length.")
@@ -241,7 +241,7 @@ class Converter {
         }
     }
 
-    private func removeLastIntegerInput() {
+    fileprivate func removeLastIntegerInput() {
         if input.integer == "0" {
             print("Input integer value string is already zero.")
             return
@@ -254,7 +254,7 @@ class Converter {
         input.integer = String(input.integer.characters.dropLast())
     }
 
-    private func removeLastDecimalInput() {
+    fileprivate func removeLastDecimalInput() {
         guard !input.decimal.isEmpty else {
             print("Input decimal value is already empty.")
             return
@@ -265,7 +265,7 @@ class Converter {
 
     // MARK: Swap input with output.
 
-    func setInputValue(value: Double) {
+    func setInputValue(_ value: Double) {
         // First split the double into an integer and decimal string.
         let valueInteger: String = String(value.split()[0])
         let valueDecimal: String = String(value.split()[1])
@@ -281,7 +281,7 @@ class Converter {
         input.decimalMode = isDecimalModeOn
     }
 
-    func swapInputWithOutput(convertInputValue convertInputValue: Bool = true) {
+    func swapInputWithOutput(convertInputValue: Bool = true) {
         if convertInputValue {
             // First let's get the values from the output currency.
             let oldOutput = parseCurrency(
@@ -301,13 +301,13 @@ class Converter {
         }
         let newInputCurrencyCode = outputCurrency.code
         let newOutputCurrencyCode = inputCurrency.code
-        inputCurrency.setTo(newInputCurrencyCode, update: false, remember: false)
-        outputCurrency.setTo(newOutputCurrencyCode, update: false, remember: false)
+        inputCurrency.setTo(newInputCurrencyCode!, update: false, remember: false)
+        outputCurrency.setTo(newOutputCurrencyCode!, update: false, remember: false)
 
     }
 
-    private func parseCurrency(
-                formattedCurrency: String,
+    fileprivate func parseCurrency(
+                _ formattedCurrency: String,
                 code: String,
                 locale: String?,
                 symbol: String?,
@@ -317,24 +317,24 @@ class Converter {
                 useSymbol: Bool,
                 useCustomSymbol: Bool
             ) -> Double {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         formatter.minimumFractionDigits = decimals
         formatter.maximumFractionDigits = decimals
         formatter.usesGroupingSeparator = true;
         formatter.groupingSeparator = ","
         
         if useLocalization {
-            if let locale = locale where !locale.isEmpty {
-                formatter.locale = NSLocale(localeIdentifier: locale)
+            if let locale = locale, !locale.isEmpty {
+                formatter.locale = Locale(identifier: locale)
             }
         } else {
-            formatter.locale = NSLocale(localeIdentifier: "en_US")
+            formatter.locale = Locale(identifier: "en_US")
         }
         
         if useSymbol {
             if useCustomSymbol {
-                if let symbol = symbol where !symbol.isEmpty {
+                if let symbol = symbol, !symbol.isEmpty {
                     formatter.currencySymbol = symbol
                 }
             }
@@ -342,7 +342,7 @@ class Converter {
             formatter.currencySymbol = ""
         }
         
-        if let number = formatter.numberFromString(formattedCurrency) {
+        if let number = formatter.number(from: formattedCurrency) {
             return (number.doubleValue)
         } else {
             print("Could not parse double from formatted currency string.")
@@ -379,29 +379,26 @@ class Converter {
         let currentOutputCurrency = outputCurrency.code
         
         func showActivityIndicator() {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "show"])
-            NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "show"])
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateActivityIndicator"), object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "show"])
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateActivityIndicator"), object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "show"])
         }
         
         func hideActivityIndicator() {
             // Update UI on main thread.
-            dispatch_async(dispatch_get_main_queue()) {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "hide"])
-                NSNotificationCenter.defaultCenter().postNotificationName("UpdateActivityIndicator", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "hide"])
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateActivityIndicator"), object: nil, userInfo: ["currencyCode": currentInputCurrency, "action": "hide"])
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateActivityIndicator"), object: nil, userInfo: ["currencyCode": currentOutputCurrency, "action": "hide"])
             }
         }
         
         // Start by showing the network indicator.
         showActivityIndicator()
         
-        let url = NSURL(string: "https://query.yahooapis.com/v1/public/yql?q=" +
-            "select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(" +
-            "%22USD" + currentInputCurrency + "%2CUSD" + currentOutputCurrency +
-            "%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
+        let url = URL(string: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USD" + currentInputCurrency! + "%2CUSD" + currentOutputCurrency! + "%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
             
             guard data != nil else {
                 print("Error performing Yahoo query when updating current currencies.")
@@ -414,8 +411,8 @@ class Converter {
             let xml = SWXMLHash.parse(data!)
             
             do {
-                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentInputCurrency)["Rate"].element!.text!
-                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentOutputCurrency)["Rate"].element!.text!
+                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentInputCurrency!)["Rate"].element!.text!
+                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentOutputCurrency!)["Rate"].element!.text!
             } catch {
                 print("Error fetching currencies: \(error)")
                 hideActivityIndicator()
@@ -426,32 +423,32 @@ class Converter {
             hideActivityIndicator()
             
             // Update UI on main thread.
-            dispatch_async(dispatch_get_main_queue()) {
-                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": currentInputCurrency, "currencyRate": fetchedInputRate])
-                NSNotificationCenter.defaultCenter().postNotificationName("CoinUpdatedNotification", object: nil, userInfo: ["currencyCode": currentOutputCurrency, "currencyRate": fetchedOutputRate])
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentInputCurrency, "currencyRate": fetchedInputRate])
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentOutputCurrency, "currencyRate": fetchedOutputRate])
                 print("Updated input and output currency rates.")
             }
             
             // CoreData setup.
             let managedObjectContext: NSManagedObjectContext!
-            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
             managedObjectContext = appDelegate.managedObjectContext as NSManagedObjectContext
             var inputCurrencyRecord: Currency
             var outputCurrencyRecord: Currency
             
             // CoreData fetching.
-            let inputFetch = NSFetchRequest(entityName: "Currency")
-            let inputPredicate = NSPredicate(format: "%K == %@", "code", currentInputCurrency)
+            let inputFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Currency")
+            let inputPredicate = NSPredicate(format: "%K == %@", "code", currentInputCurrency!)
             inputFetch.predicate = inputPredicate
             inputFetch.fetchLimit = 2
-            let outputFetch = NSFetchRequest(entityName: "Currency")
-            let outputPredicate = NSPredicate(format: "%K == %@", "code", currentOutputCurrency)
+            let outputFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Currency")
+            let outputPredicate = NSPredicate(format: "%K == %@", "code", currentOutputCurrency!)
             outputFetch.predicate = outputPredicate
             outputFetch.fetchLimit = 1
             
             do {
-                inputCurrencyRecord = try managedObjectContext.executeFetchRequest(inputFetch).first as! Currency
-                outputCurrencyRecord = try managedObjectContext.executeFetchRequest(outputFetch).first as! Currency
+                inputCurrencyRecord = try managedObjectContext.fetch(inputFetch).first as! Currency
+                outputCurrencyRecord = try managedObjectContext.fetch(outputFetch).first as! Currency
             } catch {
                 print("Error fetching currencies: \(error)")
                 return
@@ -469,7 +466,7 @@ class Converter {
                 return
             }
 
-        }
+        }) 
         
         task.resume()
         
