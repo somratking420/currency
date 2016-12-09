@@ -65,10 +65,10 @@ I am looking for help translating the application. Please [email me](mailto:nuno
 - [ ] Portuguese (Brazil)
 - [ ] Italian
 - [ ] German
-- [x] Chinese
+- [x] Chinese, thanks to [Xin Nie](https://www.instagram.com/star_nie/)
 - [x] Chinese (Simplified), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
 - [x] Chinese (Traditional), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
-- [ ] Chinese (Hong Kong)
+- [x] Chinese (Hong Kong), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
 - [ ] Dutch
 - [x] Japanese, thanks to [Asuka Yamashita](https://www.facebook.com/asuka.yamashita.944)
 - [ ] Korean
