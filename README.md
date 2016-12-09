@@ -4,13 +4,13 @@
 
 This project is a simple currency converter app for iOS, built by a designer while learning iOS development in Swift. It is available on the App Store for free to download [here](http://appstore.com/currencysimplecurrencycalculator).
 
-## Swift
-
-This project is written in Swift 3.
-
 ## Motivation
 
 This project is a learning exercise in Swift programming. I seek primarily to get feedback and critique on the code written for this project, but feedback on the overall design and idea is also welcome.
+
+## Swift
+
+This project is written in Swift 3.
 
 ## Installation
 
@@ -40,7 +40,7 @@ And the resulting XML REST query looks like:
 https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDJPY%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
 ```
 
-## Initial Currency Data
+## Initial Data
 
 For this project an initial database is created with the currency data from this [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1218JsxdKNp3ytpAtIq8D1Wtl9t4blLpC2amTweWDhek/edit?usp=sharing). Please add a comment if some of the data is incorrect. Exchange rates are updated using the Yahoo API above while the app is being used as rates fluctuate daily.
 
@@ -48,9 +48,53 @@ For this project an initial database is created with the currency data from this
 
 There are no tests written for this application so far.
 
-## Contributors
+## Translations
 
-At the moment the best contribution is in the form of feedback on the code and the product. All feedback is valid: design decisions, code style, recommended re-writes based on your experience, architecture, naming, etc. You can open an issue, comment directly on the code or add inline comments to the code.
-I will address and reply to feedback as quickly as possible. The goal is for me to learn, so learning from your suggestions is more important than the app itself.
-If don't have my contact details, I'm [@nunosans](http://twitter.com/nunosans) on Twitter, you can add and message me on Facebook: [fb.com/nunosans](http://fb.com/nunosans/) or email me at [nuno@nunocoelhosantos.com](mailto:nuno@nunocoelhosantos.com).
-This project repository will be made public after the app is launched on the App Store.
+I am looking for help translating the application. Please [email me](mailto:nuno@nunocoelhosantos.com?subject=Help%20translate%20Currency%20for%20iOS) if you're willing to help. Here is the list of current translations:
+
+- [x] English
+- [x] English (British)
+- [ ] English (Australian)
+- [ ] English (Canadian)
+- [ ] English (Indian)
+- [ ] French
+- [ ] French (Canadian)
+- [x] Spanish, thanks to [Alex Abian](https://www.instagram.com/alex_abn/)
+- [ ] Spanish (Mexico)
+- [x] Portuguese, thanks to [Jack Veiga](https://twitter.com/jackveiga)
+- [ ] Portuguese (Brazil)
+- [ ] Italian
+- [ ] German
+- [x] Chinese
+- [x] Chinese (Simplified), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
+- [x] Chinese (Traditional), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
+- [ ] Chinese (Hong Kong)
+- [ ] Dutch
+- [x] Japanese, thanks to [Asuka Yamashita](https://www.facebook.com/asuka.yamashita.944)
+- [ ] Korean
+- [ ] Vietnamese
+- [ ] Russian
+- [ ] Swedish
+- [ ] Danish
+- [ ] Finnish
+- [ ] Norwegian (Bokmal)
+- [ ] Turkish
+- [ ] Greek
+- [ ] Indonesian
+- [ ] Malay
+- [ ] Thai
+- [ ] Hindi
+- [ ] Hungarian
+- [ ] Polish
+- [ ] Czech
+- [ ] Slovak
+- [ ] Ukrainian
+- [ ] Croatian
+- [ ] Catalan
+- [ ] Romanian
+- [ ] Hebrew
+- [ ] Arabic
+
+## Contribute
+
+This is a project by [Nuno Coelho Santos](https://twitter.com/nunosans/). All contributions in the form of pull requests or comments are welcome. If you experience problems with the project, please open an issue and give as much detailed information as you can.
