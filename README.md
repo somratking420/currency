@@ -53,8 +53,8 @@ There are no tests written for this application so far.
 I am looking for help translating the application. Please [email me](mailto:nuno@nunocoelhosantos.com?subject=Help%20translate%20Currency%20for%20iOS) if you're willing to help. Here is the list of current translations:
 
 - [x] English (en)
-- [ ] French (fr)
-- [ ] German (de)
+- [x] French (fr), thanks to [Slim Ewies](https://github.com/slim-e/)
+- [x] German (de), thanks to [Simon Schmid](https://twitter.com/s2imon/)
 - [x] Chinese (Simplified) (zh-Hans), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
 - [x] Chinese (Traditional) (zh-Hant), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
 - [x] Japanese (ja), thanks to [Asuka Yamashita](https://www.facebook.com/asuka.yamashita.944)
@@ -68,7 +68,7 @@ I am looking for help translating the application. Please [email me](mailto:nuno
 - [ ] Danish (da)
 - [ ] Finnish (fi)
 - [ ] Norwegian Bokmål (nb)
-- [ ] Swedish (sv)
+- [x] Swedish (sv), thanks to [Daniel Stenberg](https://twitter.com/daniel_stenberg)
 - [ ] Russian (ru)
 - [ ] Polish (pl)
 - [ ] Turkish (tr)
