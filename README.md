@@ -52,48 +52,40 @@ There are no tests written for this application so far.
 
 I am looking for help translating the application. Please [email me](mailto:nuno@nunocoelhosantos.com?subject=Help%20translate%20Currency%20for%20iOS) if you're willing to help. Here is the list of current translations:
 
-- [x] English
-- [x] English (British)
-- [ ] English (Australian)
-- [ ] English (Canadian)
-- [ ] English (Indian)
-- [ ] French
-- [ ] French (Canadian)
-- [x] Spanish, thanks to [Alex Abian](https://www.instagram.com/alex_abn/)
-- [ ] Spanish (Mexico)
-- [x] Portuguese, thanks to [Jack Veiga](https://twitter.com/jackveiga)
-- [ ] Portuguese (Brazil)
-- [ ] Italian
-- [ ] German
-- [x] Chinese, thanks to [Xin Nie](https://www.instagram.com/star_nie/)
-- [x] Chinese (Simplified), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
-- [x] Chinese (Traditional), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
-- [x] Chinese (Hong Kong), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
-- [ ] Dutch
-- [x] Japanese, thanks to [Asuka Yamashita](https://www.facebook.com/asuka.yamashita.944)
-- [ ] Korean
-- [ ] Vietnamese
-- [ ] Russian
-- [ ] Swedish
-- [ ] Danish
-- [ ] Finnish
-- [ ] Norwegian (Bokmal)
-- [ ] Turkish
-- [ ] Greek
-- [ ] Indonesian
-- [ ] Malay
-- [ ] Thai
-- [ ] Hindi
-- [ ] Hungarian
-- [ ] Polish
-- [ ] Czech
-- [ ] Slovak
-- [ ] Ukrainian
-- [ ] Croatian
-- [ ] Catalan
-- [ ] Romanian
-- [ ] Hebrew
-- [ ] Arabic
+- [x] English (en)
+- [x] French (fr), thanks to [Slim Ewies](https://github.com/slim-e/)
+- [x] German (de), thanks to [Simon Schmid](https://twitter.com/s2imon/)
+- [x] Chinese (Simplified) (zh-Hans), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
+- [x] Chinese (Traditional) (zh-Hant), thanks to [Xin Nie](https://www.instagram.com/star_nie/)
+- [x] Japanese (ja), thanks to [Asuka Yamashita](https://www.facebook.com/asuka.yamashita.944)
+- [x] Spanish (es), thanks to [Alex Abian](https://www.instagram.com/alex_abn/)
+- [ ] Spanish (Mexico) (es-MX)
+- [ ] Italian (it)
+- [ ] Dutch (nl)
+- [ ] Korean (ko)
+- [ ] Portuguese (Brazil) (pt-BR)
+- [x] Portuguese (Portugal) (pt-PT), thanks to [Jack Veiga](https://twitter.com/jackveiga)
+- [ ] Danish (da)
+- [ ] Finnish (fi)
+- [ ] Norwegian Bokmål (nb)
+- [x] Swedish (sv), thanks to [Daniel Stenberg](https://twitter.com/daniel_stenberg)
+- [ ] Russian (ru)
+- [ ] Polish (pl)
+- [ ] Turkish (tr)
+- [ ] Arabic (ar)
+- [ ] Thai (th)
+- [ ] Czech (cs)
+- [ ] Hungarian (hu)
+- [ ] Catalan (ca)
+- [ ] Croatian (hr)
+- [ ] Greek (el)
+- [ ] Hebrew (he)
+- [ ] Romanian (ro)
+- [ ] Slovak (sk)
+- [ ] Ukrainian (uk)
+- [ ] Indonesian (id)
+- [ ] Malay (ms)
+- [ ] Vietnamese (vi)
 
 ## Contribute
 

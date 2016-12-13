@@ -26,9 +26,12 @@ class ChangeCurrencyViewController: UIViewController {
     var tableSectionTitles:Array<String>!
     let displayChineseSimplified: Bool = "zh-Hans-US" == Locale.preferredLanguages[0]
     let displayChineseTraditional: Bool = ["zh-Hant-US", "zh-HK", "zh-TW"].contains(Locale.preferredLanguages[0])
+    let displayFrench: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "fr"
+    let displayGerman: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "de"
     let displayJapanese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "ja"
     let displayPortuguese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "pt"
     let displaySpanish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "es"
+    let displaySwedish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "sv"
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -53,12 +56,18 @@ class ChangeCurrencyViewController: UIViewController {
             tableSectionTitles = ["近期货币", "所有货币"]
         } else if displayChineseTraditional {
             tableSectionTitles = ["近期貨幣", "所有貨幣"]
+        } else if displayFrench {
+            tableSectionTitles = ["Devises récentes", "Toutes les devises"]
+        } else if displayGerman {
+            tableSectionTitles = ["Neulich benutzt", "Alle Währungen"]
         } else if displayJapanese {
             tableSectionTitles = ["最近の通貨", "すべての通貨"]
         } else if displayPortuguese {
             tableSectionTitles = ["Moedas recentes", "Todas as moedas"]
         } else if displaySpanish {
             tableSectionTitles = ["Monedas recientes", "Todas las monedas"]
+        } else if displaySwedish {
+            tableSectionTitles = ["Senaste Valutor", "Alla Valutor"]
         } else {
             tableSectionTitles = ["Recent currencies", "All currencies"]
         }
@@ -72,12 +81,18 @@ class ChangeCurrencyViewController: UIViewController {
             sortDescriptor = NSSortDescriptor(key: "name_zh_Hans", ascending: true)
         } else if displayChineseTraditional {
             sortDescriptor = NSSortDescriptor(key: "name_zh_Hant", ascending: true)
+        } else if displayFrench {
+            sortDescriptor = NSSortDescriptor(key: "name_fr", ascending: true)
+        } else if displayGerman {
+            sortDescriptor = NSSortDescriptor(key: "name_de", ascending: true)
         } else if displayJapanese {
             sortDescriptor = NSSortDescriptor(key: "name_ja", ascending: true)
         } else if displayPortuguese {
             sortDescriptor = NSSortDescriptor(key: "name_pt_PT", ascending: true)
         } else if displaySpanish {
             sortDescriptor = NSSortDescriptor(key: "name_es", ascending: true)
+        } else if displaySwedish {
+            sortDescriptor = NSSortDescriptor(key: "name_sv", ascending: true)
         } else {
             sortDescriptor = NSSortDescriptor(key: "name_en", ascending: true)
         }
@@ -145,12 +160,18 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
             cell!.textLabel!.text = currency.name_zh_Hans!
         } else if displayChineseTraditional {
             cell!.textLabel!.text = currency.name_zh_Hant!
+        } else if displayFrench {
+            cell!.textLabel!.text = currency.name_fr!
+        } else if displayGerman {
+            cell!.textLabel!.text = currency.name_de!
         } else if displayJapanese {
             cell!.textLabel!.text = currency.name_ja!
         } else if displayPortuguese {
             cell!.textLabel!.text = currency.name_pt_PT!
         } else if displaySpanish {
             cell!.textLabel!.text = currency.name_es!
+        } else if displaySwedish {
+            cell!.textLabel!.text = currency.name_sv!
         } else {
             cell!.textLabel!.text = currency.name_en!
         }
@@ -211,12 +232,18 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
                 matchesName = currency.name_zh_Hans!.lowercased().range(of: searchText) != nil
             } else if displayChineseTraditional {
                 matchesName = currency.name_zh_Hant!.lowercased().range(of: searchText) != nil
+            } else if displayFrench {
+                matchesName = currency.name_fr!.lowercased().range(of: searchText) != nil
+            } else if displayGerman {
+                matchesName = currency.name_de!.lowercased().range(of: searchText) != nil
             } else if displayJapanese {
                 matchesName = currency.name_ja!.lowercased().range(of: searchText) != nil
             } else if displayPortuguese {
                 matchesName = currency.name_pt_PT!.lowercased().range(of: searchText) != nil
             } else if displaySpanish {
                 matchesName = currency.name_es!.lowercased().range(of: searchText) != nil
+            } else if displaySwedish {
+                matchesName = currency.name_sv!.lowercased().range(of: searchText) != nil
             } else {
                 matchesName = currency.name_en!.lowercased().range(of: searchText) != nil
             }
