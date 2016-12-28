@@ -16,9 +16,12 @@ class Currency: NSManagedObject {
     @NSManaged dynamic var name_en: String!
     @NSManaged dynamic var name_es: String!
     @NSManaged dynamic var name_fr: String!
+    @NSManaged dynamic var name_id: String!
     @NSManaged dynamic var name_ja: String!
+    @NSManaged dynamic var name_ko: String!
     @NSManaged dynamic var name_pt_PT: String!
     @NSManaged dynamic var name_sv: String!
+    @NSManaged dynamic var name_tr: String!
     @NSManaged dynamic var name_zh_Hans: String!
     @NSManaged dynamic var name_zh_Hant: String!
     @NSManaged dynamic var code: String!

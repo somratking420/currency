@@ -166,6 +166,7 @@
 		BC72D2081DFE46E000011C22 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
 		BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 3.xcdatamodel"; sourceTree = "<group>"; };
 		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
+		BC8BF81A1E1363FF0030752F /* Currency 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 7.xcdatamodel"; sourceTree = "<group>"; };
 		BCA0CC391CD36EF4001C520C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tap.wav; path = Sounds/tap.wav; sourceTree = "<group>"; };
 		BCAADB6E1CD2643800F360F8 /* CalculatorClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorClearButton.swift; path = "UI Classes/CalculatorClearButton.swift"; sourceTree = "<group>"; };
 		BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 5.xcdatamodel"; sourceTree = "<group>"; };
@@ -981,6 +982,7 @@
 		BCD9200E1C6BA6AC0089F52A /* Currency.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BC8BF81A1E1363FF0030752F /* Currency 7.xcdatamodel */,
 				BC0C03CB1DFFEACE00F9F41E /* Currency 6.xcdatamodel */,
 				BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */,
 				BCEDD72A1CE19032008C6356 /* Currency 4.xcdatamodel */,
@@ -988,7 +990,7 @@
 				BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */,
 				BCD9200F1C6BA6AC0089F52A /* Currency.xcdatamodel */,
 			);
-			currentVersion = BC0C03CB1DFFEACE00F9F41E /* Currency 6.xcdatamodel */;
+			currentVersion = BC8BF81A1E1363FF0030752F /* Currency 7.xcdatamodel */;
 			path = Currency.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
