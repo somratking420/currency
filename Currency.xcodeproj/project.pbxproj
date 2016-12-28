@@ -167,6 +167,9 @@
 		BC83C9041C98FF8300C7C2D7 /* Currency 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 3.xcdatamodel"; sourceTree = "<group>"; };
 		BC864FB51C8F007E00A0D4AC /* Currency 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 2.xcdatamodel"; sourceTree = "<group>"; };
 		BC8BF81A1E1363FF0030752F /* Currency 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 7.xcdatamodel"; sourceTree = "<group>"; };
+		BC8BF81E1E1366F20030752F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		BC8BF81F1E1366FA0030752F /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
+		BC8BF8201E1366FF0030752F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		BCA0CC391CD36EF4001C520C /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tap.wav; path = Sounds/tap.wav; sourceTree = "<group>"; };
 		BCAADB6E1CD2643800F360F8 /* CalculatorClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalculatorClearButton.swift; path = "UI Classes/CalculatorClearButton.swift"; sourceTree = "<group>"; };
 		BCACE05E1D001D5F0018C3A5 /* Currency 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Currency 5.xcdatamodel"; sourceTree = "<group>"; };
@@ -742,6 +745,9 @@
 				BC72D2061DFE46D500011C22 /* fr */,
 				BC72D2071DFE46D900011C22 /* de */,
 				BC72D2081DFE46E000011C22 /* sv */,
+				BC8BF81E1E1366F20030752F /* ko */,
+				BC8BF81F1E1366FA0030752F /* id */,
+				BC8BF8201E1366FF0030752F /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
