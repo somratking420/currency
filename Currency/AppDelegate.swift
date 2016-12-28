@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite")
         let prefs = UserDefaults.standard
         let userDatabaseVersion: Int
-        let latestDatabaseVersion: Int = 4
+        let latestDatabaseVersion: Int = 5
         let deleteExisting: Bool = FileManager.default.fileExists(atPath: url.path)
         
         if let version = prefs.string(forKey: "databaseVersion") {
