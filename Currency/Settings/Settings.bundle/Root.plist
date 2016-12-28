@@ -84,15 +84,6 @@
 			<key>File</key>
 			<string>Acknowledgements</string>
 		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string></string>
-			<key>FooterText</key>
-			<string>Please restart the application for settings to take effect.
-Support: currency@nunocoelhosantos.com</string>
-		</dict>
 	</array>
 </dict>
 </plist>
