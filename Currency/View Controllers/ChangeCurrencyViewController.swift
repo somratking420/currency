@@ -28,10 +28,13 @@ class ChangeCurrencyViewController: UIViewController {
     let displayChineseTraditional: Bool = ["zh-Hant-US", "zh-HK", "zh-TW"].contains(Locale.preferredLanguages[0])
     let displayFrench: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "fr"
     let displayGerman: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "de"
+    let displayIndonesian: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "id"
     let displayJapanese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "ja"
+    let displayKorean: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "ko"
     let displayPortuguese: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "pt"
     let displaySpanish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "es"
     let displaySwedish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "sv"
+    let displayTurkish: Bool = String(Locale.preferredLanguages[0].characters.prefix(2)) == "tr"
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -60,14 +63,20 @@ class ChangeCurrencyViewController: UIViewController {
             tableSectionTitles = ["Devises récentes", "Toutes les devises"]
         } else if displayGerman {
             tableSectionTitles = ["Neulich benutzt", "Alle Währungen"]
+        } else if displayIndonesian {
+            tableSectionTitles = ["Baru Saja Dipilih", "Semua Mata Uang"]
         } else if displayJapanese {
             tableSectionTitles = ["最近の通貨", "すべての通貨"]
+        } else if displayKorean {
+            tableSectionTitles = ["최근 찾은 통화", "모든 통화"]
         } else if displayPortuguese {
             tableSectionTitles = ["Moedas recentes", "Todas as moedas"]
         } else if displaySpanish {
             tableSectionTitles = ["Monedas recientes", "Todas las monedas"]
         } else if displaySwedish {
             tableSectionTitles = ["Senaste Valutor", "Alla Valutor"]
+        } else if displayTurkish {
+            tableSectionTitles = ["Son Kullanılanlar", "Tüm Kurlar"]
         } else {
             tableSectionTitles = ["Recent currencies", "All currencies"]
         }
@@ -85,14 +94,20 @@ class ChangeCurrencyViewController: UIViewController {
             sortDescriptor = NSSortDescriptor(key: "name_fr", ascending: true)
         } else if displayGerman {
             sortDescriptor = NSSortDescriptor(key: "name_de", ascending: true)
+        } else if displayIndonesian {
+            sortDescriptor = NSSortDescriptor(key: "name_id", ascending: true)
         } else if displayJapanese {
             sortDescriptor = NSSortDescriptor(key: "name_ja", ascending: true)
+        } else if displayKorean {
+            sortDescriptor = NSSortDescriptor(key: "name_ko", ascending: true)
         } else if displayPortuguese {
             sortDescriptor = NSSortDescriptor(key: "name_pt_PT", ascending: true)
         } else if displaySpanish {
             sortDescriptor = NSSortDescriptor(key: "name_es", ascending: true)
         } else if displaySwedish {
             sortDescriptor = NSSortDescriptor(key: "name_sv", ascending: true)
+        } else if displayTurkish {
+            sortDescriptor = NSSortDescriptor(key: "name_tr", ascending: true)
         } else {
             sortDescriptor = NSSortDescriptor(key: "name_en", ascending: true)
         }
@@ -164,14 +179,20 @@ extension ChangeCurrencyViewController: UITableViewDelegate, UITableViewDataSour
             cell!.textLabel!.text = currency.name_fr!
         } else if displayGerman {
             cell!.textLabel!.text = currency.name_de!
+        } else if displayIndonesian {
+            cell!.textLabel!.text = currency.name_id!
         } else if displayJapanese {
             cell!.textLabel!.text = currency.name_ja!
+        } else if displayKorean {
+            cell!.textLabel!.text = currency.name_ko!
         } else if displayPortuguese {
             cell!.textLabel!.text = currency.name_pt_PT!
         } else if displaySpanish {
             cell!.textLabel!.text = currency.name_es!
         } else if displaySwedish {
             cell!.textLabel!.text = currency.name_sv!
+        } else if displayTurkish {
+            cell!.textLabel!.text = currency.name_tr!
         } else {
             cell!.textLabel!.text = currency.name_en!
         }
@@ -236,14 +257,20 @@ extension ChangeCurrencyViewController: UISearchBarDelegate, UISearchDisplayDele
                 matchesName = currency.name_fr!.lowercased().range(of: searchText) != nil
             } else if displayGerman {
                 matchesName = currency.name_de!.lowercased().range(of: searchText) != nil
+            } else if displayIndonesian {
+                matchesName = currency.name_id!.lowercased().range(of: searchText) != nil
             } else if displayJapanese {
                 matchesName = currency.name_ja!.lowercased().range(of: searchText) != nil
+            } else if displayKorean {
+                matchesName = currency.name_ko!.lowercased().range(of: searchText) != nil
             } else if displayPortuguese {
                 matchesName = currency.name_pt_PT!.lowercased().range(of: searchText) != nil
             } else if displaySpanish {
                 matchesName = currency.name_es!.lowercased().range(of: searchText) != nil
             } else if displaySwedish {
                 matchesName = currency.name_sv!.lowercased().range(of: searchText) != nil
+            } else if displayTurkish {
+                matchesName = currency.name_tr!.lowercased().range(of: searchText) != nil
             } else {
                 matchesName = currency.name_en!.lowercased().range(of: searchText) != nil
             }
