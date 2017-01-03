@@ -2,7 +2,7 @@
 
 ![View of the Currency app for iOS running on an iPhone](http://i.imgur.com/yiOFZzV.jpg)
 
-This project is a simple currency converter app for iOS, built by a designer while learning iOS development in Swift. It is available on the App Store for free to download [here](http://appstore.com/currencysimplecurrencycalculator).
+This project is a simple currency converter app for iOS, built by a designer while learning iOS development in Swift. It is available on the App Store for free to download [here](https://itunes.apple.com/app/currency-simple-currency-calculator/id1109685198?mt=8).
 
 ## Motivation
 
