@@ -202,9 +202,11 @@ class MainViewController: UIViewController {
     }
 
     func swapInputAndOutputCurrencies() {
+        // First, hide the spinners.
         hideInputActivityIndicator()
         hideOutputActivityIndicator()
         
+        // Store all the final positions and colors before animating.
         let inputPosition = inputCurrency.center.y
         let inputColor = inputCurrency.titleLabel?.textColor
         let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
@@ -212,13 +214,15 @@ class MainViewController: UIViewController {
         let outputColor = outputCurrency.titleLabel?.textColor
         let outputCodeButtonPosition = outputCurrencyCodeButton.center.y
 
+        // Place items in their initial position before animating.
         inputCurrency.center.y = outputPosition
         inputCurrency.setTitleColor(outputColor, for: UIControlState())
         inputCurrencyCodeButton.center.y = outputCodeButtonPosition
         outputCurrency.center.y = inputPosition
         outputCurrency.setTitleColor(inputColor, for: UIControlState())
         outputCurrencyCodeButton.center.y = inputCodeButtonPosition
-
+        
+        // Animate items to their final position.
         UIView.animate(
             withDuration: 0.56,
             delay: 0,
@@ -235,14 +239,19 @@ class MainViewController: UIViewController {
             },
             completion: nil
         )
-
+        
+        // After running the animation, update the calculator to use the new currency values.
         calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
         if calculator.operationInProgress && !calculator.settingNewValue {
             converter.swapInputWithOutput(convertInputValue: false)
         } else {
             converter.swapInputWithOutput()
         }
+        
+        // Update the interface.
         updateInterface(playSound: true, clearOperationButton: false)
+        
+        // Store new input and output currencies as user preferences.
         prefs.set(converter.inputCurrency.code, forKey: "input")
         prefs.set(converter.outputCurrency.code, forKey: "output")
 
