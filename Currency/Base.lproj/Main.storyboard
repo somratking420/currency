@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-16-T8b" userLabel="Input Currency View">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-16-T8b" userLabel="Input Currency View">
                                 <rect key="frame" x="0.0" y="40" width="355" height="116"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji" customClass="CurrencyButton" customModule="Currency">
@@ -54,7 +54,7 @@
                                         <rect key="frame" x="56" y="48" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="muv-tM-atU" secondAttribute="bottom" id="3lk-az-28V"/>
                                     <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="10" id="5tI-1B-rUQ"/>
@@ -73,7 +73,7 @@
                                     <constraint firstItem="muv-tM-atU" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="top" id="ziZ-K0-eq3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-rS-HdK" userLabel="Ouput Currency View">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-rS-HdK" userLabel="Ouput Currency View">
                                 <rect key="frame" x="0.0" y="156" width="355" height="116"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha" customClass="CurrencyButton" customModule="Currency">
@@ -106,7 +106,7 @@
                                         <rect key="frame" x="56" y="48" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="4nD-bv-Hha" firstAttribute="centerY" secondItem="46j-rS-HdK" secondAttribute="centerY" id="3LD-QL-7sj"/>
                                     <constraint firstItem="rXn-1B-zNv" firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="5vy-DM-SQO"/>
@@ -375,20 +375,22 @@
                         <outlet property="inputActivityIndicator" destination="6Jm-2k-5N4" id="aBU-LT-ZBD"/>
                         <outlet property="inputCurrency" destination="muv-tM-atU" id="TbY-SG-j65"/>
                         <outlet property="inputCurrencyCodeButton" destination="dVx-wP-zji" id="2PI-eC-7qc"/>
+                        <outlet property="inputCurrencyContainer" destination="amQ-16-T8b" id="4Xx-VG-eYL"/>
                         <outlet property="inputIndicator" destination="4ye-eY-h2D" id="nSg-dp-Rdn"/>
                         <outlet property="minusButton" destination="4r1-uK-adB" id="cvc-SM-RQw"/>
                         <outlet property="outputActivityIndicator" destination="Pvj-tD-Cw9" id="jMK-Fk-NdQ"/>
                         <outlet property="outputCurrency" destination="rXn-1B-zNv" id="9CD-Of-61e"/>
                         <outlet property="outputCurrencyCodeButton" destination="4nD-bv-Hha" id="PbD-sb-ABr"/>
+                        <outlet property="outputCurrencyContainer" destination="46j-rS-HdK" id="9x5-PJ-sIU"/>
                         <outlet property="switchButton" destination="aOt-1A-j4i" id="9LZ-er-PRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="fYV-Ee-EWy" userLabel="Swipe on Input Currency">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press on Equals Button">
                     <connections>
-                        <action selector="swipedInput:" destination="BYZ-38-t0r" id="4Xw-8Z-Ymx"/>
+                        <action selector="longPressedEquals:" destination="BYZ-38-t0r" id="mQd-tK-ajZ"/>
                     </connections>
-                </swipeGestureRecognizer>
+                </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="CvM-8I-DFd" userLabel="Long Press on Input Currency">
                     <connections>
                         <action selector="longPressedInput:" destination="BYZ-38-t0r" id="aRH-N8-pjT"/>
@@ -399,16 +401,16 @@
                         <action selector="longPressedOutput:" destination="BYZ-38-t0r" id="QX4-Uf-V8i"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="zYS-Rm-9Dl" userLabel="Long Press on Equals Button">
-                    <connections>
-                        <action selector="longPressedEquals:" destination="BYZ-38-t0r" id="mQd-tK-ajZ"/>
-                    </connections>
-                </pongPressGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="UDK-Qq-hYp" userLabel="Long Press on Clear Button">
                     <connections>
                         <action selector="longPressedClear:" destination="BYZ-38-t0r" id="Iej-7p-PSy"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="fYV-Ee-EWy" userLabel="Swipe on Input Currency">
+                    <connections>
+                        <action selector="swipedInput:" destination="BYZ-38-t0r" id="4Xw-8Z-Ymx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="357.60000000000002" y="95.802098950524751"/>
         </scene>
