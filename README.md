@@ -90,3 +90,7 @@ I am looking for help translating the application. Please [email me](mailto:nuno
 ## Contribute
 
 This is a project by [Nuno Coelho Santos](https://twitter.com/nunosans/). All contributions in the form of pull requests or comments are welcome. If you experience problems with the project, please open an issue and give as much detailed information as you can.
+
+## License
+
+Currency is released under the MIT license. See [LICENSE](LICENSE) for details.
