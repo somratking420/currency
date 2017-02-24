@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
         // to restart the input indicator animation.
         notificationCenter.addObserver(self, selector:#selector(MainViewController.applicationBecameActiveNotification), name:NSNotification.Name.UIApplicationDidBecomeActive, object:nil)
         
-        // Currency drag to change
+        // Currency drag to change.
         let inputCurrencyPanRecognizer = UIPanGestureRecognizer(target: self,
                                                                 action: #selector(detectPan(recognizer:)))
         let outputCurrencyPanRecognizer = UIPanGestureRecognizer(target: self,
@@ -91,27 +91,31 @@ class MainViewController: UIViewController {
     
     func detectPan(recognizer:UIPanGestureRecognizer) {
         
-        var primary = inputCurrencyContainer
-        var secondary = outputCurrencyContainer
-        
-        if recognizer.view == outputCurrencyContainer {
-            primary = outputCurrencyContainer
-            secondary = inputCurrencyContainer
-        }
+        let primary = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
+        let secondary = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
         
         if recognizer.state == UIGestureRecognizerState.began {
             primaryLastLocation = primary!.center
             secondaryLastLocation = secondary!.center
         }
         
-        let translation  = recognizer.translation(in: primary?.superview!)
+        let translation = recognizer.translation(in: primary?.superview!)
         primary!.center =   CGPoint(x: primaryLastLocation.x,
                                     y: primaryLastLocation.y + translation.y)
         secondary!.center = CGPoint(x: secondaryLastLocation.x,
                                     y: secondaryLastLocation.y + -translation.y)
         
         if recognizer.state == UIGestureRecognizerState.ended {
-            swapInputAndOutputCurrencies()
+            let velocity = recognizer.velocity(in: primary?.superview!)
+            
+            if (recognizer.view == outputCurrencyContainer && velocity.y >= 0) ||
+               (recognizer.view == inputCurrencyContainer && velocity.y <= 0) {
+                resetInputAndOutputCurrencies(panView: recognizer.view!)
+            } else {
+                swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
+            }
+            
+            
         }
     }
 
@@ -239,8 +243,29 @@ class MainViewController: UIViewController {
         calculator.reset()
         updateInterface()
     }
+    
+    func resetInputAndOutputCurrencies(panView:UIView) {
+        
+        // Store all the final positions and colors before animating.
+        let inputPosition = panView == inputCurrencyContainer ? primaryLastLocation.y : secondaryLastLocation.y
+        let outputPosition = panView == inputCurrencyContainer ? secondaryLastLocation.y : primaryLastLocation.y
+        
+        // Animate items to their final position.
+        UIView.animate(
+            withDuration: 0.56,
+            delay: 0,
+            usingSpringWithDamping: 0.56,
+            initialSpringVelocity: 0,
+            options: .curveEaseOut,
+            animations: {
+                self.inputCurrencyContainer.center.y = inputPosition
+                self.outputCurrencyContainer.center.y = outputPosition
+        },
+            completion: nil
+        )
+    }
 
-    func swapInputAndOutputCurrencies() {
+    func swapInputAndOutputCurrencies(pan: Bool = false, velocity: CGFloat = 0) {
         // First, hide the spinners.
         hideInputActivityIndicator()
         hideOutputActivityIndicator()
@@ -262,7 +287,7 @@ class MainViewController: UIViewController {
             withDuration: 0.56,
             delay: 0,
             usingSpringWithDamping: 0.56,
-            initialSpringVelocity: 0.0,
+            initialSpringVelocity: 0,
             options: .curveEaseOut,
             animations: {
                 self.inputCurrencyContainer.center.y = inputPosition
