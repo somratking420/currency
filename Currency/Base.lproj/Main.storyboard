@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,14 +18,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-16-T8b" userLabel="Input Currency View">
-                                <rect key="frame" x="0.0" y="40" width="355" height="116"/>
+                                <rect key="frame" x="0.0" y="40" width="394" height="131"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-wP-zji" customClass="CurrencyButton" customModule="Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="116"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="131"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="j4a-99-tPZ"/>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muv-tM-atU">
-                                        <rect key="frame" x="74" y="0.0" width="281" height="116"/>
+                                        <rect key="frame" x="74" y="0.0" width="320" height="131"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="68"/>
                                         <state key="normal" title="¥0">
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4" userLabel="Input Activity Indicator">
-                                        <rect key="frame" x="56" y="48" width="20" height="20"/>
+                                        <rect key="frame" x="56" y="55.666666666666671" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -74,10 +74,10 @@
                                 </constraints>
                             </view>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-rS-HdK" userLabel="Ouput Currency View">
-                                <rect key="frame" x="0.0" y="156" width="355" height="116"/>
+                                <rect key="frame" x="0.0" y="171" width="394" height="131"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nD-bv-Hha" customClass="CurrencyButton" customModule="Currency">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="116"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="131"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="tmf-YM-r15"/>
@@ -91,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-1B-zNv">
-                                        <rect key="frame" x="74" y="0.0" width="281" height="116"/>
+                                        <rect key="frame" x="74" y="0.0" width="320" height="131"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="68"/>
                                         <state key="normal" title="£0">
@@ -103,7 +103,7 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9" userLabel="Output Activity Indicator">
-                                        <rect key="frame" x="56" y="48" width="20" height="20"/>
+                                        <rect key="frame" x="56" y="55.666666666666657" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ye-eY-h2D" userLabel="Input Indicator">
-                                <rect key="frame" x="357" y="65" width="4" height="65"/>
+                                <rect key="frame" x="396" y="72.666666666666657" width="4" height="64.999999999999972"/>
                                 <color key="backgroundColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="4" id="bLO-jx-IbR"/>
@@ -134,18 +134,18 @@
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6z-VH-Rih" userLabel="Divider line">
-                                <rect key="frame" x="0.0" y="291" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="321" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.68248796463012695" green="0.68261897563934326" blue="0.68246603012084961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="xdx-bY-Ohq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
-                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
+                                <rect key="frame" x="0.0" y="322" width="414" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="7">
@@ -156,8 +156,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="94" y="0.0" width="93.5" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="8">
@@ -168,8 +168,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="207" y="0.0" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="9">
@@ -180,8 +180,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94" width="94" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="103.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="4">
@@ -192,8 +192,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="94" y="94" width="93.5" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="103.5" y="103.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="5">
@@ -204,8 +204,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="187.5" y="94" width="94" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="207" y="103.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="6">
@@ -216,8 +216,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="187.5" width="94" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="207" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="1">
@@ -228,8 +228,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="94" y="187.5" width="93.5" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="103.5" y="207" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2">
@@ -240,8 +240,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="187.5" y="187.5" width="94" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="207" y="207" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="3">
@@ -252,8 +252,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="94" y="281.5" width="93.5" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="103.5" y="310.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="0">
@@ -264,8 +264,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="281.5" width="94" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="310.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=".">
@@ -276,8 +276,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" userLabel="Clear" customClass="CalculatorClearButton" customModule="Currency">
-                                        <rect key="frame" x="187.5" y="281.5" width="94" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="207" y="310.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.53805017471313477" green="0.53815340995788574" blue="0.53803282976150513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -290,8 +290,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="buttonSwitchIcon.png">
@@ -302,8 +302,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="281.5" y="94" width="93.5" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="310.5" y="103.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonAddIcon.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -313,8 +313,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="281.5" y="187.5" width="93.5" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="310.5" y="207" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonSubtractIcon.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -324,8 +324,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="281.5" y="281.5" width="93.5" height="93.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="310.5" y="310.5" width="103.5" height="103.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonResultIcon.png">
@@ -423,14 +423,14 @@
                         <viewControllerLayoutGuide type="bottom" id="dg3-2g-E8C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="StB-6j-ag4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="P8b-Bl-AQo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Currencies" id="CZV-23-ufX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -439,21 +439,21 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrencyCell" editingAccessoryType="checkmark" textLabel="9qf-Ta-xvN" detailTextLabel="Zjl-ce-ePH" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="7r5-xP-kk4">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="84"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7r5-xP-kk4" id="KeT-OW-NtB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qf-Ta-xvN">
-                                                    <rect key="frame" x="15" y="23" width="32" height="20"/>
+                                                    <rect key="frame" x="15.000000000000002" y="24" width="31.666666666666668" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zjl-ce-ePH">
-                                                    <rect key="frame" x="15" y="43" width="50" height="17"/>
+                                                    <rect key="frame" x="14.999999999999996" y="43.333333333333329" width="49.666666666666664" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.51589071750640869" green="0.51598978042602539" blue="0.51587420701980591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
