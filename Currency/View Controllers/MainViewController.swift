@@ -88,36 +88,6 @@ class MainViewController: UIViewController {
         outputCurrencyContainer.addGestureRecognizer(outputCurrencyPanRecognizer)
 
     }
-    
-    func detectPan(recognizer:UIPanGestureRecognizer) {
-        
-        let primary = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
-        let secondary = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
-        
-        if recognizer.state == UIGestureRecognizerState.began {
-            primaryLastLocation = primary!.center
-            secondaryLastLocation = secondary!.center
-        }
-        
-        let translation = recognizer.translation(in: primary?.superview!)
-        primary!.center =   CGPoint(x: primaryLastLocation.x,
-                                    y: primaryLastLocation.y + translation.y)
-        secondary!.center = CGPoint(x: secondaryLastLocation.x,
-                                    y: secondaryLastLocation.y + -translation.y)
-        
-        if recognizer.state == UIGestureRecognizerState.ended {
-            let velocity = recognizer.velocity(in: primary?.superview!)
-            
-            if (recognizer.view == outputCurrencyContainer && velocity.y >= 0) ||
-               (recognizer.view == inputCurrencyContainer && velocity.y <= 0) {
-                resetInputAndOutputCurrencies(panView: recognizer.view!)
-            } else {
-                swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
-            }
-            
-            
-        }
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         // When we change views the animations stop,
@@ -263,6 +233,38 @@ class MainViewController: UIViewController {
         },
             completion: nil
         )
+    }
+    
+    
+    
+    func detectPan(recognizer:UIPanGestureRecognizer) {
+        
+        let primary = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
+        let secondary = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
+        
+        if recognizer.state == UIGestureRecognizerState.began {
+            primaryLastLocation = primary!.center
+            secondaryLastLocation = secondary!.center
+        }
+        
+        let translation = recognizer.translation(in: primary?.superview!)
+        primary!.center =   CGPoint(x: primaryLastLocation.x,
+                                    y: primaryLastLocation.y + translation.y)
+        secondary!.center = CGPoint(x: secondaryLastLocation.x,
+                                    y: secondaryLastLocation.y + -translation.y)
+        
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let velocity = recognizer.velocity(in: primary?.superview!)
+            
+            if (recognizer.view == outputCurrencyContainer && velocity.y >= 0) ||
+                (recognizer.view == inputCurrencyContainer && velocity.y <= 0) {
+                resetInputAndOutputCurrencies(panView: recognizer.view!)
+            } else {
+                swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
+            }
+            
+            
+        }
     }
 
     func swapInputAndOutputCurrencies(pan: Bool = false, velocity: CGFloat = 0) {
