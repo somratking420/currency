@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 
 class MainViewController: UIViewController {
+    
+    var primaryLastLocation:CGPoint = CGPoint(x: 0, y: 0)
+    var secondaryLastLocation:CGPoint = CGPoint(x: 0, y: 0)
 
     var converter: Converter!
     var calculator: Calculator!
@@ -20,7 +23,9 @@ class MainViewController: UIViewController {
     var fadeOutAnimation: CABasicAnimation!
     var prefs: UserDefaults = UserDefaults.standard
     let notificationCenter = NotificationCenter.default
-
+    
+    @IBOutlet weak var outputCurrencyContainer: UIView!
+    @IBOutlet weak var inputCurrencyContainer: UIView!
     @IBOutlet weak var inputCurrency: UIButton!
     @IBOutlet weak var outputCurrency: UIButton!
     @IBOutlet weak var inputCurrencyCodeButton: UIButton!
@@ -73,7 +78,45 @@ class MainViewController: UIViewController {
         // We want to know if the app is opened from the background
         // to restart the input indicator animation.
         notificationCenter.addObserver(self, selector:#selector(MainViewController.applicationBecameActiveNotification), name:NSNotification.Name.UIApplicationDidBecomeActive, object:nil)
+        
+        // Currency drag to change.
+        let inputCurrencyPanRecognizer = UIPanGestureRecognizer(target: self,
+                                                                action: #selector(detectPan(recognizer:)))
+        let outputCurrencyPanRecognizer = UIPanGestureRecognizer(target: self,
+                                                                 action: #selector(detectPan(recognizer:)))
+        inputCurrencyContainer.addGestureRecognizer(inputCurrencyPanRecognizer)
+        outputCurrencyContainer.addGestureRecognizer(outputCurrencyPanRecognizer)
 
+    }
+    
+    func detectPan(recognizer:UIPanGestureRecognizer) {
+        
+        let primary = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
+        let secondary = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
+        
+        if recognizer.state == UIGestureRecognizerState.began {
+            primaryLastLocation = primary!.center
+            secondaryLastLocation = secondary!.center
+        }
+        
+        let translation = recognizer.translation(in: primary?.superview!)
+        primary!.center =   CGPoint(x: primaryLastLocation.x,
+                                    y: primaryLastLocation.y + translation.y)
+        secondary!.center = CGPoint(x: secondaryLastLocation.x,
+                                    y: secondaryLastLocation.y + -translation.y)
+        
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let velocity = recognizer.velocity(in: primary?.superview!)
+            
+            if (recognizer.view == outputCurrencyContainer && velocity.y >= 0) ||
+               (recognizer.view == inputCurrencyContainer && velocity.y <= 0) {
+                resetInputAndOutputCurrencies(panView: recognizer.view!)
+            } else {
+                swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
+            }
+            
+            
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -200,49 +243,73 @@ class MainViewController: UIViewController {
         calculator.reset()
         updateInterface()
     }
-
-    func swapInputAndOutputCurrencies() {
-        hideInputActivityIndicator()
-        hideOutputActivityIndicator()
+    
+    func resetInputAndOutputCurrencies(panView:UIView) {
         
-        let inputPosition = inputCurrency.center.y
-        let inputColor = inputCurrency.titleLabel?.textColor
-        let inputCodeButtonPosition = inputCurrencyCodeButton.center.y
-        let outputPosition = outputCurrency.center.y
-        let outputColor = outputCurrency.titleLabel?.textColor
-        let outputCodeButtonPosition = outputCurrencyCodeButton.center.y
-
-        inputCurrency.center.y = outputPosition
-        inputCurrency.setTitleColor(outputColor, for: UIControlState())
-        inputCurrencyCodeButton.center.y = outputCodeButtonPosition
-        outputCurrency.center.y = inputPosition
-        outputCurrency.setTitleColor(inputColor, for: UIControlState())
-        outputCurrencyCodeButton.center.y = inputCodeButtonPosition
-
+        // Store all the final positions and colors before animating.
+        let inputPosition = panView == inputCurrencyContainer ? primaryLastLocation.y : secondaryLastLocation.y
+        let outputPosition = panView == inputCurrencyContainer ? secondaryLastLocation.y : primaryLastLocation.y
+        
+        // Animate items to their final position.
         UIView.animate(
             withDuration: 0.56,
             delay: 0,
             usingSpringWithDamping: 0.56,
-            initialSpringVelocity: 0.0,
+            initialSpringVelocity: 0,
             options: .curveEaseOut,
             animations: {
-                self.inputCurrency.center.y = inputPosition
+                self.inputCurrencyContainer.center.y = inputPosition
+                self.outputCurrencyContainer.center.y = outputPosition
+        },
+            completion: nil
+        )
+    }
+
+    func swapInputAndOutputCurrencies(pan: Bool = false, velocity: CGFloat = 0) {
+        // First, hide the spinners.
+        hideInputActivityIndicator()
+        hideOutputActivityIndicator()
+        
+        // Store all the final positions and colors before animating.
+        let inputPosition = inputCurrencyContainer.center.y
+        let inputColor = inputCurrency.titleLabel?.textColor
+        let outputPosition = outputCurrencyContainer.center.y
+        let outputColor = outputCurrency.titleLabel?.textColor
+
+        // Place items in their initial position before animating.
+        inputCurrencyContainer.center.y = outputPosition
+        inputCurrency.setTitleColor(outputColor, for: UIControlState())
+        outputCurrencyContainer.center.y = inputPosition
+        outputCurrency.setTitleColor(inputColor, for: UIControlState())
+        
+        // Animate items to their final position.
+        UIView.animate(
+            withDuration: 0.56,
+            delay: 0,
+            usingSpringWithDamping: 0.56,
+            initialSpringVelocity: 0,
+            options: .curveEaseOut,
+            animations: {
+                self.inputCurrencyContainer.center.y = inputPosition
                 self.inputCurrency.setTitleColor(inputColor, for: UIControlState())
-                self.inputCurrencyCodeButton.center.y = inputCodeButtonPosition
-                self.outputCurrency.center.y = outputPosition
+                self.outputCurrencyContainer.center.y = outputPosition
                 self.outputCurrency.setTitleColor(outputColor, for: UIControlState())
-                self.outputCurrencyCodeButton.center.y = outputCodeButtonPosition
             },
             completion: nil
         )
-
+        
+        // After running the animation, update the calculator to use the new currency values.
         calculator.initialValue = converter.convertToOutputCurrency(calculator.initialValue)
         if calculator.operationInProgress && !calculator.settingNewValue {
             converter.swapInputWithOutput(convertInputValue: false)
         } else {
             converter.swapInputWithOutput()
         }
+        
+        // Update the interface.
         updateInterface(playSound: true, clearOperationButton: false)
+        
+        // Store new input and output currencies as user preferences.
         prefs.set(converter.inputCurrency.code, forKey: "input")
         prefs.set(converter.outputCurrency.code, forKey: "output")
 
