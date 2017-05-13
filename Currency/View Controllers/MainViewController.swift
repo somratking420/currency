@@ -43,8 +43,14 @@ class MainViewController: UIViewController {
         
         converter = Converter()
         calculator = Calculator()
-        notificationCenter.addObserver(self, selector: #selector(MainViewController.didReceiveCoinUpdateNotification), name:NSNotification.Name(rawValue: "CoinUpdatedNotification"), object: nil)
-        notificationCenter.addObserver(self, selector: #selector(MainViewController.didReceiveUpdateActivityIndicator), name:NSNotification.Name(rawValue: "UpdateActivityIndicator"), object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(MainViewController.didReceiveCoinUpdateNotification),
+                                       name:NSNotification.Name(rawValue: "CoinUpdatedNotification"),
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(MainViewController.didReceiveUpdateActivityIndicator),
+                                       name:NSNotification.Name(rawValue: "UpdateActivityIndicator"),
+                                       object: nil)
         
         // Style view.
         view.layer.cornerRadius = 3.0
@@ -77,7 +83,10 @@ class MainViewController: UIViewController {
 
         // We want to know if the app is opened from the background
         // to restart the input indicator animation.
-        notificationCenter.addObserver(self, selector:#selector(MainViewController.applicationBecameActiveNotification), name:NSNotification.Name.UIApplicationDidBecomeActive, object:nil)
+        notificationCenter.addObserver(self,
+                                       selector:#selector(MainViewController.applicationBecameActiveNotification),
+                                       name:NSNotification.Name.UIApplicationDidBecomeActive,
+                                       object:nil)
         
         // Currency drag to change.
         let inputCurrencyPanRecognizer = UIPanGestureRecognizer(target: self,
@@ -262,8 +271,6 @@ class MainViewController: UIViewController {
             } else {
                 swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
             }
-            
-            
         }
     }
 
@@ -457,14 +464,17 @@ class MainViewController: UIViewController {
         inputActivityIndicator.isHidden = false
         inputActivityIndicator.startAnimating()
     }
+    
     func hideInputActivityIndicator() {
         inputActivityIndicator.isHidden = true
         inputActivityIndicator.stopAnimating()
     }
+    
     func showOutputActivityIndicator() {
         outputActivityIndicator.isHidden = false
         outputActivityIndicator.startAnimating()
     }
+    
     func hideOutputActivityIndicator() {
         outputActivityIndicator.isHidden = true
         outputActivityIndicator.stopAnimating()
