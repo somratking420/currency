@@ -223,7 +223,33 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    func resetInputAndOutputCurrencies(panView:UIView) {
+    
+    
+    func detectPan(recognizer:UIPanGestureRecognizer) {
+        
+        let touchedGroup = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
+        let siblingGroup = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
+        
+        if recognizer.state == UIGestureRecognizerState.began {
+            primaryLastLocation = touchedGroup!.center
+            secondaryLastLocation = siblingGroup!.center
+        }
+        
+        let translation = recognizer.translation(in: touchedGroup?.superview!)
+        touchedGroup!.center = CGPoint(x: primaryLastLocation.x, y: primaryLastLocation.y + translation.y)
+        siblingGroup!.center = CGPoint(x: secondaryLastLocation.x, y: secondaryLastLocation.y + -translation.y)
+        
+        if recognizer.state == UIGestureRecognizerState.ended {
+            if (recognizer.view == outputCurrencyContainer && translation.y >= 0) || (recognizer.view == inputCurrencyContainer && translation.y <= 0) {
+                resetInputAndOutputCurrenciesLocation(panView: recognizer.view!)
+            } else {
+                let distance = abs(translation.y)
+                swapInputAndOutputCurrencies(distance: distance)
+            }
+        }
+    }
+    
+    func resetInputAndOutputCurrenciesLocation(panView:UIView) {
         
         // Store all the final positions and colors before animating.
         let inputPosition = panView == inputCurrencyContainer ? primaryLastLocation.y : secondaryLastLocation.y
@@ -243,38 +269,8 @@ class MainViewController: UIViewController {
             completion: nil
         )
     }
-    
-    
-    
-    func detectPan(recognizer:UIPanGestureRecognizer) {
-        
-        let primary = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
-        let secondary = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
-        
-        if recognizer.state == UIGestureRecognizerState.began {
-            primaryLastLocation = primary!.center
-            secondaryLastLocation = secondary!.center
-        }
-        
-        let translation = recognizer.translation(in: primary?.superview!)
-        primary!.center =   CGPoint(x: primaryLastLocation.x,
-                                    y: primaryLastLocation.y + translation.y)
-        secondary!.center = CGPoint(x: secondaryLastLocation.x,
-                                    y: secondaryLastLocation.y + -translation.y)
-        
-        if recognizer.state == UIGestureRecognizerState.ended {
-            let velocity = recognizer.velocity(in: primary?.superview!)
-            
-            if (recognizer.view == outputCurrencyContainer && velocity.y >= 0) ||
-                (recognizer.view == inputCurrencyContainer && velocity.y <= 0) {
-                resetInputAndOutputCurrencies(panView: recognizer.view!)
-            } else {
-                swapInputAndOutputCurrencies(pan: true, velocity: velocity.y)
-            }
-        }
-    }
 
-    func swapInputAndOutputCurrencies(pan: Bool = false, velocity: CGFloat = 0) {
+    func swapInputAndOutputCurrencies(distance: CGFloat = 0) {
         // First, hide the spinners.
         hideInputActivityIndicator()
         hideOutputActivityIndicator()
@@ -286,9 +282,9 @@ class MainViewController: UIViewController {
         let outputColor = outputCurrency.titleLabel?.textColor
 
         // Place items in their initial position before animating.
-        inputCurrencyContainer.center.y = outputPosition
+        inputCurrencyContainer.center.y = outputPosition + distance
         inputCurrency.setTitleColor(outputColor, for: UIControlState())
-        outputCurrencyContainer.center.y = inputPosition
+        outputCurrencyContainer.center.y = inputPosition - distance
         outputCurrency.setTitleColor(inputColor, for: UIControlState())
         
         // Animate items to their final position.
