@@ -244,7 +244,8 @@ class MainViewController: UIViewController {
                 resetInputAndOutputCurrenciesLocation(panView: recognizer.view!)
             } else {
                 let distance = abs(translation.y)
-                swapInputAndOutputCurrencies(distance: distance)
+                let velocity = abs(recognizer.velocity(in: touchedGroup?.superview!).y) / 100
+                swapInputAndOutputCurrencies(distance: distance, velocity: velocity)
             }
         }
     }
@@ -270,7 +271,7 @@ class MainViewController: UIViewController {
         )
     }
 
-    func swapInputAndOutputCurrencies(distance: CGFloat = 0) {
+    func swapInputAndOutputCurrencies(distance: CGFloat = 0, velocity: CGFloat = 0) {
         // First, hide the spinners.
         hideInputActivityIndicator()
         hideOutputActivityIndicator()
@@ -292,7 +293,7 @@ class MainViewController: UIViewController {
             withDuration: 0.56,
             delay: 0,
             usingSpringWithDamping: 0.56,
-            initialSpringVelocity: 0,
+            initialSpringVelocity: velocity,
             options: .curveEaseOut,
             animations: {
                 self.inputCurrencyContainer.center.y = inputPosition
