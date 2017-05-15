@@ -18,7 +18,7 @@ class CalculatorKeypadView: UIView {
         
         let border = CALayer()
         border.backgroundColor = borderColor
-        border.frame = CGRect(x: 0, y: -0.25, width: self.frame.size.width * 2, height: 0.25)
+        border.frame = CGRect(x: 0, y: -0.5, width: self.frame.size.width, height: 0.5)
         self.layer.addSublayer(border)
         self.layer.masksToBounds = false
     }

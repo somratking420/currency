@@ -20,7 +20,7 @@ class CalculatorSwitchButton: UIButton {
         
         self.setImage(UIImage(named: "buttonSwitchIconHighlighted.png"), for: .highlighted)
         
-        self.layer.borderWidth = 0.25
+        self.layer.borderWidth = 0.5
         self.layer.borderColor = borderColor
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(cgColor: normalStateColor)

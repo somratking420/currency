@@ -18,7 +18,7 @@ class CalculatorButton: UIButton {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
 
-        self.layer.borderWidth = 0.25
+        self.layer.borderWidth = 0.5
         self.layer.borderColor = borderColor
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(cgColor: normalStateColor)
