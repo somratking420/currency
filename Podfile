@@ -3,5 +3,5 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Currency' do
-  pod 'SWXMLHash', '~> 3.0.3'
+  pod 'SWXMLHash', '~> 4.2.1'
 end
