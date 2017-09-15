@@ -144,9 +144,8 @@
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-XE-j1z" customClass="CalculatorKeypadView" customModule="Currency">
                                 <rect key="frame" x="0.0" y="322" width="414" height="414"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUm-Pb-e64" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="6" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="7">
@@ -156,9 +155,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frj-k7-LPm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAk-yI-DGx" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="6" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="8">
@@ -168,9 +166,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iZX-2T-ZeJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="0.0" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVX-LE-xzS" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="210" y="6" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="9">
@@ -180,9 +177,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPZ-3z-0o4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-uF-R2A" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="108" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="4">
@@ -192,9 +188,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDI-Xu-ghW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="103.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-A5-Xr1" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="108" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="5">
@@ -204,9 +199,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="02u-pU-ucd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="103.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-qM-0gB" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="210" y="108" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="6">
@@ -216,9 +210,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VC4-YW-HMa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="207" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-bG-bai" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="210" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="1">
@@ -228,9 +221,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yp-b8-b4J"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="207" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a03-dZ-HOe" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="210" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="2">
@@ -240,9 +232,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lo4-1v-QSc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="207" y="207" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-TB-GgY" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="210" y="210" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="3">
@@ -252,9 +243,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wt5-W4-hQU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="310.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1au-Bl-X2Q" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="108" y="312" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="0">
@@ -264,9 +254,8 @@
                                             <action selector="digitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="513-Uw-PkC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="310.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8k-oV-4YX" customClass="CalculatorButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="312" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
                                         <color key="tintColor" red="0.14746449887752533" green="0.14749281108379364" blue="0.14745974540710449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=".">
@@ -276,9 +265,8 @@
                                             <action selector="dotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O07-Lr-vo2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" userLabel="Clear" customClass="CalculatorClearButton" customModule="Currency">
-                                        <rect key="frame" x="207" y="310.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZW-lu-eYF" userLabel="Clear" customClass="CalculatorClearButton" customModule="Currency">
+                                        <rect key="frame" x="210" y="312" width="96" height="96"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                         <color key="tintColor" red="0.53805017471313477" green="0.53815340995788574" blue="0.53803282976150513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -290,9 +278,8 @@
                                             <outletCollection property="gestureRecognizers" destination="UDK-Qq-hYp" appends="YES" id="3QF-cx-xPt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-1A-j4i" userLabel="↑↓" customClass="CalculatorSwitchButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="312" y="6" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="buttonSwitchIcon.png">
@@ -302,9 +289,8 @@
                                             <action selector="switchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yem-lN-W3e"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="103.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-D8-JHK" userLabel="+" customClass="CalculatorAddButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="312" y="108" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonAddIcon.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -313,9 +299,8 @@
                                             <action selector="addPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qny-bA-am0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="207" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4r1-uK-adB" userLabel="-" customClass="CalculatorSubtractButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="312" y="210" width="96" height="96"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonSubtractIcon.png">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -324,9 +309,8 @@
                                             <action selector="minusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YAU-7O-2Ve"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
-                                        <rect key="frame" x="310.5" y="310.5" width="103.5" height="103.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-RI-d8f" userLabel="=" customClass="CalculatorResultButton" customModule="Currency" customModuleProvider="target">
+                                        <rect key="frame" x="312" y="312" width="96" height="96"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="54"/>
                                         <state key="normal" image="buttonResultIcon.png">
@@ -339,7 +323,77 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="00t-F0-niC"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="leading" secondItem="XDL-TB-GgY" secondAttribute="trailing" constant="6" id="0Rp-or-N4P"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="top" secondItem="35e-qM-0gB" secondAttribute="bottom" constant="6" id="2iA-Az-tTJ"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="2lM-TK-1su"/>
+                                    <constraint firstItem="PUm-Pb-e64" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="6" id="2wf-dv-zWa"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="leading" secondItem="PUm-Pb-e64" secondAttribute="trailing" constant="6" id="44g-78-on4"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="leading" secondItem="fVX-LE-xzS" secondAttribute="trailing" constant="6" id="53D-5p-rpH"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="7tm-g7-uE0"/>
                                     <constraint firstAttribute="width" secondItem="NLh-XE-j1z" secondAttribute="height" multiplier="1:1" id="8cS-hi-GzH"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="6" id="9AJ-2n-Qvi"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="leading" secondItem="7ZW-lu-eYF" secondAttribute="trailing" constant="6" id="9mh-A1-OPg"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="Alf-eC-0qQ"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="top" secondItem="a03-dZ-HOe" secondAttribute="bottom" constant="6" id="BFw-KV-oB7"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="leading" secondItem="1au-Bl-X2Q" secondAttribute="trailing" constant="6" id="D6t-Sc-hKs"/>
+                                    <constraint firstAttribute="bottom" secondItem="7ZW-lu-eYF" secondAttribute="bottom" constant="6" id="Dgw-vB-X1V"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="leading" secondItem="DJH-uF-R2A" secondAttribute="trailing" constant="6" id="ELb-Tt-sqm"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="F8q-yr-7G0"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="6" id="FmT-mH-r1E"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="KW3-bE-Wrn"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="ML0-23-bZk"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="leading" secondItem="YAk-yI-DGx" secondAttribute="trailing" constant="6" id="OTy-aV-9c7"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="PEa-EW-xKE"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="PNA-E2-EWu"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="QLX-mf-gDe"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="Qif-Iq-fAU"/>
+                                    <constraint firstAttribute="trailing" secondItem="dWW-RI-d8f" secondAttribute="trailing" constant="6" id="RVG-S7-ISl"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="top" secondItem="fVX-LE-xzS" secondAttribute="bottom" constant="6" id="Rq2-98-KHR"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="SW0-cL-JWj"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="top" secondItem="8vk-bG-bai" secondAttribute="bottom" constant="6" id="SrB-e7-8Zr"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="top" secondItem="Xcs-D8-JHK" secondAttribute="bottom" constant="6" id="U0s-9J-gL8"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="UYb-Fs-ZBx"/>
+                                    <constraint firstItem="4r1-uK-adB" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="WmW-E6-Cx9"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="top" secondItem="4r1-uK-adB" secondAttribute="bottom" constant="6" id="YQJ-Ga-wrs"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="YzR-hQ-Pc0"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="ZfM-Ha-bx2"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="6" id="agm-AX-lMR"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="bb6-On-drP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xcs-D8-JHK" secondAttribute="trailing" constant="6" id="bzy-BV-OWy"/>
+                                    <constraint firstAttribute="trailing" secondItem="aOt-1A-j4i" secondAttribute="trailing" constant="6" id="dBO-nt-vgy"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="top" secondItem="DJH-uF-R2A" secondAttribute="bottom" constant="6" id="dYU-bZ-wb0"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="dq8-8G-wis"/>
+                                    <constraint firstItem="35e-qM-0gB" firstAttribute="leading" secondItem="yfa-A5-Xr1" secondAttribute="trailing" constant="6" id="duY-jE-2eU"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="top" secondItem="YAk-yI-DGx" secondAttribute="bottom" constant="6" id="eLg-Ay-pB9"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="eap-YS-WL7"/>
+                                    <constraint firstAttribute="bottom" secondItem="dWW-RI-d8f" secondAttribute="bottom" constant="6" id="fqR-oM-rzf"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="leading" secondItem="35e-qM-0gB" secondAttribute="trailing" constant="6" id="gUz-Tj-Lzt"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="top" secondItem="yfa-A5-Xr1" secondAttribute="bottom" constant="6" id="htT-Wo-pdy"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="hwf-Q4-nT5"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="height" secondItem="PUm-Pb-e64" secondAttribute="height" id="iDc-TQ-gkj"/>
+                                    <constraint firstItem="aOt-1A-j4i" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="iRO-CF-cK4"/>
+                                    <constraint firstItem="fVX-LE-xzS" firstAttribute="top" secondItem="NLh-XE-j1z" secondAttribute="top" constant="6" id="ii1-cp-43r"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="leading" secondItem="F8k-oV-4YX" secondAttribute="trailing" constant="6" id="jG8-Op-Fu7"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="top" secondItem="aOt-1A-j4i" secondAttribute="bottom" constant="6" id="kVD-hI-to7"/>
+                                    <constraint firstAttribute="trailing" secondItem="4r1-uK-adB" secondAttribute="trailing" constant="6" id="kaX-BR-kb7"/>
+                                    <constraint firstItem="Xcs-D8-JHK" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="kr2-d5-usz"/>
+                                    <constraint firstAttribute="bottom" secondItem="1au-Bl-X2Q" secondAttribute="bottom" constant="6" id="l31-mt-9dm"/>
+                                    <constraint firstAttribute="bottom" secondItem="F8k-oV-4YX" secondAttribute="bottom" constant="6" id="lgY-Zv-xWq"/>
+                                    <constraint firstItem="dWW-RI-d8f" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="nqU-5F-g3V"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="o1z-Md-9xi"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="pyL-Lg-EO5"/>
+                                    <constraint firstItem="YAk-yI-DGx" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="qo4-3v-rag"/>
+                                    <constraint firstItem="8vk-bG-bai" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="6" id="r2Z-ix-QnS"/>
+                                    <constraint firstItem="PUm-Pb-e64" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="6" id="t38-KQ-t3y"/>
+                                    <constraint firstItem="a03-dZ-HOe" firstAttribute="leading" secondItem="8vk-bG-bai" secondAttribute="trailing" constant="6" id="tCe-CJ-hEo"/>
+                                    <constraint firstItem="7ZW-lu-eYF" firstAttribute="top" secondItem="XDL-TB-GgY" secondAttribute="bottom" constant="6" id="tHB-Id-oKP"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="tZG-bW-aOF"/>
+                                    <constraint firstItem="F8k-oV-4YX" firstAttribute="leading" secondItem="NLh-XE-j1z" secondAttribute="leading" constant="6" id="uDQ-m4-Gig"/>
+                                    <constraint firstItem="1au-Bl-X2Q" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="vex-DX-1fB"/>
+                                    <constraint firstItem="XDL-TB-GgY" firstAttribute="leading" secondItem="a03-dZ-HOe" secondAttribute="trailing" constant="6" id="w6g-kS-poT"/>
+                                    <constraint firstItem="DJH-uF-R2A" firstAttribute="top" secondItem="PUm-Pb-e64" secondAttribute="bottom" constant="6" id="ziU-tg-UPe"/>
+                                    <constraint firstItem="yfa-A5-Xr1" firstAttribute="width" secondItem="PUm-Pb-e64" secondAttribute="width" id="zrH-B9-wZq"/>
                                 </constraints>
                             </view>
                         </subviews>
