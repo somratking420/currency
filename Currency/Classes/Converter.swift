@@ -411,8 +411,8 @@ class Converter {
             let xml = SWXMLHash.parse(data!)
             
             do {
-                fetchedInputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentInputCurrency!)["Rate"].element!.text!
-                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttr("id", "USD" + currentOutputCurrency!)["Rate"].element!.text!
+                fetchedInputRate = try xml["query"]["results"]["rate"].withAttribute("id", "USD" + currentInputCurrency!)["Rate"].element!.text
+                fetchedOutputRate = try xml["query"]["results"]["rate"].withAttribute("id", "USD" + currentOutputCurrency!)["Rate"].element!.text
             } catch {
                 print("Error fetching currencies: \(error)")
                 hideActivityIndicator()
