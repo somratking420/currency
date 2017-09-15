@@ -424,8 +424,8 @@ class Converter {
             
             // Update UI on main thread.
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentInputCurrency, "currencyRate": fetchedInputRate])
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentOutputCurrency, "currencyRate": fetchedOutputRate])
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentInputCurrency!, "currencyRate": fetchedInputRate])
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "CoinUpdatedNotification"), object: nil, userInfo: ["currencyCode": currentOutputCurrency!, "currencyRate": fetchedOutputRate])
                 print("Updated input and output currency rates.")
             }
             
