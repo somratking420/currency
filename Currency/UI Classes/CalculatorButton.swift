@@ -10,16 +10,14 @@ import Foundation
 import UIKit
 
 class CalculatorButton: UIButton {
-    
-    let borderColor: CGColor! = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.00).cgColor
-    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0).cgColor
-    let highlightStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.08).cgColor
+
+    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.03).cgColor
+    let highlightStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.09).cgColor
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
 
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = borderColor
+        self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(cgColor: normalStateColor)
     }
