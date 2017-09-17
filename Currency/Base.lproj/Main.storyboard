@@ -587,9 +587,9 @@
     </scenes>
     <resources>
         <image name="buttonAddIcon.png" width="26" height="26"/>
-        <image name="buttonClearIcon.png" width="52" height="31"/>
-        <image name="buttonResultIcon.png" width="24" height="12"/>
-        <image name="buttonSubtractIcon.png" width="25" height="2"/>
+        <image name="buttonClearIcon.png" width="52" height="33"/>
+        <image name="buttonResultIcon.png" width="24" height="13"/>
+        <image name="buttonSubtractIcon.png" width="25" height="3"/>
         <image name="buttonSwitchIcon.png" width="44" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
