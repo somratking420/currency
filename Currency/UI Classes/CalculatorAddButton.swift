@@ -11,7 +11,7 @@ import UIKit
 
 class CalculatorAddButton: UIButton {
     
-    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.03).cgColor
+    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.04).cgColor
     let highlightStateColor: CGColor! = UIColor(red:0.05, green:0.78, blue:0.58, alpha:0.32).cgColor
     
     required init(coder aDecoder: NSCoder) {

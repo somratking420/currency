@@ -26,6 +26,6 @@
         <attribute name="useSymbol" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Currency" positionX="-63" positionY="-18" width="128" height="375"/>
+        <element name="Currency" positionX="-63" positionY="-18" width="128" height="390"/>
     </elements>
 </model>

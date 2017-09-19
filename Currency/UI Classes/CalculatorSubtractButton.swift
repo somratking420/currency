@@ -11,7 +11,7 @@ import UIKit
 
 class CalculatorSubtractButton: UIButton {
     
-    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.03).cgColor
+    let normalStateColor: CGColor! = UIColor(red:0, green:0, blue:0, alpha:0.04).cgColor
     let highlightStateColor: CGColor! = UIColor(red:0.97, green:0.32, blue:0.32, alpha:0.32).cgColor
     
     required init(coder aDecoder: NSCoder) {
