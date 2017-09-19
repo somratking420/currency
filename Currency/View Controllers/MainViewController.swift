@@ -223,8 +223,6 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    
-    
     func detectPan(recognizer:UIPanGestureRecognizer) {
         
         let touchedGroup = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
