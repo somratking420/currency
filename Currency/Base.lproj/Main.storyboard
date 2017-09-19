@@ -51,14 +51,14 @@
                                             <outletCollection property="gestureRecognizers" destination="fYV-Ee-EWy" appends="YES" id="RJw-lx-5Km"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4" userLabel="Input Activity Indicator">
-                                        <rect key="frame" x="56" y="55.666666666666671" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Jm-2k-5N4" userLabel="Input Activity Indicator">
+                                        <rect key="frame" x="56" y="37" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dVx-wP-zji" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="leading" id="BLY-Aj-XWW"/>
+                                    <constraint firstItem="6Jm-2k-5N4" firstAttribute="centerY" secondItem="dVx-wP-zji" secondAttribute="centerY" id="Naz-jQ-4UB"/>
                                     <constraint firstAttribute="bottom" secondItem="muv-tM-atU" secondAttribute="bottom" id="VYb-tb-eCm"/>
                                     <constraint firstAttribute="trailing" secondItem="muv-tM-atU" secondAttribute="trailing" id="dST-e3-krz"/>
                                     <constraint firstItem="dVx-wP-zji" firstAttribute="top" secondItem="amQ-16-T8b" secondAttribute="top" id="kb5-Ih-fKL"/>
@@ -66,6 +66,7 @@
                                     <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="10" id="spe-PP-JW2"/>
                                     <constraint firstItem="muv-tM-atU" firstAttribute="leading" secondItem="dVx-wP-zji" secondAttribute="trailing" constant="10" id="toK-MC-bU2"/>
                                     <constraint firstAttribute="bottom" secondItem="dVx-wP-zji" secondAttribute="bottom" id="via-gE-mb1"/>
+                                    <constraint firstItem="6Jm-2k-5N4" firstAttribute="leading" secondItem="amQ-16-T8b" secondAttribute="leading" constant="56" id="yhk-ri-RZo"/>
                                 </constraints>
                             </view>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-rS-HdK" userLabel="Ouput Currency View">
@@ -97,16 +98,17 @@
                                             <outletCollection property="gestureRecognizers" destination="6Xo-w5-vdo" appends="YES" id="JV3-iV-nER"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9" userLabel="Output Activity Indicator">
-                                        <rect key="frame" x="56" y="55.666666666666657" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Pvj-tD-Cw9" userLabel="Output Activity Indicator">
+                                        <rect key="frame" x="56" y="37" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" constant="10" id="AKJ-tI-ApW"/>
                                     <constraint firstItem="rXn-1B-zNv" firstAttribute="leading" secondItem="4nD-bv-Hha" secondAttribute="trailing" constant="10" id="LG2-bc-qnL"/>
+                                    <constraint firstItem="Pvj-tD-Cw9" firstAttribute="centerY" secondItem="4nD-bv-Hha" secondAttribute="centerY" id="bpH-ac-u5d"/>
                                     <constraint firstItem="rXn-1B-zNv" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="top" id="fpN-WW-xCx"/>
+                                    <constraint firstItem="Pvj-tD-Cw9" firstAttribute="leading" secondItem="46j-rS-HdK" secondAttribute="leading" constant="56" id="hOQ-1O-zrK"/>
                                     <constraint firstAttribute="bottom" secondItem="4nD-bv-Hha" secondAttribute="bottom" id="hmt-qY-xAs"/>
                                     <constraint firstItem="4nD-bv-Hha" firstAttribute="top" secondItem="46j-rS-HdK" secondAttribute="top" id="ivj-Ad-GGR"/>
                                     <constraint firstAttribute="trailing" secondItem="rXn-1B-zNv" secondAttribute="trailing" id="j2g-08-bA4"/>
