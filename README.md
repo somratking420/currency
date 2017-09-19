@@ -78,7 +78,7 @@ I am looking for help translating the application. Please [email me](mailto:nuno
 - [ ] Hungarian (hu)
 - [ ] Catalan (ca)
 - [ ] Croatian (hr)
-- [ ] Greek (el)
+- [x] Greek (el), thanks to [Emanuel Zahariade](http://zahariades.co.uk/)
 - [ ] Hebrew (he)
 - [ ] Romanian (ro)
 - [ ] Slovak (sk)
