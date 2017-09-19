@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Device local database version:", userDatabaseVersion)
         print("Latest database version:", latestDatabaseVersion)
-        // print("Database URL: ", url)
+//        print("Database URL: ", url)
 
         if userDatabaseVersion != latestDatabaseVersion {
             print("Device local database is out of date. Updating database files...")
