@@ -18,8 +18,8 @@ class CalculatorAddButton: UIButton {
         super.init(coder: aDecoder)!
         
         self.setImage(UIImage(named: "buttonAddIconHighlighted.png"), for: .highlighted)
-        
-        self.layer.cornerRadius = self.layer.frame.width / 2
+
+        self.layer.cornerRadius = self.bounds.size.width / 2
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(cgColor: normalStateColor)
     }

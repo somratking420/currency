@@ -19,7 +19,7 @@ class CalculatorClearButton: UIButton {
         
         self.setImage(UIImage(named: "buttonClearIconHighlighted.png"), for: .highlighted)
         
-        self.layer.cornerRadius = self.layer.frame.width / 2
+        self.layer.cornerRadius = self.bounds.size.width / 2
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(cgColor: normalStateColor)
     }
