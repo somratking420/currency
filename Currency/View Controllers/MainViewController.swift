@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 
 class MainViewController: UIViewController {
     
@@ -533,5 +534,9 @@ extension MainViewController: ChangeCurrencyViewControllerDelegate {
             print("Output currency updated to: \(currencyCode)")
         }
         updateInterface()
+        // Request App Store Review.
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
     }
 }
