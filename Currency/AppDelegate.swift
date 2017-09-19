@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite")
         let prefs = UserDefaults.standard
         let userDatabaseVersion: Int
-        let latestDatabaseVersion: Int = 5
+        let latestDatabaseVersion: Int = 8
         let deleteExisting: Bool = FileManager.default.fileExists(atPath: url.path)
         
         if let version = prefs.string(forKey: "databaseVersion") {
@@ -95,12 +95,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Device local database version:", userDatabaseVersion)
         print("Latest database version:", latestDatabaseVersion)
-        
+        // print("Database URL: ", url)
+
         if userDatabaseVersion != latestDatabaseVersion {
             print("Device local database is out of date. Updating database files...")
             let sourceSqliteURLs = [Bundle.main.url(forResource: "InitialCurrencyDatabase", withExtension: "sqlite")!, Bundle.main.url(forResource: "InitialCurrencyDatabase", withExtension: "sqlite-wal")!, Bundle.main.url(forResource: "InitialCurrencyDatabase", withExtension: "sqlite-shm")!]
             let destSqliteURLs = [self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite"), self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite-wal"), self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite-shm")]
-            
+
             for index in 0..<sourceSqliteURLs.count {
                 do {
                     if deleteExisting {
@@ -112,11 +113,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(error)
                 }
             }
-            
+
             prefs.set(latestDatabaseVersion, forKey: "databaseVersion")
             print("Finished updating local database files.")
         }
-        
+
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)

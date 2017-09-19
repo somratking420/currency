@@ -13,6 +13,7 @@ import CoreData
 class Currency: NSManagedObject {
     
     @NSManaged dynamic var name_de: String!
+    @NSManaged dynamic var name_el: String!
     @NSManaged dynamic var name_en: String!
     @NSManaged dynamic var name_es: String!
     @NSManaged dynamic var name_fr: String!

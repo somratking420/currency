@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         converter = Converter()
         calculator = Calculator()
         notificationCenter.addObserver(self,
