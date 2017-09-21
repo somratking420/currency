@@ -3,55 +3,55 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon20p@2x.png",
+      "filename" : "Icon B20p@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon20p@3x.png",
+      "filename" : "Icon B20p@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon29p@2x.png",
+      "filename" : "Icon B29p@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon29p@3x.png",
+      "filename" : "Icon B29p@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon40p@2x.png",
+      "filename" : "Icon B40p@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon40p@3x.png",
+      "filename" : "Icon B40p@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon60p@2x.png",
+      "filename" : "Icon B60p@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon60p@3x.png",
+      "filename" : "Icon B60p@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "Icon App Store.png",
+      "filename" : "Icon B App Store.png",
       "scale" : "1x"
     }
   ],
