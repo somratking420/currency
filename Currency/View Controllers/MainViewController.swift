@@ -106,7 +106,7 @@ class MainViewController: UIViewController {
         super.viewDidAppear(animated)
     }
 
-    func applicationBecameActiveNotification() {
+    @objc func applicationBecameActiveNotification() {
         // When we put the app on the background the animations stop,
         // so let's restart them when the app is back on the foreground.
         animateInputIndicator()
@@ -224,7 +224,7 @@ class MainViewController: UIViewController {
         updateInterface()
     }
     
-    func detectPan(recognizer:UIPanGestureRecognizer) {
+    @objc func detectPan(recognizer:UIPanGestureRecognizer) {
         
         let touchedGroup = recognizer.view == outputCurrencyContainer ? outputCurrencyContainer : inputCurrencyContainer
         let siblingGroup = recognizer.view == outputCurrencyContainer ? inputCurrencyContainer : outputCurrencyContainer
@@ -411,7 +411,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Notifications
     
-    func didReceiveCoinUpdateNotification(_ notification: Notification) {
+    @objc func didReceiveCoinUpdateNotification(_ notification: Notification) {
         print("Notification received that there's a currency update.")
         let currency: Dictionary<String, String> = notification.userInfo as! Dictionary<String, String>
         let currencyCode: String = currency["currencyCode"]!
@@ -428,7 +428,7 @@ class MainViewController: UIViewController {
         updateInterface(playSound: false)
     }
     
-    func didReceiveUpdateActivityIndicator(_ notification: Notification) {
+    @objc func didReceiveUpdateActivityIndicator(_ notification: Notification) {
         guard prefs.bool(forKey: "activity_indicators_preference") else {
             return
         }
