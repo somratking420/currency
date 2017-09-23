@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.appendingPathComponent("CurrencyDatabase.sqlite")
         let prefs = UserDefaults.standard
         let userDatabaseVersion: Int
-        let latestDatabaseVersion: Int = 8
+        let latestDatabaseVersion: Int = 9
         let deleteExisting: Bool = FileManager.default.fileExists(atPath: url.path)
         
         if let version = prefs.string(forKey: "databaseVersion") {
@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Device local database version:", userDatabaseVersion)
         print("Latest database version:", latestDatabaseVersion)
-//        print("Database URL: ", url)
+        print("Database URL: ", url)
 
         if userDatabaseVersion != latestDatabaseVersion {
             print("Device local database is out of date. Updating database files...")

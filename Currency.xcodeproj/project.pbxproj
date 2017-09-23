@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		78864D22337FCE5BB654061E /* Pods_Currency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E717AC750FF97D127F2FD56 /* Pods_Currency.framework */; };
-		B8B6A01F1F715C8200EE194F /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01E1F715C7800EE194F /* InitialCurrencyDatabase.sqlite */; };
-		B8B6A0201F715C8200EE194F /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01D1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-shm */; };
-		B8B6A0211F715C8200EE194F /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01C1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-wal */; };
+		B8F0BE701F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01E1F715C7800EE194F /* InitialCurrencyDatabase.sqlite */; };
+		B8F0BE711F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01D1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-shm */; };
+		B8F0BE721F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = B8B6A01C1F715C7800EE194F /* InitialCurrencyDatabase.sqlite-wal */; };
 		BC0BF10E1CED57A7005FD618 /* CurrencyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0BF10D1CED57A7005FD618 /* CurrencyButton.swift */; };
 		BC1FFFBB1CD342F40036EC84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BC1FFFBA1CD342F30036EC84 /* Settings.bundle */; };
 		BC44BB081CD4A0DD00991C28 /* buttonAddIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC44BADB1CD4A0DD00991C28 /* buttonAddIcon.png */; };
@@ -545,9 +545,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B6A01F1F715C8200EE194F /* InitialCurrencyDatabase.sqlite in Resources */,
-				B8B6A0201F715C8200EE194F /* InitialCurrencyDatabase.sqlite-shm in Resources */,
-				B8B6A0211F715C8200EE194F /* InitialCurrencyDatabase.sqlite-wal in Resources */,
+				B8F0BE701F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite in Resources */,
+				B8F0BE711F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-shm in Resources */,
+				B8F0BE721F76A5A500ECEF17 /* InitialCurrencyDatabase.sqlite-wal in Resources */,
 				BC44BB1B1CD4A0DD00991C28 /* buttonResultIcon@2x.png in Resources */,
 				BC44BB0B1CD4A0DD00991C28 /* buttonAddIconDimmed.png in Resources */,
 				BC44BB231CD4A0DD00991C28 /* buttonSubtractIcon.png in Resources */,
