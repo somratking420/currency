@@ -10,7 +10,7 @@ This project is a learning exercise in Swift programming. I seek primarily to ge
 
 ## Swift
 
-This project is written in Swift 3.
+This project is written in Swift 4.
 
 ## Installation
 
